@@ -1,1 +1,152 @@
+<html lang="en"><style>* { -webkit-text-size-adjust: 95.33333333333333% !important; }</style><head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K167 - Swordland Summit | Kingdom 167</title>
+<style>
+*{box-sizing:border-box} body{margin:0;background:#0f0f1a;color:#eee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:28px 20px 10px;text-align:center} header h1{margin:0;font-size:32px;letter-spacing:.5px} header h1 span{color:#f5c542}
+header p{color:#b8b8d0;margin:8px 0 0} .pill{display:inline-block;background:#1e1e32;border:1px solid #333;padding:6px 12px;border-radius:999px;font-size:13px;margin:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:16px} .card{background:#1a1a2e;border:1px solid #2a2a44;border-radius:16px;padding:18px;margin:14px 0}
+label{font-size:13px;color:#b8b8d0;display:block;margin:12px 0 6px} input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#0f0f1a;color:#fff;font-size:15px}
+button{background:#f5c542;color:#111;border:0;padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px;width:100%;margin-top:14px}
+button.ghost{background:#2a2a44;color:#fff} .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px} @media(max-width:900px){.grid{grid-template-columns:1fr}}
+.legion{background:#1a1a2e;border:1px solid #2a2a44;border-radius:16px;padding:16px} .legion h2{margin:0 0 4px} .utc{font-size:36px;font-weight:900;color:#f5c542;margin:2px 0}
+.bar{height:10px;background:#0f0f1a;border-radius:999px;overflow:hidden;margin:6px 0 12px} .bar i{display:block;height:100%;background:#f5c542}
+.slot{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-bottom:1px solid #25253a;font-size:14px} .slot b{color:#f5c542;min-width:28px}
+.tag{background:#2a2a44;padding:3px 8px;border-radius:999px;font-size:11px;margin-left:6px} .empty{color:#777} .small{font-size:13px;color:#b8b8d0}
+.admin{border:1px dashed #f5c542} .row{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:600px){.row{grid-template-columns:1fr}}
+#status{margin-top:10px;font-size:13px;color:#f5c542;min-height:18px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+<h1>KINGDOM <span>167</span> — SWORDLAND SUMMIT</h1>
+<p>3 Legions • 30 Combatants + 20 Substitutes per Legion • One registration per player</p>
+<div><span class="pill" id="totalPill">Total Registered: 0 / 150</span> <span class="pill" id="livePill">○ Demo Mode — Add Sheet URL to go live</span></div>
+</header>
 
+<div class="wrap">
+<div class="card">
+<h2 style="margin:0">Register</h2>
+<p class="small">Pick your time first, then your role. Combatant = you commit to show up. Substitute = backup.</p>
+<div class="row">
+<div><label>Player Name</label><input id="name" placeholder="e.g. StreetDoc"></div>
+<div><label>Alliance Tag</label><select id="alliance"><option>TNW</option><option>ONE</option><option>RYL</option><option>JUS</option><option>FUN</option><option>ITA</option><option>Other</option></select></div>
+</div>
+<div class="row">
+<div><label>Legion</label><select id="legion"><option value="1">Legion 1 — UTC 2</option><option value="2">Legion 2 — UTC 19</option><option value="3">Legion 3 — UTC 19</option></select></div>
+<div><label>Role</label><select id="role"><option>Combatant</option><option>Substitute</option></select></div>
+</div>
+<button onclick="register()">Register Me</button>
+<button class="ghost" onclick="loadData()">↻ Refresh Live List</button>
+<div id="status"></div>
+</div>
+
+<div id="boards" class="grid"><div class="legion"><h2>Legion 1</h2><div class="utc">UTC 2</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>2.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>3.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>4.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>5.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>6.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>7.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>8.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>9.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>10.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>11.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>12.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>13.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>14.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>15.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>16.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>17.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>18.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>19.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>20.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>21.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>22.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>23.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>24.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>25.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>26.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>27.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>28.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>29.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>30.</b> <span class="empty">Empty Slot</span></span></div><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>32.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>33.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>34.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>35.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>36.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>37.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>38.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>39.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>40.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>41.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>42.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>43.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>44.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>45.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>46.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>47.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>48.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>49.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>50.</b> <span class="empty">Empty Slot</span></span></div></div><div class="legion"><h2>Legion 2</h2><div class="utc">UTC 19</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>2.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>3.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>4.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>5.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>6.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>7.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>8.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>9.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>10.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>11.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>12.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>13.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>14.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>15.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>16.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>17.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>18.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>19.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>20.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>21.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>22.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>23.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>24.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>25.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>26.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>27.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>28.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>29.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>30.</b> <span class="empty">Empty Slot</span></span></div><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>32.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>33.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>34.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>35.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>36.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>37.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>38.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>39.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>40.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>41.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>42.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>43.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>44.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>45.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>46.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>47.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>48.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>49.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>50.</b> <span class="empty">Empty Slot</span></span></div></div><div class="legion"><h2>Legion 3</h2><div class="utc">UTC 19</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>2.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>3.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>4.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>5.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>6.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>7.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>8.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>9.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>10.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>11.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>12.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>13.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>14.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>15.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>16.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>17.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>18.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>19.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>20.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>21.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>22.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>23.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>24.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>25.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>26.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>27.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>28.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>29.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>30.</b> <span class="empty">Empty Slot</span></span></div><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>32.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>33.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>34.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>35.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>36.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>37.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>38.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>39.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>40.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>41.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>42.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>43.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>44.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>45.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>46.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>47.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>48.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>49.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>50.</b> <span class="empty">Empty Slot</span></span></div></div></div>
+
+<div class="card admin">
+<h2 style="margin:0">⚙️ Admin — Kingdom Leader</h2>
+<p class="small">Admin changes the UTC times. Code is 167. Times are saved to the Sheet so everyone sees the new time.</p>
+<label>Admin Code</label><input id="adminCode" placeholder="Enter 167" type="password">
+<div class="row">
+<div><label>Legion 1 Time</label><input id="t1" value="UTC 2"></div>
+<div><label>Legion 2 Time</label><input id="t2" value="UTC 19"></div>
+</div>
+<div><label>Legion 3 Time</label><input id="t3" value="UTC 19"></div>
+<button onclick="saveTimes()">Save Legion Times</button>
+<button class="ghost" onclick="copySummary()">Copy Summary for Game Chat</button>
+</div>
+
+<div class="card"><h3 style="margin:0 0 8px">How this site works</h3><p class="small">This page is hosted free on GitHub Pages. It does NOT save data by itself. It talks to a Google Sheet (your live database) via a Google Apps Script Web App URL. Set that URL in the code at the top: <b>APPS_SCRIPT_URL</b>. If it's not set yet, the page works in Demo Mode (local only) so you can preview it.</p></div>
+</div>
+
+<script>
+// ★★★ PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE ★★★
+const APPS_SCRIPT_URL = ""; // e.g. "https://script.google.com/macros/s/XXXX/exec"
+let registrations = [];
+let times = {1:"UTC 2", 2:"UTC 19", 3:"UTC 19"};
+
+async function loadData(){
+  if(!APPS_SCRIPT_URL){ document.getElementById('livePill').textContent="○ Demo Mode — Add Sheet URL to go live"; render(); return; }
+  try{
+    document.getElementById('livePill').textContent="● Live — Connected to Sheet";
+    const res = await fetch(APPS_SCRIPT_URL);
+    const data = await res.json();
+    // Apps Script should return { registrations: [...], times: {...} } or array of rows
+    if(Array.isArray(data)){ registrations = data.slice(1).map(r=>({name:r[0],alliance:r[1],legion:String(r[2]),role:r[3],slot:r[4]})); }
+    else { registrations = data.registrations||[]; if(data.times) times=data.times; document.getElementById('t1').value=times[1]; document.getElementById('t2').value=times[2]; document.getElementById('t3').value=times[3]; }
+    render();
+  }catch(e){ document.getElementById('status').textContent="Could not load Sheet. Check Apps Script URL / deployment is 'Anyone'."; render(); }
+}
+
+function render(){
+  const boards=document.getElementById('boards'); boards.innerHTML="";
+  let total=registrations.length;
+  document.getElementById('totalPill').textContent=`Total Registered: ${total} / 150`;
+  [1,2,3].forEach(legion=>{
+    const list=registrations.filter(r=>String(r.legion)==String(legion));
+    const comb=list.filter(r=>r.role==="Combatant"); const subs=list.filter(r=>r.role==="Substitute");
+    let html=`<div class="legion"><h2>Legion ${legion}</h2><div class="utc">${times[legion]}</div><p class="small">Combatants ${comb.length}/30</p><div class="bar"><i style="width:${comb.length/30*100}%"></i></div><p class="small">Substitutes ${subs.length}/20</p><div class="bar"><i style="width:${subs.length/20*100}%"></i></div><h3>⚔️ Combatants 1-30</h3>`;
+    for(let i=1;i<=30;i++){ const p=comb[i-1]; html+= p? `<div class="slot"><span><b>${i}.</b> ${p.name} <span class="tag">${p.alliance}</span></span><span style="cursor:pointer" onclick="removePlayer('${p.name.replace(/'/g,"")}')">✕</span></div>` : `<div class="slot"><span><b>${i}.</b> <span class="empty">Empty Slot</span></span></div>`; }
+    html+=`<h3>🛡️ Substitutes 31-50</h3>`;
+    for(let i=0;i<20;i++){ const p=subs[i]; html+= p? `<div class="slot"><span><b>${31+i}.</b> ${p.name} <span class="tag">${p.alliance}</span></span><span style="cursor:pointer" onclick="removePlayer('${p.name.replace(/'/g,"")}')">✕</span></div>` : `<div class="slot"><span><b>${31+i}.</b> <span class="empty">Empty Slot</span></span></div>`; }
+    html+=`</div>`; boards.innerHTML+=html;
+  });
+}
+
+async function register(){
+  const name=document.getElementById('name').value.trim();
+  const alliance=document.getElementById('alliance').value;
+  const legion=document.getElementById('legion').value;
+  const role=document.getElementById('role').value;
+  if(!name){ document.getElementById('status').textContent="Enter your player name."; return; }
+  if(registrations.some(r=>r.name.toLowerCase()===name.toLowerCase())){ document.getElementById('status').textContent=name+" is already registered."; return; }
+  const count=registrations.filter(r=>String(r.legion)===String(legion) && r.role===role).length;
+  const limit=role==="Combatant"?30:20;
+  if(count>=limit){ document.getElementById('status').textContent=role+" is full for Legion "+legion+". Try Substitute or another Legion."; return; }
+  const entry={name,alliance,legion,role,slot:count+1};
+  if(!APPS_SCRIPT_URL){ registrations.push(entry); render(); document.getElementById('status').textContent="Demo Mode: saved locally only. Add Sheet URL to go live."; document.getElementById('name').value=""; return; }
+  try{
+    await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(entry)});
+    document.getElementById('status').textContent="Registered! Refreshing..."; setTimeout(loadData,1200); document.getElementById('name').value="";
+  }catch(e){ document.getElementById('status').textContent="Error saving. Try again."; }
+}
+function removePlayer(name){ if(confirm("Remove "+name+"?")){ if(!APPS_SCRIPT_URL){ registrations=registrations.filter(r=>r.name!==name); render(); return; } fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"delete",name})}).then(()=>setTimeout(loadData,800)); } }
+async function saveTimes(){
+  if(document.getElementById('adminCode').value!=="167"){ alert("Wrong admin code"); return; }
+  times={1:document.getElementById('t1').value,2:document.getElementById('t2').value,3:document.getElementById('t3').value};
+  const legSel=document.getElementById('legion'); legSel.options[0].text="Legion 1 — "+times[1]; legSel.options[1].text="Legion 2 — "+times[2]; legSel.options[2].text="Legion 3 — "+times[3];
+  if(APPS_SCRIPT_URL){ await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"saveTimes",times})}); }
+  render(); alert("Times saved: "+times[1]+" / "+times[2]+" / "+times[3]);
+}
+function copySummary(){
+  let txt="K167 SWORDLAND SUMMIT\n";
+  [1,2,3].forEach(l=>{ txt+=`\nLegion ${l} - ${times[l]}\n`; const list=registrations.filter(r=>String(r.legion)==String(l)); txt+="Combatants: "+list.filter(r=>r.role==="Combatant").map(r=>r.name).join(", ")+"\nSubstitutes: "+list.filter(r=>r.role==="Substitute").map(r=>r.name).join(", ")+"\n"; });
+  navigator.clipboard.writeText(txt).then(()=>alert("Copied!"));
+}
+loadData();
+</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
+
+</body></html>
