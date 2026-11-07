@@ -20,132 +20,247 @@
   font-family: "Optimistic Mono", ui-monospace, monospace;
 }
 </style>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>K167 - Swordland Summit | Kingdom 167</title>
 <style>
 *{box-sizing:border-box} body{margin:0;background:#0f0f1a;color:#eee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-header{padding:28px 20px 10px;text-align:center} header h1{margin:0;font-size:32px;letter-spacing:.5px} header h1 span{color:#f5c542}
-header p{color:#b8b8d0;margin:8px 0 0} .pill{display:inline-block;background:#1e1e32;border:1px solid #333;padding:6px 12px;border-radius:999px;font-size:13px;margin:4px}
+header{padding:28px 20px 10px;text-align:center} header h1{margin:0;font-size:32px} header h1 span{color:#f5c542} header p{color:#b8b8d0;margin:8px 0 0}
+.pill{display:inline-block;background:#1e1e32;border:1px solid #333;padding:6px 12px;border-radius:999px;font-size:13px;margin:4px}
 .wrap{max-width:1180px;margin:0 auto;padding:16px} .card{background:#1a1a2e;border:1px solid #2a2a44;border-radius:16px;padding:18px;margin:14px 0}
 label{font-size:13px;color:#b8b8d0;display:block;margin:12px 0 6px} input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#0f0f1a;color:#fff;font-size:15px}
-button{background:#f5c542;color:#111;border:0;padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px;width:100%;margin-top:14px}
-button.ghost{background:#2a2a44;color:#fff} .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px} @media(max-width:900px){.grid{grid-template-columns:1fr}}
-.legion{background:#1a1a2e;border:1px solid #2a2a44;border-radius:16px;padding:16px} .legion h2{margin:0 0 4px} .utc{font-size:36px;font-weight:900;color:#f5c542;margin:2px 0}
+button{background:#f5c542;color:#111;border:0;padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px;width:100%;margin-top:14px} button.ghost{background:#2a2a44;color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px} @media(max-width:900px){.grid{grid-template-columns:1fr}}
+.legion{background:#1a1a2e;border:1px solid #2a2a44;border-radius:16px;padding:16px} .legion h2{margin:0} .utc{font-size:36px;font-weight:900;color:#f5c542;margin:2px 0}
 .bar{height:10px;background:#0f0f1a;border-radius:999px;overflow:hidden;margin:6px 0 12px} .bar i{display:block;height:100%;background:#f5c542}
 .slot{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-bottom:1px solid #25253a;font-size:14px} .slot b{color:#f5c542;min-width:28px}
-.tag{background:#2a2a44;padding:3px 8px;border-radius:999px;font-size:11px;margin-left:6px} .empty{color:#777} .small{font-size:13px;color:#b8b8d0}
-.admin{border:1px dashed #f5c542} .row{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:600px){.row{grid-template-columns:1fr}}
+.tag{padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;margin-left:6px;border:1px solid rgba(255,255,255,.25)}
+.tag-TNW{background:#2563eb;color:#fff} .tag-ONE{background:#16a34a;color:#fff} .tag-RYL{background:#dc2626;color:#fff}
+.tag-JUS{background:#7c3aed;color:#fff} .tag-FUN{background:#eab308;color:#111} .tag-ITA{background:#111;color:#fff;border-color:#555} .tag-Other{background:#475569;color:#fff}
+.empty{color:#777} .small{font-size:13px;color:#b8b8d0} .admin{border:1px dashed #f5c542} .row{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:600px){.row{grid-template-columns:1fr}}
 #status{margin-top:10px;font-size:13px;color:#f5c542;min-height:18px;text-align:center}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px} @media(max-width:800px){.admin-grid{grid-template-columns:1fr}} .legion-admin{background:#0f0f1a;border:1px solid #2a2a44;border-radius:12px;padding:12px} .legion-admin h4{margin:0 0 8px} .mini{font-size:12px;padding:8px 10px;margin-top:8px} .ally-row{display:flex;gap:8px;align-items:center;margin:8px 0} .ally-row input{width:90px;text-transform:uppercase;text-align:center;font-weight:800;letter-spacing:2px} .locked-badge{background:#dc2626;color:#fff;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:800} .open-badge{background:#16a34a;color:#fff;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:800} .waitlist{background:#2a1e00;border:1px solid #f5c542;border-radius:12px;padding:12px;margin-top:14px} .waitlist h3{margin:0 0 8px;color:#f5c542}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}
 </style>
 </head>
 <body>
 <header>
 <h1>KINGDOM <span>167</span> — SWORDLAND SUMMIT</h1>
-<p>3 Legions • 30 Combatants + 20 Substitutes per Legion • One registration per player</p>
-<div><span class="pill" id="totalPill">Total Registered: 0 / 150</span> <span class="pill" id="livePill">● Live — Connected to Sheet</span></div>
+<p>3 Legions • 30 Combatants + 20 Substitutes + Waitlist per Legion</p>
+<div class="legend" id="legend"><span class="pill"><span class="dot" style="background:#2563eb"></span>TNW</span><span class="pill"><span class="dot" style="background:#16a34a"></span>ONE</span><span class="pill"><span class="dot" style="background:#dc2626"></span>RYL</span><span class="pill"><span class="dot" style="background:#7c3aed"></span>JUS</span><span class="pill"><span class="dot" style="background:#eab308"></span>FUN</span><span class="pill"><span class="dot" style="background:#111"></span>ITA</span></div>
+<div><span class="pill" id="totalPill">Total Registered: 0 / 150  •  Waitlist: 0</span> <span class="pill" id="livePill">● Connecting...</span></div>
 </header>
-
 <div class="wrap">
+<div id="welcomeBanner" class="card" style="display:none;background:#1e2a1e;border:1px solid #16a34a;padding:14px 18px">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div><b id="welcomeText">Welcome back</b><div id="welcomeSub" class="small" style="margin-top:4px"></div></div>
+    <div style="display:flex;gap:8px">
+      <button onclick="scrollToMySlot()" style="width:auto;margin:0;padding:10px 14px">Jump to My Slot ↓</button>
+      <button onclick="switchPlayer()" class="ghost" style="width:auto;margin:0;padding:10px 14px">Not you? Switch Player</button>
+    </div>
+  </div>
+</div>
 <div class="card">
 <h2 style="margin:0">Register</h2>
-<p class="small">Pick your time first, then your role. Combatant = you commit to show up. Substitute = backup.</p>
-<div class="row">
-<div><label>Player Name</label><input id="name" placeholder="e.g. StreetDoc"></div>
-<div><label>Alliance Tag</label><select id="alliance"><option>TNW</option><option>ONE</option><option>RYL</option><option>JUS</option><option>FUN</option><option>ITA</option><option>Other</option></select></div>
-</div>
-<div class="row">
-<div><label>Legion</label><select id="legion"><option value="1">Legion 1 — UTC 2</option><option value="2">Legion 2 — UTC 19</option><option value="3">Legion 3 — UTC 19</option></select></div>
-<div><label>Role</label><select id="role"><option>Combatant</option><option>Substitute</option></select></div>
-</div>
+<p class="small">If Combatants are full (30/30), you will be offered the <b>Waitlist</b>. Waitlist = first in line if a Combatant drops. You stay in order.</p>
+<div class="row"><div><label>Player Name</label><input id="name" placeholder="e.g. StreetDoc"></div>
+<div><label>Alliance Tag</label><select id="alliance"><option>TNW</option><option>ONE</option><option>RYL</option><option>JUS</option><option>FUN</option><option>ITA</option><option>Other</option></select></div></div>
+<div class="row"><div><label>Legion</label><select id="legion"><option value="1">Legion 1 — UTC 2</option><option value="2">Legion 2 — UTC 19</option><option value="3">Legion 3 — UTC 19</option></select></div>
+<div><label>Role</label><select id="role" onchange="roleHint()"><option>Combatant</option><option>Substitute</option><option>Waitlist</option></select></div></div>
+<div id="roleHint" class="small" style="margin-top:8px;color:#f5c542"></div>
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:12px;font-size:14px;color:#eee"><input type="checkbox" id="rememberMe" checked="" style="width:auto"> Remember me on this device — auto-fill my Name + Alliance next time</label>
+<p class="small" style="margin:4px 0 0">Saved only in this browser on this device. No account, no password. Use “Not you? Switch Player” to clear it.</p>
 <button onclick="register()">Register Me</button>
 <button class="ghost" onclick="loadData()">↻ Refresh Live List</button>
-<div id="status">Could not load Sheet. Check Apps Script URL / deployment is 'Anyone'.</div>
+<div id="status">Could not load Sheet. Check Apps Script deployment is Anyone.</div>
 </div>
-
-<div id="boards" class="grid"><div class="legion"><h2>Legion 1</h2><div class="utc">UTC 2</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>2.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>3.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>4.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>5.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>6.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>7.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>8.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>9.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>10.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>11.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>12.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>13.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>14.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>15.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>16.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>17.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>18.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>19.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>20.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>21.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>22.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>23.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>24.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>25.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>26.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>27.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>28.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>29.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>30.</b> <span class="empty">Empty Slot</span></span></div><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>32.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>33.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>34.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>35.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>36.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>37.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>38.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>39.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>40.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>41.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>42.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>43.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>44.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>45.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>46.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>47.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>48.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>49.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>50.</b> <span class="empty">Empty Slot</span></span></div></div><div class="legion"><h2>Legion 2</h2><div class="utc">UTC 19</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>2.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>3.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>4.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>5.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>6.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>7.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>8.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>9.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>10.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>11.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>12.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>13.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>14.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>15.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>16.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>17.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>18.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>19.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>20.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>21.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>22.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>23.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>24.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>25.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>26.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>27.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>28.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>29.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>30.</b> <span class="empty">Empty Slot</span></span></div><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>32.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>33.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>34.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>35.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>36.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>37.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>38.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>39.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>40.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>41.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>42.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>43.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>44.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>45.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>46.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>47.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>48.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>49.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>50.</b> <span class="empty">Empty Slot</span></span></div></div><div class="legion"><h2>Legion 3</h2><div class="utc">UTC 19</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>2.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>3.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>4.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>5.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>6.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>7.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>8.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>9.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>10.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>11.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>12.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>13.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>14.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>15.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>16.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>17.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>18.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>19.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>20.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>21.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>22.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>23.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>24.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>25.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>26.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>27.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>28.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>29.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>30.</b> <span class="empty">Empty Slot</span></span></div><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>32.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>33.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>34.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>35.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>36.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>37.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>38.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>39.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>40.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>41.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>42.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>43.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>44.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>45.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>46.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>47.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>48.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>49.</b> <span class="empty">Empty Slot</span></span></div><div class="slot"><span><b>50.</b> <span class="empty">Empty Slot</span></span></div></div></div>
-
+<div id="boards" class="grid"><div class="legion"><h2>Legion 1 <span class="open-badge">OPEN</span></h2><div style="margin:8px 0"><span style="display:inline-block;background:#2a2a44;border:1px solid #555;color:#eee;font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px">🏳️ Legion Alliance: Not set</span></div><div class="utc">UTC 2</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Next Empty Slot — 30 spots left</span></span></div><p class="small">No Combatants yet — be the first.</p><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Next Empty Slot — 20 spots left</span></span></div><p class="small">No Substitutes yet.</p><div class="waitlist"><h3>⏳ Waitlist — 0 in queue</h3><p class="small">No one waiting. If Combatants fill up, new players queue here.</p><p class="small">⚡ Auto-promote is ON: when a slot opens, #1 Waitlist moves up automatically. Manual Promote button still works if Auto-promote is OFF.</p></div></div><div class="legion"><h2>Legion 2 <span class="open-badge">OPEN</span></h2><div style="margin:8px 0"><span style="display:inline-block;background:#2a2a44;border:1px solid #555;color:#eee;font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px">🏳️ Legion Alliance: Not set</span></div><div class="utc">UTC 19</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Next Empty Slot — 30 spots left</span></span></div><p class="small">No Combatants yet — be the first.</p><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Next Empty Slot — 20 spots left</span></span></div><p class="small">No Substitutes yet.</p><div class="waitlist"><h3>⏳ Waitlist — 0 in queue</h3><p class="small">No one waiting. If Combatants fill up, new players queue here.</p><p class="small">⚡ Auto-promote is ON: when a slot opens, #1 Waitlist moves up automatically. Manual Promote button still works if Auto-promote is OFF.</p></div></div><div class="legion"><h2>Legion 3 <span class="open-badge">OPEN</span></h2><div style="margin:8px 0"><span style="display:inline-block;background:#2a2a44;border:1px solid #555;color:#eee;font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px">🏳️ Legion Alliance: Not set</span></div><div class="utc">UTC 19</div><p class="small">Combatants 0/30</p><div class="bar"><i style="width:0%"></i></div><p class="small">Substitutes 0/20</p><div class="bar"><i style="width:0%"></i></div><h3>⚔️ Combatants 1-30</h3><div class="slot"><span><b>1.</b> <span class="empty">Next Empty Slot — 30 spots left</span></span></div><p class="small">No Combatants yet — be the first.</p><h3>🛡️ Substitutes 31-50</h3><div class="slot"><span><b>31.</b> <span class="empty">Next Empty Slot — 20 spots left</span></span></div><p class="small">No Substitutes yet.</p><div class="waitlist"><h3>⏳ Waitlist — 0 in queue</h3><p class="small">No one waiting. If Combatants fill up, new players queue here.</p><p class="small">⚡ Auto-promote is ON: when a slot opens, #1 Waitlist moves up automatically. Manual Promote button still works if Auto-promote is OFF.</p></div></div></div>
 <div class="card admin">
 <h2 style="margin:0">⚙️ Admin — Kingdom Leader</h2>
-<p class="small">Admin changes the UTC times. Code is 167. Times are saved to the Sheet so everyone sees the new time.</p>
+<p class="small">Code 167 unlocks everything below. Each Legion has its own Legion Alliance Name (3 chars) — completely separate from the player alliance list (TNW/ONE/etc). No colour coding.</p>
 <label>Admin Code</label><input id="adminCode" placeholder="Enter 167" type="password">
-<div class="row">
-<div><label>Legion 1 Time</label><input id="t1" value="UTC 2"></div>
-<div><label>Legion 2 Time</label><input id="t2" value="UTC 19"></div>
+
+<h3 style="margin:18px 0 8px">🛡️ Legion Controls</h3>
+<p class="small">For each Legion: rename Legion, set its Alliance Name (3 chars), change UTC time, lock it, or clear it.</p>
+<div style="background:#0f0f1a;border:1px solid #2a2a44;border-radius:12px;padding:12px;margin-bottom:12px">
+<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;color:#eee"><input type="checkbox" id="autoPromoteToggle" checked="" onchange="toggleAutoPromote()" style="width:auto"> ⚡ Auto-promote: ON — When a Combatant / Substitute drops, #1 Waitlist moves up automatically</label>
+<p class="small" style="margin:6px 0 0">If OFF, Waitlist stays put until admin clicks Promote. If ON, it happens instantly for everyone, no admin needed. Promotions are shown in the banner below.</p>
+<div id="autoPromoteLog" class="small" style="margin-top:8px;color:#f5c542"></div>
 </div>
-<div><label>Legion 3 Time</label><input id="t3" value="UTC 19"></div>
-<button onclick="saveTimes()">Save Legion Times</button>
+<div class="admin-grid" id="legionAdmin"><div class="legion-admin"><h4>Legion 1</h4><label>Legion Name</label><input id="ln1" value="Legion 1"><label>Legion Alliance Name — 3 Characters</label><input id="la1" maxlength="3" value="" placeholder="e.g. ABC" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')" style="text-transform:uppercase;text-align:center;font-weight:800;letter-spacing:2px"><span class="small">Separate from player alliances. Can be any 3 chars, no colour. Change anytime.</span><label>UTC Time</label><input id="lt1" value="UTC 2"><label>Status</label><select id="ll1"><option value="false" selected="">Open — Accepting</option><option value="true">Locked — No new regs</option></select><button class="ghost mini" onclick="clearLegion(1)">Clear Legion 1 Only</button></div><div class="legion-admin"><h4>Legion 2</h4><label>Legion Name</label><input id="ln2" value="Legion 2"><label>Legion Alliance Name — 3 Characters</label><input id="la2" maxlength="3" value="" placeholder="e.g. ABC" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')" style="text-transform:uppercase;text-align:center;font-weight:800;letter-spacing:2px"><span class="small">Separate from player alliances. Can be any 3 chars, no colour. Change anytime.</span><label>UTC Time</label><input id="lt2" value="UTC 19"><label>Status</label><select id="ll2"><option value="false" selected="">Open — Accepting</option><option value="true">Locked — No new regs</option></select><button class="ghost mini" onclick="clearLegion(2)">Clear Legion 2 Only</button></div><div class="legion-admin"><h4>Legion 3</h4><label>Legion Name</label><input id="ln3" value="Legion 3"><label>Legion Alliance Name — 3 Characters</label><input id="la3" maxlength="3" value="" placeholder="e.g. ABC" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')" style="text-transform:uppercase;text-align:center;font-weight:800;letter-spacing:2px"><span class="small">Separate from player alliances. Can be any 3 chars, no colour. Change anytime.</span><label>UTC Time</label><input id="lt3" value="UTC 19"><label>Status</label><select id="ll3"><option value="false" selected="">Open — Accepting</option><option value="true">Locked — No new regs</option></select><button class="ghost mini" onclick="clearLegion(3)">Clear Legion 3 Only</button></div></div>
+<button onclick="saveLegions()">Save All Legion Settings</button>
+
+
+
+<h3 style="margin:18px 0 8px">💾 Backup / Snapshot</h3>
+<p class="small">Snapshot saves ALL 3 Legions — every player, role, slot, Legion name/time/alliance, and Auto-promote setting — with a timestamp. If someone wipes the Sheet by accident, you can restore it in one click.</p>
+<div class="row"><div><label>Snapshot Name (optional)</label><input id="snapshotName" placeholder="e.g. Before Legion 1 starts"></div><div><label>&nbsp;</label><button onclick="takeSnapshot()" style="margin:0">📸 Take Snapshot Now</button></div></div>
+<div id="snapshotLog" class="small" style="margin-top:8px;color:#f5c542"></div>
+<div id="snapshotList" style="margin-top:12px"><p class="small">No snapshots yet. Take one before registration closes, and one right before each Legion starts.</p></div>
+<div class="row"><div><button class="ghost" onclick="downloadSnapshot()">⬇️ Download Latest as File (.json)</button></div><div><button class="ghost" onclick="copySnapshotJSON()">📋 Copy Snapshot JSON</button></div></div>
 <button class="ghost" onclick="copySummary()">Copy Summary for Game Chat</button>
+<button class="ghost" style="background:#7f1d1d;color:#fff" onclick="clearAll()">⚠️ Clear ALL Registrations (All Legions)</button>
 </div>
-
-<div class="card"><h3 style="margin:0 0 8px">How this site works</h3><p class="small">This page is hosted free on GitHub Pages. It does NOT save data by itself. It talks to a Google Sheet (your live database) via a Google Apps Script Web App URL. Set that URL in the code at the top: <b>APPS_SCRIPT_URL</b>. If it's not set yet, the page works in Demo Mode (local only) so you can preview it.</p></div>
+<div class="card"><p class="small">How it works: Website (GitHub Pages) → Apps Script → Google Sheet. Sheet tabs needed: <b>Registrations</b> (Name | Alliance | Legion | Role | Slot | Timestamp) and <b>Settings</b> (Legion | Time). Waitlist is stored as Role = Waitlist in the same Sheet.</p></div>
 </div>
-
 <script>
-// ★★★ PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE ★★★
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz42SpsLFE_b8hx8W8y-h-B7UxNaRQcwHIybTJ5O7cD6oNXHuNobASExYYFoU1zCz6tPA/exec"; // e.g. "https://script.google.com/macros/s/XXXX/exec"
-let registrations = [];
-let times = {1:"UTC 2", 2:"UTC 19", 3:"UTC 19"};
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz42SpsLFE_b8hx8W8y-h-B7UxNaRQcwHIybTJ5O7cD6oNXHuNobASExYYFoU1zCz6tPA/exec";
+let registrations=[]; let times={1:"UTC 2",2:"UTC 19",3:"UTC 19"}; let legionNames={1:"Legion 1",2:"Legion 2",3:"Legion 3"}; let legionLocked={1:false,2:false,3:false}; const alliances=["TNW","ONE","RYL","JUS","FUN","ITA"]; const allianceColors=["#2563eb","#16a34a","#dc2626","#7c3aed","#eab308","#111"]; const allianceText=["#fff","#fff","#fff","#fff","#111","#fff"]; let legionAlliance={1:"",2:"",3:""}; let autoPromote=true; let _autoPromoting=false; // Separate from player alliances - no colour coding, neutral display
+function allianceIndex(a){ const i=alliances.indexOf(a); return i>=0?i:-1; }
+function tagClass(a){ const i=allianceIndex(a); if(i<0) return "tag tag-Other"; return "tag"; }
+function tagStyle(a){ const i=allianceIndex(a); if(i<0) return "background:#475569;color:#fff"; return `background:${allianceColors[i]};color:${allianceText[i]}`; }
+function roleHint(){ const r=document.getElementById('role').value; const l=document.getElementById('legion').value; const comb=registrations.filter(x=>String(x.legion)===String(l)&&x.role==="Combatant").length; document.getElementById('roleHint').textContent = r==="Waitlist" ? "You will join the Waitlist for Legion "+l+" in order." : r==="Combatant" && comb>=30 ? "⚠️ Combatants full (30/30) for Legion "+l+" — pick Waitlist to queue, or pick Substitute." : ""; }
+function buildLegend(){ const el=document.getElementById('legend'); if(!el) return; el.innerHTML=alliances.map((a,i)=>`<span class="pill"><span class="dot" style="background:${allianceColors[i]}"></span>${a}</span>`).join(''); }
+function buildAllianceDropdown(){ const sel=document.getElementById('alliance'); if(!sel) return; const cur=sel.value; sel.innerHTML=alliances.map(a=>`<option>${a}</option>`).join('')+'<option>Other</option>'; if(alliances.includes(cur)) sel.value=cur; }
+function buildAdminPanels(){
+  const la=document.getElementById('legionAdmin'); if(la){ la.innerHTML=[1,2,3].map(n=>`<div class="legion-admin"><h4>${legionNames[n]}</h4><label>Legion Name</label><input id="ln${n}" value="${legionNames[n]}"><label>Legion Alliance Name — 3 Characters</label><input id="la${n}" maxlength="3" value="${legionAlliance[n]||''}" placeholder="e.g. ABC" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')" style="text-transform:uppercase;text-align:center;font-weight:800;letter-spacing:2px"><span class="small">Separate from player alliances. Can be any 3 chars, no colour. Change anytime.</span><label>UTC Time</label><input id="lt${n}" value="${times[n]}"><label>Status</label><select id="ll${n}"><option value="false" ${!legionLocked[n]?'selected':''}>Open — Accepting</option><option value="true" ${legionLocked[n]?'selected':''}>Locked — No new regs</option></select><button class="ghost mini" onclick="clearLegion(${n})">Clear ${legionNames[n]} Only</button></div>`).join(''); }
 
-async function loadData(){
-  if(!APPS_SCRIPT_URL){ document.getElementById('livePill').textContent="○ Demo Mode — Add Sheet URL to go live"; render(); return; }
-  try{
-    document.getElementById('livePill').textContent="● Live — Connected to Sheet";
-    const res = await fetch(APPS_SCRIPT_URL);
-    const data = await res.json();
-    // Apps Script should return { registrations: [...], times: {...} } or array of rows
-    if(Array.isArray(data)){ registrations = data.slice(1).map(r=>({name:r[0],alliance:r[1],legion:String(r[2]),role:r[3],slot:r[4]})); }
-    else { registrations = data.registrations||[]; if(data.times) times=data.times; document.getElementById('t1').value=times[1]; document.getElementById('t2').value=times[2]; document.getElementById('t3').value=times[3]; }
+}
+function saveLegions(){ if(document.getElementById('adminCode').value!=="167"){ alert("Wrong admin code"); return; } [1,2,3].forEach(n=>{ const an=(document.getElementById('la'+n).value||"").trim().toUpperCase(); if(an.length!==0 && an.length!==3){ alert("Legion "+n+" Legion Alliance Name must be empty or exactly 3 characters. '"+an+"' is "+an.length+"."); throw new Error("Alliance name length"); } legionAlliance[n]=an; legionNames[n]=document.getElementById('ln'+n).value.trim()||("Legion "+n); times[n]=document.getElementById('lt'+n).value.trim()||times[n]; legionLocked[n]=document.getElementById('ll'+n).value==="true"; }); const s=document.getElementById('legion'); s.options[0].text=legionNames[1]+" — "+times[1]; s.options[1].text=legionNames[2]+" — "+times[2]; s.options[2].text=legionNames[3]+" — "+times[3]; buildAdminPanels(); render(); if(APPS_SCRIPT_URL) fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"saveLegions",times,legionNames,legionLocked,legionAlliance})}); alert("Legion settings saved"); }
+function saveAlliances(){ if(document.getElementById('adminCode').value!=="167"){ alert("Wrong admin code"); return; } const vals=[0,1,2,3,4,5].map(i=>document.getElementById('ally'+i).value.trim().toUpperCase()); for(let v of vals){ if(v.length!==3){ alert("Every alliance must be exactly 3 characters. '"+v+"' is "+v.length+". Fix it and try again."); return; } } if(new Set(vals).size!==vals.length){ alert("Alliance names must be unique — you have a duplicate."); return; } alliances=vals; buildAdminPanels(); buildAllianceDropdown(); buildLegend(); render(); if(APPS_SCRIPT_URL) fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"saveAlliances",alliances})}); alert("Alliance names saved: "+alliances.join(", ")); }
+function clearLegion(n){ if(document.getElementById('adminCode').value!=="167"){ alert("Enter admin code first"); return; } if(!confirm("Clear ALL players in "+legionNames[n]+"? This cannot be undone.")) return; if(!APPS_SCRIPT_URL){ registrations=registrations.filter(r=>String(r.legion)!==String(n)); render(); return; } fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"clearLegion",legion:String(n)})}).then(()=>setTimeout(loadData,800)); }
+function clearAll(){ if(document.getElementById('adminCode').value!=="167"){ alert("Enter admin code first"); return; } if(!confirm("Clear ALL registrations in ALL legions?")) return; if(!APPS_SCRIPT_URL){ registrations=[]; render(); return; } fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"clearAll"})}).then(()=>setTimeout(loadData,800)); }
+function saveTimes(){ saveLegions(); }
+function saveRemembered(name, alliance){ try{ if(document.getElementById('rememberMe') && !document.getElementById('rememberMe').checked){ localStorage.removeItem("k167_name"); localStorage.removeItem("k167_alliance"); return; } localStorage.setItem("k167_name", name); localStorage.setItem("k167_alliance", alliance); }catch(e){} }
+function loadRemembered(){ try{ const n=localStorage.getItem("k167_name")||""; const a=localStorage.getItem("k167_alliance")||""; if(n) document.getElementById('name').value=n; if(a && alliances.includes(a)) document.getElementById('alliance').value=a; return n; }catch(e){ return ""; } }
+function updateWelcomeBanner(){
+  const banner=document.getElementById('welcomeBanner'); if(!banner) return;
+  let remembered=""; try{ remembered=localStorage.getItem("k167_name")||""; }catch(e){}
+  if(!remembered){ banner.style.display="none"; return; }
+  const me=registrations.find(r=>r.name.toLowerCase()===remembered.toLowerCase());
+  const alliance=(()=>{ try{ return localStorage.getItem("k167_alliance")||(me?me.alliance:""); }catch(e){ return me?me.alliance:""; } })();
+  document.getElementById('welcomeText').textContent=`Welcome back, ${remembered} ${alliance?`(${alliance})`:""}`;
+  if(me){ const slotLabel = me.role==="Waitlist" ? `Waitlist for ${legionNames[me.legion]}` : `${legionNames[me.legion]} — ${me.role} — Slot ${me.slot} — ${times[me.legion]} — Legion Alliance: ${legionAlliance[me.legion]||"Not set"}`; document.getElementById('welcomeSub').textContent=`You're registered: ${slotLabel}`; }
+  else { document.getElementById('welcomeSub').textContent=`You're not registered yet — your Name + Alliance are filled in below, just pick a Legion.`; }
+  banner.style.display="block";
+}
+function switchPlayer(){ try{ localStorage.removeItem("k167_name"); localStorage.removeItem("k167_alliance"); }catch(e){} document.getElementById('name').value=""; document.getElementById('welcomeBanner').style.display="none"; document.getElementById('name').focus(); }
+function scrollToMySlot(){ const el=document.getElementById('boards'); if(el) el.scrollIntoView({behavior:"smooth"}); }
+function toggleAutoPromote(){ autoPromote=document.getElementById('autoPromoteToggle').checked; try{ localStorage.setItem("k167_autoPromote", autoPromote?"1":"0"); }catch(e){} document.getElementById('autoPromoteLog').textContent = autoPromote ? "Auto-promote is ON." : "Auto-promote is OFF — use manual Promote buttons."; if(autoPromote) checkAutoPromote(); }
+async function checkAutoPromote(){
+  if(!autoPromote || _autoPromoting) return;
+  // Find first legion with vacancy + waitlist
+  for(let legion of [1,2,3]){
+    const comb=registrations.filter(r=>String(r.legion)===String(legion)&&r.role==="Combatant");
+    const subs=registrations.filter(r=>String(r.legion)===String(legion)&&r.role==="Substitute");
+    const wait=registrations.filter(r=>String(r.legion)===String(legion)&&r.role==="Waitlist");
+    if(wait.length===0) continue;
+    const target = comb.length<30 ? "Combatant" : (subs.length<20 ? "Substitute" : null);
+    if(!target) continue;
+    const candidate=wait[0];
+    _autoPromoting=true;
+    document.getElementById('autoPromoteLog').textContent=`⚡ Auto-promoting ${candidate.name} (#1 Waitlist) → ${target} in ${legionNames[legion]}...`;
+    // Update locally first for instant UI, then save to Sheet
+    candidate.role=target;
     render();
-  }catch(e){ document.getElementById('status').textContent="Could not load Sheet. Check Apps Script URL / deployment is 'Anyone'."; render(); }
+    if(APPS_SCRIPT_URL){
+      await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"promote",name:candidate.name,legion:String(legion),toRole:target})});
+    }
+    document.getElementById('autoPromoteLog').textContent=`✅ Auto-promoted ${candidate.name} → ${target} in ${legionNames[legion]}.`;
+    _autoPromoting=false;
+    // Recheck - there might be another vacancy + another waitlist person
+    setTimeout(checkAutoPromote, 800);
+    return;
+  }
 }
-
+function getSnapshots(){ try{ return JSON.parse(localStorage.getItem("k167_snapshots")||"[]"); }catch(e){ return []; } }
+function saveSnapshots(list){ try{ localStorage.setItem("k167_snapshots", JSON.stringify(list)); }catch(e){} }
+function takeSnapshot(){
+  if(document.getElementById('adminCode').value!=="167"){ alert("Enter admin code first"); return; }
+  const name=(document.getElementById('snapshotName').value||"").trim() || ("Snapshot "+new Date().toLocaleString());
+  const snap={ id:Date.now(), name, createdAt:new Date().toISOString(), createdLabel:new Date().toLocaleString(), registrations:JSON.parse(JSON.stringify(registrations)), times:{...times}, legionNames:{...legionNames}, legionLocked:{...legionLocked}, legionAlliance:{...legionAlliance}, autoPromote };
+  const list=getSnapshots(); list.unshift(snap); if(list.length>20) list.length=20; saveSnapshots(list);
+  document.getElementById('snapshotLog').textContent=`✅ Snapshot saved: "${name}" — ${snap.registrations.length} players, ${new Date(snap.createdAt).toLocaleString()}`;
+  document.getElementById('snapshotName').value="";
+  // Also try to save to Sheet via Apps Script (if your script has snapshot action, it will store it)
+  if(APPS_SCRIPT_URL) fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"snapshot",snapshot:snap})});
+  renderSnapshotList();
+}
+function renderSnapshotList(){
+  const el=document.getElementById('snapshotList'); if(!el) return;
+  const list=getSnapshots();
+  if(list.length===0){ el.innerHTML='<p class="small">No snapshots yet. Take one before registration closes, and one right before each Legion starts.</p>'; return; }
+  el.innerHTML='<h4 style="margin:0 0 8px">Saved Snapshots — newest first</h4>' + list.map(s=>`<div style="background:#0f0f1a;border:1px solid #2a2a44;border-radius:10px;padding:10px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><div><b>${s.name}</b><div class="small">${s.createdLabel} • ${s.registrations.length} players • Legions: ${s.legionNames[1]} / ${s.legionNames[2]} / ${s.legionNames[3]}</div></div><div style="display:flex;gap:6px"><button onclick="restoreSnapshot(${s.id})" style="width:auto;margin:0;padding:8px 12px;font-size:12px">Restore</button><button onclick="deleteSnapshot(${s.id})" class="ghost" style="width:auto;margin:0;padding:8px 12px;font-size:12px;background:#7f1d1d">Delete</button></div></div>`).join('');
+}
+async function restoreSnapshot(id){
+  if(document.getElementById('adminCode').value!=="167"){ alert("Enter admin code first"); return; }
+  const snap=getSnapshots().find(s=>s.id===id); if(!snap){ alert("Snapshot not found"); return; }
+  if(!confirm(`Restore "${snap.name}" from ${snap.createdLabel}?\n\nThis will REPLACE the current live list (${registrations.length} players) with the snapshot (${snap.registrations.length} players).\n\nTake a snapshot of the current list first if you want to keep it.`)) return;
+  document.getElementById('snapshotLog').textContent="Restoring snapshot...";
+  // Restore locally first
+  registrations=JSON.parse(JSON.stringify(snap.registrations)); times={...snap.times}; legionNames={...snap.legionNames}; legionLocked={...snap.legionLocked}; legionAlliance={...snap.legionAlliance}; autoPromote=snap.autoPromote;
+  const t=document.getElementById('autoPromoteToggle'); if(t) t.checked=autoPromote;
+  buildAdminPanels(); buildAllianceDropdown(); buildLegend(); render();
+  // Restore to Sheet - clear + re-add (Apps Script restore action handles this)
+  if(APPS_SCRIPT_URL){
+    await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"restoreSnapshot",snapshot:snap})});
+    document.getElementById('snapshotLog').textContent=`✅ Restored "${snap.name}" — ${snap.registrations.length} players. Refreshing from Sheet in 2s...`;
+    setTimeout(loadData,2000);
+  } else {
+    document.getElementById('snapshotLog').textContent=`✅ Restored locally: "${snap.name}"`;
+  }
+}
+function deleteSnapshot(id){ if(!confirm("Delete this snapshot? This cannot be undone.")) return; const list=getSnapshots().filter(s=>s.id!==id); saveSnapshots(list); renderSnapshotList(); }
+function downloadSnapshot(){
+  const list=getSnapshots(); if(list.length===0){ alert("No snapshots yet — take one first."); return; }
+  const blob=new Blob([JSON.stringify(list[0],null,2)],{type:"application/json"}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`k167-swordland-snapshot-${new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')}.json`; a.click();
+}
+function copySnapshotJSON(){ const list=getSnapshots(); if(list.length===0){ alert("No snapshots yet."); return; } navigator.clipboard.writeText(JSON.stringify(list[0],null,2)).then(()=>alert("Latest snapshot JSON copied!")); }
+async function loadData(){
+  if(!APPS_SCRIPT_URL){ document.getElementById('livePill').textContent="○ Demo Mode"; render(); return; }
+  try{ const res=await fetch(APPS_SCRIPT_URL); const data=await res.json(); document.getElementById('livePill').textContent="● Live — Connected to Sheet";
+    if(Array.isArray(data)){ registrations=data.slice(1).map(r=>({name:r[0],alliance:r[1],legion:String(r[2]),role:r[3],slot:r[4]})); }
+    else{ registrations=data.registrations||[]; if(data.legionAlliance) legionAlliance=data.legionAlliance; if(data.legionNames) legionNames=data.legionNames; if(data.legionLocked) legionLocked=data.legionLocked; buildAdminPanels(); buildAllianceDropdown(); buildLegend(); if(data.times){ times=data.times; document.getElementById('t1').value=times[1]; document.getElementById('t2').value=times[2]; document.getElementById('t3').value=times[3]; const s=document.getElementById('legion'); s.options[0].text="Legion 1 — "+times[1]; s.options[1].text="Legion 2 — "+times[2]; s.options[2].text="Legion 3 — "+times[3]; } }
+    render(); roleHint(); checkAutoPromote();
+  }catch(e){ document.getElementById('status').textContent="Could not load Sheet. Check Apps Script deployment is Anyone."; render(); }
+}
 function render(){
-  const boards=document.getElementById('boards'); boards.innerHTML="";
-  let total=registrations.length;
-  document.getElementById('totalPill').textContent=`Total Registered: ${total} / 150`;
+  const boards=document.getElementById('boards'); boards.innerHTML=""; let total=registrations.length;
+  document.getElementById('totalPill').textContent=`Total Registered: ${total} / 150  •  Waitlist: ${registrations.filter(r=>r.role==="Waitlist").length}`;
   [1,2,3].forEach(legion=>{
-    const list=registrations.filter(r=>String(r.legion)==String(legion));
-    const comb=list.filter(r=>r.role==="Combatant"); const subs=list.filter(r=>r.role==="Substitute");
-    let html=`<div class="legion"><h2>Legion ${legion}</h2><div class="utc">${times[legion]}</div><p class="small">Combatants ${comb.length}/30</p><div class="bar"><i style="width:${comb.length/30*100}%"></i></div><p class="small">Substitutes ${subs.length}/20</p><div class="bar"><i style="width:${subs.length/20*100}%"></i></div><h3>⚔️ Combatants 1-30</h3>`;
-    for(let i=1;i<=30;i++){ const p=comb[i-1]; html+= p? `<div class="slot"><span><b>${i}.</b> ${p.name} <span class="tag">${p.alliance}</span></span><span style="cursor:pointer" onclick="removePlayer('${p.name.replace(/'/g,"")}')">✕</span></div>` : `<div class="slot"><span><b>${i}.</b> <span class="empty">Empty Slot</span></span></div>`; }
+    const list=registrations.filter(r=>String(r.legion)===String(legion));
+    const comb=list.filter(r=>r.role==="Combatant"); const subs=list.filter(r=>r.role==="Substitute"); const wait=list.filter(r=>r.role==="Waitlist");
+    let html=`<div class="legion"><h2>${legionNames[legion]} ${legionLocked[legion]?`<span class="locked-badge">LOCKED</span>`:`<span class="open-badge">OPEN</span>`}</h2><div style="margin:8px 0"><span style="display:inline-block;background:#2a2a44;border:1px solid #555;color:#eee;font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px">🏳️ Legion Alliance: ${legionAlliance[legion]||"Not set"}</span></div><div class="utc">${times[legion]}</div><p class="small">Combatants ${comb.length}/30</p><div class="bar"><i style="width:${comb.length/30*100}%"></i></div><p class="small">Substitutes ${subs.length}/20</p><div class="bar"><i style="width:${subs.length/20*100}%"></i></div><h3>⚔️ Combatants 1-30</h3>`;
+    const combShow = comb.length < 30 ? comb.length + 1 : 30;
+    for(let i=1;i<=combShow;i++){ const p=comb[i-1]; html+= p? `<div class="slot"><span><b>${i}.</b> ${p.name} <span class="${tagClass(p.alliance)}" style="${tagStyle(p.alliance)}">${p.alliance}</span></span><span style="cursor:pointer" onclick="removePlayer('${p.name.replace(/'/g,"")}')">✕</span></div>` : `<div class="slot"><span><b>${i}.</b> <span class="empty">Next Empty Slot — ${30-comb.length} spots left</span></span></div>`; }
+    if(comb.length===0) html+=`<p class="small">No Combatants yet — be the first.</p>`;
     html+=`<h3>🛡️ Substitutes 31-50</h3>`;
-    for(let i=0;i<20;i++){ const p=subs[i]; html+= p? `<div class="slot"><span><b>${31+i}.</b> ${p.name} <span class="tag">${p.alliance}</span></span><span style="cursor:pointer" onclick="removePlayer('${p.name.replace(/'/g,"")}')">✕</span></div>` : `<div class="slot"><span><b>${31+i}.</b> <span class="empty">Empty Slot</span></span></div>`; }
-    html+=`</div>`; boards.innerHTML+=html;
+    const subsShow = subs.length < 20 ? subs.length + 1 : 20;
+    for(let i=0;i<subsShow;i++){ const p=subs[i]; html+= p? `<div class="slot"><span><b>${31+i}.</b> ${p.name} <span class="${tagClass(p.alliance)}" style="${tagStyle(p.alliance)}">${p.alliance}</span></span><span style="cursor:pointer" onclick="removePlayer('${p.name.replace(/'/g,"")}')">✕</span></div>` : `<div class="slot"><span><b>${31+i}.</b> <span class="empty">Next Empty Slot — ${20-subs.length} spots left</span></span></div>`; }
+    if(subs.length===0) html+=`<p class="small">No Substitutes yet.</p>`;
+    html+=`<div class="waitlist"><h3>⏳ Waitlist — ${wait.length} in queue</h3>`;
+    if(wait.length===0) html+=`<p class="small">No one waiting. If Combatants fill up, new players queue here.</p>`;
+    wait.forEach((p,idx)=>{ html+=`<div class="slot"><span><b>#${idx+1}</b> ${p.name} <span class="${tagClass(p.alliance)}" style="${tagStyle(p.alliance)}">${p.alliance}</span></span><span><button style="width:auto;padding:6px 10px;font-size:12px;margin:0 4px 0 0" onclick="promotePlayer('${p.name.replace(/'/g,"")}',${legion})">Promote</button><span style="cursor:pointer" onclick="removePlayer('${p.name.replace(/'/g,"")}')">✕</span></span></div>`; });
+    html+=`<p class="small">⚡ Auto-promote is ON: when a slot opens, #1 Waitlist moves up automatically. Manual Promote button still works if Auto-promote is OFF.</p></div></div>`;
+    boards.innerHTML+=html;
   });
+  updateWelcomeBanner();
+}
+async function register(){
+  const name=document.getElementById('name').value.trim(); const alliance=document.getElementById('alliance').value; const legion=document.getElementById('legion').value; const role=document.getElementById('role').value;
+  if(!name){ document.getElementById('status').textContent="Enter your player name."; return; }
+  if(legionLocked[legion]){ document.getElementById('status').textContent=legionNames[legion]+" is LOCKED by admin — pick another Legion."; return; }
+  if(registrations.some(r=>r.name.toLowerCase()===name.toLowerCase())){ document.getElementById('status').textContent=name+" is already registered."; return; }
+  if(role!=="Waitlist"){ const count=registrations.filter(r=>String(r.legion)===String(legion)&&r.role===role).length; const limit=role==="Combatant"?30:20; if(count>=limit){ document.getElementById('status').textContent=role+" is full for Legion "+legion+". Pick Waitlist to queue."; document.getElementById('role').value="Waitlist"; roleHint(); return; } }
+  saveRemembered(name, alliance);
+  const entry={name,alliance,legion,role,slot:1};
+  if(!APPS_SCRIPT_URL){ registrations.push(entry); render(); document.getElementById('status').textContent="Demo Mode: saved locally only."; document.getElementById('name').value=""; return; }
+  try{ await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(entry)}); document.getElementById('status').textContent="Registered as "+role+"! Refreshing..."; setTimeout(loadData,1200); document.getElementById('name').value=""; }catch(e){ document.getElementById('status').textContent="Error saving. Try again."; }
+}
+function removePlayer(name){ if(confirm("Remove "+name+"?")){ if(!APPS_SCRIPT_URL){ registrations=registrations.filter(r=>r.name!==name); render(); return; } fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"delete",name})}).then(()=>{ setTimeout(()=>{ loadData(); document.getElementById('autoPromoteLog').textContent="Slot opened — checking Waitlist for auto-promote..."; },800); }); } }
+async function promotePlayer(name,legion){
+  if(document.getElementById('adminCode').value!=="167" && !confirm("Promote "+name+"? (Admin code not entered, continue?)")) return;
+  const comb=registrations.filter(r=>String(r.legion)===String(legion)&&r.role==="Combatant").length;
+  const subs=registrations.filter(r=>String(r.legion)===String(legion)&&r.role==="Substitute").length;
+  const target = comb<30 ? "Combatant" : (subs<20 ? "Substitute" : null);
+  if(!target){ alert("Both Combatants and Substitutes are full for Legion "+legion); return; }
+  // delete + re-add with new role (Apps Script handles delete + register)
+  await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"promote",name,legion:String(legion),toRole:target})});
+  document.getElementById('status').textContent=name+" promoted to "+target+"!"; setTimeout(loadData,1000);
 }
 
-async function register(){
-  const name=document.getElementById('name').value.trim();
-  const alliance=document.getElementById('alliance').value;
-  const legion=document.getElementById('legion').value;
-  const role=document.getElementById('role').value;
-  if(!name){ document.getElementById('status').textContent="Enter your player name."; return; }
-  if(registrations.some(r=>r.name.toLowerCase()===name.toLowerCase())){ document.getElementById('status').textContent=name+" is already registered."; return; }
-  const count=registrations.filter(r=>String(r.legion)===String(legion) && r.role===role).length;
-  const limit=role==="Combatant"?30:20;
-  if(count>=limit){ document.getElementById('status').textContent=role+" is full for Legion "+legion+". Try Substitute or another Legion."; return; }
-  const entry={name,alliance,legion,role,slot:count+1};
-  if(!APPS_SCRIPT_URL){ registrations.push(entry); render(); document.getElementById('status').textContent="Demo Mode: saved locally only. Add Sheet URL to go live."; document.getElementById('name').value=""; return; }
-  try{
-    await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(entry)});
-    document.getElementById('status').textContent="Registered! Refreshing..."; setTimeout(loadData,1200); document.getElementById('name').value="";
-  }catch(e){ document.getElementById('status').textContent="Error saving. Try again."; }
-}
-function removePlayer(name){ if(confirm("Remove "+name+"?")){ if(!APPS_SCRIPT_URL){ registrations=registrations.filter(r=>r.name!==name); render(); return; } fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"delete",name})}).then(()=>setTimeout(loadData,800)); } }
-async function saveTimes(){
-  if(document.getElementById('adminCode').value!=="167"){ alert("Wrong admin code"); return; }
-  times={1:document.getElementById('t1').value,2:document.getElementById('t2').value,3:document.getElementById('t3').value};
-  const legSel=document.getElementById('legion'); legSel.options[0].text="Legion 1 — "+times[1]; legSel.options[1].text="Legion 2 — "+times[2]; legSel.options[2].text="Legion 3 — "+times[3];
-  if(APPS_SCRIPT_URL){ await fetch(APPS_SCRIPT_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({action:"saveTimes",times})}); }
-  render(); alert("Times saved: "+times[1]+" / "+times[2]+" / "+times[3]);
-}
-function copySummary(){
-  let txt="K167 SWORDLAND SUMMIT\n";
-  [1,2,3].forEach(l=>{ txt+=`\nLegion ${l} - ${times[l]}\n`; const list=registrations.filter(r=>String(r.legion)==String(l)); txt+="Combatants: "+list.filter(r=>r.role==="Combatant").map(r=>r.name).join(", ")+"\nSubstitutes: "+list.filter(r=>r.role==="Substitute").map(r=>r.name).join(", ")+"\n"; });
-  navigator.clipboard.writeText(txt).then(()=>alert("Copied!"));
-}
-loadData();
+function copySummary(){ let txt="K167 SWORDLAND SUMMIT\n"; [1,2,3].forEach(l=>{ txt+=`\nLegion ${l} - ${times[l]}\n`; const list=registrations.filter(r=>String(r.legion)==String(l)); txt+="Combatants: "+list.filter(r=>r.role==="Combatant").map(r=>r.name).join(", ")+"\nSubstitutes: "+list.filter(r=>r.role==="Substitute").map(r=>r.name).join(", ")+"\nWaitlist: "+list.filter(r=>r.role==="Waitlist").map(r=>r.name).join(", ")+"\n"; }); navigator.clipboard.writeText(txt).then(()=>alert("Copied!")); }
+try{ const ap=localStorage.getItem("k167_autoPromote"); if(ap==="0"){ autoPromote=false; const t=document.getElementById("autoPromoteToggle"); if(t) t.checked=false; } }catch(e){} buildAdminPanels(); buildAllianceDropdown(); buildLegend(); loadRemembered(); renderSnapshotList(); updateWelcomeBanner(); loadData();
 </script>
 <script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
 
