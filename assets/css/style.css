@@ -147,4 +147,164 @@ img,svg,video{ max-width:100%; height:auto; }
   display:grid; grid-template-columns:38px 1fr auto; grid-template-rows:auto auto; gap:5px 12px; align-items:center; transition:.2s;
 }
 .chip:hover{ border-color:var(--ac); transform:translateY(-2px); }
-.chip.active{ background:color-mix
+.chip.active{ background:color-mix(in srgb, var(--ac) 16%, #170d29); border-color:var(--ac); box-shadow:0 0 0 1px var(--ac),0 16px 35px rgba(0,0,0,.35); }
+.chip-beast{ font-size:28px; grid-row:span 2; }
+.chip-code{ font-family:Georgia,serif; font-size:22px; font-weight:700; color:var(--ac); }
+.chip-name{ font-size:12px; color:#c9bfce; line-height:1.3; }
+.chip-num{ grid-row:span 2; color:#776e81; font-size:11px; }
+.feature{
+  margin-top:28px; border:1px solid var(--line); border-radius:24px; min-height:440px; overflow:hidden;
+  display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  background:linear-gradient(120deg,rgba(0,0,0,.28),transparent),#160d27;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+}
+.feature-left{ padding:44px; }
+.feature-top{ display:flex; justify-content:space-between; align-items:center; }
+.feature-tag{ font-size:11px; letter-spacing:.2em; font-weight:800; color:var(--ac); }
+.feature-count{ font-family:Georgia,serif; font-size:20px; color:#b9aabd; }
+.feature-beast{ font-size:92px; line-height:1; margin:32px 0 18px; filter:drop-shadow(0 0 24px var(--ac)); }
+.feature-code{ color:var(--ac); font-weight:800; letter-spacing:.18em; font-size:13px; margin:0; }
+.feature h3{ font-size:clamp(42px,5vw,68px); margin:8px 0 16px; }
+.feature-lore{ font-family:Georgia,serif; font-style:italic; font-size:25px; color:var(--gold2); margin:0; }
+.feature-note{ color:var(--muted); line-height:1.7; max-width:520px; margin-top:14px; }
+.feature-dots{ display:flex; gap:9px; margin-top:32px; }
+.dot{ width:28px; height:6px; border-radius:99px; border:0; background:#3b3146; padding:0; display:block; }
+.dot.on{ background:var(--ac); width:44px; }
+.feature-right{
+  border-left:1px solid var(--line);
+  background:radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--ac) 24%, transparent), transparent 55%),#0b0617;
+  display:flex; flex-direction:column; justify-content:space-between; padding:34px; text-align:center;
+}
+.crest{ border:1px solid color-mix(in srgb, var(--ac) 55%, transparent); border-radius:50% 50% 8px 8px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; }
+.crest-beast{ font-size:90px; }
+.crest-code{ font-family:Georgia,serif; font-size:52px; color:var(--ac); font-weight:700; }
+.crest-name{ font-size:13px; letter-spacing:.12em; color:#ddd; }
+.crest-meta{ display:flex; justify-content:space-between; font-size:10px; letter-spacing:.14em; color:#aaa; }
+.crest-meta b{ color:var(--ac); }
+
+/* ---------- GATES ---------- */
+.gates{ padding:60px 28px; background:#0d0618; color:#fff; overflow-x:clip; }
+.gates .wrap{ padding:0; }
+.section-heading{ max-width:1440px; }
+.section-heading.wide{ display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:30px; flex-wrap:wrap; }
+.section-heading .kicker{ display:block; color:#d8b25c; letter-spacing:.25em; font-size:11px; font-weight:900; margin-bottom:12px; }
+.gates h2{ font-family:Georgia,serif; font-size:clamp(34px,4vw,58px); line-height:.98; margin:0; }
+.gates h2 span{ color:#9d76dc; font-style:normal; }
+.section-heading.wide > p{ max-width:380px; color:#b8a8b8; line-height:1.65; margin:0; font-size:16px; }
+.gate-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.gate-card{
+  position:relative; min-height:430px; border-radius:28px; padding:34px; overflow:hidden;
+  border:1px solid rgba(255,255,255,.12); background:linear-gradient(145deg,#29143d,#10071f);
+  display:flex; flex-direction:column; transition:.25s;
+}
+.gate-card:hover{ transform:translateY(-6px); border-color:#d8b25c; box-shadow:0 30px 70px rgba(0,0,0,.45); }
+.dragon-card{ background:linear-gradient(145deg,#3c130c,#180708); }
+.swordland-card{ background:linear-gradient(145deg,#33200e,#120d06); }
+.gate-art{
+  width:118px; height:118px; border-radius:50%; border:1px solid rgba(255,255,255,.2);
+  display:grid; place-items:center; background:radial-gradient(circle,rgba(216,178,92,.18),transparent 70%);
+  position:relative; overflow:visible; flex:none;
+}
+.sanctuary-art{ border-color:rgba(242,213,140,.45); }
+.dragon-art{ border-color:rgba(255,112,64,.4); background:radial-gradient(circle,rgba(255,90,37,.28),rgba(255,90,37,.06) 58%,transparent 70%); box-shadow:0 0 34px rgba(255,90,37,.18),inset 0 0 28px rgba(255,90,37,.12); }
+.swordland-art{ border-color:rgba(242,213,140,.45); background:radial-gradient(circle,rgba(216,178,92,.2),transparent 70%); }
+.gate-rune{ position:absolute; left:-26px; top:-26px; width:170px; height:170px; color:#d8b25c; transform-origin:center; animation:spin 24s linear infinite; pointer-events:none; }
+.sword-ring{ position:absolute; left:-26px; top:-26px; width:170px; height:170px; color:#d8b25c; transform-origin:center; animation:spin 36s linear infinite; pointer-events:none; }
+.gate-hero-icon{ position:relative; z-index:2; display:block; filter:drop-shadow(0 0 14px rgba(242,213,140,.28)); }
+.flame-icon{ filter:drop-shadow(0 0 16px rgba(255,112,64,.55)); animation:flamePulse 2.8s ease-in-out infinite; }
+.flame-glow{ position:absolute; inset:14px; border-radius:50%; background:radial-gradient(circle,rgba(255,112,64,.5),transparent 68%); z-index:1; pointer-events:none; animation:flamePulse 2.8s ease-in-out infinite; }
+.gate-number{ margin-top:30px; color:#a99ba9; letter-spacing:.24em; font-size:10px; font-weight:900; }
+.gate-card h3{ font-family:Georgia,serif; font-size:clamp(32px,4vw,48px); margin:12px 0 10px; line-height:1; }
+.gate-card > p{ color:#c6b8c6; line-height:1.6; max-width:430px; margin:0; }
+.gate-tags{ display:flex; gap:7px; flex-wrap:wrap; margin-top:22px; margin-bottom:28px; }
+.gate-tags span{ border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:7px 10px; font-size:10px; letter-spacing:.13em; font-weight:800; color:#d8cbda; }
+.gate-button{ margin-top:auto; width:max-content; display:inline-flex; align-items:center; gap:8px; background:#d8b25c; color:#1a1205; padding:14px 19px; border-radius:999px; font-weight:900; font-size:14px; }
+.gate-button:hover{ filter:brightness(1.08); transform:translateY(-2px); }
+.dragon-button{ background:#ff5a25; color:#fff; }
+.card-path{ position:absolute; right:28px; top:32px; color:#786b79; font-size:11px; letter-spacing:.08em; }
+
+/* ---------- INTEL / BATTLE / TIMELINE ---------- */
+.intel-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:38px; }
+.intel-card{ border-radius:22px; padding:32px; border:1px solid var(--line); background:#120a20; min-height:430px; }
+.battle{ background:linear-gradient(145deg,rgba(216,178,92,.12),#120a20 45%); }
+.intel-label{ display:flex; align-items:center; gap:8px; color:var(--gold); font-size:11px; letter-spacing:.2em; font-weight:800; }
+.battle-title{ font-family:Georgia,serif; font-size:24px; line-height:1.15; margin:52px 0 6px; }
+.battle-title small{ font-size:17px; color:#a999b1; }
+.intel-card h3{ font-size:42px; margin:0 0 28px; }
+.legions{ display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.legions div{ padding:18px 8px; border-right:1px solid var(--line); }
+.legions div:last-child{ border:0; }
+.legions span{ display:block; color:#a999b1; font-size:10px; letter-spacing:.14em; }
+.legions b{ display:block; font-size:22px; margin-top:7px; }
+.roster{ display:flex; align-items:center; gap:12px; margin-top:24px; color:var(--gold2); }
+.roster span{ line-height:1.5; color:#ded6de; }
+.timeline-rows{ margin-top:28px; }
+.tl-row{ display:flex; align-items:center; gap:16px; padding:17px 0; border-bottom:1px solid var(--line); }
+.tl-day{ width:52px; color:var(--gold2); font-weight:800; }
+.tl-row b{ margin-left:auto; }
+.tl-note{ display:flex; gap:9px; align-items:flex-start; color:var(--muted); line-height:1.55; margin:24px 0 0; }
+
+/* ---------- CLOSING + FOOTER ---------- */
+.closing{ text-align:center; padding:110px 20px 120px; background:radial-gradient(ellipse 650px 300px at 50% 80%,rgba(123,53,213,.28),transparent 65%); }
+.closing h2{ font-size:clamp(58px,8vw,104px); margin:0; }
+.closing h2 span{ color:var(--gold2); }
+.closing > p:last-of-type{ font-family:Georgia,serif; font-style:italic; font-size:24px; color:#e8dcdf; }
+footer{ border-top:1px solid var(--line); padding:28px 0 18px; background:#05020b; }
+.footer-inner{ max-width:1440px; margin:auto; padding:0 32px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.footer-inner p{ color:#a999b1; }
+.footer-inner .return-top{ display:flex; align-items:center; gap:7px; background:transparent; border:1px solid var(--line); color:var(--ink); border-radius:99px; padding:10px 15px; }
+.footer-bottom{ max-width:1440px; margin:18px auto 0; padding:14px 32px 0; border-top:1px solid rgba(255,255,255,.05); display:flex; justify-content:space-between; color:#6f6579; font-size:10px; letter-spacing:.18em; }
+
+/* ---------- PAGE-SPECIFIC HOOKS ---------- */
+/* body.page-sanctuaries .hero{ ... } */
+/* body.page-flamedragon .hero{ ... } */
+/* body.page-swordland .hero{ ... } */
+/* body.page-prepweek .hero{ ... } */
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes spin{ to{ transform:rotate(360deg); } }
+@keyframes flamePulse{ 0%,100%{ opacity:.55; transform:scale(1); } 50%{ opacity:.95; transform:scale(1.12); } }
+@keyframes runePulse{ 0%,100%{ opacity:1; } 50%{ opacity:.82; } }
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1150px){ .gate-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:900px){
+  .nav,.brand-full{ display:none; }
+  .wrap{ padding:0 20px; }
+  .feature{ grid-template-columns:1fr; }
+  .feature-right{ display:none; }
+  .gate-grid,.intel-grid{ grid-template-columns:1fr; }
+  .rune,.vertical-label{ display:none; }
+  .flame-orb{ left:auto; right:18px; bottom:95px; width:62px; height:62px; font-size:28px; }
+  .header-cta{ padding:10px 13px; font-size:12px; }
+  .topbar-inner{ padding:0 16px; }
+}
+@media(max-width:720px){
+  .gate-grid{ grid-template-columns:1fr; }
+  .section-heading.wide{ align-items:flex-start; flex-direction:column; gap:14px; }
+  .gates{ padding:48px 16px; }
+  .gate-card{ min-height:430px; padding:28px 22px; }
+  .card-path{ right:22px; top:26px; }
+}
+@media(max-width:600px){
+  .hero{ padding-top:65px; min-height:640px; }
+  .hero-copy{ font-size:15px; }
+  .section{ padding:66px 0; }
+  .chips{ gap:9px; }
+  .chip{ flex:1 1 42%; min-width:0; padding:11px; }
+  .chip-name{ font-size:11px; }
+  .feature-left{ padding:26px 20px; }
+  .feature-beast{ font-size:72px; }
+  .legions{ grid-template-columns:1fr; }
+  .legions div{ border-right:0; border-bottom:1px solid var(--line); }
+  .legions div:last-child{ border-bottom:0; }
+  .footer-inner{ flex-direction:column; align-items:flex-start; }
+  .footer-bottom{ flex-direction:column; gap:6px; }
+  .closing .hero-actions{ flex-direction:column; }
+  .closing .btn{ width:100%; }
+  .tl-row{ font-size:13px; }
+  .tl-row b{ font-size:12px; }
+}
+@media(prefers-reduced-motion:reduce){
+  .gate-rune,.sword-ring,.flame-icon,.flame-glow{ animation:none; }
+}
