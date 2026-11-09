@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111117">
+  <title>Kingdom Matchmaker — Kingdom 167</title>
+  <link rel="stylesheet" href="matchmaker.css">
+  <script src="matchmaker.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="../"><span class="crown">♛</span><span>KINGDOM 167</span></a><a class="back" href="../">← Kingdom home</a></header>
+    <section class="hero"><div><p class="kicker">A KINGDOM 167 MINI GAME</p><h1>KINGDOM <em>MATCHMAKER</em></h1><p>Eight recruits. Five alliances. One transfer manager who expects you to get it right.</p></div><div class="window-mark"><span>TRANSFER</span><b>WINDOW 01</b></div></section>
+    <section class="desk" aria-label="Transfer desk game">
+      <div class="desk-head"><div><small>TRANSFER WINDOW</small><b id="round-progress">RECRUIT 1 / 8</b></div><div><small>YOUR MATCH SCORE</small><b id="score">000</b></div><div><small>VACANCIES LEFT</small><b id="vacancies">10</b></div></div>
+      <div class="advice" aria-live="polite"><div class="portrait" aria-hidden="true"><span class="hair"></span><b>SF</b></div><div class="advice-copy"><strong>SLICKFINGER <span>· TRANSFER MANAGER</span></strong><p id="advice">Read the vacancies. Read the recruit. Make a decision you can defend.</p></div><div class="seal">IRON<br>RULES</div></div>
+      <div class="desk-content" id="desk-content">
+        <section class="applicant-panel" aria-live="polite"><div class="panel-label"><span>INCOMING APPLICATION</span><span id="applicant-number">01</span></div><div class="applicant-head"><div class="applicant-avatar" id="applicant-avatar">?</div><div><h2 id="applicant-name">Loading recruit…</h2><p id="applicant-role"></p></div></div><p class="applicant-note" id="applicant-note"></p><div class="traits-title">RECRUIT PROFILE</div><div id="applicant-traits" class="trait-list"></div><div class="applicant-ask"><span>LOOKING FOR</span><b id="applicant-wants"></b></div><button id="pass" class="pass-button" type="button">PASS THIS RECRUIT <span>→</span></button></section>
+        <section class="vacancies-panel"><div class="panel-label"><span>OPEN ALLIANCE VACANCIES</span><span>CHOOSE A PLACEMENT</span></div><div id="alliances" class="alliance-list"></div><div id="feedback" class="feedback" aria-live="polite">Select an alliance to review the fit.</div></section>
+      </div>
+      <section id="results" class="results hidden" aria-live="polite"><div class="result-medal">♛</div><p class="kicker">TRANSFER WINDOW CLOSED</p><h2 id="result-title">Kingdom Architect</h2><p id="result-copy"></p><div class="result-stats"><div><small>MATCH SCORE</small><b id="final-score">0</b></div><div><small>STRONG FITS</small><b id="strong-fits">0 / 8</b></div><div><small>RECRUITS PLACED</small><b id="placed-count">0 / 8</b></div></div><button id="play-again" class="primary-button" type="button">OPEN ANOTHER WINDOW <span>→</span></button></section>
+    </section>
+    <footer>FIVE BANNERS · ONE KINGDOM <span>✦</span> EVERY RECRUIT NEEDS A GOOD FIT</footer>
+  </main>
+</body>
+</html>
