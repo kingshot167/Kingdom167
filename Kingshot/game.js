@@ -8,7 +8,6 @@
   function dims(){return {w:canvas.clientWidth,h:canvas.clientHeight,ground:canvas.clientHeight*.79,wall:canvas.clientWidth*.80}}
   function updateHud(){ $('wave').textContent=game.wave; $('health').textContent=Array.from({length:game.health},()=> '♥').join(' ')||'—'; $('gold').textContent=game.gold; $('score').textContent=game.score; $('upgrade-cost').textContent=(30+(game.level-1)*25)+'g'; $('upgrade').disabled=!game.active||game.gold<30+(game.level-1)*25; }
   function start(){Object.assign(game,{active:true,wave:1,health:3,gold:0,score:0,level:1,enemies:[],arrows:[],sparks:[],last:performance.now(),spawn:0,wavePause:0});$('overlay').classList.add('hidden');$('status').textContent='WAVE 1 INCOMING';updateHud()}
-  function roundRect(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
   function drawScene(t){const {w,h,ground,wall}=dims();ctx.clearRect(0,0,w,h);
     const sky=ctx.createLinearGradient(0,0,0,ground);sky.addColorStop(0,'#182030');sky.addColorStop(1,'#35434b');ctx.fillStyle=sky;ctx.fillRect(0,0,w,ground);
     ctx.fillStyle='#d6be83';ctx.globalAlpha=.8;ctx.beginPath();ctx.arc(w*.77,h*.19,24,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
@@ -29,8 +28,16 @@
     for(const s of game.sparks){ctx.globalAlpha=Math.max(0,s.life);ctx.fillStyle=s.color;ctx.beginPath();ctx.arc(s.x,s.y,2.4*s.life,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1;
   }
   function drawEnemy(e,t){const x=e.x,y=e.y,bob=Math.sin(t/120+e.phase)*2;ctx.save();ctx.translate(x,y+bob);ctx.fillStyle='#15141a88';ctx.beginPath();ctx.ellipse(0,2,14,5,0,0,Math.PI*2);ctx.fill();ctx.fillStyle=e.color;ctx.beginPath();ctx.arc(0,-17,8,0,Math.PI*2);ctx.fill();ctx.fillStyle='#815a45';ctx.fillRect(-8,-11,16,18);ctx.fillStyle='#39333a';ctx.fillRect(-7,5,5,9);ctx.fillRect(2,5,5,9);ctx.fillStyle='#77716c';ctx.fillRect(7,-11,4,15);ctx.fillStyle='#d8c37d';ctx.fillRect(9,-13,2,5);ctx.fillStyle='#e6bd68';ctx.fillRect(-9,-30,18,3);ctx.fillStyle='#b94e48';ctx.fillRect(-9,-29,18*(e.hp/e.maxHp),2);ctx.restore()}
-  function addSparks(x,y,color,n=8){for(let i=0;i<n;i++)game.sparks.push({x,y,vx:rand(-85,85),vy:rand(-100,30),life:1,color})}
-  function shoot(x,y){if(!game.active)return;const {wall,ground}=dims(),sx=wall-20,sy=ground-110,dx=x-sx,dy=y-sy,len=Math.hypot(dx,dy)||1;game.arrows.push({x:sx,y:sy,vx:dx/len*560,vy:dy/len*560,angle:Math.atan2(dy,dx),life:1.2})}
+  function addSparks(x,y,color,n=8){for(let i=0;i<n;i++)game.sparks.push({x,y,vx:rand(-85,85),vy:rand(-100,30),life:1,color});if(game.sparks.length>120)game.sparks.splice(0,game.sparks.length-120)}
+  function shoot(x,y){
+    if(!game.active||!Number.isFinite(x)||!Number.isFinite(y)||game.arrows.length>=36)return;
+    const {wall,ground}=dims(),sx=wall-20,sy=ground-110,dx=x-sx,dy=y-sy,len=Math.hypot(dx,dy)||1;
+    const shots=Math.min(game.level,3);
+    for(let i=0;i<shots&&game.arrows.length<36;i++){
+      const spread=(i-(shots-1)/2)*.045,angle=Math.atan2(dy,dx)+spread,speed=560;
+      game.arrows.push({x:sx,y:sy,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,angle,life:1.2});
+    }
+  }
   function frame(now){const dt=Math.min((now-game.last)/1000,.04);game.last=now;const {wall,ground}=dims();if(game.active){
       game.spawn-=dt;if(game.spawn<=0&&game.wavePause<=0){game.enemies.push({x:wall+rand(55,160),y:ground-10,hp:1+Math.floor((game.wave-1)/3),maxHp:1+Math.floor((game.wave-1)/3),speed:rand(22,33)+game.wave*2,color:['#9b5444','#70785b','#806b84'][Math.floor(rand(0,3))],phase:rand(0,7)});game.spawn=Math.max(.45,1.6-game.wave*.09)}
       for(const e of game.enemies)e.x-=e.speed*dt;
@@ -42,7 +49,5 @@
     }drawScene(now);requestAnimationFrame(frame)}
   canvas.addEventListener('pointerdown',e=>{const r=canvas.getBoundingClientRect();shoot(e.clientX-r.left,e.clientY-r.top)});
   $('start').addEventListener('click',start);$('upgrade').addEventListener('click',()=>{const cost=30+(game.level-1)*25;if(game.gold>=cost){game.gold-=cost;game.level++;game.arrows.push({x:dims().wall-20,y:dims().ground-110,vx:0,vy:-300,angle:-Math.PI/2,life:.1});$('status').textContent='ARCHER UPGRADED · LV '+game.level;updateHud()}});
-  // Each level adds a second arrow on every shot.
-  const baseShoot=shoot;shoot=(x,y)=>{baseShoot(x,y);for(let i=1;i<game.level;i++)setTimeout(()=>{if(game.active)baseShoot(x+rand(-20,20),y+rand(-20,20))},i*85)};
   window.addEventListener('resize',resize);resize();updateHud();requestAnimationFrame(frame);
 })();
