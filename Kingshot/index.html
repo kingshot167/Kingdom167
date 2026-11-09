@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10131c">
-  <title>Kingshot — Kingdom 167</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#11141b">
+  <title>Tavern to Bear Trap — Kingdom 167</title>
   <link rel="stylesheet" href="game.css">
   <script src="game.js" defer></script>
 </head>
 <body>
   <main class="game-shell">
-    <header class="topbar"><a class="brand" href="../">♛ <span>KINGDOM 167</span></a><a class="back-link" href="../">← Kingdom home</a></header>
-    <section class="intro"><div><p class="eyebrow">A KINGDOM 167 MINI GAME</p><h1>KING<span>SHOT</span></h1><p class="subtitle">Hold the line. Protect your kingdom.</p></div><div class="howto"><b>HOW TO PLAY</b><span>Click or tap the battlefield to loose an arrow.</span><span>Stop the raiders before they reach your keep.</span></div></section>
-    <section class="game-card" aria-label="Kingshot castle defense game">
-      <div class="hud"><div><small>WAVE</small><b id="wave">1</b></div><div><small>KEEP</small><b id="health">♥ ♥ ♥</b></div><div><small>GOLD</small><b id="gold">0</b></div><div><small>SCORE</small><b id="score">0</b></div><button id="upgrade" class="upgrade" type="button">⬆ Upgrade <span id="upgrade-cost">30g</span></button></div>
-      <div class="arena-wrap"><canvas id="arena" aria-label="Battlefield. Click to shoot arrows at incoming raiders."></canvas>
-        <div id="overlay" class="overlay"><div class="overlay-panel"><span class="crest">♛</span><p class="eyebrow">KINGDOM 167 DEFENSE</p><h2 id="overlay-title">The raiders approach</h2><p id="overlay-copy">Your keep is the last line. Aim true, commander.</p><button id="start" class="start-button">DEFEND THE KEEP <span>→</span></button></div></div>
+    <header class="topbar"><a class="brand" href="../"><span class="brand-crown">♛</span><span>KINGDOM 167</span></a><a class="back-link" href="../">← Kingdom home</a></header>
+    <section class="intro"><div><p class="eyebrow">A KINGDOM 167 MINI GAME</p><h1>TAVERN <span>TO TRAP</span></h1><p class="subtitle">DirtyBob is late for the Bear Trap rally. Again.</p></div><div class="howto"><b>GET TO THE RALLY</b><span>Switch lanes and jump to dodge the kingdom’s chaos.</span><span>Find the rare eggplant for a one-hit shield.</span></div></section>
+    <section class="game-card" aria-label="Tavern to Bear Trap runner game">
+      <div class="hud"><div><small>LOCATION</small><b id="location">THE TAVERN</b></div><div><small>HEALTH</small><b id="health" class="hearts">♥ ♥ ♥</b></div><div><small>DISTANCE</small><b><span id="distance">0</span><small class="unit"> / 1,000 m</small></b></div><div><small>RALLY SCORE</small><b id="score">0</b></div><div id="power-state" class="power-state"><span class="power-icon">🍆</span><span id="power-label">RARE POWER</span></div></div>
+      <div class="arena-wrap"><canvas id="arena" aria-label="DirtyBob running through five Kingshot themed locations. Use arrow keys or touch controls to dodge obstacles."></canvas>
+        <div id="overlay" class="overlay"><div class="overlay-panel"><span class="crest">♛</span><p class="eyebrow">TAVERN TO BEAR TRAP</p><h2 id="overlay-title">Last call. Rally’s on.</h2><p id="overlay-copy">DirtyBob has to cross the kingdom and reach his alliance before the Bear Trap hunt begins.</p><button id="start" class="start-button">START THE RUN <span>→</span></button></div></div>
       </div>
-      <div class="controls"><span><i class="dot gold-dot"></i> Tap or click to fire</span><span><i class="dot red-dot"></i> Raiders breach the wall = lose a heart</span><span class="status" id="status">READY FOR BATTLE</span></div>
+      <div class="touch-controls" aria-label="Touch controls"><button type="button" data-control="left" aria-label="Move left">←</button><button type="button" data-control="jump" aria-label="Jump">JUMP</button><button type="button" data-control="right" aria-label="Move right">→</button></div>
+      <div class="controls"><span><i class="key">←</i><i class="key">→</i> switch lanes</span><span><i class="key space-key">SPACE</i> jump</span><span><i class="dot"></i> The eggplant blocks one hit</span><span class="status" id="status">READY FOR THE RALLY</span></div>
     </section>
-    <footer>ONE KINGDOM · FIVE BANNERS <span>✦</span> FORGED IN FIRE &amp; GOLD</footer>
+    <footer>ONE KINGDOM · FIVE BANNERS <span>✦</span> SAVE A SPOT AT BEAR TRAP</footer>
   </main>
 </body>
 </html>
