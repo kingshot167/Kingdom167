@@ -111,6 +111,21 @@ function k167Tick(){
 
 // ---------- BOOT ----------
 document.addEventListener('DOMContentLoaded', ()=>{
+  // Show the cinematic welcome on a direct home visit; deep links go straight to their section.
+  const realmIntro = document.getElementById('realm-intro');
+  const realmEnter = document.getElementById('realm-enter');
+  if(realmIntro && realmEnter){
+    if(location.hash && location.hash !== '#home'){
+      realmIntro.remove();
+    }else{
+      document.body.classList.add('realm-intro-open');
+      realmEnter.addEventListener('click', ()=>{
+        realmIntro.classList.add('is-leaving');
+        document.body.classList.remove('realm-intro-open');
+        window.setTimeout(()=>realmIntro.remove(), 950);
+      }, {once:true});
+    }
+  }
   k167InitAllianceSwitcher();
   k167Tick();
   setInterval(k167Tick, 1000);
