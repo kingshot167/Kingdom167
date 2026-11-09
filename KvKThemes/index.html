@@ -1,0 +1,212 @@
+<html lang="en"><style>* { -webkit-text-size-adjust: 95.33333333333333% !important; }</style><head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KvK Themes — Kingdom 167</title>
+  <meta name="description" content="K167 KvK Themes — Suggest a theme, then vote for 1 of the Top 4. 1 vote per IGN. Winner becomes next KvK theme.">
+  <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
+</head>
+<body class="page-kvkthemes">
+<div class="shell" id="top">
+  <header class="topbar"><div class="topbar-inner">
+    <a class="brand" href="/Kingdom167/"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span class="brand-full">KINGDOM 167</span></a>
+    <nav class="nav" aria-label="Kingdom navigation">
+      <a class="nav-link" href="/Kingdom167/">Home</a>
+      <a class="nav-link" href="/Kingdom167/Sanctuaries/">Sanctuaries</a>
+      <a class="nav-link" href="/Kingdom167/FlameDragonTyrant/">Flame Dragon Tyrant</a>
+      <a class="nav-link" href="/Kingdom167/AllianceBrawl/">Alliance Brawl</a>
+      <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland Summit</a>
+      <a class="nav-link" href="/Kingdom167/PrepWeek/">KvK Prep Week</a>
+      <a class="nav-link active" href="/Kingdom167/KvKThemes/">KvK Themes</a>
+    </nav>
+    <a class="header-cta" href="#vote">Vote Now →</a>
+  </div></header>
+  <div class="live-bar" id="live-bar"><span class="live-dot"></span><b id="live-phase">PHASE —</b><span class="sep">•</span><span id="live-reg">Registration —</span><span class="sep">•</span><span id="kvk-status">KvK Themes: Survey Open</span></div>
+  <main>
+    <section class="hero"><div class="hero-inner">
+      <p class="eyebrow"><span class="eyebrow-line"></span> KVK THEMES • 4-WEEK CYCLE <span class="eyebrow-line"></span></p>
+      <div class="k167-outline" aria-hidden="true">🗳️</div>
+      <h1>KVK <span class="gold">THEMES</span></h1>
+      <p class="tagline">You pick the war. We fight it.</p>
+      <p class="hero-copy">Suggest a KvK theme. Leadership picks the Top 4. You vote for 1. Winner becomes the next KvK theme. 1 vote per IGN — second vote replaces your first.</p>
+      <div class="hero-actions"><a class="btn gold" href="#suggest">Suggest a Theme →</a><a class="btn ghost" href="#vote">🗳️ Vote for Top 4</a></div>
+      <p class="hero-meta">PHASE 1: SURVEY <i>•</i> PHASE 2: POLL <i>•</i> 1 VOTE PER IGN</p>
+    </div><a class="scroll-hint" href="#how">SCROLL ↓</a></section>
+    <section class="section" id="how"><div class="wrap">
+      <div class="section-head"><p class="kicker">HOW IT WORKS • 4-WEEK CYCLE</p><h2>2 phases.<br><span>1 winner.</span></h2></div>
+      <div class="intel-grid">
+        <article class="intel-card"><div class="intel-label">📝 PHASE 1 • WEEK 1 • SURVEY</div><h3>Suggest ideas.</h3><p class="section-copy">Anyone can suggest. Theme name + 1 line why. No voting yet. Suggest as many as you want — survey is NOT limited to 1 per person.</p><div class="legions"><div><span>WHO</span><b>Anyone</b></div><div><span>LIMIT</span><b>Unlimited ideas</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">👑 LEADERSHIP • BETWEEN PHASES</div><h3>Top 4 picked.</h3><p class="section-copy">Leadership reads all suggestions, merges duplicates, picks the Top 4 finalists. This stops 30 similar ideas splitting the vote.</p><div class="legions"><div><span>FINALISTS</span><b>Top 4</b></div><div><span>PICKED BY</span><b>Leadership</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">🗳️ PHASE 2 • WEEK 2 • POLL</div><h3>Vote for 1 of 4.</h3><p class="section-copy">Vote by IGN. 1 vote per IGN. If you vote again, your new vote REPLACES your old one — it does not add a second vote.</p><div class="legions"><div><span>WHO</span><b>Anyone</b></div><div><span>LIMIT</span><b>1 vote / IGN</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">🏆 WEEKS 3-4 • PLAY IT</div><h3>Winner = next KvK theme.</h3><p class="section-copy">Winner is locked, announced, and becomes the next KvK theme. Then we loop back to Phase 1 for the next cycle.</p><div class="legions"><div><span>WINNER</span><b>Most votes</b></div><div><span>NEXT</span><b>New cycle</b></div></div></article>
+      </div>
+    </div></section>
+    <section class="section" id="suggest"><div class="wrap">
+      <div class="section-head"><p class="kicker">PHASE 1 • SURVEY</p><h2>Suggest a theme.</h2><p class="section-copy">What KvK theme should we run next? Give it a name + 1 line why. Leadership will read every one.</p></div>
+      <div class="intel-grid">
+        <article class="intel-card">
+          <div class="intel-label">📝 SUGGEST A THEME</div>
+          <form id="theme-form" style="display:grid; gap:12px; margin-top:12px;">
+            <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">IN-GAME NAME (IGN) *
+              <input id="theme-ign" required="" placeholder="e.g. StreetDoc" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:rgba(0,0,0,.35); color:#f8f1e5; font-size:15px;">
+            </label>
+            <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">THEME NAME *
+              <input id="theme-name" required="" placeholder="e.g. Dragon Week" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:rgba(0,0,0,.35); color:#f8f1e5; font-size:15px;">
+            </label>
+            <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">WHY? (1 line)
+              <input id="theme-why" placeholder="e.g. Everyone loves dragon buffs" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:rgba(0,0,0,.35); color:#f8f1e5; font-size:15px;">
+            </label>
+            <button type="submit" id="theme-submit" class="btn gold" style="width:100%; justify-content:center; border:0; cursor:pointer;">Submit Theme →</button>
+            <p id="theme-status" style="font-size:13px; text-align:center; min-height:20px; margin:0; color:#f2d58c;"></p>
+          </form>
+        </article>
+        <article class="intel-card battle"><div class="intel-label">💡 GOOD THEMES</div><h3>What makes a good theme?</h3><div class="timeline-rows"><div class="tl-row"><span class="tl-day">✓</span><span>Clear: everyone knows what to do</span><b>Clear</b></div><div class="tl-row"><span class="tl-day">✓</span><span>Fun for farms + mains</span><b>Fun</b></div><div class="tl-row"><span class="tl-day">✓</span><span>Fits a 4-week cycle</span><b>Fits</b></div><div class="tl-row"><span class="tl-day">✕</span><span>Too vague: 'be better'</span><b>No</b></div></div><p class="tl-note">Examples: Dragon Week, Pirate Week, Farm Frenzy, Speedup Burn. Leadership merges duplicates — don't worry if someone already suggested yours.</p></article>
+      </div>
+    </div></section>
+    <section class="section" id="vote"><div class="wrap">
+      <div class="section-head"><p class="kicker">PHASE 2 • POLL • TOP 4 FINALISTS</p><h2>Vote for 1.<br><span>1 vote per IGN.</span></h2><p class="section-copy">Leadership sets the 4 finalists below. Vote by entering your IGN + tapping a theme. Vote again to change your vote — your old vote is replaced, not added. Live counts update on refresh.</p></div>
+      <div class="intel-grid">
+        <article class="intel-card">
+          <div class="intel-label">🗳️ YOUR VOTE</div>
+          <form id="vote-form" style="display:grid; gap:12px; margin-top:12px;">
+            <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">IN-GAME NAME (IGN) *
+              <input id="vote-ign" required="" placeholder="e.g. StreetDoc — must match your IGN exactly" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:rgba(0,0,0,.35); color:#f8f1e5; font-size:15px;">
+            </label>
+            <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">PICK 1 THEME *
+              <select id="vote-theme" required="" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:#120a20; color:#f8f1e5; font-size:15px;">
+                <option value="">— Pick 1 of the Top 4 —</option>
+                <option value="FINALIST_1">Finalist 1 — EDIT ME IN HTML</option>
+                <option value="FINALIST_2">Finalist 2 — EDIT ME IN HTML</option>
+                <option value="FINALIST_3">Finalist 3 — EDIT ME IN HTML</option>
+                <option value="FINALIST_4">Finalist 4 — EDIT ME IN HTML</option>
+              </select>
+            </label>
+            <p style="font-size:12px; color:#b9aabd; line-height:1.6; margin:0;">⚠️ <b style="color:#f2d58c;">1 vote per IGN.</b> Voting again replaces your old vote. IGNs are matched case-insensitively — "StreetDoc" = "streetdoc".</p>
+            <button type="submit" id="vote-submit" class="btn gold" style="width:100%; justify-content:center; border:0; cursor:pointer;">Cast My Vote →</button>
+            <p id="vote-status" style="font-size:13px; text-align:center; min-height:20px; margin:0; color:#f2d58c;"></p>
+          </form>
+        </article>
+        <article class="intel-card battle">
+          <div class="intel-label">📊 LIVE RESULTS</div>
+          <h3>Who's winning?</h3>
+          <div style="display:flex; justify-content:space-between; align-items:center;"><b style="font-size:13px;">VOTES — THIS CYCLE</b><button id="results-refresh" type="button" style="background:transparent; border:1px solid rgba(216,178,92,.4); color:#f2d58c; padding:6px 12px; border-radius:999px; font-size:12px; cursor:pointer;">↻ Refresh</button></div>
+          <div id="vote-results" style="margin-top:12px; font-size:13px; color:#ddd2df; line-height:1.7;">⚠️ Results not live yet — paste your Apps Script URL to activate (same as Brawl / Swordland).</div>
+          <p style="font-size:11px; color:#8c7f8f; margin:10px 0 0;">Counts are 1 per IGN. If someone changes their vote, the old vote moves, total does not go up.</p>
+        </article>
+      </div>
+      <div class="intel-grid" style="margin-top:12px;">
+        <article class="intel-card"><div class="intel-label">🏆 FINALIST 1</div><h3 id="f1-name">Finalist 1 — Edit in HTML</h3><p class="section-copy">Leadership: edit the 4 finalist names in this HTML file each cycle (search FINALIST_1). Votes are counted by that exact name.</p><div class="legions"><div><span>VOTES</span><b id="f1-count">—</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">🏆 FINALIST 2</div><h3 id="f2-name">Finalist 2 — Edit in HTML</h3><p class="section-copy">Same — edit FINALIST_2 in the vote dropdown + this card.</p><div class="legions"><div><span>VOTES</span><b id="f2-count">—</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">🏆 FINALIST 3</div><h3 id="f3-name">Finalist 3 — Edit in HTML</h3><p class="section-copy">Same — edit FINALIST_3.</p><div class="legions"><div><span>VOTES</span><b id="f3-count">—</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">🏆 FINALIST 4</div><h3 id="f4-name">Finalist 4 — Edit in HTML</h3><p class="section-copy">Same — edit FINALIST_4.</p><div class="legions"><div><span>VOTES</span><b id="f4-count">—</b></div></div></article>
+      </div>
+    </div></section>
+    <section class="closing"><div class="wrap"><p class="kicker">YOU PICK • WE FIGHT</p><h2>VOTE. FIGHT. <span>REPEAT.</span></h2><p>Five banners. One crown. No retreat.</p><div class="hero-actions"><a class="btn gold" href="/Kingdom167/">← Back to Kingdom 167</a><a class="btn ghost" href="/Kingdom167/PrepWeek/">📋 KvK Prep Week</a><a class="btn outline" href="/Kingdom167/AllianceBrawl/">⚔️ Alliance Brawl</a></div></div></section>
+  </main>
+  <footer><div class="footer-inner"><a class="brand" href="#top"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span>Kingdom 167</span></a><p>Kingdom 167 • K167 • KvK Themes</p><a class="return-top" href="#top">Return to throne ↑</a></div><div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>FORGED IN SHADOW, FIRE &amp; GOLD</span></div></footer>
+</div>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <a href="/Kingdom167/"><i>🏠</i>Home</a>
+  <a href="/Kingdom167/Sanctuaries/"><i>🏰</i>Sanctuaries</a>
+  <a href="/Kingdom167/FlameDragonTyrant/"><i>🔥</i>Dragon</a>
+  <a href="/Kingdom167/AllianceBrawl/"><i>⚔️</i>Brawl</a>
+  <a href="/Kingdom167/SwordlandSummit/"><i>🛡️</i>Swordland</a>
+  <a href="/Kingdom167/PrepWeek/"><i>📋</i>Prep</a>
+  <a class="active" href="/Kingdom167/KvKThemes/"><i>🗳️</i>Themes</a>
+</nav>
+<script src="/Kingdom167/assets/js/main.js" defer=""></script>
+<script>
+// ===== KVK THEMES — SAME PATTERN AS BRAWL / SWORDLAND =====
+// ⚠️ PASTE YOUR APPS SCRIPT URL HERE when you have it
+const KVK_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+// Finalists — MUST match the option values in #vote-theme exactly.
+// Leadership: edit these 4 strings each cycle, and the 4 <option> values above.
+const FINALISTS = ["FINALIST_1","FINALIST_2","FINALIST_3","FINALIST_4"];
+const themeForm = document.getElementById('theme-form');
+const voteForm = document.getElementById('vote-form');
+const themeStatus = document.getElementById('theme-status');
+const voteStatus = document.getElementById('vote-status');
+const resultsEl = document.getElementById('vote-results');
+function isLive(){ return KVK_SCRIPT_URL && !KVK_SCRIPT_URL.includes("PASTE_"); }
+async function loadResults(){
+  if(!resultsEl) return;
+  if(!isLive()){ resultsEl.innerHTML = "⚠️ Results not live yet — paste your Apps Script URL to activate (same as Brawl / Swordland)."; return; }
+  try{
+    resultsEl.textContent = "Loading results…";
+    const res = await fetch(KVK_SCRIPT_URL + "?action=list&event=KVK_VOTES");
+    const counts = await res.json(); // { "Dragon Week": 12, ... }
+    let total = 0; Object.values(counts).forEach(v=> total += v);
+    let html = "";
+    FINALISTS.forEach((f,i)=>{
+      const c = counts[f] || 0;
+      const pct = total ? Math.round(c/total*100) : 0;
+      html += "<div style='margin-bottom:12px;'><b>"+f+"</b> — "+c+" votes ("+pct+"%)<div style='height:8px; background:rgba(255,255,255,.1); border-radius:999px; margin-top:4px; overflow:hidden;'><div style='width:"+pct+"%; height:100%; background:#d8b25c;'></div></div></div>";
+      const el = document.getElementById("f"+(i+1)+"-count"); if(el) el.textContent = c + " ("+pct+"%)";
+    });
+    html += "<div style='color:#8c7f8f; font-size:12px;'>Total votes (1 per IGN): "+total+"</div>";
+    resultsEl.innerHTML = html;
+  }catch(e){ resultsEl.textContent = "Could not load results. Tap Refresh."; }
+}
+if(themeForm){
+  themeForm.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const ign = document.getElementById('theme-ign').value.trim();
+    const theme = document.getElementById('theme-name').value.trim();
+    const why = document.getElementById('theme-why').value.trim();
+    if(!ign || !theme){ themeStatus.textContent = "⚠️ Fill IGN + Theme first."; return; }
+    if(!isLive()){ themeStatus.textContent = "⚠️ Survey not live yet — Apps Script URL not set. Tell leadership your idea for now."; return; }
+    const btn = document.getElementById('theme-submit'); btn.disabled=true; btn.textContent="Submitting…";
+    try{
+      const res = await fetch(KVK_SCRIPT_URL, { method:"POST", body: JSON.stringify({ event:"KVK_THEME", ign, theme, why }) });
+      const out = await res.json();
+      if(out && out.ok){ themeStatus.textContent = "✅ Thanks "+ign+"! Your theme '"+theme+"' was submitted."; themeForm.reset(); }
+      else themeStatus.textContent = "⚠️ " + (out && out.error ? out.error : "Submit failed. Try again.");
+    }catch(err){ themeStatus.textContent = "⚠️ Network error. Try again."; }
+    btn.disabled=false; btn.textContent="Submit Theme →";
+  });
+}
+if(voteForm){
+  voteForm.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const ign = document.getElementById('vote-ign').value.trim();
+    const theme = document.getElementById('vote-theme').value;
+    if(!ign || !theme){ voteStatus.textContent = "⚠️ Fill IGN + pick 1 theme."; return; }
+    if(!isLive()){ voteStatus.textContent = "⚠️ Poll not live yet — Apps Script URL not set."; return; }
+    const btn = document.getElementById('vote-submit'); btn.disabled=true; btn.textContent="Casting vote…";
+    try{
+      const res = await fetch(KVK_SCRIPT_URL, { method:"POST", body: JSON.stringify({ event:"KVK_VOTE", ign, theme }) });
+      const out = await res.json();
+      if(out && out.ok){
+        voteStatus.textContent = out.updated ? "✅ Vote updated! "+ign+" — now voting for "+theme+"." : "✅ Vote counted! "+ign+" — "+theme+".";
+        voteForm.reset(); loadResults();
+      } else voteStatus.textContent = "⚠️ " + (out && out.error ? out.error : "Vote failed. Try again.");
+    }catch(err){ voteStatus.textContent = "⚠️ Network error. Try again."; }
+    btn.disabled=false; btn.textContent="Cast My Vote →";
+  });
+}
+document.getElementById('results-refresh')?.addEventListener('click', loadResults);
+loadResults();
+</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
+
+</body></html>
