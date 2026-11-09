@@ -356,4 +356,45 @@ body.page-home{ padding-bottom:0; }
   .countdown-grid{ grid-template-columns:1fr; }
   .live-bar{ font-size:11px; line-height:1.6; }
 }
-
+/* ---------- FIX: Gate SVG alignment — Sanctuaries + Swordland ---------- */
+.gate-art{
+  position:relative;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden;
+}
+/* Both SVGs in a gate — center them on the exact same point */
+.gate-art svg{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+  margin:0 !important;
+  display:block;
+}
+/* Big decorative ring stays behind */
+.gate-art .gate-rune,
+.gate-art .sword-ring{
+  width:170px !important;
+  height:170px !important;
+  z-index:1;
+  opacity:.9;
+}
+/* Small hero icon sits on top, centered */
+.gate-art .gate-hero-icon{
+  width:62px !important;
+  height:62px !important;
+  z-index:2;
+}
+/* Flame Dragon only has 1 SVG — keep it centered too, don't break it */
+.gate-art .flame-icon{
+  width:64px !important;
+  height:64px !important;
+}
+.gate-art .flame-glow{
+  position:absolute;
+  left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  z-index:1;
+}
