@@ -1,281 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><style>* { -webkit-text-size-adjust: 95.33333333333333% !important; }</style><head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KvK Prep Week — Kingdom 167</title>
-  <meta name="description" content="K167 KvK Prep Week — Kingdom of Power: 5 prep days, what to save, what to spend on which day, castle roles, King Skills, and battle day.">
+  <meta name="description" content="K167 KvK Prep Week — 28-day cycle, 5 prep days, 200k/day = State Medal. Save, don't spend. Castle battle Sat 12:00-17:00 UTC.">
   <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
 </head>
-<body class="page-prepweek">
+<body class="page-prep">
 <div class="shell" id="top">
-
-  <!-- ============ HEADER ============ -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/Kingdom167/" aria-label="K167 Kingdom 167 home">
-        <span class="diamond">♛</span>
-        <span class="brand-k">K167</span>
-        <span class="brand-divider"></span>
-        <span class="brand-full">KINGDOM 167</span>
-      </a>
-      <nav class="nav" aria-label="Kingdom navigation">
-        <a class="nav-link" href="/Kingdom167/">Home</a>
-        <a class="nav-link" href="/Kingdom167/Sanctuaries/">Sanctuaries</a>
-        <a class="nav-link" href="/Kingdom167/FlameDragonTyrant/">Flame Dragon Tyrant</a>
-        <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland Summit</a>
-        <a class="nav-link active" href="/Kingdom167/PrepWeek/">KvK Prep Week</a>
-      </nav>
-      <a class="header-cta" href="#days">See the 5 Days →</a>
-    </div>
-  </header>
-
+  <header class="topbar"><div class="topbar-inner">
+    <a class="brand" href="/Kingdom167/"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span class="brand-full">KINGDOM 167</span></a>
+    <nav class="nav" aria-label="Kingdom navigation">
+      <a class="nav-link" href="/Kingdom167/">Home</a>
+      <a class="nav-link" href="/Kingdom167/Sanctuaries/">Sanctuaries</a>
+      <a class="nav-link" href="/Kingdom167/FlameDragonTyrant/">Flame Dragon Tyrant</a>
+      <a class="nav-link" href="/Kingdom167/AllianceBrawl/">Alliance Brawl</a>
+      <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland Summit</a>
+      <a class="nav-link active" href="/Kingdom167/PrepWeek/">KvK Prep Week</a>
+    </nav>
+    <a class="header-cta" href="#days">See the 5 Days →</a>
+  </div></header>
+  <div class="live-bar" id="live-bar"><span class="live-dot"></span><b id="live-phase">PHASE —</b><span class="sep">•</span><span id="live-reg">Registration —</span><span class="sep">•</span><span>KvK: Save, don't spend</span></div>
   <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow"><span class="eyebrow-line"></span> KINGDOM OF POWER • KvK <span class="eyebrow-line"></span></p>
-        <div class="k167-outline" aria-hidden="true">KvK</div>
-        <h1>KvK PREP <span class="gold">WEEK</span></h1>
-        <p class="tagline">Win prep. Invade. Become High King.</p>
-        <p class="hero-copy">KvK is won 2 weeks before it starts. Save everything. Spend it on the RIGHT day. Hit 200,000 points every day for your State Medal.</p>
-        <div class="hero-actions">
-          <a class="btn gold" href="#days">The 5 Prep Days →</a>
-          <a class="btn ghost" href="#save">🧳 What to Save</a>
-        </div>
-        <p class="hero-meta">28-DAY CYCLE <i>•</i> TC 16+ TO JOIN PREP <i>•</i> 200K / DAY = MEDAL</p>
+    <section class="hero"><div class="hero-inner">
+      <p class="eyebrow"><span class="eyebrow-line"></span> KVK PREP WEEK • 28-DAY CYCLE <span class="eyebrow-line"></span></p>
+      <div class="k167-outline" aria-hidden="true">📋</div>
+      <h1>KVK <span class="gold">PREP WEEK</span></h1>
+      <p class="tagline">Save now. Win the castle.</p>
+      <p class="hero-copy">28-day cycle. 5 prep days. 200k points per day = State Medal. Winner becomes attacker + gets the High King shot. Castle battle Sat 12:00-17:00 UTC.</p>
+      <div class="hero-actions"><a class="btn gold" href="#days">The 5 Prep Days →</a><a class="btn ghost" href="#save">💰 What to Save</a></div>
+      <p class="hero-meta">200K / DAY <i>•</i> STATE MEDAL <i>•</i> CASTLE SAT 12:00-17:00 UTC</p>
+    </div><a class="scroll-hint" href="#days">SCROLL ↓</a></section>
+    <section class="section" id="days"><div class="wrap">
+      <div class="section-head"><p class="kicker">THE 5 PREP DAYS</p><h2>5 days.<br><span>200k every day.</span></h2><p class="section-copy">Each prep day has one focus. Do that focus, hit 200k, get your State Medal. Don't burn other resources on the wrong day.</p></div>
+      <div class="intel-grid">
+        <article class="intel-card battle"><div class="intel-label">📅 DAY 1</div><h3>Build + Train</h3><p class="section-copy">Building upgrades + troop training. Use speedups here, not on other days.</p><div class="legions"><div><span>TARGET</span><b>200k</b></div><div><span>REWARD</span><b>State Medal</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">📅 DAY 2</div><h3>Hero + Gear</h3><p class="section-copy">Hero upgrades, gear, shards. Save hero items for today.</p><div class="legions"><div><span>TARGET</span><b>200k</b></div><div><span>REWARD</span><b>State Medal</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">📅 DAY 3</div><h3>Pet + Gather</h3><p class="section-copy">Pet training + gathering. Save pet items + gathering speedups for today.</p><div class="legions"><div><span>TARGET</span><b>200k</b></div><div><span>REWARD</span><b>State Medal</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">📅 DAY 4</div><h3>Trade + Caravan</h3><p class="section-copy">Trade, caravan escort / raid, gems, Truegold. Save caravan vouchers for today.</p><div class="legions"><div><span>TARGET</span><b>200k</b></div><div><span>REWARD</span><b>State Medal</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">📅 DAY 5</div><h3>Full Push</h3><p class="section-copy">Everything together. Use your reserve. Finish strong — this sets up KvK.</p><div class="legions"><div><span>TARGET</span><b>200k</b></div><div><span>REWARD</span><b>State Medal</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">🏰 CASTLE BATTLE</div><h3>Saturday. The castle.</h3><p class="section-copy">Castle battle Sat 12:00-17:00 UTC. Winner becomes attacker + High King shot. Be online, be healed, be ready.</p><div class="legions"><div><span>WHEN</span><b>Sat 12:00-17:00 UTC</b></div><div><span>PRIZE</span><b>Attacker + High King</b></div></div></article>
       </div>
-      <div class="flame-orb" aria-hidden="true"><span>⚔️</span></div>
-      <a class="scroll-hint" href="#days">SCROLL ↓</a>
-    </section>
-
-    <!-- ============ WHY PREP MATTERS ============ -->
-    <section class="section" id="why">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">WHY PREP DECIDES EVERYTHING</p>
-          <h2>Prep winner = attacker.<br><span>Prep loser = invaded.</span></h2>
-          <p class="section-copy">Win prep and your castle is untouchable, you teleport into their kingdom, and you get State Bonuses: faster healing + more Enlistment capacity. Win prep + win the castle = High King for 2 weeks: titles, buffs, jail access.</p>
-        </div>
-        <div class="intel-grid">
-          <article class="intel-card battle">
-            <div class="intel-label">🏆 IF WE WIN PREP</div>
-            <h3>We attack.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">✓</span><span>Our castle untouchable</span><b>Safe</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Teleport into enemy kingdom</span><b>10:00-22:00 UTC</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Healing Speed +15%</span><b>State Bonus</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Enlistment +200% capacity</span><b>State Bonus</b></div>
-            </div>
-          </article>
-          <article class="intel-card">
-            <div class="intel-label">🎖️ STATE MEDALS — 6 TOTAL</div>
-            <h3>200k every day.</h3>
-            <p class="section-copy">Each prep day has chests at 30k / 100k / 200k. Hit 200k = State Medal. 5 medals for 5 days + 1 for joining a rally / garrison on battle day = 6th medal = final Medal Reward tier.</p>
-            <div class="legions">
-              <div><span>DAY TARGET</span><b>200,000 pts</b></div>
-              <div><span>PREP MEDALS</span><b>5</b></div>
-              <div><span>BATTLE MEDAL</span><b>+1 = 6</b></div>
-            </div>
-            <p class="tl-note">Even weaker players: show up on battle day, join a rally/garrison, get your 6th medal.</p>
-          </article>
-        </div>
+    </div></section>
+    <section class="section" id="save"><div class="wrap">
+      <div class="section-head"><p class="kicker">SAVE vs SPEND</p><h2>Save this.<br><span>Don't spend that.</span></h2></div>
+      <div class="intel-grid">
+        <article class="intel-card"><div class="intel-label">💰 SAVE</div><h3>Save for Prep / KvK.</h3><div class="timeline-rows"><div class="tl-row"><span class="tl-day">✓</span><span>Speedups</span><b>Save</b></div><div class="tl-row"><span class="tl-day">✓</span><span>Hero shards / gear</span><b>Save</b></div><div class="tl-row"><span class="tl-day">✓</span><span>Pet items</span><b>Save</b></div><div class="tl-row"><span class="tl-day">✓</span><span>Caravan vouchers</span><b>Save</b></div><div class="tl-row"><span class="tl-day">✓</span><span>Truegold / dust</span><b>Save</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">🔥 SPEND</div><h3>Spend only on the right day.</h3><p class="section-copy">Spending on the wrong day = wasted points. If it's not your focus day, wait. Patience is how K167 wins KvK.</p><div class="timeline-rows"><div class="tl-row"><span class="tl-day">⚠️</span><span>Don't burn speedups early</span><b>Wait</b></div><div class="tl-row"><span class="tl-day">⚠️</span><span>Don't upgrade heroes off-day</span><b>Wait</b></div><div class="tl-row"><span class="tl-day">⚠️</span><span>Don't raid caravans off-day</span><b>Wait</b></div></div></article>
       </div>
-    </section>
-
-    <!-- ============ 5 DAYS ============ -->
-    <section class="section" id="days">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">THE 5 PREP DAYS — SPEND ON THE RIGHT DAY ONLY</p>
-          <h2>Don't burn Day 1.<br><span>Pace to 200k daily.</span></h2>
-          <p class="section-copy">Golden rule: activate buffs + castle role FIRST, then spend. Every item spent without Wolf pet / Decree / role is wasted efficiency. Check in-game Point Sources — older kingdoms can see extra rows.</p>
-        </div>
-
-        <div class="intel-grid">
-          <article class="intel-card battle">
-            <div class="intel-label">📅 DAY 1 • CITY CONSTRUCTION</div>
-            <h3>Build. Don't rush.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">30,000</span><span>Tempered Truegold upgrade</span><b>Needs TG8</b></div>
-              <div class="tl-row"><span class="tl-day">6,000</span><span>Intel Mission</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">2,000</span><span>Truegold building upgrade</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">30 / min</span><span>Construction / Research / Training speedups</span><b>Gem excluded</b></div>
-              <div class="tl-row"><span class="tl-day">70</span><span>Governor Charm max score +1</span><b>Per point</b></div>
-            </div>
-            <p class="tl-note">👑 King Skill: Groundworks. Role: Chief Minister. Start roles 23:50 day before. Max 49 appointments / day.</p>
-          </article>
-
-          <article class="intel-card">
-            <div class="intel-label">📅 DAY 2 • BASIC SKILLS UP</div>
-            <h3>Heroes + Roulette.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">8,000</span><span>Hero Roulette spin</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">6,000</span><span>Master Emblem</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">3,040</span><span>Mythic Hero Shard</span><b>Ascend</b></div>
-              <div class="tl-row"><span class="tl-day">1,220</span><span>Epic Hero Shard</span><b>Ascend</b></div>
-              <div class="tl-row"><span class="tl-day">350</span><span>Rare Hero Shard</span><b>Ascend</b></div>
-              <div class="tl-row"><span class="tl-day">30 / min</span><span>Speedups (all types)</span><b>Gem excluded</b></div>
-            </div>
-            <p class="tl-note">👑 King Skill: Fresh Ideas. Role: Chief Minister. Save universal shards until TODAY.</p>
-          </article>
-
-          <article class="intel-card">
-            <div class="intel-label">📅 DAY 3 • PET TRAINING</div>
-            <h3>Pets only.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">15,000</span><span>Advanced Taming Mark</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">8,000</span><span>Hero Roulette spin</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">6,000</span><span>Intel Mission</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">1,150</span><span>Common Taming Mark</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">50</span><span>Pet advancement +1</span><b>Per point</b></div>
-            </div>
-            <p class="tl-note">Don't spend Taming Marks outside KvK. Pet Food / Hero XP are fine anytime — they don't score here.</p>
-          </article>
-
-          <article class="intel-card battle">
-            <div class="intel-label">📅 DAY 4 • HERO DEVELOPMENT / TROOPS</div>
-            <h3>The big troop day.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">40,000</span><span>Mithril</span><b>Each — needs maxed Mythic gear</b></div>
-              <div class="tl-row"><span class="tl-day">8,000</span><span>Hero Exclusive Gear Widget</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">4,000</span><span>Forgehammer</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">3 - 60</span><span>Train troops Lv.1 → Lv.10</span><b>Per troop</b></div>
-              <div class="tl-row"><span class="tl-day">70</span><span>Governor Charm max score +1</span><b>Per point</b></div>
-            </div>
-            <p class="tl-note">👑 King Skill: Mobilize. Role: Noble Advisor (or Chief Minister = +10% training if full).</p>
-          </article>
-        </div>
-
-        <div class="intel-grid">
-          <article class="intel-card battle">
-            <div class="intel-label">📅 DAY 5 • POWER BOOST — 1.5 DAYS LONG</div>
-            <h3>Give it ALL. Nothing left.</h3>
-            <p class="section-copy">Day 5 runs Fri → Sat 10:00 UTC. Don't leave anything unspent. This is the ONLY day Governor Gear scores.</p>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">40,000</span><span>Mithril</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">15,000</span><span>Advanced Taming Mark</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">8,000</span><span>Widget / Exclusive Gear</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">6,000</span><span>Intel Mission</span><b>Each</b></div>
-              <div class="tl-row"><span class="tl-day">36</span><span>Governor Gear max score +1</span><b>ONLY TODAY</b></div>
-            </div>
-            <p class="tl-note">👑 King Skill: Community Healing — schedule for Sat 00:00 UTC. Helps heal before castle battle.</p>
-          </article>
-          <article class="intel-card" id="save">
-            <div class="intel-label">🧳 SAVE FOR 2 WEEKS BEFORE KvK</div>
-            <h3>Hoard list.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">⏱️</span><span>All speedups: construction / research / training</span><b>30 pts / min</b></div>
-              <div class="tl-row"><span class="tl-day">🪙</span><span>Truegold + Tempered Truegold</span><b>Day 1</b></div>
-              <div class="tl-row"><span class="tl-day">🧩</span><span>Hero shards: Rare / Epic / Mythic</span><b>Day 2</b></div>
-              <div class="tl-row"><span class="tl-day">🐾</span><span>Taming Marks, Nutrient Potions, Growth Manuals</span><b>Day 3</b></div>
-              <div class="tl-row"><span class="tl-day">⚒️</span><span>Forge hammers, Mithril, Widgets</span><b>Day 4-5</b></div>
-              <div class="tl-row"><span class="tl-day">✨</span><span>Governor gear: Vision, Satin, Threads, Charm Designs / Guides</span><b>Day 1 / 5</b></div>
-            </div>
-            <p class="tl-note">Gathering = 2 pts per bundle. Beast hunting = 0. Don't count on either. Keep healing speedups for battle itself.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ BATTLE DAY ============ -->
-    <section class="gates" id="battle">
-      <div class="wrap">
-        <div class="section-heading wide">
-          <div><span class="kicker">BATTLE DAY • SATURDAY</span><h2>Castle battle.<br><span>12:00 - 17:00 UTC.</span></h2></div>
-          <p>Cross-kingdom teleport opens 10:00 UTC. Shield up at end of prep — there's a gap where unshielded towns get hit.</p>
-        </div>
-        <div class="gate-grid">
-          <article class="gate-card">
-            <div class="gate-art sanctuary-art" aria-hidden="true"><span class="gate-hero-icon" style="font-size:62px;">🏰</span></div>
-            <div class="gate-number">BATTLE • 01</div>
-            <h3>Hold the Castle</h3>
-            <p>First side to hold 2.5 continuous hours wins outright. Otherwise longest total hold wins. Hold time counts per alliance, not per kingdom.</p>
-            <div class="gate-tags"><span>5 HOURS</span><span>2.5H = INSTANT WIN</span><span>KEEP CYCLING TROOPS</span></div>
-            <a class="gate-button" href="#checklist">K167 Checklist →</a>
-            <span class="card-path">/Castle</span>
-          </article>
-          <article class="gate-card dragon-card">
-            <div class="gate-art dragon-art" aria-hidden="true"><span class="gate-hero-icon" style="font-size:62px;">🗼</span></div>
-            <div class="gate-number">BATTLE • 02</div>
-            <h3>4 Turrets</h3>
-            <p>Holding turrets gives your kingdom's squads inside the castle Lethality: +8% / +12% / +15% / +20% for 1 / 2 / 3 / 4 turrets. Clear enemy turrets — they wear down your garrison.</p>
-            <div class="gate-tags"><span>+8% → +20%</span><span>LETHALITY</span><span>CLEAR ENEMY TURRETS</span></div>
-            <a class="gate-button dragon-button" href="#checklist">K167 Checklist →</a>
-            <span class="card-path">/Turrets</span>
-          </article>
-          <article class="gate-card swordland-card">
-            <div class="gate-art swordland-art" aria-hidden="true"><span class="gate-hero-icon" style="font-size:62px;">🩹</span></div>
-            <div class="gate-number">BATTLE • 03</div>
-            <h3>Heal Smart</h3>
-            <p>If infirmary is full, new casualties die permanently. Set heal slider ~30 min, tap heal repeatedly, send alliance help. Save speedups for overflow emergencies.</p>
-            <div class="gate-tags"><span>30-MIN HEAL</span><span>ALLIANCE HELP</span><span>FIELD TRIAGE 30% BASE</span></div>
-            <a class="gate-button" href="#checklist">K167 Checklist →</a>
-            <span class="card-path">/Heal</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ K167 CHECKLIST ============ -->
-    <section class="section" id="checklist">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">K167 RULES</p>
-          <h2>Before you spend.<br><span>Before you fight.</span></h2>
-        </div>
-        <div class="intel-grid">
-          <article class="intel-card battle">
-            <div class="intel-label">✅ BEFORE YOU SPEND ANYTHING</div>
-            <h3>Buffs first.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">1</span><span>Activate Wolf pet</span><b>Buff</b></div>
-              <div class="tl-row"><span class="tl-day">2</span><span>Double Time Decree</span><b>Buff</b></div>
-              <div class="tl-row"><span class="tl-day">3</span><span>Apply for castle role (Chief Minister / Noble Advisor)</span><b>23:50 day before</b></div>
-              <div class="tl-row"><span class="tl-day">4</span><span>Check in-game Point Sources for TODAY</span><b>Don't guess</b></div>
-              <div class="tl-row"><span class="tl-day">5</span><span>Pace to 200k — don't burn all Day 1</span><b>200k / day</b></div>
-            </div>
-          </article>
-          <article class="intel-card">
-            <div class="intel-label">⚔️ BATTLE DAY RULES</div>
-            <h3>Rally, don't solo.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">✓</span><span>Activate 12h battle bonuses + Counter-Recon at 10:00 UTC</span><b>10:00 UTC</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Only hit TC within 3 levels of yours (rally leader's TC counts)</span><b>TC ±3</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Join a rally / garrison — earns 6th medal</span><b>Medal</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Shield up at end of prep</span><b>Gap hits are real</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Stock food / wood / stone / iron — healing burns reserves</span><b>Stockpile</b></div>
-            </div>
-            <p class="tl-note">After battle: Field Triage = 30% base + Rescue Orders (20 to give, up to 50 to receive, +1% each) + Medical Satchels (+10%) = up to 90%. Castle losses go to Enlistment Office, 70% back via Loyalty Points.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CLOSING ============ -->
-    <section class="closing">
-      <div class="wrap">
-        <p class="kicker">ONE KINGDOM • ONE FIGHT</p>
-        <h2>WIN PREP. <span>TAKE THE CASTLE.</span></h2>
-        <p>Five banners. One crown. No retreat.</p>
-        <div class="hero-actions">
-          <a class="btn gold" href="/Kingdom167/">← Back to Kingdom 167</a>
-          <a class="btn ghost" href="/Kingdom167/FlameDragonTyrant/">🔥 Flame Dragon Tyrant</a>
-          <a class="btn outline" href="/Kingdom167/Sanctuaries/">Enter Sanctuaries →</a>
-        </div>
-      </div>
-    </section>
+    </div></section>
+    <section class="closing"><div class="wrap"><p class="kicker">ONE KINGDOM • ONE CASTLE</p><h2>TAKE THE <span>CASTLE</span></h2><p>Five banners. One crown. No retreat.</p><div class="hero-actions"><a class="btn gold" href="/Kingdom167/">← Back to Kingdom 167</a><a class="btn ghost" href="/Kingdom167/Sanctuaries/">🏰 Sanctuaries</a><a class="btn outline" href="/Kingdom167/AllianceBrawl/">⚔️ Alliance Brawl</a></div></div></section>
   </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="footer-inner">
-      <a class="brand" href="#top"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span>Kingdom 167</span></a>
-      <p>Kingdom 167 • K167 • KvK Prep Week</p>
-      <a class="return-top" href="#top">Return to throne ↑</a>
-    </div>
-    <div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>FORGED IN SHADOW, FIRE &amp; GOLD</span></div>
-  </footer>
+  <footer><div class="footer-inner"><a class="brand" href="#top"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span>Kingdom 167</span></a><p>Kingdom 167 • K167 • KvK Prep Week</p><a class="return-top" href="#top">Return to throne ↑</a></div><div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>FORGED IN SHADOW, FIRE &amp; GOLD</span></div></footer>
 </div>
-</body>
-</html>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <a href="/Kingdom167/"><i>🏠</i>Home</a>
+  <a href="/Kingdom167/Sanctuaries/"><i>🏰</i>Sanctuaries</a>
+  <a href="/Kingdom167/FlameDragonTyrant/"><i>🔥</i>Dragon</a>
+  <a href="/Kingdom167/AllianceBrawl/"><i>⚔️</i>Brawl</a>
+  <a href="/Kingdom167/SwordlandSummit/"><i>🛡️</i>Swordland</a>
+  <a class="active" href="/Kingdom167/PrepWeek/"><i>📋</i>Prep</a>
+</nav>
+<script src="/Kingdom167/assets/js/main.js" defer=""></script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
+
+</body></html>
