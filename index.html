@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kingdom 167 — Home of the Five Alliances</title>
-  <meta name="description" content="Kingdom 167 — One kingdom. Five banners. Sanctuaries, Flame Dragon Tyrant, and Swordland Summit.">
+  <meta name="description" content="Kingdom 167 — One kingdom. Five banners. Sanctuaries, Flame Dragon Tyrant, Swordland Summit, Alliance Brawl, and KvK Prep Week.">
   <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
 </head>
 <body class="page-home">
 <div class="shell" id="top">
 
-  <!-- ============ HEADER ============ -->
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="/Kingdom167/" aria-label="K167 Kingdom 167 home">
@@ -23,6 +22,7 @@
         <a class="nav-link active" href="/Kingdom167/">Home</a>
         <a class="nav-link" href="/Kingdom167/Sanctuaries/">Sanctuaries</a>
         <a class="nav-link" href="/Kingdom167/FlameDragonTyrant/">Flame Dragon Tyrant</a>
+        <a class="nav-link" href="/Kingdom167/AllianceBrawl/">Alliance Brawl</a>
         <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland Summit</a>
         <a class="nav-link" href="/Kingdom167/PrepWeek/">KvK Prep Week</a>
       </nav>
@@ -30,7 +30,6 @@
     </div>
   </header>
 
-  <!-- ============ 1. LIVE STATUS BAR ============ -->
   <div class="live-bar" id="live-bar">
     <span class="live-dot"></span><b id="live-phase">PHASE —</b>
     <span class="sep">•</span><span id="live-reg">Registration —</span>
@@ -38,7 +37,6 @@
   </div>
 
   <main>
-    <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="rune rune-left" aria-hidden="true">ᚠ<br>ᚢ<br>ᚦ<br>ᚨ</div>
       <div class="rune rune-right" aria-hidden="true">ᚱ<br>ᚲ<br>ᚷ<br>ᚹ</div>
@@ -59,7 +57,6 @@
       <a class="scroll-hint" href="#alliances">SCROLL ↓</a>
     </section>
 
-    <!-- ============ ALLIANCES ============ -->
     <section class="section alliances" id="alliances">
       <div class="wrap">
         <div class="section-head">
@@ -67,7 +64,6 @@
           <h2>Choose your banner.<br><span>Carry its beast.</span></h2>
           <p class="section-copy">Tap an alliance to feel its colors take the hall. Every banner belongs to the same kingdom.</p>
         </div>
-
         <div class="chips" role="tablist" aria-label="Choose an alliance" id="alliance-chips">
           <button role="tab" aria-selected="true" class="chip active" style="--ac:#55a7ff;" data-index="0"><span class="chip-beast">🐺</span><span class="chip-code">TNW</span><span class="chip-name">The Night's Watch</span><span class="chip-num">01</span></button>
           <button role="tab" aria-selected="false" class="chip" style="--ac:#ff4d5d;" data-index="1"><span class="chip-beast">🦁</span><span class="chip-code">RYL</span><span class="chip-name">Royal Legionnairs</span><span class="chip-num">02</span></button>
@@ -75,7 +71,6 @@
           <button role="tab" aria-selected="false" class="chip" style="--ac:#d7dce6;" data-index="3"><span class="chip-beast">🦅</span><span class="chip-code">ITA</span><span class="chip-name">Imperium Æternum</span><span class="chip-num">04</span></button>
           <button role="tab" aria-selected="false" class="chip" style="--ac:#b47bff;" data-index="4"><span class="chip-beast">🔥</span><span class="chip-code">JUS</span><span class="chip-name">Justice</span><span class="chip-num">05</span></button>
         </div>
-
         <div class="feature" id="alliance-feature" style="--ac:#55a7ff;">
           <div class="feature-left">
             <div class="feature-top"><span class="feature-tag" id="f-tag">THE WATCHERS</span><span class="feature-count" id="f-count">01 / 05</span></div>
@@ -100,15 +95,16 @@
       </div>
     </section>
 
-    <!-- ============ GATES ============ -->
+    <!-- ============ GATES — NOW 5 GATES ============ -->
     <section class="gates" id="gates" aria-labelledby="gates-title">
       <div class="wrap">
         <div class="section-heading wide">
           <div><span class="kicker">THE KINGDOM GATES</span><h2 id="gates-title">Where does the war<br><span>call you next?</span></h2></div>
-          <p>Three realms. Three kinds of fire. Step through the gate your legion needs.</p>
+          <p>Five realms. Five kinds of fire. Step through the gate your legion needs.</p>
         </div>
 
         <div class="gate-grid">
+          <!-- GATE 01 — SANCTUARIES -->
           <article class="gate-card sanctuary-card">
             <div class="gate-art sanctuary-art" aria-hidden="true">
               <svg class="gate-rune" viewBox="0 0 100 100" width="170" height="170" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="44" stroke="currentColor" stroke-opacity=".35" stroke-width="1"></circle><circle cx="50" cy="50" r="31" stroke="currentColor" stroke-opacity=".22" stroke-width="1"></circle><path d="M50 12 61 39 88 50 61 61 50 88 39 61 12 50 39 39Z" stroke="currentColor" stroke-width="1.2"></path><circle cx="50" cy="6" r="1.8" fill="currentColor"></circle><circle cx="50" cy="94" r="1.8" fill="currentColor"></circle><circle cx="6" cy="50" r="1.8" fill="currentColor"></circle><circle cx="94" cy="50" r="1.8" fill="currentColor"></circle></svg>
@@ -122,6 +118,7 @@
             <span class="card-path">/Sanctuaries</span>
           </article>
 
+          <!-- GATE 02 — FLAME DRAGON -->
           <article class="gate-card dragon-card">
             <div class="gate-art dragon-art" aria-hidden="true">
               <svg class="gate-hero-icon flame-icon" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><path fill="#ff7040" d="M32 5c2.4 7.2 9.2 11.4 12.2 18.2 2 4.8 3 8.4 3 12.3a15.2 15.2 0 1 1-30.4 0c0-6 3-10.2 6.2-14.2 1 4.2 3 6.4 6 7.2-1-8.2 1-16.2 3-23.5Z"></path><path fill="#ffd166" d="M32 29c2.2 4.2 5.2 7.2 5.2 11.4a5.2 5.2 0 1 1-10.4 0c0-3.2 1.2-5.4 3.2-7.4 0 2.2 1 3.4 2 3.4 0-2.2 0-5 0-7.4Z"></path><path fill="#fff3d6" d="M32 43a2.2 2.2 0 1 1-2.2-2.2A2.2 2.2 0 0 1 32 43Z"></path></svg>
@@ -135,6 +132,7 @@
             <span class="card-path">/FlameDragonTyrant</span>
           </article>
 
+          <!-- GATE 03 — SWORDLAND -->
           <article class="gate-card swordland-card">
             <div class="gate-art swordland-art" aria-hidden="true">
               <svg class="sword-ring" viewBox="0 0 100 100" width="170" height="170" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="44" stroke="currentColor" stroke-opacity=".45" stroke-width="1"></circle><path d="M50 1.5 54 6 50 10.5 46 6Z" fill="currentColor"></path><path d="M50 89.5 54 94 50 98.5 46 94Z" fill="currentColor"></path></svg>
@@ -147,11 +145,38 @@
             <a class="gate-button" href="/Kingdom167/SwordlandSummit/">Enter Swordland Summit →</a>
             <span class="card-path">/SwordlandSummit</span>
           </article>
+
+          <!-- GATE 04 — ALLIANCE BRAWL (NEW) -->
+          <article class="gate-card brawl-card">
+            <div class="gate-art brawl-art" aria-hidden="true">
+              <svg class="gate-rune" viewBox="0 0 100 100" width="170" height="170" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="44" stroke="currentColor" stroke-opacity=".35" stroke-width="1"></circle><circle cx="50" cy="50" r="31" stroke="currentColor" stroke-opacity=".22" stroke-width="1"></circle><path d="M50 12 61 39 88 50 61 61 50 88 39 61 12 50 39 39Z" stroke="currentColor" stroke-width="1.2"></path></svg>
+              <svg class="gate-hero-icon" viewBox="0 0 64 64" width="62" height="62" fill="none" stroke="#f2d58c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 48L32 14l20 34"></path><path d="M20 40h24"></path><path d="M24 40l8-14 8 14"></path><path d="M32 14v-6"></path><circle cx="32" cy="52" r="3"></circle></svg>
+            </div>
+            <div class="gate-number">GATE · 04</div>
+            <h3>Alliance Brawl</h3>
+            <p>10 squads × 5 mains. Win = Top 10. Lose = Top 5. Guaranteed rewards.</p>
+            <div class="gate-tags"><span>10 SQUADS</span><span>5 MAINS</span><span>GUARANTEED</span></div>
+            <a class="gate-button" href="/Kingdom167/AllianceBrawl/">Enter Alliance Brawl →</a>
+            <span class="card-path">/AllianceBrawl</span>
+          </article>
+
+          <!-- GATE 05 — KVK PREP WEEK (NEW) -->
+          <article class="gate-card prep-card">
+            <div class="gate-art prep-art" aria-hidden="true">
+              <svg class="gate-rune" viewBox="0 0 100 100" width="170" height="170" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="44" stroke="currentColor" stroke-opacity=".35" stroke-width="1"></circle><circle cx="50" cy="50" r="31" stroke="currentColor" stroke-opacity=".22" stroke-width="1"></circle></svg>
+              <svg class="gate-hero-icon" viewBox="0 0 64 64" width="62" height="62" fill="none" stroke="#f2d58c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 12h36v44H14z"></path><path d="M20 22h24"></path><path d="M20 30h24"></path><path d="M20 38h16"></path><path d="M14 12l6-6 6 6"></path><path d="M44 12l6-6"></path></svg>
+            </div>
+            <div class="gate-number">GATE · 05</div>
+            <h3>KvK Prep Week</h3>
+            <p>5 prep days. Save, don't spend. 200k/day = State Medal. Win the castle.</p>
+            <div class="gate-tags"><span>5 DAYS</span><span>28-DAY CYCLE</span><span>SAVE</span></div>
+            <a class="gate-button" href="/Kingdom167/PrepWeek/">Enter KvK Prep Week →</a>
+            <span class="card-path">/PrepWeek</span>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ INTEL + 2. COUNTDOWNS ============ -->
     <section class="section intel" id="intel">
       <div class="wrap">
         <div class="section-head">
@@ -169,7 +194,6 @@
               <div><span>LEGION III</span><b>UTC 19</b></div>
             </div>
             <div class="roster"><span>👥</span><span><b>30 combatants + 20 substitutes</b><br>per legion</span></div>
-            <!-- COUNTDOWNS -->
             <div class="countdown-grid">
               <div class="countdown-box"><span>REGISTRATION OPENS IN</span><b id="cd-reg">—</b><small id="cd-reg-sub">Wed 00:00 UTC</small></div>
               <div class="countdown-box"><span>SANCTUARY BATTLE IN</span><b id="cd-battle">—</b><small id="cd-battle-sub">Fri 00:00 UTC</small></div>
@@ -191,7 +215,6 @@
       </div>
     </section>
 
-    <!-- ============ CLOSING ============ -->
     <section class="closing">
       <div class="wrap">
         <p class="kicker">ONE KINGDOM</p>
@@ -200,13 +223,13 @@
         <div class="hero-actions">
           <a class="btn gold" href="/Kingdom167/Sanctuaries/">Enter Sanctuaries →</a>
           <a class="btn ghost" href="/Kingdom167/FlameDragonTyrant/">🔥 Face the Dragon</a>
-          <a class="btn outline" href="/Kingdom167/SwordlandSummit/">⚔️ Join Swordland Summit</a>
+          <a class="btn outline" href="/Kingdom167/AllianceBrawl/">⚔️ Join Alliance Brawl</a>
+          <a class="btn outline" href="/Kingdom167/PrepWeek/">📋 KvK Prep Week</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
   <footer>
     <div class="footer-inner">
       <a class="brand" href="#top"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span>Kingdom 167</span></a>
@@ -217,17 +240,16 @@
   </footer>
 </div>
 
-<!-- ============ 6. MOBILE NAV — ONLY ON PHONE ============ -->
 <nav class="mobile-nav" aria-label="Mobile navigation">
   <a class="active" href="/Kingdom167/"><i>🏠</i>Home</a>
   <a href="/Kingdom167/Sanctuaries/"><i>🏰</i>Sanctuaries</a>
   <a href="/Kingdom167/FlameDragonTyrant/"><i>🔥</i>Dragon</a>
-  <a href="/Kingdom167/SwordlandSummit/"><i>⚔️</i>Swordland</a>
+  <a href="/Kingdom167/AllianceBrawl/"><i>⚔️</i>Brawl</a>
+  <a href="/Kingdom167/SwordlandSummit/"><i>🛡️</i>Swordland</a>
   <a href="/Kingdom167/PrepWeek/"><i>📋</i>Prep</a>
 </nav>
 
 <script>
-// Alliance switcher
 const ALLIANCES = [
   {code:"TNW", name:"The Night's Watch", color:"#55a7ff", beast:"🐺", beastName:"WOLF", lore:"The howl before the hunt", tag:"THE WATCHERS"},
   {code:"RYL", name:"Royal Legionnairs", color:"#ff4d5d", beast:"🦁", beastName:"LION", lore:"The crown never kneels", tag:"THE ROYAL LINE"},
@@ -255,17 +277,12 @@ function setAlliance(i){
   dots.forEach((d,di)=> d.classList.toggle('on', di===i));
 }
 chips.forEach(c => c.addEventListener('click', ()=> setAlliance(Number(c.dataset.index))));
-
-// 1 + 2. Live Phase + Countdowns — same anchor as Sanctuaries page
-// Anchor: Mon 02 Nov 2026 00:00 UTC = Phase 1
-// Cycle: Mon 00:00 phase starts, Wed 00:00 reg opens, Fri 00:00 reg closes / battle, Sun 00:00 phase ends
 const ANCHOR = Date.UTC(2026, 10, 2);
 function getPhase(nowMs){
   const diffDays = Math.floor((nowMs - ANCHOR) / 86400000);
   return Math.floor(diffDays / 7) + 1;
 }
 function nextWeekdayUTC(fromMs, weekday, hour){
-  // weekday: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
   const d = new Date(fromMs);
   const cur = d.getUTCDay();
   let add = (weekday - cur + 7) % 7;
@@ -287,8 +304,7 @@ function tick(){
   const now = Date.now();
   const phase = getPhase(now);
   const nowDate = new Date(now);
-  const day = nowDate.getUTCDay(); // 0 Sun, 1 Mon, 2 Tue, 3 Wed, 4 Thu, 5 Fri, 6 Sat
-  // Registration status: Mon-Tue = opens Wed, Wed-Thu = OPEN, Fri-Sun = closed
+  const day = nowDate.getUTCDay();
   let regText = "";
   if(day === 1 || day === 2) regText = "Registration opens Wed 00:00 UTC";
   else if(day === 3 || day === 4) regText = "Registration OPEN — closes Fri 00:00 UTC";
@@ -299,10 +315,8 @@ function tick(){
   if(lr) lr.textContent = regText;
   const pn = document.getElementById('phase-note');
   if(pn) pn.textContent = "📍 Today is " + nowDate.toUTCString().slice(0,16) + " UTC — Phase " + phase + ". Next phase starts Mon 00:00 UTC.";
-  // Countdowns
   const nextWed = nextWeekdayUTC(now, 3, 0);
   const nextFri = nextWeekdayUTC(now, 5, 0);
-  // If we're Wed-Thu, reg is already open — show time until it closes (Fri)
   let regMs, regLabel;
   if(day === 3 || day === 4){ regMs = nextFri - now; regLabel = "Fri 00:00 UTC • Closes"; }
   else { regMs = nextWed - now; regLabel = "Wed 00:00 UTC • Opens"; }
