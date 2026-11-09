@@ -498,8 +498,9 @@ body.page-home {
   .page-home .hero-copy { font-size: .96rem; padding-inline: 8px; }
   .page-home .hero-actions { flex-direction: column; align-items: stretch; width: min(100%, 340px); margin-inline: auto; }
   .page-home .hero-actions .btn { justify-content: center; }
-  .page-home .chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .page-home .chip:last-child { grid-column: 1 / -1; }
+  .page-home .chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .page-home .chip { min-width: 0; min-height: 82px; padding: 12px; grid-template-columns: 30px minmax(0, 1fr) 20px; gap: 4px 8px; }
+  .page-home .chip:last-child { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
   .page-home .feature { gap: 20px; }
   .page-home .gate-grid { grid-template-columns: 1fr; }
 }

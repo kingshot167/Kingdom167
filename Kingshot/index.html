@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <title>Kingshot — Kingdom 167</title>
+  <link rel="stylesheet" href="game.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar"><a class="brand" href="../">♛ <span>KINGDOM 167</span></a><a class="back-link" href="../">← Kingdom home</a></header>
+    <section class="intro"><div><p class="eyebrow">A KINGDOM 167 MINI GAME</p><h1>KING<span>SHOT</span></h1><p class="subtitle">Hold the line. Protect your kingdom.</p></div><div class="howto"><b>HOW TO PLAY</b><span>Click or tap the battlefield to loose an arrow.</span><span>Stop the raiders before they reach your keep.</span></div></section>
+    <section class="game-card" aria-label="Kingshot castle defense game">
+      <div class="hud"><div><small>WAVE</small><b id="wave">1</b></div><div><small>KEEP</small><b id="health">♥ ♥ ♥</b></div><div><small>GOLD</small><b id="gold">0</b></div><div><small>SCORE</small><b id="score">0</b></div><button id="upgrade" class="upgrade" type="button">⬆ Upgrade <span id="upgrade-cost">30g</span></button></div>
+      <div class="arena-wrap"><canvas id="arena" aria-label="Battlefield. Click to shoot arrows at incoming raiders."></canvas>
+        <div id="overlay" class="overlay"><div class="overlay-panel"><span class="crest">♛</span><p class="eyebrow">KINGDOM 167 DEFENSE</p><h2 id="overlay-title">The raiders approach</h2><p id="overlay-copy">Your keep is the last line. Aim true, commander.</p><button id="start" class="start-button">DEFEND THE KEEP <span>→</span></button></div></div>
+      </div>
+      <div class="controls"><span><i class="dot gold-dot"></i> Tap or click to fire</span><span><i class="dot red-dot"></i> Raiders breach the wall = lose a heart</span><span class="status" id="status">READY FOR BATTLE</span></div>
+    </section>
+    <footer>ONE KINGDOM · FIVE BANNERS <span>✦</span> FORGED IN FIRE &amp; GOLD</footer>
+  </main>
+</body>
+</html>
