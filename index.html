@@ -1,30 +1,12 @@
-<html lang="en"><style>* { -webkit-text-size-adjust: 95.33333333333333% !important; }</style><head><style>
-@font-face {
-  font-family: "Optimistic";
-  font-style: normal;
-  font-weight: 400 600;
-  font-display: swap;
-  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Optimistic Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
-}
-:where(html) {
-  font-family: "Optimistic", system-ui, sans-serif;
-}
-:where(code, pre, kbd, samp) {
-  font-family: "Optimistic Mono", ui-monospace, monospace;
-}
-</style>
+<!doctype html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kingdom 167 — Home of the Five Alliances</title>
   <meta name="description" content="Kingdom 167 — One kingdom. Five banners. Sanctuaries, Flame Dragon Tyrant, Swordland Summit, Alliance Brawl, KvK Prep Week, KvK Themes.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body class="page-home">
 <div class="shell" id="top">
@@ -120,24 +102,6 @@
   <a href="./PrepWeek/"><i>📋</i>Prep</a>
   <a href="./KvKThemes/"><i>🗳️</i>Themes</a>
 </nav>
-<script>
-const ALLIANCES=[
-{code:"TNW",name:"The Night’s Watch",color:"#55a7ff",beast:"🐺",beastName:"WOLF",lore:"The howl before the hunt",tag:"THE WATCHERS"},
-{code:"RYL",name:"Royal Legionnairs",color:"#ff4d5d",beast:"🦁",beastName:"LION",lore:"The crown never kneels",tag:"THE ROYAL LINE"},
-{code:"JUS",name:"Justice",color:"#b47bff",beast:"🔥",beastName:"FLAME",lore:"Reborn in every war",tag:"THE REBORN"},
-{code:"ONE",name:"One Nation Empire",color:"#3ddc84",beast:"🐉",beastName:"DRAGON",lore:"One banner, one breath",tag:"ONE NATION"},
-{code:"ITA",name:"Imperium Æternum",color:"#d7dce6",beast:"🦅",beastName:"EAGLE",lore:"Empire above the storm",tag:"ETERNAL EMPIRE"}
-];
-const chips=document.querySelectorAll('#alliance-chips .chip');const dots=document.querySelectorAll('#f-dots .dot');
-function setAlliance(i){const a=ALLIANCES[i];const pad=String(i+1).padStart(2,"0");document.getElementById('alliance-feature').style.setProperty('--ac',a.color);document.getElementById('f-tag').textContent=a.tag;document.getElementById('f-count').textContent=pad+" / 05";document.getElementById('f-beast').textContent=a.beast;document.getElementById('f-code').textContent=a.code+" — "+a.beastName;document.getElementById('f-name').textContent=a.name;document.getElementById('f-lore').textContent="“"+a.lore+"”";document.getElementById('c-beast').textContent=a.beast;document.getElementById('c-code').textContent=a.code;document.getElementById('c-name').textContent=a.name;document.getElementById('c-meta').textContent="ALLIANCE "+pad+" OF 05";chips.forEach((c,ci)=>{c.classList.toggle('active',ci===i);c.setAttribute('aria-selected',ci===i?"true":"false");});dots.forEach((d,di)=>d.classList.toggle('on',di===i));}
-chips.forEach(c=>c.addEventListener('click',()=>setAlliance(Number(c.dataset.index))));
-const ANCHOR=Date.UTC(2026,10,2);
-function getPhase(nowMs){return Math.floor(Math.floor((nowMs-ANCHOR)/86400000)/7)+1;}
-function nextWeekdayUTC(fromMs,weekday,hour){const d=new Date(fromMs);const cur=d.getUTCDay();let add=(weekday-cur+7)%7;const target=Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()+add,hour,0,0);if(target<=fromMs)return target+7*86400000;return target;}
-function fmtCountdown(ms){if(ms<0)ms=0;const s=Math.floor(ms/1000);const d=Math.floor(s/86400);const h=Math.floor((s%86400)/3600);const m=Math.floor((s%3600)/60);const sec=s%60;if(d>0)return d+"d "+String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m";return String(h).padStart(2,"0")+"h "+String(m).padStart(2,"0")+"m "+String(sec).padStart(2,"0")+"s";}
-function tick(){const now=Date.now();const phase=getPhase(now);const nowDate=new Date(now);const day=nowDate.getUTCDay();let regText="";if(day===1||day===2)regText="Registration opens Wed 00:00 UTC";else if(day===3||day===4)regText="Registration OPEN — closes Fri 00:00 UTC";else regText="Registration CLOSED — opens next Wed 00:00 UTC";const lp=document.getElementById('live-phase');if(lp)lp.textContent="PHASE "+phase;const lr=document.getElementById('live-reg');if(lr)lr.textContent=regText;const pn=document.getElementById('phase-note');if(pn)pn.textContent="📍 Today is "+nowDate.toUTCString().slice(0,16)+" UTC — Phase "+phase+". Next phase starts Mon 00:00 UTC.";const nextWed=nextWeekdayUTC(now,3,0);const nextFri=nextWeekdayUTC(now,5,0);let regMs,regLabel;if(day===3||day===4){regMs=nextFri-now;regLabel="Fri 00:00 UTC • Closes";}else{regMs=nextWed-now;regLabel="Wed 00:00 UTC • Opens";}const cr=document.getElementById('cd-reg');if(cr)cr.textContent=fmtCountdown(regMs);const crs=document.getElementById('cd-reg-sub');if(crs)crs.textContent=regLabel;const cb=document.getElementById('cd-battle');if(cb)cb.textContent=fmtCountdown(nextFri-now);const cbs=document.getElementById('cd-battle-sub');if(cbs)cbs.textContent="Fri 00:00 UTC • Sanctuary Battle";}
-tick();setInterval(tick,1000);
-</script>
 <script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
 
 </body></html>

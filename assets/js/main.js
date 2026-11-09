@@ -10,9 +10,9 @@
 const K167_ALLIANCES = [
   {code:"TNW", name:"The Night's Watch", color:"#55a7ff", beast:"🐺", beastName:"WOLF", lore:"The howl before the hunt", tag:"THE WATCHERS"},
   {code:"RYL", name:"Royal Legionnairs", color:"#ff4d5d", beast:"🦁", beastName:"LION", lore:"The crown never kneels", tag:"THE ROYAL LINE"},
+  {code:"JUS", name:"Justice", color:"#b47bff", beast:"🔥", beastName:"FLAME", lore:"Reborn in every war", tag:"THE REBORN"},
   {code:"ONE", name:"One Nation Empire", color:"#3ddc84", beast:"🐉", beastName:"DRAGON", lore:"One banner, one breath", tag:"ONE NATION"},
   {code:"ITA", name:"Imperium Æternum", color:"#d7dce6", beast:"🦅", beastName:"EAGLE", lore:"Empire above the storm", tag:"ETERNAL EMPIRE"},
-  {code:"JUS", name:"Justice", color:"#b47bff", beast:"🔥", beastName:"FLAME", lore:"Reborn in every war", tag:"THE REBORN"},
 ];
 
 // ---------- SANCTUARY PHASE ----------
