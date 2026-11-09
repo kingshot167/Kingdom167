@@ -1,241 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><style>* { -webkit-text-size-adjust: 95.33333333333333% !important; }</style><head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flame Dragon Tyrant — Kingdom 167</title>
-  <meta name="description" content="Flame Dragon Tyrant — K167 guide: 5 phases, Palace battle Sun 12:00-18:00 UTC, 4 Aeries, Crystal Skills, Tyrant titles and Dragon Banquet.">
+  <meta name="description" content="K167 Flame Dragon Tyrant — Palace battle Sun 12:00-18:00 UTC, 4 Aeries, 60 combatants, Tyrant title +30 days.">
   <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
 </head>
-<body class="page-flamedragon">
+<body class="page-dragon">
 <div class="shell" id="top">
-
-  <!-- ============ HEADER — SAME ON EVERY PAGE ============ -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/Kingdom167/" aria-label="K167 Kingdom 167 home">
-        <span class="diamond">♛</span>
-        <span class="brand-k">K167</span>
-        <span class="brand-divider"></span>
-        <span class="brand-full">KINGDOM 167</span>
-      </a>
-      <nav class="nav" aria-label="Kingdom navigation">
-        <a class="nav-link" href="/Kingdom167/">Home</a>
-        <a class="nav-link" href="/Kingdom167/Sanctuaries/">Sanctuaries</a>
-        <a class="nav-link active" href="/Kingdom167/FlameDragonTyrant/">Flame Dragon Tyrant</a>
-        <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland Summit</a>
-        <a class="nav-link" href="/Kingdom167/PrepWeek/">KvK Prep Week</a>
-      </nav>
-      <a class="header-cta" href="#phases">See the Phases →</a>
-    </div>
-  </header>
-
+  <header class="topbar"><div class="topbar-inner">
+    <a class="brand" href="/Kingdom167/"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span class="brand-full">KINGDOM 167</span></a>
+    <nav class="nav" aria-label="Kingdom navigation">
+      <a class="nav-link" href="/Kingdom167/">Home</a>
+      <a class="nav-link" href="/Kingdom167/Sanctuaries/">Sanctuaries</a>
+      <a class="nav-link active" href="/Kingdom167/FlameDragonTyrant/">Flame Dragon Tyrant</a>
+      <a class="nav-link" href="/Kingdom167/AllianceBrawl/">Alliance Brawl</a>
+      <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland Summit</a>
+      <a class="nav-link" href="/Kingdom167/PrepWeek/">KvK Prep Week</a>
+    </nav>
+    <a class="header-cta" href="#phases">See Phases →</a>
+  </div></header>
+  <div class="live-bar" id="live-bar"><span class="live-dot"></span><b id="live-phase">PHASE —</b><span class="sep">•</span><span id="live-reg">Registration —</span><span class="sep">•</span><span>Flame Dragon: Battlefield Sun 11:00 UTC</span></div>
   <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow"><span class="eyebrow-line"></span> ALLIANCE BATTLEFIELD • SUNDAY <span class="eyebrow-line"></span></p>
-        <div class="k167-outline" aria-hidden="true">🐉</div>
-        <h1>FLAME DRAGON <span class="gold">TYRANT</span></h1>
-        <p class="tagline">Hold the Palace longest. Wear the crown for 30 days.</p>
-        <p class="hero-copy">One Palace. Four Aeries. 60 combatants per alliance. Only the Rally Captain's occupation time counts — so every rally, every hold, every retake matters.</p>
-        <div class="hero-actions">
-          <a class="btn gold" href="#phases">Battle Phases →</a>
-          <a class="btn ghost" href="#palace">🔥 Palace &amp; Aeries</a>
-        </div>
-        <p class="hero-meta">PALACE BATTLE <i>•</i> SUN 12:00-18:00 UTC <i>•</i> BATTLEFIELD OPENS 11:00 UTC</p>
+    <section class="hero"><div class="hero-inner">
+      <p class="eyebrow"><span class="eyebrow-line"></span> FLAME DRAGON TYRANT • PALACE BATTLE <span class="eyebrow-line"></span></p>
+      <div class="k167-outline" aria-hidden="true">🔥</div>
+      <h1>FLAME DRAGON <span class="gold">TYRANT</span></h1>
+      <p class="tagline">Take the Palace. Hold it. Become Tyrant.</p>
+      <p class="hero-copy">Palace battle Sun 12:00-18:00 UTC. 4 Aeries. Only the Rally Captain's occupation time counts. 60 combatants max. Tyrant title lasts 30 days.</p>
+      <div class="hero-actions"><a class="btn gold" href="#phases">Battle Phases →</a><a class="btn ghost" href="#palace">🏰 Palace &amp; Aeries</a></div>
+      <p class="hero-meta">PALACE <i>•</i> SUN 12:00-18:00 UTC <i>•</i> 60 COMBATANTS <i>•</i> TYRANT +30 DAYS</p>
+    </div><a class="scroll-hint" href="#phases">SCROLL ↓</a></section>
+    <section class="section" id="phases"><div class="wrap">
+      <div class="section-head"><p class="kicker">HOW IT RUNS • ALL TIMES UTC</p><h2>4 phases.<br><span>One Tyrant.</span></h2></div>
+      <div class="intel-grid">
+        <article class="intel-card"><div class="intel-label">📅 MON-TUE • SIGN-UP</div><h3>Sign up.</h3><p class="section-copy">Register your alliance for Flame Dragon. Check your roster — only 60 combatants can fight. Captains confirm who is in.</p><div class="legions"><div><span>WHEN</span><b>Mon-Tue</b></div><div><span>COMBATANTS</span><b>60 max</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">📅 WED-THU • DISPATCH</div><h3>Dispatch.</h3><p class="section-copy">Send troops, set rallies, prep marches. Rally Captains assigned. Everyone knows their Aer y / Palace role before Sunday.</p><div class="legions"><div><span>WHEN</span><b>Wed-Thu</b></div><div><span>ROLE</span><b>Rally Captain</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">📅 FRI-SUN EVE • PREP</div><h3>Final prep.</h3><p class="section-copy">Top up, heal, check gear. No last-minute changes to Rally Captains — occupation time is everything.</p><div class="legions"><div><span>WHEN</span><b>Fri-Sun eve</b></div><div><span>RULE</span><b>No swaps</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">📅 SUN • BATTLE</div><h3>Battle day.</h3><p class="section-copy">Battlefield opens Sun 11:00 UTC. Palace battle Sun 12:00-18:00 UTC. Hold the Palace longest — only the Rally Captain's occupation time counts.</p><div class="legions"><div><span>OPENS</span><b>Sun 11:00 UTC</b></div><div><span>BATTLE</span><b>12:00-18:00 UTC</b></div></div></article>
       </div>
-      <div class="flame-orb" aria-hidden="true"><span>🔥</span></div>
-      <a class="scroll-hint" href="#phases">SCROLL ↓</a>
-    </section>
-
-    <!-- ============ 5 PHASES ============ -->
-    <section class="section" id="phases">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">HOW IT WORKS</p>
-          <h2>The 5 phases.<br><span>Miss one, miss the war.</span></h2>
-          <p class="section-copy">K167 runs this on a fixed weekly rhythm. R4 / R5 handle sign-up and dispatch — everyone else preps, predicts, and shows up ready.</p>
-        </div>
-        <div class="intel-grid">
-          <article class="intel-card battle">
-            <div class="intel-label">📋 PHASE 1 • MON - TUE • 48H</div>
-            <h3>Alliance Sign-Up</h3>
-            <p class="section-copy">Leader or R4 registers the alliance. Only the zone's top-ranked alliances qualify after sign-up.</p>
-            <div class="legions">
-              <div><span>WHO SIGNS UP</span><b>R5 / R4</b></div>
-              <div><span>DURATION</span><b>48 hours</b></div>
-              <div><span>WHO CAN JOIN</span><b>All alliances</b></div>
-            </div>
-            <p class="tl-note">⚠️ Members who join after sign-up are auto-disqualified. Don't swap alliances mid-week.</p>
-          </article>
-          <article class="intel-card">
-            <div class="intel-label">⚔️ PHASE 2 • WED - THU • 48H</div>
-            <h3>Combatant Dispatch</h3>
-            <p class="section-copy">Leader / R4 dispatches up to 60 members to the battlefield. Championship predictions open here too.</p>
-            <div class="legions">
-              <div><span>MAX COMBATANTS</span><b>60</b></div>
-              <div><span>DURATION</span><b>48 hours</b></div>
-              <div><span>PREDICTIONS</span><b>Open</b></div>
-            </div>
-            <p class="tl-note">🎯 Predict the future Tyrant for Dragonclaw rewards. Predictions lock — choose carefully.</p>
-          </article>
-          <article class="intel-card">
-            <div class="intel-label">🌙 PHASE 3 • FRI - SUN • 59H</div>
-            <h3>Eve of Battle</h3>
-            <p class="section-copy">Wait, prep, predict. Finish missions, stock healing, confirm rally ratios with your R4.</p>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">DO</span><span>Finish prep missions + chests</span><b>Before Sun</b></div>
-              <div class="tl-row"><span class="tl-day">DO</span><span>Place predictions + trivia</span><b>Free</b></div>
-              <div class="tl-row"><span class="tl-day">DON'T</span><span>Leave your alliance</span><b>Disqualified</b></div>
-            </div>
-          </article>
-          <article class="intel-card battle">
-            <div class="intel-label">🔥 PHASE 4 • SUN 11:00-19:00 UTC</div>
-            <h3>Battlefield Opens</h3>
-            <p class="section-copy">11:00 UTC enter. 12:00 UTC Palace opens for 5 hours. 18:00 UTC battle ends. 18:00-19:00 UTC no attacks, retreat = can't re-enter.</p>
-            <div class="legions">
-              <div><span>ENTER</span><b>11:00 UTC</b></div>
-              <div><span>PALACE</span><b>12:00-18:00</b></div>
-              <div><span>COOLDOWN</span><b>18:00-19:00</b></div>
-            </div>
-            <p class="tl-note">👑 Longest Palace holder (Rally Captain time only) = Flamedragon Tyrant for 30 days.</p>
-          </article>
-        </div>
+    </div></section>
+    <section class="section" id="palace"><div class="wrap">
+      <div class="section-head"><p class="kicker">PALACE &amp; AERIES</p><h2>Hold the center.<br><span>Take the skies.</span></h2></div>
+      <div class="intel-grid">
+        <article class="intel-card battle"><div class="intel-label">🏰 PALACE • THE THRONE</div><h3>Only occupation time counts.</h3><p class="section-copy">The alliance whose Rally Captain holds the Palace longest wins. Not kills. Not damage. Time. Protect your Rally Captain at all costs.</p><div class="timeline-rows"><div class="tl-row"><span class="tl-day">1</span><span>Rally Captain occupies Palace</span><b>Time counts</b></div><div class="tl-row"><span class="tl-day">2</span><span>Everyone else defends the Captain</span><b>Defend</b></div><div class="tl-row"><span class="tl-day">3</span><span>Captain falls = time stops</span><b>Reset</b></div></div></article>
+        <article class="intel-card"><div class="intel-label">🦅 4 AERIES</div><h3>Aeries give buffs + points.</h3><p class="section-copy">4 Aeries around the Palace. Hold them for buffs and to pressure the Palace. Don't abandon Palace for an Aerie — Palace is the win.</p><div class="timeline-rows"><div class="tl-row"><span class="tl-day">A1</span><span>Aerie 1</span><b>Buff</b></div><div class="tl-row"><span class="tl-day">A2</span><span>Aerie 2</span><b>Buff</b></div><div class="tl-row"><span class="tl-day">A3</span><span>Aerie 3</span><b>Buff</b></div><div class="tl-row"><span class="tl-day">A4</span><span>Aerie 4</span><b>Buff</b></div></div></article>
       </div>
-    </section>
-
-    <!-- ============ PALACE + AERIES ============ -->
-    <section class="gates" id="palace">
-      <div class="wrap">
-        <div class="section-heading wide">
-          <div><span class="kicker">THE BATTLEFIELD</span><h2>Palace in the centre.<br><span>Aeries on the flanks.</span></h2></div>
-          <p>Inside the Magma Sanctum (red line) shields don't work. Get knocked out and you're teleported back to the Border Region.</p>
-        </div>
-        <div class="gate-grid">
-          <article class="gate-card dragon-card">
-            <div class="gate-art dragon-art" aria-hidden="true"><span class="gate-hero-icon" style="font-size:62px;">🏰</span><span class="flame-glow"></span></div>
-            <div class="gate-number">TARGET • 01</div>
-            <h3>Flamedragon Palace</h3>
-            <p>Centre of the map. Opens 1 hour after battlefield opens. First occupier gets First Occupancy Reward for the whole alliance.</p>
-            <div class="gate-tags"><span>5 HOURS</span><span>RALLY CAPTAIN TIME ONLY</span><span>OLD GUARD DEFENDERS</span></div>
-            <a class="gate-button dragon-button" href="#tyrant">Tyrant Rewards →</a>
-            <span class="card-path">/Palace</span>
-          </article>
-          <article class="gate-card">
-            <div class="gate-art sanctuary-art" aria-hidden="true"><span class="gate-hero-icon" style="font-size:62px;">🦅</span></div>
-            <div class="gate-number">TARGET • 02</div>
-            <h3>4 Aeries</h3>
-            <p>Surround the Palace. Vulnerable in alternating 30-min windows (30 min vulnerable / 30 min protected). Longest holder each round gets a 30-min alliance-wide bonus.</p>
-            <div class="gate-tags"><span>4x AERIES</span><span>30-MIN ROTATION</span><span>ALLIANCE BUFFS</span></div>
-            <a class="gate-button" href="#crystal">Crystal Skills →</a>
-            <span class="card-path">/Aeries</span>
-          </article>
-          <article class="gate-card swordland-card">
-            <div class="gate-art swordland-art" aria-hidden="true"><span class="gate-hero-icon" style="font-size:62px;">💎</span></div>
-            <div class="gate-number">TARGET • 03</div>
-            <h3>Pyrocrystals</h3>
-            <p>Gather Pyrocrystal ores or defeat Dragonborn Escorts. R4 / R5 spend Alliance Pyrocrystals on Crystal Skills — big temporary buffs for everyone on the field.</p>
-            <div class="gate-tags"><span>GATHER</span><span>ESCORTS</span><span>COOLDOWN PER SKILL</span></div>
-            <a class="gate-button" href="#crystal">How Skills Work →</a>
-            <span class="card-path">/Pyrocrystals</span>
-          </article>
-        </div>
+    </div></section>
+    <section class="section" id="rewards"><div class="wrap">
+      <div class="section-head"><p class="kicker">REWARDS &amp; TITLES</p><h2>Win it.<br><span>Wear it for 30 days.</span></h2></div>
+      <div class="intel-grid">
+        <article class="intel-card"><div class="intel-label">👑 TYRANT TITLE</div><h3>Tyrant for 30 days.</h3><p class="section-copy">The winning alliance's leader becomes Flame Dragon Tyrant. Title + buffs for 30 days. Use them — don't waste the month.</p><div class="legions"><div><span>DURATION</span><b>30 days</b></div><div><span>TITLE</span><b>Tyrant</b></div></div></article>
+        <article class="intel-card battle"><div class="intel-label">🍖 DRAGON BANQUET</div><h3>Celebrate. Then get back to war.</h3><p class="section-copy">Dragon Banquet after the battle — rewards for participants. Claim them, heal up, next event is already coming.</p><div class="legions"><div><span>WHEN</span><b>After battle</b></div><div><span>FOR</span><b>Participants</b></div></div></article>
       </div>
-    </section>
-
-    <!-- ============ TYRANT REWARDS ============ -->
-    <section class="section" id="tyrant">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">WINNER TAKES ALL — 30 DAYS</p>
-          <h2>The Tyrant.<br><span>And the four titles.</span></h2>
-          <p class="section-copy">The Tyrant gets an exclusive title that stacks with other titles. The Tyrant can also grant 4 sub-titles to governors in the kingdom.</p>
-        </div>
-        <div class="intel-grid">
-          <article class="intel-card battle">
-            <div class="intel-label">👑 SUPREME FLAMEDRAGON TYRANT</div>
-            <h3>+10% Attack / Defense / Lethality / Health</h3>
-            <p class="section-copy">+5,000 Troops Deployment Capacity. Exclusive Tyrant Title (stackable). Plus a free pack, Commendation Chests, and the right to host the Dragon Banquet.</p>
-            <div class="legions">
-              <div><span>TITLE DURATION</span><b>30 days</b></div>
-              <div><span>BANQUET</span><b>1 per reign</b></div>
-              <div><span>BANQUET LENGTH</span><b>1 hour</b></div>
-            </div>
-          </article>
-          <article class="intel-card">
-            <div class="intel-label">🏅 TITLES THE TYRANT GRANTS</div>
-            <h3>Four titles. Pick wisely.</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">🩸</span><span>Bloodwyrm Warlord</span><b>+20% Health / +2,000 Cap</b></div>
-              <div class="tl-row"><span class="tl-day">🔥</span><span>Wyrmbreath Overlord</span><b>+20% Lethality / +2,000 Cap</b></div>
-              <div class="tl-row"><span class="tl-day">🛡️</span><span>Dragonscale Guard</span><b>+20% Defense / +2,000 Cap</b></div>
-              <div class="tl-row"><span class="tl-day">⚔️</span><span>Dragontooth General</span><b>+20% Attack / +2,000 Cap</b></div>
-            </div>
-            <p class="tl-note">All four stack with other titles. Give them to your rally leads and top holders.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ REARMAMENT + BANQUET + K167 CHECKLIST ============ -->
-    <section class="section" id="crystal">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">AFTER THE BATTLE • PHASE 5</p>
-          <h2>Heal cheap.<br><span>Feast big.</span></h2>
-        </div>
-        <div class="intel-grid">
-          <article class="intel-card">
-            <div class="intel-label">🩹 REARMAMENT • SUN 18:00 UTC → TUE 24:00 UTC</div>
-            <h3>Healing Speed +500%<br>Healing Costs -30%</h3>
-            <p class="section-copy">Don't heal during the battle if you can wait. Heal everything in Rearmament. Coordinate a kingdom heal window — e.g. during Bear Trap — so everyone benefits.</p>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">SUN</span><span>Battle ends</span><b>18:00 UTC</b></div>
-              <div class="tl-row"><span class="tl-day">SUN-TUE</span><span>Rearmament bonus</span><b>+500% / -30%</b></div>
-              <div class="tl-row"><span class="tl-day">SUN-MON</span><span>Dragon Banquet window</span><b>18:00 Sun → 24:00 Mon</b></div>
-            </div>
-          </article>
-          <article class="intel-card battle">
-            <div class="intel-label">🍖 DRAGON BANQUET • K167 CHECKLIST</div>
-            <h3>Before Sunday, every member:</h3>
-            <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">✓</span><span>Confirm you're dispatched (60 max)</span><b>R4 / R5</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Know your rally ratio for your Gen</span><b>Rally Lead</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Stock heals — don't waste them early</span><b>All</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Place predictions + do trivia</span><b>Dragonclaw</b></div>
-              <div class="tl-row"><span class="tl-day">✓</span><span>Be online Sun 11:00 UTC</span><b>Battlefield</b></div>
-            </div>
-            <p class="tl-note">F2P tip: farm small buildings around the Palace for personal points. Infirmary has infinite capacity — low risk, steady points.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CLOSING ============ -->
-    <section class="closing">
-      <div class="wrap">
-        <p class="kicker">ONE KINGDOM • ONE TYRANT</p>
-        <h2>TAKE THE <span>PALACE</span></h2>
-        <p>Five banners. One crown. No retreat.</p>
-        <div class="hero-actions">
-          <a class="btn gold" href="/Kingdom167/">← Back to Kingdom 167</a>
-          <a class="btn ghost" href="/Kingdom167/Sanctuaries/">Enter Sanctuaries →</a>
-          <a class="btn outline" href="/Kingdom167/SwordlandSummit/">⚔️ Swordland Summit</a>
-        </div>
-      </div>
-    </section>
+    </div></section>
+    <section class="closing"><div class="wrap"><p class="kicker">ONE KINGDOM • ONE TYRANT</p><h2>TAKE THE <span>PALACE</span></h2><p>Five banners. One crown. No retreat.</p><div class="hero-actions"><a class="btn gold" href="/Kingdom167/">← Back to Kingdom 167</a><a class="btn ghost" href="/Kingdom167/Sanctuaries/">🏰 Sanctuaries</a><a class="btn outline" href="/Kingdom167/AllianceBrawl/">⚔️ Alliance Brawl</a></div></div></section>
   </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="footer-inner">
-      <a class="brand" href="#top"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span>Kingdom 167</span></a>
-      <p>Kingdom 167 • K167 • Flame Dragon Tyrant</p>
-      <a class="return-top" href="#top">Return to throne ↑</a>
-    </div>
-    <div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>FORGED IN SHADOW, FIRE &amp; GOLD</span></div>
-  </footer>
+  <footer><div class="footer-inner"><a class="brand" href="#top"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span>Kingdom 167</span></a><p>Kingdom 167 • K167 • Flame Dragon Tyrant</p><a class="return-top" href="#top">Return to throne ↑</a></div><div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>FORGED IN SHADOW, FIRE &amp; GOLD</span></div></footer>
 </div>
-</body>
-</html>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <a href="/Kingdom167/"><i>🏠</i>Home</a>
+  <a href="/Kingdom167/Sanctuaries/"><i>🏰</i>Sanctuaries</a>
+  <a class="active" href="/Kingdom167/FlameDragonTyrant/"><i>🔥</i>Dragon</a>
+  <a href="/Kingdom167/AllianceBrawl/"><i>⚔️</i>Brawl</a>
+  <a href="/Kingdom167/SwordlandSummit/"><i>🛡️</i>Swordland</a>
+  <a href="/Kingdom167/PrepWeek/"><i>📋</i>Prep</a>
+</nav>
+<script src="/Kingdom167/assets/js/main.js" defer=""></script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
+
+</body></html>
