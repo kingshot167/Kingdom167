@@ -2,12 +2,12 @@
   const canvas = document.getElementById('arena');
   const ctx = canvas.getContext('2d');
   const $ = id => document.getElementById(id);
-  const game = { active:false, wave:1, health:3, gold:0, score:0, level:1, enemies:[], arrows:[], sparks:[], last:0, spawn:0, wavePause:0, pointer:{x:0,y:0} };
+  const game = { active:false, wave:1, waveRemaining:3, health:3, gold:0, score:0, level:1, enemies:[], arrows:[], sparks:[], last:0, spawn:0, wavePause:0, pointer:{x:0,y:0} };
   const rand=(a,b)=>a+Math.random()*(b-a);
   function resize(){const r=canvas.getBoundingClientRect(),d=window.devicePixelRatio||1;canvas.width=r.width*d;canvas.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)}
   function dims(){return {w:canvas.clientWidth,h:canvas.clientHeight,ground:canvas.clientHeight*.79,wall:canvas.clientWidth*.80}}
   function updateHud(){ $('wave').textContent=game.wave; $('health').textContent=Array.from({length:game.health},()=> '♥').join(' ')||'—'; $('gold').textContent=game.gold; $('score').textContent=game.score; $('upgrade-cost').textContent=(30+(game.level-1)*25)+'g'; $('upgrade').disabled=!game.active||game.gold<30+(game.level-1)*25; }
-  function start(){Object.assign(game,{active:true,wave:1,health:3,gold:0,score:0,level:1,enemies:[],arrows:[],sparks:[],last:performance.now(),spawn:0,wavePause:0});$('overlay').classList.add('hidden');$('status').textContent='WAVE 1 INCOMING';updateHud()}
+  function start(){Object.assign(game,{active:true,wave:1,waveRemaining:3,health:3,gold:0,score:0,level:1,enemies:[],arrows:[],sparks:[],last:performance.now(),spawn:0,wavePause:0});$('overlay').classList.add('hidden');$('status').textContent='WAVE 1 INCOMING';updateHud()}
   function drawScene(t){const {w,h,ground,wall}=dims();ctx.clearRect(0,0,w,h);
     const sky=ctx.createLinearGradient(0,0,0,ground);sky.addColorStop(0,'#182030');sky.addColorStop(1,'#35434b');ctx.fillStyle=sky;ctx.fillRect(0,0,w,ground);
     ctx.fillStyle='#d6be83';ctx.globalAlpha=.8;ctx.beginPath();ctx.arc(w*.77,h*.19,24,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
@@ -39,12 +39,12 @@
     }
   }
   function frame(now){const dt=Math.min((now-game.last)/1000,.04);game.last=now;const {wall,ground}=dims();if(game.active){
-      game.spawn-=dt;if(game.spawn<=0&&game.wavePause<=0){game.enemies.push({x:wall+rand(55,160),y:ground-10,hp:1+Math.floor((game.wave-1)/3),maxHp:1+Math.floor((game.wave-1)/3),speed:rand(22,33)+game.wave*2,color:['#9b5444','#70785b','#806b84'][Math.floor(rand(0,3))],phase:rand(0,7)});game.spawn=Math.max(.45,1.6-game.wave*.09)}
+      game.spawn-=dt;if(game.waveRemaining>0&&game.spawn<=0){game.enemies.push({x:wall+rand(55,160),y:ground-10,hp:1+Math.floor((game.wave-1)/3),maxHp:1+Math.floor((game.wave-1)/3),speed:rand(22,33)+game.wave*2,color:['#9b5444','#70785b','#806b84'][Math.floor(rand(0,3))],phase:rand(0,7)});game.waveRemaining--;game.spawn=Math.max(.65,1.25-game.wave*.04)}
       for(const e of game.enemies)e.x-=e.speed*dt;
       game.arrows=game.arrows.filter(a=>a.life>0);let hudChanged=false;for(const a of game.arrows){a.x+=a.vx*dt;a.y+=a.vy*dt;a.vy+=240*dt;a.angle=Math.atan2(a.vy,a.vx);a.life-=dt;for(const e of game.enemies){if(!e.dead&&Math.hypot(a.x-e.x,a.y-(e.y-8))<17){e.hp--;a.life=0;addSparks(e.x,e.y-10,'#f1cc72',5);if(e.hp<=0){e.dead=true;game.gold+=5;game.score+=10;hudChanged=true;addSparks(e.x,e.y-10,'#e97959',12)}break}}}
       game.enemies=game.enemies.filter(e=>{if(e.dead)return false;if(e.x<wall-25){game.health--;hudChanged=true;addSparks(wall-10,ground-25,'#e76d64',12);return false}return true});
       game.sparks=game.sparks.filter(s=>s.life>0);for(const s of game.sparks){s.x+=s.vx*dt;s.y+=s.vy*dt;s.vy+=120*dt;s.life-=dt*1.8}
-      if(game.enemies.length===0){game.wavePause+=dt;if(game.wavePause>2.2){game.wave++;game.gold+=10;game.spawn=.3;game.wavePause=0;$('status').textContent='WAVE '+game.wave+' INCOMING';hudChanged=true}}
+      if(game.waveRemaining===0&&game.enemies.length===0){game.wavePause+=dt;if(game.wavePause>.75){game.wave++;game.gold+=10;game.waveRemaining=game.wave+2;game.spawn=0;game.wavePause=0;$('status').textContent='WAVE '+game.wave+' INCOMING';hudChanged=true}}else{game.wavePause=0}
       if(game.health<=0){game.active=false;$('overlay-title').textContent='The keep has fallen';$('overlay-copy').textContent='You held through '+game.wave+' wave'+(game.wave===1?'':'s')+' and scored '+game.score+'.';$('start').innerHTML='DEFEND AGAIN <span>→</span>';$('overlay').classList.remove('hidden');$('status').textContent='BATTLE ENDED';hudChanged=true}
       if(hudChanged)updateHud();
     }drawScene(now);requestAnimationFrame(frame)}

@@ -46,73 +46,6 @@ function k167Set(id, txt){
   if(el) el.textContent = txt;
 }
 
-// ---------- KINGDOM THEME PLAYER ----------
-function k167InitMusicPlayer(){
-  if(document.getElementById('k167-music-player')) return;
-  const style = document.createElement('link');
-  style.rel = 'stylesheet';
-  const sharedScript = Array.from(document.scripts).find(script => /\/assets\/js\/main\.js(?:\?|$)/.test(script.src));
-  style.href = new URL('../css/music-player.css', sharedScript ? sharedScript.src : location.href).href;
-  document.head.appendChild(style);
-
-  const player = document.createElement('aside');
-  player.id = 'k167-music-player';
-  player.className = 'k167-player';
-  player.setAttribute('aria-label', 'Kingdom theme music player');
-  player.innerHTML = '<button class="k167-play" type="button" aria-label="Play kingdom theme">▶</button><div class="k167-track"><strong>EMBERFALL</strong><span>Kingdom Theme · Sample</span></div><label class="k167-volume-label" title="Volume"><span aria-hidden="true">♪</span><input class="k167-volume" type="range" min="0" max="100" value="22" aria-label="Music volume"></label>';
-  document.body.appendChild(player);
-
-  const playButton = player.querySelector('.k167-play');
-  const volume = player.querySelector('.k167-volume');
-  let context = null, master = null, timer = null, nextBeat = 0, beat = 0, playing = false;
-  const savedVolume = Number(localStorage.getItem('k167-music-volume'));
-  if(Number.isFinite(savedVolume) && savedVolume >= 0 && savedVolume <= 100) volume.value = String(savedVolume);
-  const chords = [[146.83,174.61,220],[116.54,146.83,174.61],[130.81,164.81,196],[130.81,164.81,196]];
-  const melody = [293.66,0,349.23,440,0,392,349.23,0,293.66,0,261.63,293.66,0,220,261.63,0, 261.63,0,293.66,349.23,0,392,349.23,0,440,0,392,349.23,0,293.66,261.63,0];
-  function setVolume(){ if(master) master.gain.setTargetAtTime(Number(volume.value)/100*.16,context.currentTime,.08); }
-  function tone(freq, at, duration, type, loudness){
-    if(!freq || !context) return;
-    const osc=context.createOscillator(), gain=context.createGain();
-    osc.type=type; osc.frequency.setValueAtTime(freq,at);
-    gain.gain.setValueAtTime(.0001,at); gain.gain.exponentialRampToValueAtTime(loudness,at+.045); gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
-    osc.connect(gain); gain.connect(master); osc.start(at); osc.stop(at+duration+.03);
-  }
-  function schedule(){
-    const now=context.currentTime;
-    while(nextBeat<now+.35){
-      const step=beat%8, bar=Math.floor(beat/8)%4, at=nextBeat;
-      if(step===0){ chords[bar].forEach(f=>tone(f,at,2.75,'triangle',.17)); tone(chords[bar][0]/2,at,2.8,'sine',.18); }
-      const note=melody[(Math.floor(beat/2))%melody.length];
-      if(beat%2===0) tone(note,at,.52,'sine',.32);
-      nextBeat+=60/84/2; beat++;
-    }
-  }
-  async function start(){
-    const AudioCtx=window.AudioContext||window.webkitAudioContext;
-    if(!AudioCtx){ player.classList.add('k167-no-audio'); return; }
-    if(!context){ context=new AudioCtx(); master=context.createGain(); master.connect(context.destination); setVolume(); }
-    try{ await context.resume(); }catch(_){ return; }
-    if(playing) return;
-    playing=true; nextBeat=context.currentTime+.08; timer=window.setInterval(schedule,100);
-    playButton.textContent='Ⅱ'; playButton.setAttribute('aria-label','Pause kingdom theme'); player.classList.add('k167-playing');
-    localStorage.setItem('k167-music-playing','true');
-  }
-  function pause(){
-    if(!playing) return;
-    playing=false; window.clearInterval(timer); timer=null;
-    if(context) context.suspend();
-    playButton.textContent='▶'; playButton.setAttribute('aria-label','Play kingdom theme'); player.classList.remove('k167-playing');
-    localStorage.setItem('k167-music-playing','false');
-  }
-  playButton.addEventListener('click',()=>playing?pause():start());
-  volume.addEventListener('input',()=>{localStorage.setItem('k167-music-volume',volume.value);setVolume();});
-  if(localStorage.getItem('k167-music-playing')==='true'){
-    playButton.title='Tap to resume the kingdom theme';
-    playButton.setAttribute('aria-label','Resume kingdom theme');
-    start();
-  }
-}
-
 // ---------- ALLIANCE SWITCHER (Home only) ----------
 function k167InitAllianceSwitcher(){
   const chips = document.querySelectorAll('#alliance-chips .chip');
@@ -178,7 +111,6 @@ function k167Tick(){
 
 // ---------- BOOT ----------
 document.addEventListener('DOMContentLoaded', ()=>{
-  k167InitMusicPlayer();
   k167InitAllianceSwitcher();
   k167Tick();
   setInterval(k167Tick, 1000);
