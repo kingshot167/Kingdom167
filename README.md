@@ -14,7 +14,8 @@ A static Kingshot community site designed for GitHub Pages. It uses plain HTML, 
 
 - `assets/css/style.css` — existing site styles plus the shared Dirtybob theme and responsive components
 - `assets/js/main.js` — existing shared kingdom behaviour
-- `assets/dirtybob.svg` — editable vector illustration used on the introduction and home page
+- `assets/dirtybob-kingdom.jpg` — wide entry and dashboard key art
+- `assets/swordland-summit.jpg`, `assets/alliance-brawl.jpg`, `assets/prep-week.jpg` — event banner artwork
 
 The new pages link to the existing GitHub Pages base path, `/Kingdom167/`. Keep that prefix in links and asset paths while the project is deployed at `kingshot167.github.io/Kingdom167`.
 
