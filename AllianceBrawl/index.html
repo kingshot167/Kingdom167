@@ -93,7 +93,6 @@
       </div>
     </section>
 
-    <!-- ============ 10 SQUADS ============ -->
     <section class="section" id="signup">
       <div class="wrap">
         <div class="section-head">
@@ -102,7 +101,6 @@
           <p class="section-copy">Each squad is a separate alliance in-game. Sign up as MAIN (1 of 5) or FARM. Leadership assigns you — do NOT move until told. Moving early can break Top 20 or the Sunday lock.</p>
         </div>
 
-        <!-- ROW 1: A + B -->
         <div class="intel-grid">
           <article class="intel-card battle">
             <div class="intel-label">⚔️ SQUAD 01 • K167-BRAWL-01</div>
@@ -130,7 +128,6 @@
           </article>
         </div>
 
-        <!-- ROW 2: C + D -->
         <div class="intel-grid">
           <article class="intel-card battle">
             <div class="intel-label">⚔️ SQUAD 03 • K167-BRAWL-03</div>
@@ -158,7 +155,6 @@
           </article>
         </div>
 
-        <!-- ROW 3: E + F -->
         <div class="intel-grid">
           <article class="intel-card battle">
             <div class="intel-label">⚔️ SQUAD 05 • K167-BRAWL-05</div>
@@ -186,7 +182,6 @@
           </article>
         </div>
 
-        <!-- ROW 4: G + H -->
         <div class="intel-grid">
           <article class="intel-card battle">
             <div class="intel-label">⚔️ SQUAD 07 • K167-BRAWL-07</div>
@@ -214,7 +209,6 @@
           </article>
         </div>
 
-        <!-- ROW 5: I + J -->
         <div class="intel-grid">
           <article class="intel-card battle">
             <div class="intel-label">⚔️ SQUAD 09 • K167-BRAWL-09</div>
@@ -242,20 +236,71 @@
           </article>
         </div>
 
-        <!-- HOW TO SIGN UP -->
         <div class="intel-grid">
           <article class="intel-card">
             <div class="intel-label">📋 HOW TO SIGN UP</div>
             <h3>3 steps. Don't skip step 3.</h3>
             <div class="timeline-rows">
-              <div class="tl-row"><span class="tl-day">1</span><span>Tell leadership: MAIN or FARM + your IGN</span><b>Discord / In-game</b></div>
+              <div class="tl-row"><span class="tl-day">1</span><span>Fill the form below: MAIN or FARM + IGN</span><b>Form ↓</b></div>
               <div class="tl-row"><span class="tl-day">2</span><span>Leadership assigns you to Squad 01–10</span><b>Wait for assign</b></div>
               <div class="tl-row"><span class="tl-day">3</span><span>MOVE into your Brawl Alliance BEFORE Sun 23:00 UTC</span><b>Sun 23:00 UTC</b></div>
             </div>
-            <p class="tl-note">This page is the board. Real sign-up lives where your kingdom signs up — Discord / Form / Sheet. Link it below when ready.</p>
-            <div class="hero-actions">
-              <a class="btn gold" href="#" onclick="return false;">📝 Sign Up Form — ADD LINK HERE</a>
-              <a class="btn ghost" href="#" onclick="return false;">📊 Live Roster Sheet — ADD LINK HERE</a>
+            <p class="tl-note">Mains are capped at 5 per squad. If a squad shows 5/5 mains, pick another squad or sign up as FARM.</p>
+
+            <!-- LIVE SIGN-UP FORM — SAME AS SWORDLAND -->
+            <form id="brawl-form" style="margin-top:18px; display:grid; gap:12px;">
+              <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">IN-GAME NAME (IGN) *
+                <input id="brawl-ign" required placeholder="e.g. StreetDoc" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:rgba(0,0,0,.35); color:#f8f1e5; font-size:15px;" />
+              </label>
+              <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">YOU ARE *
+                <select id="brawl-type" required style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:#120a20; color:#f8f1e5; font-size:15px;">
+                  <option value="">— Pick one —</option>
+                  <option value="MAIN">MAIN — 1 of 5 per squad, guaranteed rewards</option>
+                  <option value="FARM">FARM — unlimited, never outscore M5</option>
+                </select>
+              </label>
+              <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">PREFERRED SQUAD (1–10) — Leadership assigns final squad
+                <select id="brawl-squad" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:#120a20; color:#f8f1e5; font-size:15px;">
+                  <option value="">No preference — assign me anywhere</option>
+                  <option value="01">Squad 01 — K167-BRAWL-01</option>
+                  <option value="02">Squad 02 — K167-BRAWL-02</option>
+                  <option value="03">Squad 03 — K167-BRAWL-03</option>
+                  <option value="04">Squad 04 — K167-BRAWL-04</option>
+                  <option value="05">Squad 05 — K167-BRAWL-05</option>
+                  <option value="06">Squad 06 — K167-BRAWL-06</option>
+                  <option value="07">Squad 07 — K167-BRAWL-07</option>
+                  <option value="08">Squad 08 — K167-BRAWL-08</option>
+                  <option value="09">Squad 09 — K167-BRAWL-09</option>
+                  <option value="10">Squad 10 — K167-BRAWL-10</option>
+                </select>
+              </label>
+              <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">HOME ALLIANCE (where you are now)
+                <select id="brawl-home" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:#120a20; color:#f8f1e5; font-size:15px;">
+                  <option value="">— Pick —</option>
+                  <option value="TNW">TNW</option>
+                  <option value="RYL">RYL</option>
+                  <option value="ONE">ONE</option>
+                  <option value="ITA">ITA</option>
+                  <option value="JUS">JUS</option>
+                  <option value="FUN">FUN</option>
+                  <option value="Other">Other / Farm alliance</option>
+                </select>
+              </label>
+              <label style="display:grid; gap:6px; font-size:12px; letter-spacing:.08em; color:#b9aabd; font-weight:800;">DISCORD / CONTACT (optional, for captain to reach you)
+                <input id="brawl-contact" placeholder="e.g. @streetdoc on Discord" style="padding:14px; border-radius:12px; border:1px solid rgba(248,241,229,.2); background:rgba(0,0,0,.35); color:#f8f1e5; font-size:15px;" />
+              </label>
+              <p style="font-size:12px; color:#b9aabd; line-height:1.6; margin:0;">⚠️ By signing up you agree: <b style="color:#f2d58c;">You will be IN your assigned Brawl Alliance by Sun 23:00 UTC.</b> If you're not in at lock, you get nothing. Farms: you will NOT outscore M5.</p>
+              <button type="submit" id="brawl-submit" class="btn gold" style="width:100%; justify-content:center; border:0; cursor:pointer;">Sign Me Up →</button>
+              <p id="brawl-status" style="font-size:13px; text-align:center; min-height:20px; margin:0; color:#f2d58c;"></p>
+            </form>
+
+            <div style="margin-top:12px; border:1px solid rgba(248,241,229,.14); border-radius:16px; padding:14px; background:rgba(0,0,0,.25);">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <b style="font-size:13px;">LIVE ROSTER — THIS WEEK</b>
+                <button id="brawl-refresh" type="button" style="background:transparent; border:1px solid rgba(216,178,92,.4); color:#f2d58c; padding:6px 12px; border-radius:999px; font-size:12px; cursor:pointer;">↻ Refresh</button>
+              </div>
+              <div id="brawl-roster" style="margin-top:12px; font-size:13px; color:#ddd2df; line-height:1.7;">Loading roster…</div>
+              <p style="font-size:11px; color:#8c7f8f; margin:10px 0 0;">Mains are capped at 5 per squad. Captains: check this board before Sun 23:00 UTC.</p>
             </div>
           </article>
           <article class="intel-card battle">
@@ -334,5 +379,68 @@
 </nav>
 
 <script src="/Kingdom167/assets/js/main.js" defer></script>
+<script>
+// ===== BRAWL SIGN-UP — SAME PATTERN AS SWORDLAND =====
+// ⚠️ PASTE YOUR APPS SCRIPT URL HERE when you have it
+const BRAWL_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+const form = document.getElementById('brawl-form');
+const statusEl = document.getElementById('brawl-status');
+const rosterEl = document.getElementById('brawl-roster');
+async function loadRoster(){
+  if(!rosterEl) return;
+  if(!BRAWL_SCRIPT_URL || BRAWL_SCRIPT_URL.includes("PASTE_")){
+    rosterEl.innerHTML = "⚠️ Roster not live yet — paste your Apps Script URL to activate live sign-up (same as Swordland).";
+    return;
+  }
+  try{
+    rosterEl.textContent = "Loading roster…";
+    const res = await fetch(BRAWL_SCRIPT_URL + "?action=list&event=BRAWL");
+    const data = await res.json();
+    if(!data || !data.length){ rosterEl.innerHTML = "No sign-ups yet this week. Be the first."; return; }
+    let html = "";
+    for(let s=1; s<=10; s++){
+      const pad = String(s).padStart(2,"0");
+      const rows = data.filter(r => String(r.squad).padStart(2,"0") === pad);
+      const mains = rows.filter(r => r.type === "MAIN");
+      const farms = rows.filter(r => r.type === "FARM");
+      html += "<div style='margin-bottom:12px;'><b style='color:#f2d58c;'>Squad " + pad + " — Mains " + mains.length + "/5 • Farms " + farms.length + "</b><br>";
+      if(mains.length) html += "Mains: " + mains.map(r => r.ign).join(", ") + "<br>";
+      if(farms.length) html += "Farms: " + farms.map(r => r.ign).join(", ");
+      if(!rows.length) html += "<span style='color:#8c7f8f;'>Empty — open</span>";
+      html += "</div>";
+    }
+    rosterEl.innerHTML = html;
+  }catch(e){ rosterEl.textContent = "Could not load roster. Tap Refresh."; }
+}
+if(form){
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const ign = document.getElementById('brawl-ign').value.trim();
+    const type = document.getElementById('brawl-type').value;
+    const squad = document.getElementById('brawl-squad').value || "";
+    const home = document.getElementById('brawl-home').value || "";
+    const contact = document.getElementById('brawl-contact').value.trim();
+    if(!ign || !type){ statusEl.textContent = "⚠️ Fill IGN + MAIN/FARM first."; return; }
+    if(!BRAWL_SCRIPT_URL || BRAWL_SCRIPT_URL.includes("PASTE_")){
+      statusEl.textContent = "⚠️ Sign-up not live yet — Apps Script URL not set. Tell leadership your IGN for now.";
+      return;
+    }
+    const btn = document.getElementById('brawl-submit');
+    btn.disabled = true; btn.textContent = "Signing you up…";
+    statusEl.textContent = "";
+    try{
+      const res = await fetch(BRAWL_SCRIPT_URL, { method: "POST", body: JSON.stringify({ event:"BRAWL", ign, type, squad, home, contact }) });
+      const out = await res.json();
+      if(out && out.ok){
+        statusEl.textContent = "✅ Signed up! " + ign + " — " + type + (squad ? " • Squad " + squad + " (preference)" : " • No preference") + ". Wait for leadership to assign you. MOVE before Sun 23:00 UTC.";
+        form.reset(); loadRoster();
+      } else { statusEl.textContent = "⚠️ " + (out && out.error ? out.error : "Sign-up failed. Try again or DM leadership."); }
+    }catch(err){ statusEl.textContent = "⚠️ Network error. Try again or DM leadership."; }
+    btn.disabled = false; btn.textContent = "Sign Me Up →";
+  });
+}
+document.getElementById('brawl-refresh')?.addEventListener('click', loadRoster);
+loadRoster();
+</script>
 </body>
 </html>
