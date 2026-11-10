@@ -127,12 +127,20 @@ def fetch_kingdom_profile(api_key, kingdom_id):
     payload = fetch_json(f"{API_BASE}/kingdoms/{kingdom_id}", api_key)
     data = response_data(payload)
     kingdom = data.get("kingdom", data) if isinstance(data, dict) else {}
-    if not isinstance(kingdom, dict) or not kingdom.get("name"):
-        raise RuntimeError(f"MightPulse did not return a name for kingdom {kingdom_id}")
+    if not isinstance(kingdom, dict):
+        kingdom = {}
+    # MightPulse can omit the name for a kingdom. Check common wrapper locations,
+    # then use an explicit empty-name label so optional profile data cannot stop
+    # the leaderboard refresh.
+    candidates = [kingdom, data, payload]
+    name = next((item.get("name") or item.get("kingdom_name") for item in candidates
+                 if isinstance(item, dict) and (item.get("name") or item.get("kingdom_name"))), None)
+    banner_url = next((item.get("banner_url") for item in candidates
+                       if isinstance(item, dict) and item.get("banner_url")), None)
     return {
         "kid": kingdom_id,
-        "name": kingdom["name"],
-        "banner_url": kingdom.get("banner_url"),
+        "name": name or "No name set",
+        "banner_url": banner_url,
     }
 
 
