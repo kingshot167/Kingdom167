@@ -1,7 +1,6 @@
 // Controls the one-time landscape reveal on the Kingdom 167 entry page.
 (function () {
   const page = document.documentElement;
-  const skipButton = document.getElementById("skip-intro");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const seenKey = "k167-intro-seen";
 
@@ -29,7 +28,4 @@
     window.setTimeout(finishIntro, 4700);
   }
 
-  if (skipButton) {
-    skipButton.addEventListener("click", finishIntro);
-  }
 })();

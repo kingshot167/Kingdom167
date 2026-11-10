@@ -56,11 +56,36 @@
         <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
       </div>
 
-      <div class="intro-flame-sweep" aria-hidden="true"></div>
+      <svg class="intro-flame-sweep" viewBox="0 0 600 1200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="flame-horizontal" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#8e28d1" stop-opacity="0" />
+            <stop offset=".42" stop-color="#9c31dc" stop-opacity=".28" />
+            <stop offset=".72" stop-color="#c75bff" stop-opacity=".88" />
+            <stop offset=".82" stop-color="#ffe09a" />
+            <stop offset=".9" stop-color="#d458ff" stop-opacity=".78" />
+            <stop offset="1" stop-color="#7724b9" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="flame-vertical" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8e28d1" stop-opacity="0" />
+            <stop offset=".42" stop-color="#9c31dc" stop-opacity=".28" />
+            <stop offset=".72" stop-color="#c75bff" stop-opacity=".88" />
+            <stop offset=".82" stop-color="#ffe09a" />
+            <stop offset=".9" stop-color="#d458ff" stop-opacity=".78" />
+            <stop offset="1" stop-color="#7724b9" stop-opacity="0" />
+          </linearGradient>
+          <filter id="living-flame" x="-20%" y="-15%" width="140%" height="130%">
+            <feTurbulence type="fractalNoise" baseFrequency=".008 .035" numOctaves="2" seed="12" result="fire-noise">
+              <animate attributeName="baseFrequency" values=".008 .035;.012 .055;.006 .028;.008 .035" dur="1.35s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="fire-noise" scale="34" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+        <path class="flame-shape flame-shape-horizontal" d="M0 0H580 C530 90 443 128 475 205 C504 274 398 302 441 390 C482 475 370 510 426 602 C479 690 355 739 411 825 C459 899 363 976 412 1060 C444 1117 393 1163 367 1200H0Z" fill="url(#flame-horizontal)" filter="url(#living-flame)" />
+        <path class="flame-shape flame-shape-vertical" d="M0 0H600V630 C528 671 488 743 420 713 C347 680 310 794 237 753 C164 713 117 821 63 770 C31 741 20 792 0 807Z" fill="url(#flame-vertical)" filter="url(#living-flame)" />
+      </svg>
 
       <div class="intro-seal" aria-hidden="true"><span>♛</span><b>K167</b></div>
-      <button class="intro-skip" type="button" id="skip-intro">Skip intro <span aria-hidden="true">×</span></button>
-
       <section class="intro-copy">
         <p class="intro-kicker">FIVE BANNERS <span>·</span> ONE KINGDOM</p>
         <h1 id="intro-title">KINGDOM <span>167</span></h1>
