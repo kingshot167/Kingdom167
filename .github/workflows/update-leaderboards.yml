@@ -1,0 +1,50 @@
+name: Update MightPulse leaderboards
+
+on:
+  push:
+    branches:
+      - Dirtybob
+    paths:
+      - ".github/workflows/update-leaderboards.yml"
+      - "scripts/fetch_leaderboards.py"
+  schedule:
+    # GitHub runs scheduled workflows from the repository's default branch.
+    # Daily at 03:17 UTC (13:17 in Brisbane), away from the top of the hour.
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-leaderboards
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the selected branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch MightPulse leaderboards
+        env:
+          MIGHTPULSE_API_KEY: ${{ secrets.MIGHTPULSE_API_KEY }}
+        run: python scripts/fetch_leaderboards.py
+
+      - name: Commit changed snapshot
+        run: |
+          if git diff --quiet -- assets/data/leaderboards.json; then
+            echo "Leaderboard and alliance roster snapshot is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/leaderboards.json
+          git commit -m "Update MightPulse leaderboard and alliance data"
+          git push

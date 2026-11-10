@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090611">
+  <meta name="description" content="Kingdom 167 player and alliance leaderboards.">
+  <title>Rankings | Kingdom 167</title>
+  <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
+  <link rel="stylesheet" href="/Kingdom167/assets/css/navigation.css">
+</head>
+<body class="page-rankings site-with-rail">
+  <div class="shell" id="top">
+    <header class="topbar"><div class="topbar-inner">
+      <a class="brand" href="/Kingdom167/Home/"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span class="brand-full">KINGDOM 167</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="nav-link" href="/Kingdom167/Home/">Command Centre</a>
+        <a class="nav-link" href="/Kingdom167/Alliances/">Alliances</a>
+        <a class="nav-link active" href="/Kingdom167/Rankings/">Rankings</a>
+        <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland</a>
+      </nav>
+      <a class="header-cta" href="#leaderboard">View standings ↓</a>
+    </div></header>
+    <main>
+      <section class="rankings-hero">
+        <div class="cc-wrap">
+          <span class="cc-overline">KINGDOM 167 • THE STANDINGS</span>
+          <h1>Kingdom<br><span>Rankings.</span></h1>
+          <p>Compare the kingdom's top 100 governors across player and alliance leaderboards. Filter the standings by one of the five main alliances.</p>
+          <a class="cc-btn" href="#leaderboard">Explore rankings ↓</a>
+        </div>
+      </section>
+
+      <section class="rankings-section" id="leaderboard" aria-labelledby="rankings-title">
+        <div class="rankings-heading">
+          <div><span class="cc-overline">TOP 100 • KINGDOM 167</span><h2 id="rankings-title">Leaderboard</h2></div>
+          <p id="rankings-updated">Waiting for the first JSON refresh</p>
+        </div>
+        <div class="rankings-controls">
+          <label>Choose a leaderboard
+            <select id="board-select" aria-label="Choose a leaderboard">
+              <optgroup label="Governor leaderboards">
+                <option value="personal_power">Personal Power</option><option value="kills">Kill Count</option><option value="town_center">Town Center</option><option value="rebel_conquest">Rebel Conquest</option><option value="single_hero">Single Hero Power</option><option value="hero_total">Hero Total</option><option value="troop_power">Troop Power</option><option value="building_power">Building Power</option><option value="research_power">Research Power</option><option value="hero_no_equip">Hero w/o Equip</option><option value="hero_equip">Hero Equip</option><option value="gov_gear">Governor Gear Power</option><option value="gov_charm">Governor Charm Power</option><option value="pet_power">Pet Power</option><option value="island_prosperity">Island Prosperity</option><option value="migrant_score">Migrant Score</option><option value="mystic_trial">Mystic Trial</option><option value="coliseum">Coliseum</option><option value="forest_of_life">Forest of Life</option><option value="crystal_cave">Crystal Cave</option><option value="knowledge_nexus">Knowledge Nexus</option><option value="molten_fort">Molten Fort</option><option value="radiant_spire">Radiant Spire</option><option value="master_power">Master Power</option>
+              </optgroup>
+            </select>
+          </label>
+          <label>Alliance filter
+            <select id="alliance-select" aria-label="Filter by alliance">
+              <option value="all">All Kingdom 167</option>
+              <option value="RYL">RYL — Royal Legionnairs</option>
+              <option value="JUS">JUS — Justice</option>
+              <option value="TNW">TNW — The Night's Watch</option>
+              <option value="ONE">ONE — One Nation Empire</option>
+              <option value="ITA">ITA — Imperium Æternum</option>
+            </select>
+          </label>
+        </div>
+        <div class="rankings-status" id="rankings-status" role="status" aria-live="polite">Loading the local leaderboard snapshot…</div>
+        <div class="rankings-board">
+          <div class="rankings-board-head"><div><span class="cc-overline" id="board-kind">GOVERNOR LEADERBOARD</span><h3 id="board-title">Personal Power</h3></div><span class="rankings-count" id="board-count">0 / 100</span></div>
+          <ol class="rankings-list" id="rankings-list" aria-label="Leaderboard results"></ol>
+        </div>
+        <p class="rankings-footnote">Standings are read from the latest published MightPulse JSON snapshot. GitHub Actions refreshes the snapshot; the API key is never sent to this page.</p>
+      </section>
+    </main>
+    <footer><div class="footer-inner"><a class="brand" href="/Kingdom167/Home/"><span class="diamond">♛</span><span class="brand-k">K167</span><span>Kingdom 167</span></a><p>Kingdom Rankings</p><a class="return-top" href="#top">Back to the crown ↑</a></div><div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>THE DIRTYBOB REALM</span></div></footer>
+  </div>
+  <script src="/Kingdom167/assets/js/rankings.js" defer></script>
+  <script src="/Kingdom167/assets/js/navigation.js" defer></script>
+</body>
+</html>

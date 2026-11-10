@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090611">
+  <meta name="description" content="Redeem a Kingshot gift code for your player account.">
+  <title>Gift Code Redemption | Kingdom 167</title>
+  <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
+  <link rel="stylesheet" href="/Kingdom167/assets/css/navigation.css">
+  <link rel="stylesheet" href="/Kingdom167/assets/css/gift-code.css">
+  <script src="/Kingdom167/assets/js/gift-code.js" defer></script>
+  <script src="/Kingdom167/assets/js/navigation.js" defer></script>
+</head>
+<body class="cc-page site-with-rail gift-code-page">
+  <div class="shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/Kingdom167/Home/" aria-label="Kingdom 167 home"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span class="brand-full">KINGDOM 167</span></a>
+        <nav class="nav" aria-label="Main navigation">
+          <a class="nav-link" href="/Kingdom167/Home/">Command Centre</a>
+          <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland</a>
+          <a class="nav-link" href="/Kingdom167/AllianceBrawl/">Brawl</a>
+          <a class="nav-link" href="/Kingdom167/PrepWeek/">Prep Week</a>
+        </nav>
+        <a class="header-cta" href="/Kingdom167/">Kingdom gates ↗</a>
+      </div>
+    </header>
+
+    <main class="gift-wrap">
+      <header class="gift-heading">
+        <p class="gift-kicker">KINGDOM 167 · PLAYER TOOL</p>
+        <h1>Gift code <span>redemption</span></h1>
+        <p>Submit a Kingshot gift code to the official Century Games redemption service.</p>
+      </header>
+
+      <section class="code-catalog" aria-labelledby="catalog-title">
+        <div class="catalog-head"><div><span class="gift-overline">FROM KINGSHOT.NET</span><h2 id="catalog-title">Active gift codes</h2></div><span class="catalog-refresh" aria-hidden="true">↻</span></div>
+        <p id="codes-meta" class="codes-meta" aria-live="polite">Loading the latest code list…</p>
+        <div id="available-codes" class="available-codes"><p class="codes-empty">Loading codes…</p></div>
+        <p class="catalog-source">Community-sourced list; codes may expire or have account requirements. <a href="https://kingshot.net/gift-codes/" target="_blank" rel="noopener noreferrer">View the source ↗</a></p>
+      </section>
+
+      <section class="gift-card" aria-labelledby="form-title">
+        <div class="gift-card-head">
+          <div><span class="gift-overline">REDEEM A CODE</span><h2 id="form-title">Player details</h2></div>
+          <span class="gift-mark" aria-hidden="true">♛</span>
+        </div>
+        <form id="gift-form">
+          <label for="player-id">Player ID</label>
+          <input id="player-id" name="fid" type="text" inputmode="numeric" autocomplete="off" required maxlength="32" placeholder="Enter your player ID">
+
+          <label for="kingdom-id">Kingdom</label>
+          <input id="kingdom-id" name="kid" type="text" inputmode="numeric" autocomplete="off" required maxlength="12" value="167" placeholder="e.g. 167">
+
+          <label for="gift-code">Gift code</label>
+          <input id="gift-code" name="cdk" type="text" autocomplete="off" autocapitalize="characters" required maxlength="80" placeholder="Enter the gift code">
+
+          <label class="gift-consent"><input id="redeem-confirm" type="checkbox" required><span>I understand this submits a redemption to Century Games and the code may be limited or single use.</span></label>
+
+          <button id="redeem-button" class="gift-submit" type="submit"><span>Redeem gift code</span><span aria-hidden="true">→</span></button>
+        </form>
+        <div id="gift-status" class="gift-status" role="status" aria-live="polite" hidden></div>
+      </section>
+
+      <section id="gift-result" class="gift-result" aria-labelledby="result-title" hidden>
+        <div class="gift-result-head"><div><span class="gift-overline">SERVICE RESPONSE</span><h2 id="result-title">Result</h2></div><span id="result-badge" class="result-badge"></span></div>
+        <p id="result-summary" class="result-summary"></p>
+        <details><summary>Show response details</summary><pre id="result-raw"></pre></details>
+      </section>
+
+      <aside class="gift-note">
+        <b>Before you submit</b>
+        <p>Your player ID, kingdom, and gift code are sent directly to Century Games. This community prototype doesn’t save them. The API and request signature are based on third-party documentation and may change.</p>
+      </aside>
+    </main>
+    <footer class="gift-footer"><span>DIRTYBOB · KINGDOM 167</span><a href="/Kingdom167/Home/">Return to Command Centre ↑</a></footer>
+  </div>
+</body>
+</html>
