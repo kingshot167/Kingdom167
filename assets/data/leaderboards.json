@@ -4,7 +4,7 @@
   "kingdom_name": "Kingdom 167",
   "source": "MightPulse",
   "source_url": "https://api.mightpulse.com/v1/kingdoms/167/ranks",
-  "updated_at": "2026-11-10T12:29:11Z",
+  "updated_at": "2026-11-10T14:04:27Z",
   "limit": 100,
   "leaderboards": {
     "personal_power": {
@@ -2076,7 +2076,7 @@
           "governor_id": "27856294",
           "nick_name": "TheRealCashew",
           "score": 70,
-          "alliance_abbr": "RYL"
+          "alliance_abbr": null
         },
         {
           "rank": 95,
@@ -4819,7 +4819,7 @@
           "governor_id": "27856294",
           "nick_name": "TheRealCashew",
           "score": 366725608,
-          "alliance_abbr": "RYL"
+          "alliance_abbr": null
         },
         {
           "rank": 84,
@@ -16931,8 +16931,8 @@
   "alliances": {
     "TNW": {
       "name": "TheNight’sWatch",
-      "member_count": 97,
-      "power": 37725572559,
+      "member_count": 96,
+      "power": 38236549354,
       "members": [
         {
           "governor_id": "33415680",
@@ -17235,12 +17235,6 @@
           "rank": "R3"
         },
         {
-          "governor_id": "25643561",
-          "name": "꓄ꋊꅐ༒Racoon City༒",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/08/PNL3vW_1794176926.png",
-          "rank": "R3"
-        },
-        {
           "governor_id": "27364707",
           "name": "ashecutiepie",
           "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/10/10/ADVoyl_1791637231.png",
@@ -17520,8 +17514,8 @@
     },
     "RYL": {
       "name": "RoyalLegionnairs",
-      "member_count": 84,
-      "power": 28783529605,
+      "member_count": 81,
+      "power": 31160111046,
       "members": [
         {
           "governor_id": "29582567",
@@ -17530,27 +17524,9 @@
           "rank": "R5"
         },
         {
-          "governor_id": "27250084",
-          "name": "Bob's CAT",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/10/09/v23kD0_1791568966.png",
-          "rank": "R4"
-        },
-        {
-          "governor_id": "27889021",
-          "name": "Erskineeeeeeeeee",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/02/wp38og_1793627941.png",
-          "rank": "R4"
-        },
-        {
           "governor_id": "32645653",
           "name": "Leonidasss",
           "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/08/15/DR1v5A_1786775108.png",
-          "rank": "R4"
-        },
-        {
-          "governor_id": "31200718",
-          "name": "Slick's CAT",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/10/26/g55XRj_1793025126.png",
           "rank": "R4"
         },
         {
@@ -17593,6 +17569,12 @@
           "governor_id": "32503167",
           "name": "༺ᴿʸˡ༻mewn༺ᴿʸˡ༻",
           "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/08/21/Anm2Pj_1787328539.png",
+          "rank": "R4"
+        },
+        {
+          "governor_id": "34514762",
+          "name": "༺ᴿʸˡ༻SlickFinger",
+          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/08/JZA6rl_1794100892.png",
           "rank": "R4"
         },
         {
@@ -17662,6 +17644,12 @@
           "rank": "R3"
         },
         {
+          "governor_id": "27889021",
+          "name": "Erskineeeeeeeeee",
+          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/02/wp38og_1793627941.png",
+          "rank": "R3"
+        },
+        {
           "governor_id": "30221564",
           "name": "Fabian ll",
           "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/02/08/ElqGyg_1770509859.png",
@@ -17677,12 +17665,6 @@
           "governor_id": "32760404",
           "name": "FallenEmpire",
           "avatar_url": "/assets/icons/hero_headpic_50002.png",
-          "rank": "R3"
-        },
-        {
-          "governor_id": "25759311",
-          "name": "Father Mary",
-          "avatar_url": "/assets/icons/hero_headpic_50007.png",
           "rank": "R3"
         },
         {
@@ -17791,12 +17773,6 @@
           "governor_id": "26021537",
           "name": "Matheus",
           "avatar_url": "/assets/icons/hero_headpic_50033.png",
-          "rank": "R3"
-        },
-        {
-          "governor_id": "29712943",
-          "name": "mazine",
-          "avatar_url": "/assets/icons/lord_man_pic_01.png",
           "rank": "R3"
         },
         {
@@ -18004,15 +17980,15 @@
           "rank": "R2"
         },
         {
-          "governor_id": "33531009",
-          "name": "00芋仔00",
-          "avatar_url": "/assets/icons/lord_man_pic_01.png",
+          "governor_id": "118117905",
+          "name": "DOC's CAT",
+          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/10/26/g2rrLr_1793052951.png",
           "rank": "R1"
         },
         {
-          "governor_id": "33542194",
-          "name": "DRAGØN",
-          "avatar_url": "/assets/icons/hero_headpic_50022.png",
+          "governor_id": "25759311",
+          "name": "Father Mary",
+          "avatar_url": "/assets/icons/hero_headpic_50007.png",
           "rank": "R1"
         },
         {
@@ -18022,33 +17998,9 @@
           "rank": "R1"
         },
         {
-          "governor_id": "31696377",
-          "name": "High Lord",
-          "avatar_url": "/assets/icons/hero_headpic_50026.png",
-          "rank": "R1"
-        },
-        {
-          "governor_id": "285026975",
-          "name": "LilPanda",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/08/21/w5OPkX_1787273232.png",
-          "rank": "R1"
-        },
-        {
-          "governor_id": "31859522",
-          "name": "pete",
+          "governor_id": "29712943",
+          "name": "mazine",
           "avatar_url": "/assets/icons/lord_man_pic_01.png",
-          "rank": "R1"
-        },
-        {
-          "governor_id": "27856294",
-          "name": "TheRealCashew",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/08/14/pY3P2Q_1786677407.png",
-          "rank": "R1"
-        },
-        {
-          "governor_id": "28167496",
-          "name": "༒ Mike Litoris ༒",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/10/03/G6lxY3_1791053845.png",
           "rank": "R1"
         }
       ]
@@ -18056,7 +18008,7 @@
     "ONE": {
       "name": "OneNationEmpire",
       "member_count": 82,
-      "power": 33064146044,
+      "power": 33254162452,
       "members": [
         {
           "governor_id": "26398016",
@@ -18555,12 +18507,12 @@
     "JUS": {
       "name": "Justice",
       "member_count": 99,
-      "power": 33740126679,
+      "power": 34035624952,
       "members": [
         {
-          "governor_id": "30827969",
-          "name": "Knight",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/07/xG65YJ_1794063062.png",
+          "governor_id": "29811488",
+          "name": "Merrie",
+          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/07/qj7G1r_1794015985.png",
           "rank": "R5"
         },
         {
@@ -18606,6 +18558,12 @@
           "rank": "R4"
         },
         {
+          "governor_id": "30827969",
+          "name": "Knight",
+          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/07/xG65YJ_1794063062.png",
+          "rank": "R4"
+        },
+        {
           "governor_id": "57315685",
           "name": "Krimsonwulf",
           "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/05/15/D9vZPA_1778803735.png",
@@ -18621,12 +18579,6 @@
           "governor_id": "32269433",
           "name": "Matt myth legend",
           "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/08/25/Z48W6J_1787654282.png",
-          "rank": "R4"
-        },
-        {
-          "governor_id": "29811488",
-          "name": "Merrie",
-          "avatar_url": "https://got-global-avatar.akamaized.net/avatar/2026/11/07/qj7G1r_1794015985.png",
           "rank": "R4"
         },
         {
@@ -19182,7 +19134,6 @@
       "15501233",
       "26496263",
       "39022244",
-      "25643561",
       "18985199",
       "33317492",
       "33285527",
@@ -19267,16 +19218,15 @@
       "31367817",
       "25840753",
       "28429739",
-      "27250084",
       "30253627",
       "30428654",
       "27894389",
+      "34514762",
       "30958411",
       "25759011",
       "30123430",
       "35663321",
       "29582567",
-      "27856294",
       "29712943",
       "34235507",
       "13588737",
@@ -19307,7 +19257,6 @@
       "33383122",
       "116731299",
       "30450236",
-      "31200718",
       "30483430",
       "167336645",
       "32957657",
@@ -19322,26 +19271,21 @@
       "178302106",
       "114339677",
       "30237518",
+      "118117905",
       "29402268",
       "25595431",
       "26354135",
-      "31696377",
       "30221564",
       "31483095",
       "32465712",
       "30746032",
       "162903905",
       "29712907",
-      "33531009",
-      "28167496",
       "27538449",
       "185965070",
-      "33542194",
       "380343223",
       "151408395",
-      "285026975",
       "173013078",
-      "31859522",
       "413213481"
     ],
     "ONE": [
@@ -19565,7 +19509,6 @@
       "30778681",
       "189373378",
       "27792274",
-      "150621646",
       "96437439",
       "32596571",
       "29680263",
@@ -19710,6 +19653,7 @@
       "31302163"
     ],
     "TDW": [
+      "25643561",
       "357131701",
       "179256658",
       "383246710",
@@ -19729,6 +19673,7 @@
       "29861035",
       "393905321",
       "33170644",
+      "444020635",
       "32040090",
       "387107492",
       "390095786",
@@ -19761,5 +19706,17 @@
   },
   "kingdom": {
     "active_7d": 254
+  },
+  "kingdom_profiles": {
+    "167": {
+      "kid": 167,
+      "name": "No name set",
+      "banner_url": "/assets/icons/capital_icon_got_9.png"
+    },
+    "154": {
+      "kid": 154,
+      "name": "No name set",
+      "banner_url": "/assets/icons/capital_icon_got_4.png"
+    }
   }
 }
