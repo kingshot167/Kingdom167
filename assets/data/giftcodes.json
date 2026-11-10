@@ -2,27 +2,27 @@
   "schema_version": 1,
   "source": "Kingshot.net",
   "source_url": "https://kingshot.net/gift-codes/",
-  "updated_at": "2026-11-10T12:03:08Z",
+  "updated_at": "2026-11-10T12:34:14Z",
   "codes": [
     {
-      "code": "VIP777",
-      "expires_at": null,
-      "created_at": null
-    },
-    {
       "code": "11OFFICIALSTORE08",
-      "expires_at": null,
-      "created_at": null
+      "expires_at": "2026-11-13T00:00:00.000Z",
+      "created_at": "2026-11-08T12:01:28.760Z"
     },
     {
       "code": "FORTHEKINGDOM",
       "expires_at": null,
-      "created_at": null
+      "created_at": "2026-11-05T07:59:48.213Z"
     },
     {
       "code": "KS1104",
       "expires_at": null,
-      "created_at": null
+      "created_at": "2026-11-04T06:18:09.926Z"
+    },
+    {
+      "code": "VIP777",
+      "expires_at": "2026-12-31T00:00:00.000Z",
+      "created_at": "2025-09-09T20:01:01.000Z"
     }
   ]
 }
