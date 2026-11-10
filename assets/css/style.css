@@ -821,3 +821,44 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 .feature-day.has-event{border-color:rgba(157,92,255,.38);background:rgba(89,35,124,.2)}
 @media(max-width:900px){.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-card.span2{grid-column:span 2}}
 @media(max-width:700px){.feature-hero{padding:42px 0 28px}.feature-hero h1{font-size:40px}.feature-grid{grid-template-columns:1fr}.feature-card.span2{grid-column:auto}.feature-day{min-height:58px;padding:5px;font-size:9px}}
+
+/* Put alliance, Sanctuary, Dragon Tyrant and KvK Themes heroes on the shared event banner. */
+.page-sanctuaries .event-hero,
+.page-dragon .event-hero,
+.page-kvkthemes .event-hero,
+.page-alliance-directory .event-hero,
+.alliance-page .event-hero { min-height:410px; }
+.page-sanctuaries .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.46),rgba(12,7,18,.12)),url('/Kingdom167/assets/intro-desktop.jpg'); background-position:center,center 54%; }
+.page-dragon .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.5),rgba(12,7,18,.12)),url('/Kingdom167/assets/flame-dragon-tyrant.png'); background-position:center,center 48%; }
+.page-kvkthemes .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.48),rgba(12,7,18,.12)),url('/Kingdom167/assets/dirtybob-kingdom.jpg'); background-position:center,center 52%; }
+.page-alliance-directory .event-hero,
+.alliance-page .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.46),rgba(12,7,18,.12)),url('/Kingdom167/assets/intro-desktop.jpg'); background-position:center,center 52%; }
+.page-sanctuaries .event-hero::before,
+.page-dragon .event-hero::before,
+.page-kvkthemes .event-hero::before,
+.page-alliance-directory .event-hero::before,
+.alliance-page .event-hero::before { z-index:0; background:linear-gradient(90deg,rgba(8,5,14,.94),rgba(8,5,14,.76) 42%,rgba(8,5,14,.12)),linear-gradient(0deg,rgba(8,5,14,.62),transparent 48%); }
+.page-sanctuaries .event-hero .cc-wrap,
+.page-dragon .event-hero .cc-wrap,
+.page-kvkthemes .event-hero .cc-wrap,
+.page-alliance-directory .event-hero .cc-wrap,
+.alliance-page .event-hero .cc-wrap { position:relative; z-index:1; }
+.page-alliance-directory .event-hero h1,
+.alliance-page .event-hero h1 { max-width:700px; }
+@media(max-width:700px) {
+  .page-sanctuaries .event-hero,
+  .page-dragon .event-hero,
+  .page-kvkthemes .event-hero,
+  .page-alliance-directory .event-hero,
+  .alliance-page .event-hero { min-height:390px; }
+  .page-sanctuaries .event-hero { background-position:center,61% center; }
+  .page-dragon .event-hero { background-position:center,63% center; }
+  .page-kvkthemes .event-hero { background-position:center,60% center; }
+  .page-alliance-directory .event-hero,
+  .alliance-page .event-hero { background-position:center,62% center; }
+  .page-sanctuaries .event-hero::before,
+  .page-dragon .event-hero::before,
+  .page-kvkthemes .event-hero::before,
+  .page-alliance-directory .event-hero::before,
+  .alliance-page .event-hero::before { background:linear-gradient(0deg,rgba(8,5,14,.97),rgba(8,5,14,.8) 48%,rgba(8,5,14,.12)); }
+}
