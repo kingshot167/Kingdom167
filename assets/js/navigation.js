@@ -20,6 +20,7 @@
     { label: "Announcements", icon: "✉", href: "/Kingdom167/Announcements/", key: "announcements" },
     { label: "Event Rosters", icon: "♟", href: "/Kingdom167/EventRosters/", key: "rosters" },
     { label: "Contact Us", icon: "✉", href: "/Kingdom167/ContactUs/", key: "contact" },
+    { label: "Gift Code Redemption", short: "Gift Codes", icon: "✧", href: "/Kingdom167/GiftCode/", key: "giftcode" },
     { label: "Kingdom Directory", short: "Directory", icon: "◎", href: "/Kingdom167/KingdomDirectory/", key: "directory" },
     { label: "Pocket Holdout", short: "Pocket Holdout", icon: "✊", href: "/Kingdom167/PocketHoldout/", key: "pocket" },
     { label: "Rules & FAQ", short: "Rules & FAQ", icon: "❖", href: "/Kingdom167/RulesFAQ/", key: "rules" }
@@ -89,6 +90,7 @@
   else if (path.indexOf("Announcements") !== -1) activeKey = "announcements";
   else if (path.indexOf("EventRosters") !== -1) activeKey = "rosters";
   else if (path.indexOf("ContactUs") !== -1) activeKey = "contact";
+  else if (path.indexOf("GiftCode") !== -1) activeKey = "giftcode";
   else if (path.indexOf("KingdomDirectory") !== -1) activeKey = "directory";
   else if (path.indexOf("PocketHoldout") !== -1) activeKey = "pocket";
   else if (path.indexOf("RulesFAQ") !== -1) activeKey = "rules";

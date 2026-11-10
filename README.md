@@ -20,6 +20,7 @@ A static Kingshot community site designed for GitHub Pages. It uses plain HTML, 
 - `KingdomDirectory/index.html` — player directory starter page with privacy and data-source placeholders
 - `RulesFAQ/index.html` — kingdom rules draft and common questions
 - `PocketHoldout/index.html` — original browser arcade mini-game starring StreetDoc and Dirtybob
+- `GiftCode/index.html` — browser-only Kingshot gift-code redemption prototype
 
 ## Shared files
 
