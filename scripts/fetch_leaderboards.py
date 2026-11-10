@@ -22,8 +22,6 @@ ALLIANCE_TAGS = ("RYL", "JUS", "TNW", "ONE", "ITA")
 # These tags and spelling variants are looked up only inside Kingdom 167.
 PLAYER_ID_TAGS = ("TNW", "RYL", "ONE", "JUS", "JU2", "ryl", "FUN", "rly", "ita", "TDW", "167", "LG2")
 BOARD_KINDS = {
-    "alliance_power": "alliance",
-    "alliance_kills": "alliance",
     "personal_power": "player",
     "kills": "player",
     "town_center": "player",

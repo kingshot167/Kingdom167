@@ -72,7 +72,7 @@
     if (!snapshot) return;
     const key = boardSelect.value;
     const board = snapshot.leaderboards && snapshot.leaderboards[key];
-    const isAlliance = board && board.kind ? board.kind === "alliance" : key === "alliance_power" || key === "alliance_kills";
+    const isAlliance = Boolean(board && board.kind === "alliance");
     title.textContent = boardLabels.get(key) || "Leaderboard";
     kindLabel.textContent = isAlliance ? "ALLIANCE LEADERBOARD" : "GOVERNOR LEADERBOARD";
 
