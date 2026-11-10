@@ -30,3 +30,7 @@ The entry page uses a separate stylesheet so its fixed navigation rail, reveal e
 ## Future sign-ups
 
 The current forms are intentionally guidance-only because the site is static. When Supabase is added, keep its URL and public anon key in a small shared configuration file, enforce access with database row-level security, and never put a service-role key in browser code. Connect each sign-up section to a shared JavaScript helper so validation and submission behaviour stay consistent across events.
+
+## Future hub chat
+
+Plan a responsive, integrated hub chat for the Kingdom community, sized for roughly 200–300 members with around 50 likely active chatters. The site is static, so chat will need a hosted backend; Supabase Auth and Realtime are the preferred starting point and fit the site's existing direction. Start on the free tier and review actual usage against its quotas before launch and as the community grows. Include sign-in, row-level security, basic moderation controls, and spam/rate limiting. Keep the Supabase service-role key out of browser code. Treat free-tier availability and limits as subject to change; re-evaluate hosting if usage or reliability needs exceed them.
