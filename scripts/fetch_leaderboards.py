@@ -3,6 +3,7 @@
 
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timezone
@@ -14,6 +15,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILE = ROOT / "assets" / "data" / "leaderboards.json"
+KVK_SEASON_FILE = ROOT / "KvK" / "season-data.js"
 API_BASE = "https://api.mightpulse.com/v1"
 KINGDOM_ID = 167
 KINGDOM_NAME = "Kingdom 167"
@@ -118,6 +120,29 @@ def fetch_kingdom_activity(api_key):
     if not isinstance(kingdom, dict) or kingdom.get("active_7d") is None:
         raise RuntimeError("MightPulse kingdom response did not include active_7d; saved data was left unchanged")
     return {"active_7d": kingdom["active_7d"]}
+
+
+def fetch_kingdom_profile(api_key, kingdom_id):
+    """Fetch the public kingdom name and banner URL for a KvK matchup card."""
+    payload = fetch_json(f"{API_BASE}/kingdoms/{kingdom_id}", api_key)
+    data = response_data(payload)
+    kingdom = data.get("kingdom", data) if isinstance(data, dict) else {}
+    if not isinstance(kingdom, dict) or not kingdom.get("name"):
+        raise RuntimeError(f"MightPulse did not return a name for kingdom {kingdom_id}")
+    return {
+        "kid": kingdom_id,
+        "name": kingdom["name"],
+        "banner_url": kingdom.get("banner_url"),
+    }
+
+
+def current_kvk_opponent_id():
+    """Read the current opponent id from the editable KvK season data table."""
+    source = KVK_SEASON_FILE.read_text(encoding="utf-8")
+    match = re.search(r'opponent:\s*\{\s*kid:\s*(\d+)', source)
+    if not match:
+        raise RuntimeError("Could not find opponent.kid in KvK/season-data.js")
+    return int(match.group(1))
 
 
 def board_container(payload):
@@ -297,6 +322,11 @@ def main():
 
     ranks_url = f"{API_BASE}/kingdoms/{KINGDOM_ID}/ranks?{urlencode({'limit': LIMIT})}"
     kingdom = fetch_kingdom_activity(api_key)
+    opponent_id = current_kvk_opponent_id()
+    kingdom_profiles = {
+        str(kid): fetch_kingdom_profile(api_key, kid)
+        for kid in (KINGDOM_ID, opponent_id)
+    }
     ranks_payload = fetch_json(ranks_url, api_key)
     alliances, tags_by_governor, player_ids_by_alliance = alliance_rosters(api_key)
     leaderboards = normalize_boards(ranks_payload, tags_by_governor)
@@ -313,6 +343,7 @@ def main():
         and existing.get("alliances") == alliances
         and existing.get("player_ids_by_alliance") == player_ids_by_alliance
         and existing.get("kingdom") == kingdom
+        and existing.get("kingdom_profiles") == kingdom_profiles
     ):
         print("No leaderboard changes; keeping the current snapshot.")
         return
@@ -329,6 +360,7 @@ def main():
         "alliances": alliances,
         "player_ids_by_alliance": player_ids_by_alliance,
         "kingdom": kingdom,
+        "kingdom_profiles": kingdom_profiles,
     }
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
     DATA_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

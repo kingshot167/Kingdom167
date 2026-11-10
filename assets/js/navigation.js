@@ -13,6 +13,7 @@
     { label: "Sanctuaries", icon: "♜", href: "/Kingdom167/Sanctuaries/", key: "sanctuaries" },
     { label: "Flame Dragon Tyrant", short: "Dragon Tyrant", icon: "♨", href: "/Kingdom167/FlameDragonTyrant/", key: "dragon" },
     { label: "KvK Themes", icon: "✧", href: "/Kingdom167/KvKThemes/", key: "themes" },
+    { label: "KvK Season 23", short: "KvK Season 23", icon: "⚔", href: "/Kingdom167/KvK/", key: "kvk" },
     { label: "Event Calendar", icon: "▦", href: "/Kingdom167/EventCalendar/", key: "calendar" },
     { label: "KvK Command Board", short: "KvK Board", icon: "⚑", href: "/Kingdom167/KvKCommandBoard/", key: "command" },
     { label: "Recognition Board", short: "Recognition", icon: "★", href: "/Kingdom167/RecognitionBoard/", key: "recognition" },
@@ -83,6 +84,7 @@
   else if (path.indexOf("Sanctuaries") !== -1) activeKey = "sanctuaries";
   else if (path.indexOf("FlameDragonTyrant") !== -1) activeKey = "dragon";
   else if (path.indexOf("KvKThemes") !== -1) activeKey = "themes";
+  else if (path.indexOf("/KvK/") !== -1) activeKey = "kvk";
   else if (path.indexOf("EventCalendar") !== -1) activeKey = "calendar";
   else if (path.indexOf("KvKCommandBoard") !== -1) activeKey = "command";
   else if (path.indexOf("RecognitionBoard") !== -1) activeKey = "recognition";
