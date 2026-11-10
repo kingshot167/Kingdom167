@@ -110,6 +110,16 @@ def response_data(payload):
     return data if isinstance(data, (dict, list)) else payload
 
 
+def fetch_kingdom_activity(api_key):
+    """Fetch the kingdom's seven-day active governor count."""
+    payload = fetch_json(f"{API_BASE}/kingdoms/{KINGDOM_ID}", api_key)
+    data = response_data(payload)
+    kingdom = data.get("kingdom", data) if isinstance(data, dict) else {}
+    if not isinstance(kingdom, dict) or kingdom.get("active_7d") is None:
+        raise RuntimeError("MightPulse kingdom response did not include active_7d; saved data was left unchanged")
+    return {"active_7d": kingdom["active_7d"]}
+
+
 def board_container(payload):
     """Find the grouped board data in an aggregate ranks response."""
     data = response_data(payload)
@@ -286,6 +296,7 @@ def main():
         raise RuntimeError("Set the MIGHTPULSE_API_KEY GitHub Actions secret before running this refresh")
 
     ranks_url = f"{API_BASE}/kingdoms/{KINGDOM_ID}/ranks?{urlencode({'limit': LIMIT})}"
+    kingdom = fetch_kingdom_activity(api_key)
     ranks_payload = fetch_json(ranks_url, api_key)
     alliances, tags_by_governor, player_ids_by_alliance = alliance_rosters(api_key)
     leaderboards = normalize_boards(ranks_payload, tags_by_governor)
@@ -301,6 +312,7 @@ def main():
         existing.get("leaderboards") == leaderboards
         and existing.get("alliances") == alliances
         and existing.get("player_ids_by_alliance") == player_ids_by_alliance
+        and existing.get("kingdom") == kingdom
     ):
         print("No leaderboard changes; keeping the current snapshot.")
         return
@@ -316,6 +328,7 @@ def main():
         "leaderboards": leaderboards,
         "alliances": alliances,
         "player_ids_by_alliance": player_ids_by_alliance,
+        "kingdom": kingdom,
     }
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
     DATA_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

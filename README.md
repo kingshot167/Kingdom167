@@ -30,8 +30,9 @@ A static Kingshot community site designed for GitHub Pages. It uses plain HTML, 
 - `.github/workflows/update-giftcodes.yml` — checks Kingshot.net three times daily and commits list changes
 - `scripts/fetch_giftcodes.py` — reads Kingshot.net's public gift-code feed; it does not redeem codes
 - `.github/workflows/update-leaderboards.yml` and `scripts/fetch_leaderboards.py` — refresh MightPulse rankings and all five alliance rosters in one snapshot
-- `assets/data/leaderboards.json` — local Top 100, alliance member rosters, and alliance summary snapshot read by the Rankings and Alliances hub pages
+- `assets/data/leaderboards.json` — local Top 100, alliance member rosters, alliance summaries, and kingdom activity snapshot
 - `assets/css/alliance-members.css` and `assets/js/alliance-members.js` — shared role-grouped member cards for alliance profiles
+- `assets/js/kingdom-stats.js` — fills the Home dashboard's seven-day active member count from the shared snapshot
 - `assets/dirtybob-kingdom.jpg` — wide entry and dashboard key art
 - `assets/css/intro.css` and `assets/js/intro.js` — responsive cinematic entry screen and violet flame reveal
 - `assets/intro-desktop.jpg`, `assets/intro-ipad.jpg`, `assets/intro-phone.jpg` — art plates composed for each screen size

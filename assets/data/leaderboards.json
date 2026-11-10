@@ -7,5 +7,8 @@
   "limit": 100,
   "leaderboards": {},
   "alliances": {},
-  "player_ids_by_alliance": {}
+  "player_ids_by_alliance": {},
+  "kingdom": {
+    "active_7d": null
+  }
 }
