@@ -441,3 +441,168 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
   .cc-mascot{background-position:63% center;background-image:linear-gradient(0deg,rgba(20,11,27,.96) 0%,rgba(20,11,27,.84) 49%,rgba(20,11,27,.14) 100%),url('/Kingdom167/assets/dirtybob-kingdom.jpg')}
   .event-hero{background-position:center,right 34%}
 }
+
+/* Full-bleed event banners: Sanctuaries, Flame Dragon and KvK Themes. */
+.page-sanctuaries .hero,
+.page-dragon .hero,
+.page-kvkthemes .hero {
+  min-height: min(780px, max(640px, calc(100svh - 122px)));
+  justify-content: flex-start;
+  padding: clamp(72px, 9vh, 116px) clamp(24px, 7vw, 112px) 96px;
+  text-align: left;
+  background-color: #090611;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom: 1px solid rgba(216, 178, 92, .24);
+  isolation: isolate;
+}
+
+.page-sanctuaries .hero { background-image: url('/Kingdom167/assets/intro-desktop.jpg'); background-position: center 54%; }
+.page-dragon .hero { background-image: url('/Kingdom167/assets/flame-dragon-tyrant.png'); background-position: center 48%; }
+.page-kvkthemes .hero { background-image: url('/Kingdom167/assets/swordland-summit.jpg'); background-position: center 48%; }
+
+.page-sanctuaries .hero::before,
+.page-dragon .hero::before,
+.page-kvkthemes .hero::before {
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(8, 5, 14, .94) 0%, rgba(8, 5, 14, .78) 42%, rgba(8, 5, 14, .18) 100%),
+    linear-gradient(0deg, rgba(8, 5, 14, .72), transparent 45%);
+}
+
+.page-sanctuaries .hero-inner,
+.page-dragon .hero-inner,
+.page-kvkthemes .hero-inner { width: min(100%, 850px); max-width: 850px; margin: 0; text-align: left; }
+.page-sanctuaries .hero .eyebrow,
+.page-dragon .hero .eyebrow,
+.page-kvkthemes .hero .eyebrow { justify-content: flex-start; color: #f3d48b; }
+.page-sanctuaries .hero h1,
+.page-dragon .hero h1,
+.page-kvkthemes .hero h1 { max-width: 820px; font-size: clamp(48px, 6.5vw, 92px); text-shadow: 0 8px 42px rgba(0, 0, 0, .78); }
+.page-sanctuaries .hero-copy,
+.page-dragon .hero-copy,
+.page-kvkthemes .hero-copy { margin: 0; max-width: 620px; color: #eee5f2; }
+.page-sanctuaries .hero-actions,
+.page-dragon .hero-actions,
+.page-kvkthemes .hero-actions { justify-content: flex-start; }
+.page-sanctuaries .hero-meta,
+.page-dragon .hero-meta,
+.page-kvkthemes .hero-meta { color: #e3d2e8; }
+.page-sanctuaries .scroll-hint,
+.page-dragon .scroll-hint,
+.page-kvkthemes .scroll-hint { z-index: 2; color: #f2d58c; }
+.page-sanctuaries .section,
+.page-dragon .section,
+.page-kvkthemes .section { background: linear-gradient(180deg, #0d0815, #100a19); border-bottom: 1px solid rgba(202, 161, 255, .08); }
+
+@media (max-width: 700px) {
+  .page-sanctuaries .hero,
+  .page-dragon .hero,
+  .page-kvkthemes .hero { min-height: max(620px, calc(100svh - 120px)); align-items: flex-end; padding: 74px 18px 72px; }
+  .page-sanctuaries .hero::before,
+  .page-dragon .hero::before,
+  .page-kvkthemes .hero::before { background: linear-gradient(0deg, rgba(8, 5, 14, .98) 0%, rgba(8, 5, 14, .84) 45%, rgba(8, 5, 14, .14) 100%); }
+  .page-sanctuaries .hero { background-position: 61% center; }
+  .page-dragon .hero { background-position: 63% center; }
+  .page-kvkthemes .hero { background-position: 60% center; }
+  .page-sanctuaries .hero h1,
+  .page-dragon .hero h1,
+  .page-kvkthemes .hero h1 { font-size: clamp(42px, 12vw, 62px); }
+}
+
+/* Alliance directory and reusable alliance profile template. */
+.page-alliance-directory .hero,
+.alliance-page .hero {
+  min-height: min(740px, max(620px, calc(100svh - 122px)));
+  justify-content: flex-start;
+  padding: clamp(72px, 9vh, 112px) clamp(24px, 7vw, 112px) 90px;
+  text-align: left;
+  background: url('/Kingdom167/assets/intro-desktop.jpg') center 52% / cover no-repeat #090611;
+  border-bottom: 1px solid rgba(216, 178, 92, .24);
+  isolation: isolate;
+}
+
+.page-alliance-directory .hero::before,
+.alliance-page .hero::before {
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(8, 5, 14, .94), rgba(8, 5, 14, .76) 42%, rgba(8, 5, 14, .12)),
+    linear-gradient(0deg, rgba(8, 5, 14, .7), transparent 48%);
+}
+
+.page-alliance-directory .hero-inner,
+.alliance-page .hero-inner { width: min(100%, 790px); max-width: 790px; margin: 0; text-align: left; }
+.page-alliance-directory .hero .eyebrow,
+.alliance-page .hero .eyebrow { justify-content: flex-start; color: #f3d48b; }
+.page-alliance-directory .hero h1,
+.alliance-page .hero h1 { max-width: 780px; font-size: clamp(48px, 6.5vw, 88px); text-shadow: 0 8px 42px rgba(0, 0, 0, .78); }
+.page-alliance-directory .hero-copy,
+.alliance-page .hero-copy { margin: 0; max-width: 620px; color: #eee5f2; }
+.page-alliance-directory .hero-actions,
+.alliance-page .hero-actions { justify-content: flex-start; }
+.page-alliance-directory .scroll-hint,
+.alliance-page .scroll-hint { z-index: 2; color: #f2d58c; }
+
+.alliance-directory,
+.alliance-content { padding: clamp(44px, 6vw, 82px) clamp(17px, 4vw, 56px); }
+.alliance-section-heading { max-width: 1440px; margin: 0 auto 24px; }
+.alliance-section-heading .kicker { display: block; margin-bottom: 10px; color: var(--gold2); font-size: 10px; font-weight: 850; letter-spacing: .2em; }
+.alliance-section-heading h2 { margin: 0; font-size: clamp(30px, 4vw, 48px); }
+.alliance-section-heading p { max-width: 680px; color: var(--muted); line-height: 1.65; }
+.alliance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; max-width: 1440px; margin: auto; }
+.alliance-card {
+  position: relative;
+  display: flex;
+  min-height: 245px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px;
+  overflow: hidden;
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--alliance-accent) 44%, transparent);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(34, 21, 47, .98), rgba(12, 9, 18, .99));
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.alliance-card:hover,
+.alliance-card:focus-visible { transform: translateY(-4px); border-color: var(--alliance-accent); box-shadow: 0 15px 35px rgba(0, 0, 0, .3), 0 0 24px color-mix(in srgb, var(--alliance-accent) 20%, transparent); outline: none; }
+.alliance-card-mark,
+.alliance-symbol { display: grid; width: 56px; height: 56px; place-items: center; color: var(--alliance-accent); border: 1px solid color-mix(in srgb, var(--alliance-accent) 55%, transparent); border-radius: 50%; background: color-mix(in srgb, var(--alliance-accent) 11%, #110b1b); font-size: 26px; }
+.alliance-card-code { margin-top: 18px; color: var(--alliance-accent); font-size: 11px; font-weight: 900; letter-spacing: .2em; }
+.alliance-card h3 { margin: 6px 0 8px; font: 750 20px Inter, system-ui, sans-serif; letter-spacing: -.03em; }
+.alliance-card p { margin: 0; color: #bcb0c9; font: italic 14px Georgia, serif; }
+.alliance-card-more { margin-top: auto; padding-top: 18px; color: #f3d48b; font-size: 10px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+.alliance-tnw { --alliance-accent: #66b4ff; }
+.alliance-ryl { --alliance-accent: #ff6575; }
+.alliance-jus { --alliance-accent: #bd83ff; }
+.alliance-one { --alliance-accent: #53dfa0; }
+.alliance-ita { --alliance-accent: #dce2ee; }
+
+.alliance-content { background: linear-gradient(180deg, #0d0815, #100a19); border-bottom: 1px solid rgba(202, 161, 255, .08); }
+.alliance-profile-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr); gap: 14px; max-width: 1440px; margin: auto; }
+.alliance-panel { padding: clamp(18px, 3vw, 28px); border: 1px solid rgba(197, 137, 237, .2); border-radius: 12px; background: linear-gradient(145deg, rgba(31, 20, 43, .96), rgba(15, 11, 21, .98)); box-shadow: 0 16px 50px rgba(0, 0, 0, .2); }
+.alliance-panel h2 { margin: 0 0 12px; font: 750 22px Inter, system-ui, sans-serif; letter-spacing: -.04em; }
+.alliance-panel p { color: var(--muted); line-height: 1.7; }
+.alliance-facts { display: grid; gap: 10px; margin: 18px 0 0; }
+.alliance-facts div { display: flex; justify-content: space-between; gap: 14px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, .08); font-size: 12px; }
+.alliance-facts dt { color: #b7a9c7; }
+.alliance-facts dd { margin: 0; color: var(--alliance-accent); font-weight: 800; text-align: right; }
+.alliance-event-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 1440px; margin: 14px auto 0; }
+.alliance-event-link { display: block; padding: 17px; border: 1px solid rgba(197, 137, 237, .2); border-radius: 10px; background: rgba(27, 17, 38, .88); transition: border-color .2s ease, transform .2s ease; }
+.alliance-event-link:hover,
+.alliance-event-link:focus-visible { transform: translateY(-2px); border-color: rgba(232, 193, 110, .55); outline: none; }
+.alliance-event-link b { display: block; color: #f2d58c; font-size: 12px; }
+.alliance-event-link span { display: block; margin-top: 6px; color: #b7a9c7; font-size: 11px; line-height: 1.5; }
+
+@media (max-width: 700px) {
+  .page-alliance-directory .hero,
+  .alliance-page .hero { min-height: max(620px, calc(100svh - 120px)); align-items: flex-end; padding: 74px 18px 72px; background-position: 62% center; }
+  .page-alliance-directory .hero::before,
+  .alliance-page .hero::before { background: linear-gradient(0deg, rgba(8, 5, 14, .98) 0%, rgba(8, 5, 14, .82) 48%, rgba(8, 5, 14, .15) 100%); }
+  .page-alliance-directory .hero h1,
+  .alliance-page .hero h1 { font-size: clamp(42px, 12vw, 62px); }
+  .alliance-directory,
+  .alliance-content { padding: 44px 17px; }
+  .alliance-profile-grid,
+  .alliance-event-links { grid-template-columns: 1fr; }
+  .alliance-card { min-height: 210px; }
+}

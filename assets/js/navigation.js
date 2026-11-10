@@ -3,7 +3,7 @@
   const home = "/Kingdom167/Home/";
   const items = [
     { label: "Home", icon: "⌂", href: home, key: "home" },
-    { label: "Alliances", icon: "♜", href: home + "#alliances", key: "alliances" },
+    { label: "Alliances", icon: "♜", href: "/Kingdom167/Alliances/", key: "alliances" },
     { label: "Swordland Summit", short: "Swordland", icon: "⚔", href: "/Kingdom167/SwordlandSummit/", key: "swordland" },
     { label: "Alliance Brawl", icon: "♢", href: "/Kingdom167/AllianceBrawl/", key: "brawl" },
     { label: "Prep Week", icon: "▤", href: "/Kingdom167/PrepWeek/", key: "prep" },
@@ -59,6 +59,7 @@
   const hash = window.location.hash;
   let activeKey = "";
   if (path === "/Kingdom167" || path === "/Kingdom167/Home") activeKey = hash === "#alliances" ? "alliances" : "home";
+  else if (path.indexOf("/Alliances") !== -1) activeKey = "alliances";
   else if (path.indexOf("SwordlandSummit") !== -1) activeKey = "swordland";
   else if (path.indexOf("AllianceBrawl") !== -1) activeKey = "brawl";
   else if (path.indexOf("PrepWeek") !== -1) activeKey = "prep";
