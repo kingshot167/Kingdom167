@@ -66,53 +66,31 @@ body.kingdom-intro { color: #fff; }
 /* The cinematic scene */
 .intro-stage { position: relative; min-width: 0; height: 100%; overflow: hidden; isolation: isolate; background: #110a18; }
 .intro-scene, .intro-scene img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.intro-scene { z-index: 0; clip-path: inset(0); }
 .intro-scene img { object-fit: cover; object-position: center center; animation: scene-arrive 6s ease-out both; }
 .intro-shade { position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(10, 6, 15, .45), transparent 55%), linear-gradient(0deg, rgba(8, 4, 12, .84), transparent 34%); }
 .intro-stage::after { position: absolute; z-index: 2; inset: auto 0 0; height: 1px; content: ""; background: linear-gradient(90deg, transparent, rgba(232, 193, 110, .7), transparent); }
 
-/* Carved stone gate leaves begin closed, then slide away from the crest. */
-.intro-gate-door {
+/* A violet-gold flame travels across the landscape and reveals the scene. */
+.intro-playing .intro-scene { clip-path: inset(0 100% 0 0); animation: scene-unveil 2.35s cubic-bezier(.66, 0, .24, 1) .55s forwards; }
+.intro-revealed .intro-scene { clip-path: inset(0); }
+.intro-flame-sweep {
   position: absolute;
-  z-index: 15;
-  top: 0;
-  bottom: 0;
-  width: 50.5%;
-  overflow: hidden;
+  z-index: 8;
+  top: -15%;
+  bottom: -15%;
+  left: -60%;
+  width: 53%;
+  opacity: 0;
   pointer-events: none;
-  border: 7px solid #8d673f;
-  background-color: #29232e;
-  background-image:
-    linear-gradient(90deg, rgba(242, 217, 166, .24), transparent 8%, transparent 92%, rgba(0, 0, 0, .65)),
-    repeating-linear-gradient(0deg, transparent 0 76px, rgba(0, 0, 0, .58) 77px, rgba(198, 167, 130, .2) 80px, transparent 84px),
-    repeating-linear-gradient(90deg, transparent 0 132px, rgba(0, 0, 0, .55) 133px, rgba(202, 171, 134, .18) 136px, transparent 140px),
-    linear-gradient(135deg, #564a58, #2a2330 45%, #453949);
-  box-shadow: inset 0 0 0 4px rgba(18, 12, 20, .9), inset 0 0 70px rgba(0, 0, 0, .72);
+  mix-blend-mode: screen;
+  filter: blur(5px);
+  clip-path: polygon(0 0, 44% 0, 33% 8%, 75% 14%, 48% 23%, 100% 30%, 57% 39%, 90% 48%, 52% 57%, 100% 66%, 55% 75%, 81% 84%, 42% 91%, 55% 100%, 0 100%, 19% 90%, 0 80%, 27% 69%, 0 58%, 32% 47%, 0 37%, 25% 27%, 0 17%, 20% 8%);
 }
-.intro-gate-door::before {
-  position: absolute;
-  inset: 7%;
-  content: "";
-  border: 2px solid rgba(225, 190, 130, .42);
-  box-shadow: inset 0 0 0 7px rgba(14, 10, 17, .38), inset 0 0 26px rgba(0, 0, 0, .7);
-  background: linear-gradient(90deg, transparent 48%, rgba(12, 8, 14, .36) 50%, transparent 52%);
-}
-.intro-gate-door::after {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 8px;
-  content: "";
-  background: linear-gradient(90deg, #5b3c24, #f0cf8e 42%, #704722 72%, #2a1e1d);
-  box-shadow: 0 0 22px rgba(232, 193, 110, .42);
-}
-.intro-gate-door-left { left: 0; border-right: 2px solid #e2bc78; }
-.intro-gate-door-left::after { right: 0; }
-.intro-gate-door-right { right: 0; border-left: 2px solid #e2bc78; }
-.intro-gate-door-right::after { left: 0; }
-.intro-playing .intro-gate-door-left { animation: gate-open-left 1.75s cubic-bezier(.72, 0, .16, 1) .5s forwards; }
-.intro-playing .intro-gate-door-right { animation: gate-open-right 1.75s cubic-bezier(.72, 0, .16, 1) .5s forwards; }
-.intro-revealed .intro-gate-door-left { transform: translateX(-103%); }
-.intro-revealed .intro-gate-door-right { transform: translateX(103%); }
+.intro-flame-sweep::before, .intro-flame-sweep::after { position: absolute; inset: 0; content: ""; }
+.intro-flame-sweep::before { background: linear-gradient(90deg, transparent 0%, rgba(103, 24, 165, .18) 17%, rgba(165, 52, 229, .85) 48%, rgba(255, 191, 97, .98) 56%, rgba(190, 60, 242, .88) 68%, rgba(87, 24, 140, .22) 88%, transparent 100%); }
+.intro-flame-sweep::after { background: radial-gradient(ellipse at 55% 50%, rgba(255, 226, 147, .88), rgba(205, 82, 255, .58) 28%, rgba(122, 39, 191, .3) 52%, transparent 74%); filter: blur(22px); }
+.intro-playing .intro-flame-sweep { animation: flame-pass 2.35s cubic-bezier(.62, 0, .3, 1) .55s forwards; }
 
 /* Firelight and small embers are CSS-only, so they stay light on mobile. */
 .intro-flame { position: absolute; z-index: 3; bottom: 7%; width: clamp(34px, 5vw, 76px); height: clamp(100px, 19vh, 230px); pointer-events: none; opacity: .56; filter: blur(7px); background: radial-gradient(ellipse at 50% 100%, rgba(255, 206, 104, .9) 0, rgba(255, 107, 35, .7) 20%, rgba(193, 35, 94, .24) 49%, transparent 74%); transform-origin: center bottom; animation: flame-dance 1.3s ease-in-out infinite alternate; }
@@ -133,7 +111,7 @@ body.kingdom-intro { color: #fff; }
 .intro-embers i:nth-child(11) { --x: 67%; --size: 3px; --duration: 7.3s; --delay: 5s; }
 .intro-embers i:nth-child(12) { --x: 46%; --size: 2px; --duration: 5.4s; --delay: 3.4s; }
 
-/* K167 seal is centered on the gate seam at the start. */
+/* K167 seal glows at the center before the flame reveals the realm. */
 .intro-seal { position: absolute; z-index: 30; top: 50%; left: 50%; display: grid; width: 112px; height: 112px; place-content: center; color: #f9d982; text-align: center; border: 2px solid #e8c16e; border-radius: 50%; background: radial-gradient(circle, #532a65 0, #21162b 61%, #0d0911 100%); box-shadow: 0 0 0 8px rgba(21, 14, 25, .58), 0 0 0 10px rgba(232, 193, 110, .58), 0 0 42px rgba(179, 75, 226, .62), inset 0 0 20px rgba(255, 214, 132, .17); opacity: 0; transform: translate(-50%, -50%) scale(.86); }
 .intro-seal span { font: 34px Georgia, serif; line-height: .9; }
 .intro-seal b { margin-top: 5px; font: 800 15px Georgia, serif; letter-spacing: .1em; }
@@ -166,10 +144,10 @@ body.kingdom-intro { color: #fff; }
 .intro-playing .intro-enter { animation: rise-in .75s cubic-bezier(.2, .8, .2, 1) 2.5s both; }
 .intro-playing .intro-footnote { animation: rise-in .65s cubic-bezier(.2, .8, .2, 1) 2.75s both; }
 
-@keyframes gate-open-left { to { transform: translateX(-103%); } }
-@keyframes gate-open-right { to { transform: translateX(103%); } }
-@keyframes gate-open-top { to { transform: translateY(-103%); } }
-@keyframes gate-open-bottom { to { transform: translateY(103%); } }
+@keyframes scene-unveil { to { clip-path: inset(0); } }
+@keyframes scene-unveil-down { to { clip-path: inset(0); } }
+@keyframes flame-pass { 0% { left: -60%; opacity: 0; transform: scaleX(.8); } 15% { opacity: 1; } 82% { opacity: .92; } 100% { left: 112%; opacity: 0; transform: scaleX(1.08); } }
+@keyframes flame-pass-down { 0% { top: -60%; opacity: 0; transform: scaleY(.8); } 15% { opacity: 1; } 82% { opacity: .92; } 100% { top: 112%; opacity: 0; transform: scaleY(1.08); } }
 @keyframes seal-flash { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.86); } 28% { opacity: 1; transform: translate(-50%, -50%) scale(1); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.12); } }
 @keyframes rise-in { from { opacity: 0; transform: translateY(19px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes scene-arrive { from { transform: scale(1.045); filter: brightness(.64); } to { transform: scale(1); filter: brightness(1); } }
@@ -196,6 +174,14 @@ body.kingdom-intro { color: #fff; }
   .intro-footnote { margin-top: 12px; }
 }
 
+@media (min-width: 701px) and (max-width: 1100px) and (orientation: portrait) {
+  .intro-playing .intro-scene { clip-path: inset(0 0 100% 0); animation-name: scene-unveil-down; }
+  .intro-flame-sweep { top: -60%; right: -10%; bottom: auto; left: -10%; width: auto; height: 60%; clip-path: polygon(0 0, 100% 0, 100% 43%, 91% 32%, 82% 58%, 71% 36%, 61% 70%, 50% 39%, 38% 65%, 25% 33%, 15% 58%, 8% 38%, 0 62%); }
+  .intro-flame-sweep::before { background: linear-gradient(180deg, transparent, rgba(103, 24, 165, .22) 15%, rgba(165, 52, 229, .85) 48%, rgba(255, 191, 97, .98) 55%, rgba(190, 60, 242, .84) 67%, transparent); }
+  .intro-flame-sweep::after { background: radial-gradient(ellipse at 50% 55%, rgba(255, 226, 147, .86), rgba(205, 82, 255, .54) 30%, transparent 74%); }
+  .intro-playing .intro-flame-sweep { animation-name: flame-pass-down; }
+}
+
 /* Phone: purpose-built portrait composition and thumb-friendly control. */
 @media (max-width: 700px) {
   .intro-layout { display: block; }
@@ -203,15 +189,11 @@ body.kingdom-intro { color: #fff; }
   .intro-stage { width: 100%; height: 100%; }
   .intro-scene img { object-position: center center; }
   .intro-shade { background: linear-gradient(0deg, rgba(8, 4, 13, .68), transparent 34%); }
-  .intro-gate-door { top: auto; bottom: auto; width: 100%; height: 51%; }
-  .intro-gate-door-left { top: 0; left: 0; right: 0; border-right-width: 7px; border-bottom: 2px solid #e2bc78; }
-  .intro-gate-door-right { right: 0; bottom: 0; left: 0; border-top: 2px solid #e2bc78; border-left-width: 7px; }
-  .intro-gate-door-left::after { top: auto; right: 0; bottom: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(180deg, #5b3c24, #f0cf8e 42%, #704722 72%, #2a1e1d); }
-  .intro-gate-door-right::after { top: 0; right: 0; bottom: auto; left: 0; width: 100%; height: 8px; background: linear-gradient(180deg, #5b3c24, #f0cf8e 42%, #704722 72%, #2a1e1d); }
-  .intro-playing .intro-gate-door-left { animation-name: gate-open-top; }
-  .intro-playing .intro-gate-door-right { animation-name: gate-open-bottom; }
-  .intro-revealed .intro-gate-door-left { transform: translateY(-103%); }
-  .intro-revealed .intro-gate-door-right { transform: translateY(103%); }
+  .intro-playing .intro-scene { clip-path: inset(0 0 100% 0); animation-name: scene-unveil-down; }
+  .intro-flame-sweep { top: -60%; right: -10%; bottom: auto; left: -10%; width: auto; height: 60%; clip-path: polygon(0 0, 100% 0, 100% 43%, 91% 32%, 82% 58%, 71% 36%, 61% 70%, 50% 39%, 38% 65%, 25% 33%, 15% 58%, 8% 38%, 0 62%); }
+  .intro-flame-sweep::before { background: linear-gradient(180deg, transparent, rgba(103, 24, 165, .22) 15%, rgba(165, 52, 229, .85) 48%, rgba(255, 191, 97, .98) 55%, rgba(190, 60, 242, .84) 67%, transparent); }
+  .intro-flame-sweep::after { background: radial-gradient(ellipse at 50% 55%, rgba(255, 226, 147, .86), rgba(205, 82, 255, .54) 30%, transparent 74%); }
+  .intro-playing .intro-flame-sweep { animation-name: flame-pass-down; }
   .intro-skip { top: max(16px, env(safe-area-inset-top)); right: 16px; padding: 9px 10px; font-size: 9px; }
   .intro-seal { width: 85px; height: 85px; }
   .intro-seal span { font-size: 29px; }
@@ -232,15 +214,10 @@ body.kingdom-intro { color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   .intro-scene img, .intro-flame, .intro-embers i { animation: none !important; }
-  .intro-playing .intro-gate-door-left, .intro-revealed .intro-gate-door-left { animation: none !important; transform: translateX(-103%); }
-  .intro-playing .intro-gate-door-right, .intro-revealed .intro-gate-door-right { animation: none !important; transform: translateX(103%); }
+  .intro-playing .intro-scene { animation: none !important; clip-path: none; }
+  .intro-flame-sweep { display: none; }
   .intro-playing .intro-seal, .intro-playing .intro-kicker, .intro-playing .intro-copy h1,
   .intro-playing .intro-tagline, .intro-playing .intro-enter, .intro-playing .intro-footnote { animation: none !important; opacity: 1; transform: none; }
   .intro-seal { display: none; }
-}
-
-@media (max-width: 700px) and (prefers-reduced-motion: reduce) {
-  .intro-playing .intro-gate-door-left, .intro-revealed .intro-gate-door-left { transform: translateY(-103%); }
-  .intro-playing .intro-gate-door-right, .intro-revealed .intro-gate-door-right { transform: translateY(103%); }
 }
 

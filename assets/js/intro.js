@@ -1,4 +1,4 @@
-// Controls the one-time curtain reveal on the Kingdom 167 entry page.
+// Controls the one-time landscape reveal on the Kingdom 167 entry page.
 (function () {
   const page = document.documentElement;
   const skipButton = document.getElementById("skip-intro");
