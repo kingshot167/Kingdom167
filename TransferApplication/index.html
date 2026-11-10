@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090611">
+  <meta name="description" content="Kingdom 167 transfer application information and applicant profile form.">
+  <title>Transfer Application | Kingdom 167</title>
+  <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
+  <link rel="stylesheet" href="/Kingdom167/assets/css/navigation.css">
+</head>
+<body class="page-transfer site-with-rail">
+  <div class="shell" id="top">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/Kingdom167/Home/"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span class="brand-full">KINGDOM 167</span></a>
+        <nav class="nav" aria-label="Main navigation">
+          <a class="nav-link" href="/Kingdom167/Home/">Command Centre</a>
+          <a class="nav-link" href="/Kingdom167/Alliances/">Alliances</a>
+          <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland</a>
+          <a class="nav-link" href="/Kingdom167/AllianceBrawl/">Brawl</a>
+        </nav>
+        <a class="header-cta" href="#application-form">Application details ↓</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="transfer-hero" aria-labelledby="transfer-title">
+        <picture class="transfer-hero-media" aria-hidden="true">
+          <source media="(max-width: 700px)" srcset="/Kingdom167/assets/intro-phone.jpg">
+          <source media="(min-width: 701px) and (max-width: 1100px)" srcset="/Kingdom167/assets/intro-ipad.jpg">
+          <img src="/Kingdom167/assets/intro-desktop.jpg" alt="" fetchpriority="high">
+        </picture>
+        <div class="transfer-hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> JOIN THE KINGDOM <span class="eyebrow-line"></span></p>
+          <h1 id="transfer-title">Transfer<br><span class="gold">Application</span></h1>
+          <p class="tagline">A new banner. A stronger kingdom.</p>
+          <p class="hero-copy">Apply to transfer into Kingdom 167. Share your account profile and preferences for leadership to review when secure applications open.</p>
+          <div class="hero-actions"><a class="btn gold" href="#application-form">View application →</a><a class="btn ghost" href="/Kingdom167/Alliances/">Meet the alliances</a></div>
+          <p class="hero-meta">KINGDOM 167 <i>•</i> FIVE ALLIANCES <i>•</i> ONE CROWN</p>
+        </div>
+      </section>
+
+      <section class="transfer-section" id="application-form">
+        <div class="transfer-heading">
+          <span class="kicker">TRANSFER APPLICATION</span>
+          <h2>Apply to Kingdom 167.</h2>
+          <p>Fields marked <b>*</b> will be required when applications open. Your information should be reviewed privately by kingdom leadership.</p>
+          <span class="transfer-review-badge"><span aria-hidden="true">♙</span> SECURE SUBMISSION NOT CONNECTED</span>
+        </div>
+
+        <div class="transfer-preview-note" role="status">
+          <b>Preview only</b>
+          <span>This form is not connected to a private leadership inbox yet. Its fields are disabled, and nothing is sent or stored. Please don’t enter real account or contact details.</span>
+        </div>
+
+        <form class="transfer-form" autocomplete="off">
+          <fieldset class="transfer-step" disabled>
+            <legend><span>01</span><span><b>Contact &amp; account</b><small>Tell leadership who you are and how to reach you.</small></span></legend>
+            <div class="transfer-fields">
+              <label class="transfer-field">Who did you talk to about transferring? <em>*</em>
+                <input name="referrer" type="text" placeholder="Governor or recruiter name" required>
+              </label>
+              <label class="transfer-field">Discord username <em>*</em>
+                <input name="discord" type="text" placeholder="Example: governorname" required>
+              </label>
+              <label class="transfer-field">Email address <span>(optional)</span>
+                <input name="email" type="email" placeholder="you@example.com">
+              </label>
+              <label class="transfer-field">Current Kingdom <em>*</em>
+                <input name="current-kingdom" type="text" inputmode="numeric" placeholder="Example: 846" required>
+              </label>
+              <label class="transfer-field">In-game governor name <em>*</em>
+                <input name="governor-name" type="text" placeholder="Your exact in-game name" required>
+              </label>
+              <label class="transfer-field">KingShot Player ID <em>*</em>
+                <input name="player-id" type="text" inputmode="numeric" placeholder="Numbers only" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="transfer-step" disabled>
+            <legend><span>02</span><span><b>Account strength</b><small>Help leadership understand your account and transfer capacity.</small></span></legend>
+            <div class="transfer-fields">
+              <label class="transfer-field">Current power <em>*</em>
+                <input name="power" type="text" placeholder="Example: 200M" required>
+              </label>
+              <label class="transfer-field">City level <em>*</em>
+                <input name="city-level" type="text" placeholder="Example: 30" required>
+              </label>
+              <label class="transfer-field">VIP level <em>*</em>
+                <input name="vip-level" type="text" placeholder="Enter your VIP level" required>
+              </label>
+              <label class="transfer-field">Transfer tickets currently owned <em>*</em>
+                <input name="tickets" type="number" min="0" placeholder="Number of tickets" required>
+              </label>
+              <label class="transfer-field">Willing to buy more tickets? <em>*</em>
+                <select name="buy-tickets" required><option value="">Choose one…</option><option>Yes</option><option>No</option><option>Not sure yet</option></select>
+              </label>
+              <label class="transfer-field">Power cap / invitation plan <em>*</em>
+                <select name="power-cap" required><option value="">Choose one…</option><option>I will follow the available leadership cap</option><option>I have a preferred power cap</option><option>I would like guidance</option></select>
+              </label>
+            </div>
+            <fieldset class="troop-levels">
+              <legend>Troop levels <span>(select all that apply)</span></legend>
+              <div class="troop-level-grid">
+                <label><input type="checkbox" name="troop-level" value="TG1-4 T10"><span>TG1–4 T10</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG5 T10"><span>TG5 T10</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG6 T10"><span>TG6 T10</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG7 T10"><span>TG7 T10</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG8 T10"><span>TG8 T10</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG5 T11"><span>TG5 T11</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG6 T11"><span>TG6 T11</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG7 T11"><span>TG7 T11</span></label>
+                <label><input type="checkbox" name="troop-level" value="TG8 T11"><span>TG8 T11</span></label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="transfer-step" disabled>
+            <legend><span>03</span><span><b>Transfer preferences</b><small>Help route your application to the right alliance leadership.</small></span></legend>
+            <div class="transfer-fields">
+              <label class="transfer-field">Preferred Kingdom 167 alliance
+                <select name="alliance"><option>No preference</option><option>RYL — Royal Legionnairs</option><option>JUS — Justice</option><option>TNW — The Night's Watch</option><option>ONE — One Nation Empire</option><option>ITA — Imperium Æternum</option></select>
+              </label>
+              <label class="transfer-field">Applying alone or with a group? <em>*</em>
+                <select name="group-type" required><option value="">Choose one…</option><option>Applying alone</option><option>Applying with a group</option></select>
+              </label>
+              <label class="transfer-field transfer-field-wide">Why do you want to transfer to Kingdom 167? <em>*</em>
+                <textarea name="reason" rows="4" placeholder="Tell us what you are looking for, your activity level, event interests, and what you can bring to the kingdom." required></textarea>
+              </label>
+              <label class="transfer-field transfer-field-wide">Questions or comments
+                <textarea name="comments" rows="3" placeholder="Anything else leadership should know?"></textarea>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="transfer-confirm"><input type="checkbox" required disabled><span>I confirm this information is accurate and understand that applying does not guarantee a transfer invitation.</span></label>
+          <button class="transfer-submit" type="submit" disabled>Secure submission coming soon <span aria-hidden="true">→</span></button>
+          <p class="transfer-submit-note">When secure submission is ready, your application will be routed for private leadership review.</p>
+        </form>
+      </section>
+
+      <section class="transfer-help">
+        <div><span class="kicker">ALREADY IN KINGDOM 167?</span><h2>Find your alliance.</h2><p>Explore the five alliance profiles or return to the command centre.</p></div>
+        <div class="transfer-help-actions"><a class="btn gold" href="/Kingdom167/Alliances/">View alliances →</a><a class="btn ghost" href="/Kingdom167/Home/">Command Centre</a></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner"><a class="brand" href="/Kingdom167/Home/"><span class="diamond">♛</span><span class="brand-k">K167</span><span>Kingdom 167</span></a><p>Transfer Application</p><a class="return-top" href="#top">Return to the crown ↑</a></div>
+      <div class="footer-bottom"><span>THE DIRTYBOB REALM</span><span>FIVE BANNERS • ONE KINGDOM</span></div>
+    </footer>
+  </div>
+  <script src="/Kingdom167/assets/js/navigation.js" defer></script>
+</body>
+</html>

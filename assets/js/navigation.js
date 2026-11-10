@@ -4,12 +4,25 @@
   const items = [
     { label: "Home", icon: "⌂", href: home, key: "home" },
     { label: "Alliances", icon: "♜", href: "/Kingdom167/Alliances/", key: "alliances" },
+    { label: "Transfer Application", icon: "⇢", href: "/Kingdom167/TransferApplication/", key: "transfer" },
+    { label: "Member Portal", icon: "♙", href: "/Kingdom167/MemberPortal/", key: "portal" },
+    { label: "Rankings", icon: "♜", href: "/Kingdom167/Rankings/", key: "rankings" },
     { label: "Swordland Summit", short: "Swordland", icon: "⚔", href: "/Kingdom167/SwordlandSummit/", key: "swordland" },
     { label: "Alliance Brawl", icon: "♢", href: "/Kingdom167/AllianceBrawl/", key: "brawl" },
     { label: "Prep Week", icon: "▤", href: "/Kingdom167/PrepWeek/", key: "prep" },
     { label: "Sanctuaries", icon: "♜", href: "/Kingdom167/Sanctuaries/", key: "sanctuaries" },
     { label: "Flame Dragon Tyrant", short: "Dragon Tyrant", icon: "♨", href: "/Kingdom167/FlameDragonTyrant/", key: "dragon" },
-    { label: "KvK Themes", icon: "✧", href: "/Kingdom167/KvKThemes/", key: "themes" }
+    { label: "KvK Themes", icon: "✧", href: "/Kingdom167/KvKThemes/", key: "themes" },
+    { label: "Event Calendar", icon: "▦", href: "/Kingdom167/EventCalendar/", key: "calendar" },
+    { label: "KvK Command Board", short: "KvK Board", icon: "⚑", href: "/Kingdom167/KvKCommandBoard/", key: "command" },
+    { label: "Recognition Board", short: "Recognition", icon: "★", href: "/Kingdom167/RecognitionBoard/", key: "recognition" },
+    { label: "Resource Library", short: "Resources", icon: "▤", href: "/Kingdom167/ResourceLibrary/", key: "resources" },
+    { label: "Announcements", icon: "✉", href: "/Kingdom167/Announcements/", key: "announcements" },
+    { label: "Event Rosters", icon: "♟", href: "/Kingdom167/EventRosters/", key: "rosters" },
+    { label: "Contact Us", icon: "✉", href: "/Kingdom167/ContactUs/", key: "contact" },
+    { label: "Kingdom Directory", short: "Directory", icon: "◎", href: "/Kingdom167/KingdomDirectory/", key: "directory" },
+    { label: "Pocket Holdout", short: "Pocket Holdout", icon: "✊", href: "/Kingdom167/PocketHoldout/", key: "pocket" },
+    { label: "Rules & FAQ", short: "Rules & FAQ", icon: "❖", href: "/Kingdom167/RulesFAQ/", key: "rules" }
   ];
 
   function railMarkup(intro) {
@@ -60,12 +73,25 @@
   let activeKey = "";
   if (path === "/Kingdom167" || path === "/Kingdom167/Home") activeKey = hash === "#alliances" ? "alliances" : "home";
   else if (path.indexOf("/Alliances") !== -1) activeKey = "alliances";
+  else if (path.indexOf("TransferApplication") !== -1) activeKey = "transfer";
+  else if (path.indexOf("MemberPortal") !== -1) activeKey = "portal";
+  else if (path.indexOf("Rankings") !== -1) activeKey = "rankings";
   else if (path.indexOf("SwordlandSummit") !== -1) activeKey = "swordland";
   else if (path.indexOf("AllianceBrawl") !== -1) activeKey = "brawl";
   else if (path.indexOf("PrepWeek") !== -1) activeKey = "prep";
   else if (path.indexOf("Sanctuaries") !== -1) activeKey = "sanctuaries";
   else if (path.indexOf("FlameDragonTyrant") !== -1) activeKey = "dragon";
   else if (path.indexOf("KvKThemes") !== -1) activeKey = "themes";
+  else if (path.indexOf("EventCalendar") !== -1) activeKey = "calendar";
+  else if (path.indexOf("KvKCommandBoard") !== -1) activeKey = "command";
+  else if (path.indexOf("RecognitionBoard") !== -1) activeKey = "recognition";
+  else if (path.indexOf("ResourceLibrary") !== -1) activeKey = "resources";
+  else if (path.indexOf("Announcements") !== -1) activeKey = "announcements";
+  else if (path.indexOf("EventRosters") !== -1) activeKey = "rosters";
+  else if (path.indexOf("ContactUs") !== -1) activeKey = "contact";
+  else if (path.indexOf("KingdomDirectory") !== -1) activeKey = "directory";
+  else if (path.indexOf("PocketHoldout") !== -1) activeKey = "pocket";
+  else if (path.indexOf("RulesFAQ") !== -1) activeKey = "rules";
   const activeLink = rail.querySelector('[data-rail-key="' + activeKey + '"]');
   if (activeLink) {
     activeLink.classList.add("is-active");

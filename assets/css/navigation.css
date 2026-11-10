@@ -61,7 +61,7 @@ body.site-with-rail > .shell {
 .kingdom-rail .rail-crest i { position: absolute; top: -9px; left: 17px; font: normal 16px Georgia, serif; text-shadow: 0 0 12px var(--rail-gold); }
 .kingdom-rail .rail-brand-name { color: #f4e5c4; font: 700 14px Georgia, serif; letter-spacing: .12em; }
 .kingdom-rail .rail-brand-name small { display: block; margin-top: 6px; color: #aa98b4; font: 700 8px Inter, system-ui, sans-serif; letter-spacing: .17em; }
-.kingdom-rail .rail-nav { display: grid; gap: 7px; margin-top: 25px; }
+.kingdom-rail .rail-nav { display: grid; gap: 7px; margin-top: 25px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
 .kingdom-rail .rail-link {
   display: flex;
   align-items: center;
@@ -148,6 +148,8 @@ body.site-with-rail > .shell {
     width: min(82vw, 300px);
     height: 100vh;
     height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     padding: max(20px, env(safe-area-inset-top)) 18px max(20px, env(safe-area-inset-bottom));
     transform: translateX(-105%);
     transition: transform .28s cubic-bezier(.2, .8, .2, 1);
