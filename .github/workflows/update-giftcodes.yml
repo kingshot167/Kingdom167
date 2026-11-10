@@ -7,7 +7,7 @@ on:
       - "scripts/fetch_giftcodes.py"
   schedule:
     # Three checks daily, offset from the hour to avoid peak GitHub Actions load.
-    - cron: "17 0,8,16 * * *"
+    - cron: "5 3,11,19 * * *"
   workflow_dispatch:
 
 permissions:
