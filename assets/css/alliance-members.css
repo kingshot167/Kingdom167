@@ -1,0 +1,22 @@
+.alliance-roster-section { max-width: 1440px; margin: 42px auto; }
+.alliance-roster-section .alliance-section-heading { margin-bottom: 18px; }
+.alliance-roster-status { min-height: 20px; margin: 0 0 14px; color: var(--muted); font-size: 12px; }
+.alliance-roster-groups { display: grid; gap: 14px; }
+.alliance-roster-group { padding: 17px; border: 1px solid rgba(197, 137, 237, .2); border-radius: 12px; background: linear-gradient(145deg, rgba(31, 20, 43, .96), rgba(15, 11, 21, .98)); }
+.alliance-roster-group-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.alliance-roster-group-head h3 { margin: 0; color: var(--alliance-accent); font: 800 18px Inter, system-ui, sans-serif; }
+.alliance-roster-group-head span { color: #b7a9c7; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.alliance-member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 10px; padding-top: 14px; }
+.alliance-member-card { min-width: 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .09); border-radius: 10px; background: rgba(8, 6, 13, .58); }
+.alliance-member-avatar { position: relative; display: grid; aspect-ratio: 1; place-items: center; overflow: hidden; background: radial-gradient(circle, rgba(173, 67, 239, .22), rgba(8, 6, 13, .9)); color: var(--alliance-accent); font-size: 32px; font-weight: 800; }
+.alliance-member-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.alliance-member-name { display: block; overflow: hidden; padding: 9px 7px; color: #eee3f4; font-size: 12px; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
+.alliance-card-stats { display: flex; flex-wrap: wrap; gap: 7px 15px; margin-top: 14px; color: #c5b7d1; font-size: 11px; letter-spacing: .04em; }
+.alliance-card-stats span { white-space: nowrap; }
+.alliance-card-stats b { color: var(--alliance-accent); font-size: 13px; font-weight: 850; }
+
+@media (max-width: 600px) {
+  .alliance-roster-group { padding: 13px; }
+  .alliance-member-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .alliance-member-name { font-size: 11px; }
+}

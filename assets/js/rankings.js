@@ -1,4 +1,4 @@
-/* Reads the published leaderboard snapshot. A future MightPulse sync fills the JSON. */
+/* Reads the published JSON snapshot written by the MightPulse GitHub Actions refresh. */
 (function () {
   const dataUrl = "/Kingdom167/assets/data/leaderboards.json";
   const boardSelect = document.getElementById("board-select");
@@ -72,12 +72,12 @@
     if (!snapshot) return;
     const key = boardSelect.value;
     const board = snapshot.leaderboards && snapshot.leaderboards[key];
-    const isAlliance = key === "alliance_power" || key === "alliance_kills";
+    const isAlliance = board && board.kind ? board.kind === "alliance" : key === "alliance_power" || key === "alliance_kills";
     title.textContent = boardLabels.get(key) || "Leaderboard";
     kindLabel.textContent = isAlliance ? "ALLIANCE LEADERBOARD" : "GOVERNOR LEADERBOARD";
 
     if (!board || !Array.isArray(board.entries) || board.entries.length === 0) {
-      showEmpty("No cached rankings for this board yet. The JSON snapshot will populate when the MightPulse refresh is connected.");
+      showEmpty("No rankings are available for this board in the latest snapshot.");
       return;
     }
 
@@ -108,9 +108,9 @@
       snapshot = data;
       if (data.updated_at) {
         const date = new Date(data.updated_at);
-        updated.textContent = Number.isNaN(date.getTime()) ? "Snapshot date unavailable" : "JSON refreshed " + date.toLocaleString();
+        updated.textContent = Number.isNaN(date.getTime()) ? "Snapshot date unavailable" : "Snapshot updated " + date.toLocaleString();
       } else updated.textContent = "Waiting for the first JSON refresh";
-      status.textContent = "JSON snapshot loaded · " + (data.kingdom_name || "Kingdom 167");
+      status.textContent = "MightPulse snapshot loaded · " + (data.kingdom_name || "Kingdom 167");
       render();
     })
     .catch(function () {
