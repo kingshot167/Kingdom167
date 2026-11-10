@@ -5,6 +5,21 @@
 .gift-heading h1{font-size:clamp(40px,7vw,68px);line-height:1;margin:14px 0}
 .gift-heading h1 span{color:var(--gold2);font-style:italic}
 .gift-heading>p:last-child{max-width:520px;margin:0 auto;color:var(--muted);line-height:1.65}
+.code-catalog{margin:0 0 20px;padding:clamp(20px,4vw,30px);border:1px solid rgba(157,92,255,.28);border-radius:16px;background:linear-gradient(140deg,rgba(123,53,213,.13),transparent 60%),#100a19}
+.catalog-head{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.catalog-head h2{margin:8px 0 0;font:800 24px/1.1 Inter,system-ui,sans-serif}
+.catalog-refresh{display:grid;place-items:center;width:40px;height:40px;border:1px solid rgba(216,178,92,.32);border-radius:50%;color:var(--gold2);font-size:22px}
+.codes-meta{margin:11px 0 16px;color:var(--muted);font-size:12px;line-height:1.5}
+.available-codes{display:grid;gap:8px}
+.available-code{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 13px;border:1px solid rgba(248,241,229,.1);border-radius:9px;background:rgba(7,3,15,.43)}
+.available-code-main{min-width:0}
+.available-code-name{display:block;color:#fff2d3;font:700 15px/1.3 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}
+.available-code-expiry{display:block;margin-top:4px;color:#ad9fb7;font-size:11px}
+.use-code-button{flex:0 0 auto;min-height:36px;padding:0 12px;border:1px solid rgba(216,178,92,.42);border-radius:7px;background:rgba(216,178,92,.08);color:var(--gold2);font-size:11px;font-weight:800}
+.use-code-button:hover{background:rgba(216,178,92,.16)}
+.codes-empty{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+.catalog-source{margin:14px 0 0;color:#9e91a7;font-size:11px;line-height:1.55}
+.catalog-source a{color:var(--gold2);text-decoration:underline;text-underline-offset:3px}
 .gift-card,.gift-result{padding:clamp(22px,5vw,38px);border:1px solid rgba(216,178,92,.28);border-radius:18px;background:linear-gradient(145deg,rgba(123,53,213,.13),transparent 55%),#120a20;box-shadow:0 24px 80px rgba(0,0,0,.25)}
 .gift-card-head,.gift-result-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:25px}
 .gift-card h2,.gift-result h2{font-size:30px;line-height:1.1;margin:8px 0 0}
@@ -35,4 +50,4 @@
 .gift-note p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.65}
 .gift-footer{display:flex;justify-content:space-between;gap:16px;padding:20px max(20px,calc((100% - 760px)/2));border-top:1px solid rgba(216,178,92,.16);color:#9d8ca6;font-size:10px;letter-spacing:.12em}
 .gift-footer a{color:var(--gold2);letter-spacing:0}
-@media(max-width:700px){.gift-code-page .topbar-inner{padding:0 16px}.gift-code-page .nav,.gift-code-page .header-cta{display:none}.gift-wrap{width:min(100% - 28px,600px);padding-top:38px}.gift-footer{padding:18px 14px;font-size:9px}}
+@media(max-width:700px){.gift-code-page .topbar-inner{padding:0 16px}.gift-code-page .nav,.gift-code-page .header-cta{display:none}.gift-wrap{width:min(100% - 28px,600px);padding-top:38px}.gift-footer{padding:18px 14px;font-size:9px}.available-code{align-items:flex-start}.use-code-button{min-height:34px;padding:0 9px}}

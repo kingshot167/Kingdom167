@@ -70,6 +70,74 @@
   const badge = document.getElementById("result-badge");
   const summary = document.getElementById("result-summary");
   const raw = document.getElementById("result-raw");
+  const codesMeta = document.getElementById("codes-meta");
+  const codesList = document.getElementById("available-codes");
+
+  function formatDate(value) {
+    if (!value) return "No expiry announced";
+    const numeric = typeof value === "number" || /^\d+(\.\d+)?$/.test(String(value));
+    const timestamp = numeric ? Number(value) * (Number(value) < 100000000000 ? 1000 : 1) : value;
+    const date = new Date(timestamp);
+    if (Number.isNaN(date.getTime())) return "Expiry: " + value;
+    return "Expires " + new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeZone: "UTC" }).format(date) + " (UTC)";
+  }
+
+  async function loadCodes() {
+    try {
+      const response = await fetch("/Kingdom167/assets/data/giftcodes.json", { cache: "no-cache" });
+      if (!response.ok) throw new Error("Code list unavailable");
+      const data = await response.json();
+      if (!Array.isArray(data.codes)) throw new Error("Unexpected code-list format");
+      codesList.replaceChildren();
+      if (data.updated_at) {
+        const updated = new Date(data.updated_at);
+        codesMeta.textContent = "Active codes · list last changed " + (Number.isNaN(updated.getTime()) ? data.updated_at : new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }).format(updated) + " UTC");
+      } else {
+        codesMeta.textContent = "Active codes · waiting for the first successful scheduled update";
+      }
+      if (data.codes.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "codes-empty";
+        empty.textContent = "No codes are loaded yet. You can still enter a code manually below.";
+        codesList.appendChild(empty);
+        return;
+      }
+      data.codes.forEach(function (item) {
+        if (!item || typeof item.code !== "string") return;
+        const row = document.createElement("div");
+        row.className = "available-code";
+        const main = document.createElement("div");
+        main.className = "available-code-main";
+        const name = document.createElement("span");
+        name.className = "available-code-name";
+        name.textContent = item.code;
+        const expiry = document.createElement("span");
+        expiry.className = "available-code-expiry";
+        expiry.textContent = formatDate(item.expires_at);
+        const use = document.createElement("button");
+        use.className = "use-code-button";
+        use.type = "button";
+        use.textContent = "Use code";
+        use.addEventListener("click", function () {
+          document.getElementById("gift-code").value = item.code;
+          document.getElementById("gift-code").focus();
+          document.getElementById("gift-form").scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        main.append(name, expiry);
+        row.append(main, use);
+        codesList.appendChild(row);
+      });
+    } catch (_) {
+      codesMeta.textContent = "The code list could not be loaded right now.";
+      codesList.replaceChildren();
+      const fallback = document.createElement("p");
+      fallback.className = "codes-empty";
+      fallback.textContent = "You can still enter a gift code manually below.";
+      codesList.appendChild(fallback);
+    }
+  }
+
+  loadCodes();
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();

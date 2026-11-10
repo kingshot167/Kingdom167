@@ -1,30 +1,235 @@
-(function(){
-  const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
-  const timerEl=document.getElementById('timer'),bestEl=document.getElementById('best'),meter=document.getElementById('meter'),overlay=document.getElementById('overlay');
-  const title=document.getElementById('overlay-title'),copy=document.getElementById('overlay-copy');
-  let running=false,holding=false,alive=false,started=0,last=0,tension=0,docX=355,bobX=605,lean=0,sound=false,audio;
-  let best=Number(localStorage.getItem('pocketHoldoutBest')||0),particles=[];
-  const fmt=n=>{let s=n/1000;return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(Math.floor(s%60)).padStart(2,'0')}.${Math.floor(s%1*10)}`};
-  bestEl.textContent=fmt(best);
-  function start(){running=true;alive=true;started=performance.now();last=started;tension=0;docX=355;bobX=605;lean=0;holding=true;overlay.classList.add('hidden');requestAnimationFrame(loop)}
-  function end(){alive=false;running=false;holding=false;const score=performance.now()-started;if(score>best){best=score;localStorage.setItem('pocketHoldoutBest',best);bestEl.textContent=fmt(best)}title.textContent='Pocket escaped!';copy.textContent=`StreetDoc held on for ${fmt(score)}. Dirtybob’s pocket lives to fight another day.`;document.getElementById('start').textContent='Try again';overlay.classList.remove('hidden');beep(170,.18)}
-  function setHold(v){if(!alive)return;holding=v}
-  function beep(f,d){if(!sound)return;try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();const o=audio.createOscillator(),g=audio.createGain();o.frequency.value=f;o.type='triangle';g.gain.value=.035;o.connect(g);g.connect(audio.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+d);o.stop(audio.currentTime+d)}catch(e){}}
-  function drawPerson(x,y,shirt,name,pose){ctx.save();ctx.translate(x,y);ctx.fillStyle='#17111d';ctx.beginPath();ctx.ellipse(0,3,34,9,0,0,7);ctx.fill();ctx.fillStyle='#302638';ctx.fillRect(-17,-64,13,64);ctx.fillRect(5,-64,13,64);ctx.fillStyle=shirt;ctx.beginPath();ctx.roundRect(-27,-112,54,52,10);ctx.fill();ctx.fillStyle='#d8a985';ctx.beginPath();ctx.arc(0,-128,22,0,7);ctx.fill();ctx.fillStyle='#342321';ctx.beginPath();ctx.arc(0,-137,22,Math.PI,Math.PI*2);ctx.fill();ctx.fillRect(-21,-138,42,9);ctx.fillStyle='#22171c';ctx.fillRect(-10,-132,5,3);ctx.fillRect(7,-132,5,3);ctx.strokeStyle='#6a332e';ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,-122,7,.2,2.9);ctx.stroke();ctx.fillStyle='#e8e2ee';ctx.font='bold 13px system-ui';ctx.textAlign='center';ctx.fillText(name,0,-161);if(pose){ctx.strokeStyle='#d8a985';ctx.lineWidth=11;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-20,-102);ctx.lineTo(-42,-88);ctx.lineTo(-56,-91);ctx.stroke()}else{ctx.strokeStyle='#d8a985';ctx.lineWidth=11;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(20,-101);ctx.lineTo(42,-89);ctx.lineTo(51,-95);ctx.stroke()}ctx.restore()}
-  function draw(now){const w=960,h=540;ctx.clearRect(0,0,w,h);let t=now*.001;let grad=ctx.createLinearGradient(0,0,0,h);grad.addColorStop(0,'#241933');grad.addColorStop(.62,'#49314c');grad.addColorStop(1,'#17111d');ctx.fillStyle=grad;ctx.fillRect(0,0,w,h);
-    ctx.fillStyle='#19131f';for(let i=0;i<8;i++){let x=i*145-30;ctx.fillRect(x,115+(i%2)*24,110,230);ctx.fillStyle='#76506b';for(let j=0;j<3;j++)ctx.fillRect(x+18+j*31,145+(i%2)*24,12,30);ctx.fillStyle='#19131f'}
-    ctx.fillStyle='#302438';ctx.fillRect(0,360,w,180);ctx.strokeStyle='#614d64';ctx.lineWidth=2;for(let x=0;x<w;x+=90){ctx.beginPath();ctx.moveTo(x,360);ctx.lineTo(x-100,540);ctx.stroke()}ctx.fillStyle='#dbccde';ctx.globalAlpha=.18;ctx.font='bold 24px system-ui';ctx.fillText('KINGDOM 167',22,402);ctx.globalAlpha=1;
-    const pocketX=bobX-37,pocketY=249;const stretch=Math.abs(pocketX-(docX+52));ctx.beginPath();ctx.moveTo(docX+52,269);ctx.quadraticCurveTo((docX+pocketX)/2,240+Math.sin(t*10)*12,pocketX,pocketY);ctx.strokeStyle=holding?'#d8b5ff':'#db5476';ctx.lineWidth=holding?7:4;ctx.setLineDash(holding?[]:[10,10]);ctx.stroke();ctx.setLineDash([]);
-    ctx.fillStyle='#542a4b';ctx.beginPath();ctx.moveTo(bobX-31,253);ctx.lineTo(bobX-3,253);ctx.lineTo(bobX+4,280);ctx.lineTo(bobX-38,280);ctx.fill();ctx.fillStyle='#ffcf5c';ctx.fillRect(pocketX-1,250,13,8);ctx.fillStyle='#fff0b0';ctx.fillRect(pocketX+3,251,5,2);
-    drawPerson(docX,360,'#7a4dc0','STREETDOC',true);drawPerson(bobX,360,'#ad3359','DIRTYBOB',false);
-    ctx.fillStyle='#fff';ctx.font='15px system-ui';ctx.textAlign='center';ctx.fillText(holding?'GRIP LOCKED':'RELEASED!',(docX+bobX)/2,218);
-    if(Math.random()<.16&&holding){particles.push({x:pocketX,y:pocketY,vx:(Math.random()-.5)*2,vy:-Math.random()*2-1,life:1})}particles=particles.filter(p=>p.life>0);particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.life-=.025;ctx.globalAlpha=p.life;ctx.fillStyle='#ffd66b';ctx.fillRect(p.x,p.y,4,4)});ctx.globalAlpha=1;
-    if(alive){const elapsed=now-started;timerEl.textContent=fmt(elapsed)}
+(function () {
+  const canvas = document.getElementById("game");
+  const ctx = canvas.getContext("2d");
+  const overlay = document.getElementById("overlay");
+  const timerEl = document.getElementById("timer");
+  const scoreEl = document.getElementById("score");
+  const meter = document.getElementById("meter");
+  const bestEl = document.getElementById("best");
+  const title = document.getElementById("overlay-title");
+  const copy = document.getElementById("overlay-copy");
+  const sprites = {
+    streetDoc: new Image(),
+    dirtybob: new Image()
+  };
+  sprites.streetDoc.src = "/Kingdom167/assets/streetdoc-sprite.png";
+  sprites.dirtybob.src = "/Kingdom167/assets/dirtybob-sprite.png";
+  const state = {
+    active: false, grip: false, runId: 0, started: 0, last: 0, elapsed: 0,
+    tension: 0, docX: 350, bobX: 620, bobY: 340, direction: 1,
+    score: 0, best: Number(localStorage.getItem("pocketHoldoutBest") || 0),
+    keys: new Set(), pointer: null, target: null, nextTarget: 0,
+    sound: false, audio: null, sparks: []
+  };
+
+  function timeText(ms) {
+    const seconds = ms / 1000;
+    return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(Math.floor(seconds % 60)).padStart(2, "0")}.${Math.floor(seconds % 1 * 10)}`;
   }
-  function loop(now){if(!alive)return;let dt=Math.min((now-last)/1000,.04);last=now;const elapsed=now-started;const difficulty=1+elapsed/28000;bobX+=((Math.sin(now*.0015)*110 + Math.sin(now*.00063)*125)*difficulty*dt);bobX=Math.max(535,Math.min(855,bobX));docX+=lean*250*dt;docX=Math.max(100,Math.min(510,docX));lean*=.91;const distance=Math.max(0,Math.abs((bobX-37)-(docX+52))-145);if(holding)tension+=dt*(.19+distance/540);else tension+=dt*.9;if(distance<65&&holding)tension-=dt*.25;tension=Math.max(0,Math.min(1,tension));meter.style.width=`${tension*100}%`;if(!holding||tension>=1){draw(now);end();return}draw(now);requestAnimationFrame(loop)}
-  function idle(){if(!alive){draw(performance.now());requestAnimationFrame(idle)}}idle();
-  document.getElementById('start').addEventListener('click',start);document.getElementById('restart').addEventListener('click',()=>{if(!alive)start();else{tension=0;started=performance.now();last=started;holding=false}});
-  document.getElementById('sound').addEventListener('click',e=>{sound=!sound;e.currentTarget.textContent=`Sound: ${sound?'on':'off'}`;e.currentTarget.setAttribute('aria-pressed',String(sound));beep(440,.08)});
-  window.addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();if(!alive)start();setHold(true)}if(e.code==='ArrowLeft'||e.code==='KeyA')lean=-1;if(e.code==='ArrowRight'||e.code==='KeyD')lean=1});window.addEventListener('keyup',e=>{if(e.code==='Space')setHold(false);if(e.code==='ArrowLeft'||e.code==='ArrowRight'||e.code==='KeyA'||e.code==='KeyD')lean=0});
-  canvas.addEventListener('pointerdown',e=>{if(!alive)start();canvas.setPointerCapture(e.pointerId);setHold(true);lean=(e.offsetX/canvas.clientWidth-.5)*2});canvas.addEventListener('pointermove',e=>{if(e.buttons)lean=(e.offsetX/canvas.clientWidth-.5)*2});canvas.addEventListener('pointerup',()=>setHold(false));canvas.addEventListener('pointercancel',()=>setHold(false));
+  bestEl.textContent = timeText(state.best);
+
+  function start() {
+    state.runId++;
+    state.active = true;
+    state.grip = true;
+    state.started = state.last = performance.now();
+    state.elapsed = state.tension = state.score = 0;
+    state.docX = 350;
+    state.bobX = 620;
+    state.bobY = 340;
+    state.direction = 1;
+    state.target = null;
+    state.nextTarget = state.started + 1100;
+    state.sparks.length = 0;
+    state.keys.clear();
+    scoreEl.textContent = "0";
+    meter.style.width = "0%";
+    overlay.classList.add("hidden");
+    requestAnimationFrame(now => frame(now, state.runId));
+  }
+
+  function finish() {
+    if (!state.active) return;
+    state.active = false;
+    state.grip = false;
+    if (state.elapsed > state.best) {
+      state.best = state.elapsed;
+      localStorage.setItem("pocketHoldoutBest", String(state.best));
+      bestEl.textContent = timeText(state.best);
+    }
+    title.textContent = "Pocket escaped!";
+    copy.textContent = `StreetDoc held on for ${timeText(state.elapsed)} and collected ${state.score} in loose change.`;
+    document.getElementById("start").textContent = "Try again";
+    overlay.classList.remove("hidden");
+    beep(170, 0.18);
+  }
+
+  function beep(frequency, duration) {
+    if (!state.sound) return;
+    try {
+      state.audio = state.audio || new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = state.audio.createOscillator();
+      const gain = state.audio.createGain();
+      oscillator.frequency.value = frequency;
+      oscillator.type = "triangle";
+      gain.gain.value = 0.035;
+      oscillator.connect(gain);
+      gain.connect(state.audio.destination);
+      oscillator.start();
+      gain.gain.exponentialRampToValueAtTime(0.001, state.audio.currentTime + duration);
+      oscillator.stop(state.audio.currentTime + duration);
+    } catch (_) {}
+  }
+
+  function character(image, x, groundY, label) {
+    const height = 245;
+    const width = height * 2 / 3;
+    ctx.fillStyle = "#17111d";
+    ctx.beginPath(); ctx.ellipse(x, groundY + 3, 48, 10, 0, 0, Math.PI * 2); ctx.fill();
+    if (image.complete && image.naturalWidth) {
+      ctx.drawImage(image, x - width / 2, groundY - height, width, height);
+    }
+    ctx.fillStyle = "#eee7f5"; ctx.font = "bold 13px system-ui"; ctx.textAlign = "center";
+    ctx.fillText(label, x, groundY - height - 8);
+  }
+
+  function draw(now) {
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#241933"); sky.addColorStop(0.62, "#49314c"); sky.addColorStop(1, "#17111d");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 8; i++) {
+      const x = i * 145 - 30;
+      ctx.fillStyle = "#19131f"; ctx.fillRect(x, 115 + (i % 2) * 24, 110, 245);
+      ctx.fillStyle = "#76506b";
+      for (let j = 0; j < 3; j++) ctx.fillRect(x + 18 + j * 31, 145 + (i % 2) * 24, 12, 30);
+    }
+    ctx.fillStyle = "#302438"; ctx.fillRect(0, 360, w, 180);
+    ctx.strokeStyle = "#614d64"; ctx.lineWidth = 2;
+    for (let x = 0; x < w; x += 90) { ctx.beginPath(); ctx.moveTo(x, 360); ctx.lineTo(x - 100, 540); ctx.stroke(); }
+    ctx.fillStyle = "#dbccde"; ctx.globalAlpha = 0.18; ctx.font = "bold 24px system-ui";
+    ctx.fillText("KINGDOM 167", 22, 402); ctx.globalAlpha = 1;
+
+    const handX = state.docX + 43, handY = 270;
+    const pocketX = state.bobX - 35, pocketY = state.bobY - 75;
+    ctx.beginPath(); ctx.moveTo(handX, handY);
+    ctx.quadraticCurveTo((handX + pocketX) / 2, 228 + Math.sin(now / 130) * 13, pocketX, pocketY);
+    ctx.strokeStyle = state.grip ? "#d8b5ff" : "#db5476"; ctx.lineWidth = 7; ctx.stroke();
+    ctx.fillStyle = "#542a4b";
+    ctx.beginPath(); ctx.moveTo(state.bobX - 31, pocketY + 4); ctx.lineTo(state.bobX - 3, pocketY + 4);
+    ctx.lineTo(state.bobX + 4, pocketY + 31); ctx.lineTo(state.bobX - 38, pocketY + 31); ctx.fill();
+    ctx.fillStyle = "#ffcf5c"; ctx.fillRect(pocketX - 1, pocketY + 1, 13, 8);
+
+    if (state.target) {
+      ctx.save(); ctx.translate(state.target.x, state.target.y); ctx.rotate(now / 500);
+      ctx.fillStyle = "#ffd66b"; ctx.shadowColor = "#ffd66b"; ctx.shadowBlur = 18;
+      ctx.beginPath(); ctx.arc(0, 0, 13, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "#7c4b19"; ctx.font = "bold 14px system-ui"; ctx.textAlign = "center"; ctx.fillText("$", 0, 5);
+      ctx.restore();
+    }
+    state.sparks = state.sparks.filter(spark => spark.life > 0);
+    state.sparks.forEach(spark => {
+      spark.y -= 1.2; spark.life -= 0.025; ctx.globalAlpha = spark.life;
+      ctx.fillStyle = "#ffd66b"; ctx.fillRect(spark.x, spark.y, 5, 5);
+    });
+    ctx.globalAlpha = 1;
+    character(sprites.streetDoc, state.docX, 360, "STREETDOC");
+    character(sprites.dirtybob, state.bobX, state.bobY + 20, "DIRTYBOB");
+    ctx.fillStyle = "#fff"; ctx.font = "15px system-ui"; ctx.textAlign = "center";
+    ctx.fillText(state.target ? "LOOSE CHANGE! MOVE STREETDOC TO GRAB IT" : "DON'T LET GO!", 480, 70);
+  }
+
+  function frame(now, runId) {
+    if (!state.active || runId !== state.runId) return;
+    const dt = Math.min((now - state.last) / 1000, 0.04);
+    state.last = now;
+    state.elapsed = now - state.started;
+    const difficulty = 1 + state.elapsed / 50000;
+
+    if (state.keys.has("ArrowLeft") || state.keys.has("KeyA")) state.docX -= 260 * dt;
+    if (state.keys.has("ArrowRight") || state.keys.has("KeyD")) state.docX += 260 * dt;
+    state.docX = Math.max(90, Math.min(510, state.docX));
+
+    state.bobX += state.direction * (85 + state.elapsed / 1600) * difficulty * dt;
+    state.bobY = 330 + Math.sin(now / 520) * 17;
+    if (state.bobX > 850 || state.bobX < 560) state.direction *= -1;
+
+    const gap = Math.max(0, Math.abs((state.bobX - 37) - (state.docX + 59)) - 145);
+    state.tension += dt * (0.035 + gap / 1450);
+    if (gap < 35) state.tension -= dt * 0.12;
+    state.tension = Math.max(0, Math.min(1, state.tension));
+    meter.style.width = `${state.tension * 100}%`;
+
+    if (now >= state.nextTarget && !state.target) {
+      state.target = { x: 120 + Math.random() * 420, y: 274 + Math.random() * 80 };
+      state.nextTarget = now + 1800;
+    }
+    if (state.target && Math.abs(state.target.x - (state.docX + 30)) < 45) {
+      state.score += 10;
+      scoreEl.textContent = String(state.score);
+      for (let i = 0; i < 8; i++) state.sparks.push({ x: state.target.x, y: state.target.y, life: 1 });
+      state.target = null; state.nextTarget = now + 3000; state.tension = Math.max(0, state.tension - 0.12);
+      beep(620, 0.1);
+    }
+
+    timerEl.textContent = timeText(state.elapsed);
+    draw(now);
+    if (!state.grip || state.tension >= 1) { finish(); return; }
+    requestAnimationFrame(next => frame(next, runId));
+  }
+
+  document.getElementById("start").addEventListener("click", start);
+  document.getElementById("restart").addEventListener("click", () => {
+    if (state.active) { state.active = false; state.grip = false; }
+    start();
+  });
+  document.getElementById("sound").addEventListener("click", event => {
+    state.sound = !state.sound;
+    event.currentTarget.textContent = `Sound: ${state.sound ? "on" : "off"}`;
+    event.currentTarget.setAttribute("aria-pressed", String(state.sound));
+    beep(440, 0.08);
+  });
+
+  window.addEventListener("keydown", event => {
+    if (["Space", "ArrowLeft", "ArrowRight"].includes(event.code)) event.preventDefault();
+    if (event.code === "Space") {
+      if (!state.active) start();
+      state.grip = true;
+    }
+    state.keys.add(event.code);
+  });
+  window.addEventListener("keyup", event => {
+    state.keys.delete(event.code);
+    if (event.code === "Space" && state.active) { state.grip = false; finish(); }
+  });
+  window.addEventListener("blur", () => {
+    state.keys.clear(); state.pointer = null;
+    if (state.active) { state.grip = false; finish(); }
+  });
+
+  canvas.addEventListener("pointerdown", event => {
+    if (!state.active) start();
+    canvas.setPointerCapture(event.pointerId);
+    state.pointer = event.pointerId;
+    state.grip = true;
+    state.docX = Math.max(90, Math.min(510, event.offsetX / canvas.clientWidth * canvas.width - 30));
+  });
+  canvas.addEventListener("pointermove", event => {
+    if (state.pointer !== event.pointerId) return;
+    state.docX = Math.max(90, Math.min(510, event.offsetX / canvas.clientWidth * canvas.width - 30));
+  });
+  function release(event) {
+    if (state.pointer !== event.pointerId) return;
+    state.pointer = null;
+    if (state.active) { state.grip = false; finish(); }
+  }
+  canvas.addEventListener("pointerup", release);
+  canvas.addEventListener("pointercancel", release);
+
+  function idle(now) {
+    if (!state.active) { state.bobX = 620 + Math.sin(now / 950) * 80; state.bobY = 330 + Math.sin(now / 520) * 17; draw(now); }
+    requestAnimationFrame(idle);
+  }
+  requestAnimationFrame(idle);
 })();

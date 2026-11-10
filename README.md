@@ -18,14 +18,17 @@ A static Kingshot community site designed for GitHub Pages. It uses plain HTML, 
 - `EventRosters/index.html` — event roster hub, with subpages for Flame Dragon Tyrant, Sanctuaries, Swordland Summit, and Alliance Brawl
 - `ContactUs/index.html` — contact options and links to the relevant kingdom pages and existing alliance directory
 - `KingdomDirectory/index.html` — player directory starter page with privacy and data-source placeholders
-- `RulesFAQ/index.html` — kingdom rules draft and common questions
+- `RulesFAQ/index.html` — Kingdom 167 community rules, poster, and common questions
 - `PocketHoldout/index.html` — original browser arcade mini-game starring StreetDoc and Dirtybob
-- `GiftCode/index.html` — browser-only Kingshot gift-code redemption prototype
+- `GiftCode/index.html` — Kingshot gift-code list and redemption page
 
 ## Shared files
 
 - `assets/css/style.css` — existing site styles plus the shared Dirtybob theme and responsive components
 - `assets/js/main.js` — existing shared kingdom behaviour
+- `assets/data/giftcodes.json` — active code snapshot used by the Gift Code page
+- `.github/workflows/update-giftcodes.yml` — checks Kingshot.net three times daily and commits list changes
+- `scripts/fetch_giftcodes.py` — reads Kingshot.net's public gift-code feed; it does not redeem codes
 - `assets/dirtybob-kingdom.jpg` — wide entry and dashboard key art
 - `assets/css/intro.css` and `assets/js/intro.js` — responsive cinematic entry screen and violet flame reveal
 - `assets/intro-desktop.jpg`, `assets/intro-ipad.jpg`, `assets/intro-phone.jpg` — art plates composed for each screen size
@@ -55,5 +58,6 @@ Plan a responsive, integrated hub chat for the Kingdom community, sized for roug
 - [ ] Connect the Rankings page to a GitHub Actions refresh that fetches MightPulse data using a GitHub Actions secret, enriches player rows with alliance tags, and updates `assets/data/leaderboards.json`. Never expose the MightPulse key in browser code or committed files.
 - [ ] Connect the event calendar, KvK command board, recognition board, resource library, and announcements to an editable content source when ready.
 - [ ] Connect Event Rosters pages to member sign-ups, role assignments, and event-specific schedules.
+- [ ] Add a language selector for international members, starting with English and adding reviewed translations. Store translated interface text separately from page layout and remember each visitor's language choice on their device.
 
 The leaderboard JSON is a normalized display snapshot. Each `leaderboards` entry uses a MightPulse board slug and contains `kind` (`player` or `alliance`) plus `entries` (up to 100 rows). Player rows should include `rank`, `governor_id`, `nick_name`, `score`, and `alliance_abbr`; alliance rows should include `rank`, `aid`, `abbr`, `name`, and `score`. The page reads only this local JSON file; API credentials and refresh logic will be added later.

@@ -1,0 +1,41 @@
+name: Update Kingshot gift codes
+
+on:
+  push:
+    paths:
+      - ".github/workflows/update-giftcodes.yml"
+      - "scripts/fetch_giftcodes.py"
+  schedule:
+    # Three checks daily, offset from the hour to avoid peak GitHub Actions load.
+    - cron: "17 0,8,16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-giftcodes
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+
+      - name: Fetch active codes
+        run: python3 scripts/fetch_giftcodes.py
+
+      - name: Commit changed code list
+        run: |
+          if git diff --quiet -- assets/data/giftcodes.json; then
+            echo "Gift code list is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/giftcodes.json
+          git commit -m "Update Kingshot gift codes"
+          git push
