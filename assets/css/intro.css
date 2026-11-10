@@ -133,8 +133,8 @@ body.kingdom-intro { color: #fff; }
 .intro-embers i:nth-child(11) { --x: 67%; --size: 3px; --duration: 7.3s; --delay: 5s; }
 .intro-embers i:nth-child(12) { --x: 46%; --size: 2px; --duration: 5.4s; --delay: 3.4s; }
 
-/* K167 seal is centered on the curtain seam at the start. */
-.intro-seal { position: absolute; z-index: 30; top: 50%; left: 50%; display: grid; width: 104px; height: 116px; place-content: center; color: #f9d982; text-align: center; border: 1px solid rgba(249, 217, 130, .85); background: linear-gradient(145deg, rgba(86, 30, 115, .96), rgba(13, 7, 19, .98)); clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 100%, 0 76%); box-shadow: 0 0 40px rgba(179, 75, 226, .7), inset 0 0 20px rgba(255, 214, 132, .17); opacity: 0; transform: translate(-50%, -50%) scale(.86); }
+/* K167 seal is centered on the gate seam at the start. */
+.intro-seal { position: absolute; z-index: 30; top: 50%; left: 50%; display: grid; width: 112px; height: 112px; place-content: center; color: #f9d982; text-align: center; border: 2px solid #e8c16e; border-radius: 50%; background: radial-gradient(circle, #532a65 0, #21162b 61%, #0d0911 100%); box-shadow: 0 0 0 8px rgba(21, 14, 25, .58), 0 0 0 10px rgba(232, 193, 110, .58), 0 0 42px rgba(179, 75, 226, .62), inset 0 0 20px rgba(255, 214, 132, .17); opacity: 0; transform: translate(-50%, -50%) scale(.86); }
 .intro-seal span { font: 34px Georgia, serif; line-height: .9; }
 .intro-seal b { margin-top: 5px; font: 800 15px Georgia, serif; letter-spacing: .1em; }
 .intro-playing .intro-seal { animation: seal-flash 1.35s ease .1s forwards; }
@@ -203,10 +203,17 @@ body.kingdom-intro { color: #fff; }
   .intro-stage { width: 100%; height: 100%; }
   .intro-scene img { object-position: center center; }
   .intro-shade { background: linear-gradient(0deg, rgba(8, 4, 13, .68), transparent 34%); }
-  .intro-gate-door { width: 52%; }
-  .intro-gate-door::before { background: repeating-linear-gradient(90deg, rgba(8, 3, 13, .57) 0, rgba(8, 3, 13, .57) 8%, rgba(174, 86, 212, .2) 18%, rgba(42, 12, 59, .12) 33%, rgba(5, 2, 8, .42) 48%); }
+  .intro-gate-door { top: auto; bottom: auto; width: 100%; height: 51%; }
+  .intro-gate-door-left { top: 0; left: 0; right: 0; border-right-width: 7px; border-bottom: 2px solid #e2bc78; }
+  .intro-gate-door-right { right: 0; bottom: 0; left: 0; border-top: 2px solid #e2bc78; border-left-width: 7px; }
+  .intro-gate-door-left::after { top: auto; right: 0; bottom: 0; left: 0; width: 100%; height: 8px; background: linear-gradient(180deg, #5b3c24, #f0cf8e 42%, #704722 72%, #2a1e1d); }
+  .intro-gate-door-right::after { top: 0; right: 0; bottom: auto; left: 0; width: 100%; height: 8px; background: linear-gradient(180deg, #5b3c24, #f0cf8e 42%, #704722 72%, #2a1e1d); }
+  .intro-playing .intro-gate-door-left { animation-name: gate-open-top; }
+  .intro-playing .intro-gate-door-right { animation-name: gate-open-bottom; }
+  .intro-revealed .intro-gate-door-left { transform: translateY(-103%); }
+  .intro-revealed .intro-gate-door-right { transform: translateY(103%); }
   .intro-skip { top: max(16px, env(safe-area-inset-top)); right: 16px; padding: 9px 10px; font-size: 9px; }
-  .intro-seal { width: 85px; height: 95px; }
+  .intro-seal { width: 85px; height: 85px; }
   .intro-seal span { font-size: 29px; }
   .intro-copy { right: 18px; bottom: max(24px, env(safe-area-inset-bottom)); left: 18px; width: auto; text-align: center; }
   .intro-kicker { margin-bottom: 7px; font-size: 9px; letter-spacing: .2em; }
@@ -225,10 +232,15 @@ body.kingdom-intro { color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   .intro-scene img, .intro-flame, .intro-embers i { animation: none !important; }
-  .intro-playing .intro-gate-door-left, .intro-playing .intro-gate-door-right { animation: none !important; transform: translateX(-103%); }
-  .intro-playing .intro-gate-door-right { transform: translateX(103%); }
+  .intro-playing .intro-gate-door-left, .intro-revealed .intro-gate-door-left { animation: none !important; transform: translateX(-103%); }
+  .intro-playing .intro-gate-door-right, .intro-revealed .intro-gate-door-right { animation: none !important; transform: translateX(103%); }
   .intro-playing .intro-seal, .intro-playing .intro-kicker, .intro-playing .intro-copy h1,
   .intro-playing .intro-tagline, .intro-playing .intro-enter, .intro-playing .intro-footnote { animation: none !important; opacity: 1; transform: none; }
   .intro-seal { display: none; }
+}
+
+@media (max-width: 700px) and (prefers-reduced-motion: reduce) {
+  .intro-playing .intro-gate-door-left, .intro-revealed .intro-gate-door-left { transform: translateY(-103%); }
+  .intro-playing .intro-gate-door-right, .intro-revealed .intro-gate-door-right { transform: translateY(103%); }
 }
 

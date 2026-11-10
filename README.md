@@ -15,7 +15,7 @@ A static Kingshot community site designed for GitHub Pages. It uses plain HTML, 
 - `assets/css/style.css` — existing site styles plus the shared Dirtybob theme and responsive components
 - `assets/js/main.js` — existing shared kingdom behaviour
 - `assets/dirtybob-kingdom.jpg` — wide entry and dashboard key art
-- `assets/css/intro.css` and `assets/js/intro.js` — responsive cinematic entry screen and curtain reveal
+- `assets/css/intro.css` and `assets/js/intro.js` — responsive cinematic entry screen and stone-gate reveal
 - `assets/intro-desktop.jpg`, `assets/intro-ipad.jpg`, `assets/intro-phone.jpg` — art plates composed for each screen size
 - `assets/swordland-summit.jpg`, `assets/alliance-brawl.jpg`, `assets/prep-week.jpg` — event banner artwork
 
