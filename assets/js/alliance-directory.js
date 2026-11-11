@@ -13,7 +13,7 @@
     }).format(number);
   }
 
-  fetch("/Kingdom167/assets/data/leaderboards.json", { cache: "no-store" })
+  fetch("/assets/data/leaderboards.json", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Alliance snapshot unavailable");
       return response.json();

@@ -84,7 +84,7 @@
 
   async function loadCodes() {
     try {
-      const response = await fetch("/Kingdom167/assets/data/giftcodes.json", { cache: "no-cache" });
+      const response = await fetch("/assets/data/giftcodes.json", { cache: "no-cache" });
       if (!response.ok) throw new Error("Code list unavailable");
       const data = await response.json();
       if (!Array.isArray(data.codes)) throw new Error("Unexpected code-list format");

@@ -66,7 +66,7 @@
   const history = document.querySelector("[data-history]");
   history.innerHTML = season.history.map((row) => `<tr class="${row.castle === "Held" ? "held-row" : ""}"><td>${row.date}</td><td><b class="opponent">${row.opponent}</b></td><td><span class="${resultClass(row.prep)}">${row.prep}</span>${row.prepScore ? `<small>${row.prepScore}</small>` : ""}</td><td><span class="${resultClass(row.castle)}">${row.castle}</span></td></tr>`).join("");
 
-  fetch("/Kingdom167/assets/data/leaderboards.json", { cache: "no-store" })
+  fetch("/assets/data/leaderboards.json", { cache: "no-store" })
     .then((response) => response.ok ? response.json() : Promise.reject(new Error("MightPulse kingdom details unavailable")))
     .then((snapshot) => {
       const profiles = snapshot.kingdom_profiles || {};

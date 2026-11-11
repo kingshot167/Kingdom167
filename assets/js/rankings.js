@@ -1,6 +1,6 @@
 /* Reads the published JSON snapshot written by the MightPulse GitHub Actions refresh. */
 (function () {
-  const dataUrl = "/Kingdom167/assets/data/leaderboards.json";
+  const dataUrl = "/assets/data/leaderboards.json";
   const boardSelect = document.getElementById("board-select");
   const allianceSelect = document.getElementById("alliance-select");
   const list = document.getElementById("rankings-list");

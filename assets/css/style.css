@@ -1,7 +1,7 @@
 /* ============================================
    K167 — KINGDOM 167 — SHARED STYLE SYSTEM
    Single source of truth for ALL pages.
-   File: /Kingdom167/assets/css/style.css
+   File: /assets/css/style.css
    NEVER paste <style> into a page. Edit here only.
    ============================================ */
 
@@ -415,30 +415,30 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 @media(min-width:701px) and (max-width:1100px){.hero-inner{margin-left:5vw}.event-grid{grid-template-columns:1fr 1fr}}
 /* Art direction from the Kingdom 167 concept boards */
 .entry-hero{
-  background-image:linear-gradient(90deg,rgba(7,4,13,.97) 2%,rgba(9,5,15,.87) 30%,rgba(9,5,15,.24) 63%,rgba(9,5,15,.12)),url('/Kingdom167/assets/dirtybob-kingdom.jpg');
+  background-image:linear-gradient(90deg,rgba(7,4,13,.97) 2%,rgba(9,5,15,.87) 30%,rgba(9,5,15,.24) 63%,rgba(9,5,15,.12)),url('/assets/dirtybob-kingdom.jpg');
   background-size:cover;background-position:center;
 }
 .entry-hero:after{background:linear-gradient(0deg,rgba(9,6,17,.6),transparent 30%)}
 .entry-art{display:none}
 .cc-mascot{
-  background-image:linear-gradient(90deg,rgba(20,11,27,.96) 0%,rgba(20,11,27,.87) 39%,rgba(20,11,27,.15) 78%),url('/Kingdom167/assets/dirtybob-kingdom.jpg');
+  background-image:linear-gradient(90deg,rgba(20,11,27,.96) 0%,rgba(20,11,27,.87) 39%,rgba(20,11,27,.15) 78%),url('/assets/dirtybob-kingdom.jpg');
   background-size:cover;background-position:center 54%;
 }
 .cc-mascot-art{display:none}
 .cc-mascot:after{content:none}
 .event-hero{position:relative;background-size:cover,cover;background-position:center,right center;isolation:isolate}
 .event-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,6,15,.96) 0%,rgba(10,6,16,.76) 43%,rgba(10,6,16,.12) 100%)}
-.page-swordland .event-hero{background-image:linear-gradient(0deg,rgba(16,7,22,.45),rgba(16,7,22,.1)),url('/Kingdom167/assets/swordland-summit.jpg')}
-.page-brawl .event-hero{background-image:linear-gradient(0deg,rgba(18,7,16,.5),rgba(18,7,16,.12)),url('/Kingdom167/assets/alliance-brawl.jpg')}
-.page-prep .event-hero{background-image:linear-gradient(0deg,rgba(12,8,17,.5),rgba(12,8,17,.1)),url('/Kingdom167/assets/prep-week.jpg')}
+.page-swordland .event-hero{background-image:linear-gradient(0deg,rgba(16,7,22,.45),rgba(16,7,22,.1)),url('/assets/swordland-summit.jpg')}
+.page-brawl .event-hero{background-image:linear-gradient(0deg,rgba(18,7,16,.5),rgba(18,7,16,.12)),url('/assets/alliance-brawl.jpg')}
+.page-prep .event-hero{background-image:linear-gradient(0deg,rgba(12,8,17,.5),rgba(12,8,17,.1)),url('/assets/prep-week.jpg')}
 .event-hero h1{max-width:600px;text-shadow:0 3px 35px rgba(0,0,0,.8)}
 .event-hero .cc-overline{display:inline-flex;padding:8px 11px;border:1px solid rgba(236,195,110,.45);background:rgba(12,7,18,.62);border-radius:3px}
 .event-tabs a{border-radius:4px;text-transform:uppercase;letter-spacing:.08em}
 .event-card{border-radius:8px;background:linear-gradient(145deg,rgba(32,20,42,.96),rgba(14,10,19,.98))}
 .event-card h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.025em}
 @media(max-width:700px){
-  .entry-hero{background-position:63% center;background-image:linear-gradient(0deg,rgba(8,5,14,.99) 4%,rgba(8,5,14,.89) 43%,rgba(8,5,14,.03) 100%),url('/Kingdom167/assets/dirtybob-kingdom.jpg')}
-  .cc-mascot{background-position:63% center;background-image:linear-gradient(0deg,rgba(20,11,27,.96) 0%,rgba(20,11,27,.84) 49%,rgba(20,11,27,.14) 100%),url('/Kingdom167/assets/dirtybob-kingdom.jpg')}
+  .entry-hero{background-position:63% center;background-image:linear-gradient(0deg,rgba(8,5,14,.99) 4%,rgba(8,5,14,.89) 43%,rgba(8,5,14,.03) 100%),url('/assets/dirtybob-kingdom.jpg')}
+  .cc-mascot{background-position:63% center;background-image:linear-gradient(0deg,rgba(20,11,27,.96) 0%,rgba(20,11,27,.84) 49%,rgba(20,11,27,.14) 100%),url('/assets/dirtybob-kingdom.jpg')}
   .event-hero{background-position:center,right 34%}
 }
 
@@ -458,9 +458,9 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
   isolation: isolate;
 }
 
-.page-sanctuaries .hero { background-image: url('/Kingdom167/assets/intro-desktop.jpg'); background-position: center 54%; }
-.page-dragon .hero { background-image: url('/Kingdom167/assets/flame-dragon-tyrant.png'); background-position: center 48%; }
-.page-kvkthemes .hero { background-image: url('/Kingdom167/assets/swordland-summit.jpg'); background-position: center 48%; }
+.page-sanctuaries .hero { background-image: url('/assets/intro-desktop.jpg'); background-position: center 54%; }
+.page-dragon .hero { background-image: url('/assets/flame-dragon-tyrant.png'); background-position: center 48%; }
+.page-kvkthemes .hero { background-image: url('/assets/swordland-summit.jpg'); background-position: center 48%; }
 
 .page-sanctuaries .hero::before,
 .page-dragon .hero::before,
@@ -517,7 +517,7 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
   justify-content: flex-start;
   padding: clamp(72px, 9vh, 112px) clamp(24px, 7vw, 112px) 90px;
   text-align: left;
-  background: url('/Kingdom167/assets/intro-desktop.jpg') center 52% / cover no-repeat #090611;
+  background: url('/assets/intro-desktop.jpg') center 52% / cover no-repeat #090611;
   border-bottom: 1px solid rgba(216, 178, 92, .24);
   isolation: isolate;
 }
@@ -718,7 +718,7 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 
 /* Member portal sign-in preview. */
 .member-hero { position: relative; display: flex; min-height: 360px; align-items: center; margin: 18px clamp(14px, 3vw, 28px) 0; overflow: hidden; border: 1px solid rgba(216,178,92,.35); border-radius: 13px; background: #100a16; isolation: isolate; }
-.member-hero-art { position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,rgba(12,7,17,.96),rgba(12,7,17,.82) 52%,rgba(12,7,17,.25)),url('/Kingdom167/assets/intro-desktop.jpg') center 48%/cover no-repeat; }
+.member-hero-art { position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,rgba(12,7,17,.96),rgba(12,7,17,.82) 52%,rgba(12,7,17,.25)),url('/assets/intro-desktop.jpg') center 48%/cover no-repeat; }
 .member-hero-copy { max-width:760px; padding:clamp(30px,6vw,70px); }
 .member-hero-copy .kicker { color:var(--gold2); font-size:10px; font-weight:900; letter-spacing:.24em; }
 .member-hero h1 { margin:13px 0 0; font-size:clamp(42px,6vw,68px); line-height:1; }
@@ -747,7 +747,7 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 @media(max-width:760px) { .member-portal-content { grid-template-columns:1fr; padding:32px 16px 48px; } .member-preview-note { grid-column:auto; flex-direction:column; gap:4px; } .member-hero { min-height:320px; margin:12px 12px 0; } .member-hero-art { background-position:61% center; } }
 
 /* JSON-backed Kingdom 167 rankings. */
-.rankings-hero { min-height:360px; display:flex; align-items:center; padding:56px clamp(18px,6vw,80px); border-bottom:1px solid rgba(216,178,92,.22); background:linear-gradient(90deg,rgba(8,5,14,.96),rgba(8,5,14,.72) 53%,rgba(8,5,14,.2)),url('/Kingdom167/assets/swordland-summit.jpg') center 48%/cover no-repeat; }
+.rankings-hero { min-height:360px; display:flex; align-items:center; padding:56px clamp(18px,6vw,80px); border-bottom:1px solid rgba(216,178,92,.22); background:linear-gradient(90deg,rgba(8,5,14,.96),rgba(8,5,14,.72) 53%,rgba(8,5,14,.2)),url('/assets/swordland-summit.jpg') center 48%/cover no-repeat; }
 .rankings-hero .cc-wrap { width:100%; max-width:1380px; padding:0; }
 .rankings-hero h1 { margin:15px 0; font:900 clamp(46px,7vw,82px)/.94 Inter,system-ui,sans-serif; letter-spacing:-.07em; }
 .rankings-hero h1 span { color:#f1c76c; }
@@ -851,11 +851,11 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 .page-kvkthemes .event-hero,
 .page-alliance-directory .event-hero,
 .alliance-page .event-hero { min-height:410px; }
-.page-sanctuaries .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.46),rgba(12,7,18,.12)),url('/Kingdom167/assets/intro-desktop.jpg'); background-position:center,center 54%; }
-.page-dragon .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.5),rgba(12,7,18,.12)),url('/Kingdom167/assets/flame-dragon-tyrant.png'); background-position:center,center 48%; }
-.page-kvkthemes .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.48),rgba(12,7,18,.12)),url('/Kingdom167/assets/dirtybob-kingdom.jpg'); background-position:center,center 52%; }
+.page-sanctuaries .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.46),rgba(12,7,18,.12)),url('/assets/intro-desktop.jpg'); background-position:center,center 54%; }
+.page-dragon .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.5),rgba(12,7,18,.12)),url('/assets/flame-dragon-tyrant.png'); background-position:center,center 48%; }
+.page-kvkthemes .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.48),rgba(12,7,18,.12)),url('/assets/dirtybob-kingdom.jpg'); background-position:center,center 52%; }
 .page-alliance-directory .event-hero,
-.alliance-page .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.46),rgba(12,7,18,.12)),url('/Kingdom167/assets/intro-desktop.jpg'); background-position:center,center 52%; }
+.alliance-page .event-hero { background-image:linear-gradient(0deg,rgba(12,7,18,.46),rgba(12,7,18,.12)),url('/assets/intro-desktop.jpg'); background-position:center,center 52%; }
 .page-sanctuaries .event-hero::before,
 .page-dragon .event-hero::before,
 .page-kvkthemes .event-hero::before,

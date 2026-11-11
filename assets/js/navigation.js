@@ -1,30 +1,30 @@
 /* Shared navigation for every Kingdom 167 page. */
 (function () {
-  const home = "/Kingdom167/Home/";
+  const home = "/Home/";
   const items = [
     { label: "Home", icon: "⌂", href: home, key: "home" },
-    { label: "Alliances", icon: "♜", href: "/Kingdom167/Alliances/", key: "alliances" },
-    { label: "Transfer Application", icon: "⇢", href: "/Kingdom167/TransferApplication/", key: "transfer" },
-    { label: "Member Portal", icon: "♙", href: "/Kingdom167/MemberPortal/", key: "portal" },
-    { label: "Rankings", icon: "♜", href: "/Kingdom167/Rankings/", key: "rankings" },
-    { label: "Swordland Summit", short: "Swordland", icon: "⚔", href: "/Kingdom167/SwordlandSummit/", key: "swordland" },
-    { label: "Alliance Brawl", icon: "♢", href: "/Kingdom167/AllianceBrawl/", key: "brawl" },
-    { label: "Prep Week", icon: "▤", href: "/Kingdom167/PrepWeek/", key: "prep" },
-    { label: "Sanctuaries", icon: "♜", href: "/Kingdom167/Sanctuaries/", key: "sanctuaries" },
-    { label: "Flame Dragon Tyrant", short: "Dragon Tyrant", icon: "♨", href: "/Kingdom167/FlameDragonTyrant/", key: "dragon" },
-    { label: "KvK Themes", icon: "✧", href: "/Kingdom167/KvKThemes/", key: "themes" },
-    { label: "KvK Season 23", short: "KvK Season 23", icon: "⚔", href: "/Kingdom167/KvK/", key: "kvk" },
-    { label: "Event Calendar", icon: "▦", href: "/Kingdom167/EventCalendar/", key: "calendar" },
-    { label: "KvK Command Board", short: "KvK Board", icon: "⚑", href: "/Kingdom167/KvKCommandBoard/", key: "command" },
-    { label: "Recognition Board", short: "Recognition", icon: "★", href: "/Kingdom167/RecognitionBoard/", key: "recognition" },
-    { label: "Resource Library", short: "Resources", icon: "▤", href: "/Kingdom167/ResourceLibrary/", key: "resources" },
-    { label: "Announcements", icon: "✉", href: "/Kingdom167/Announcements/", key: "announcements" },
-    { label: "Event Rosters", icon: "♟", href: "/Kingdom167/EventRosters/", key: "rosters" },
-    { label: "Contact Us", icon: "✉", href: "/Kingdom167/ContactUs/", key: "contact" },
-    { label: "Gift Code Redemption", short: "Gift Codes", icon: "✧", href: "/Kingdom167/GiftCode/", key: "giftcode" },
-    { label: "Kingdom Directory", short: "Directory", icon: "◎", href: "/Kingdom167/KingdomDirectory/", key: "directory" },
-    { label: "Pocket Holdout", short: "Pocket Holdout", icon: "✊", href: "/Kingdom167/PocketHoldout/", key: "pocket" },
-    { label: "Rules & FAQ", short: "Rules & FAQ", icon: "❖", href: "/Kingdom167/RulesFAQ/", key: "rules" }
+    { label: "Alliances", icon: "♜", href: "/Alliances/", key: "alliances" },
+    { label: "Transfer Application", icon: "⇢", href: "/TransferApplication/", key: "transfer" },
+    { label: "Member Portal", icon: "♙", href: "/MemberPortal/", key: "portal" },
+    { label: "Rankings", icon: "♜", href: "/Rankings/", key: "rankings" },
+    { label: "Swordland Summit", short: "Swordland", icon: "⚔", href: "/SwordlandSummit/", key: "swordland" },
+    { label: "Alliance Brawl", icon: "♢", href: "/AllianceBrawl/", key: "brawl" },
+    { label: "Prep Week", icon: "▤", href: "/PrepWeek/", key: "prep" },
+    { label: "Sanctuaries", icon: "♜", href: "/Sanctuaries/", key: "sanctuaries" },
+    { label: "Flame Dragon Tyrant", short: "Dragon Tyrant", icon: "♨", href: "/FlameDragonTyrant/", key: "dragon" },
+    { label: "KvK Themes", icon: "✧", href: "/KvKThemes/", key: "themes" },
+    { label: "KvK Season 23", short: "KvK Season 23", icon: "⚔", href: "/KvK/", key: "kvk" },
+    { label: "Event Calendar", icon: "▦", href: "/EventCalendar/", key: "calendar" },
+    { label: "KvK Command Board", short: "KvK Board", icon: "⚑", href: "/KvKCommandBoard/", key: "command" },
+    { label: "Recognition Board", short: "Recognition", icon: "★", href: "/RecognitionBoard/", key: "recognition" },
+    { label: "Resource Library", short: "Resources", icon: "▤", href: "/ResourceLibrary/", key: "resources" },
+    { label: "Announcements", icon: "✉", href: "/Announcements/", key: "announcements" },
+    { label: "Event Rosters", icon: "♟", href: "/EventRosters/", key: "rosters" },
+    { label: "Contact Us", icon: "✉", href: "/ContactUs/", key: "contact" },
+    { label: "Gift Code Redemption", short: "Gift Codes", icon: "✧", href: "/GiftCode/", key: "giftcode" },
+    { label: "Kingdom Directory", short: "Directory", icon: "◎", href: "/KingdomDirectory/", key: "directory" },
+    { label: "Pocket Holdout", short: "Pocket Holdout", icon: "✊", href: "/PocketHoldout/", key: "pocket" },
+    { label: "Rules & FAQ", short: "Rules & FAQ", icon: "❖", href: "/RulesFAQ/", key: "rules" }
   ];
 
   function railMarkup(intro) {
@@ -73,7 +73,7 @@
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   const hash = window.location.hash;
   let activeKey = "";
-  if (path === "/Kingdom167" || path === "/Kingdom167/Home") activeKey = hash === "#alliances" ? "alliances" : "home";
+  if (path === "/Kingdom167" || path === "/Home") activeKey = hash === "#alliances" ? "alliances" : "home";
   else if (path.indexOf("/Alliances") !== -1) activeKey = "alliances";
   else if (path.indexOf("TransferApplication") !== -1) activeKey = "transfer";
   else if (path.indexOf("MemberPortal") !== -1) activeKey = "portal";
