@@ -428,9 +428,9 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 .cc-mascot:after{content:none}
 .event-hero{position:relative;background-size:cover,cover;background-position:center,right center;isolation:isolate}
 .event-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,6,15,.96) 0%,rgba(10,6,16,.76) 43%,rgba(10,6,16,.12) 100%)}
-.page-swordland .event-hero{background-image:linear-gradient(0deg,rgba(16,7,22,.45),rgba(16,7,22,.1)),url('/Kingdom167/assets/swordland-summit.jpg')}
-.page-brawl .event-hero{background-image:linear-gradient(0deg,rgba(18,7,16,.5),rgba(18,7,16,.12)),url('/Kingdom167/assets/alliance-brawl.jpg')}
-.page-prep .event-hero{background-image:linear-gradient(0deg,rgba(12,8,17,.5),rgba(12,8,17,.1)),url('/Kingdom167/assets/prep-week.jpg')}
+.page-swordland .default-hero{background-image:linear-gradient(0deg,rgba(16,7,22,.45),rgba(16,7,22,.1)),url('/Kingdom167/assets/swordland-summit.jpg')}
+.page-brawl .default-hero{background-image:linear-gradient(0deg,rgba(18,7,16,.5),rgba(18,7,16,.12)),url('/Kingdom167/assets/alliance-brawl.jpg')}
+.page-prep .default-hero{background-image:linear-gradient(0deg,rgba(12,8,17,.5),rgba(12,8,17,.1)),url('/Kingdom167/assets/prep-week.jpg')}
 .event-hero h1{max-width:600px;text-shadow:0 3px 35px rgba(0,0,0,.8)}
 .event-hero .cc-overline{display:inline-flex;padding:8px 11px;border:1px solid rgba(236,195,110,.45);background:rgba(12,7,18,.62);border-radius:3px}
 .event-tabs a{border-radius:4px;text-transform:uppercase;letter-spacing:.08em}
@@ -458,9 +458,9 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
   isolation: isolate;
 }
 
-.page-sanctuaries .hero { background-image: url('/Kingdom167/assets/intro-desktop.jpg'); background-position: center 54%; }
-.page-dragon .hero { background-image: url('/Kingdom167/assets/flame-dragon-tyrant.png'); background-position: center 48%; }
-.page-kvkthemes .hero { background-image: url('/Kingdom167/assets/swordland-summit.jpg'); background-position: center 48%; }
+.page-sanctuaries .default-hero { background-image: url('/Kingdom167/assets/intro-desktop.jpg'); background-position: center 54%; }
+.page-dragon .default-hero { background-image: url('/Kingdom167/assets/flame-dragon-tyrant.png'); background-position: center 48%; }
+.page-kvkthemes .default-hero { background-image: url('/Kingdom167/assets/swordland-summit.jpg'); background-position: center 48%; }
 
 .page-sanctuaries .hero::before,
 .page-dragon .hero::before,
