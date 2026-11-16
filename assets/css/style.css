@@ -749,7 +749,12 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 /* JSON-backed Kingdom 167 rankings. */
 .rankings-hero { min-height:360px; display:flex; align-items:center; padding:56px clamp(18px,6vw,80px); border-bottom:1px solid rgba(216,178,92,.22); background:linear-gradient(90deg,rgba(8,5,14,.96),rgba(8,5,14,.72) 53%,rgba(8,5,14,.2)),url('/Kingdom167/assets/swordland-summit.jpg') center 48%/cover no-repeat; }
 .rankings-hero .cc-wrap { width:100%; max-width:1380px; padding:0; }
-.rankings-hero h1 {
+.event-hero .cc-overline{
+  display:inline-flex;
+  padding:8px 11px;
+  border:1px solid rgba(236,195,110,.45);
+  background:rgba(12,7,18,.62);
+   .rankings-hero h1 {
   margin:15px 0;
   font:900 clamp(46px,7vw,82px)/1.05 Inter,system-ui,sans-serif;
   letter-spacing:-.07em;
