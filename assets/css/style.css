@@ -8,7 +8,7 @@
 /* ---------- TOKENS ---------- */
 :root{
   --bg:#07030f;
-  --ink:#f8f1e5;
+  --ink:#f8f1e5f
   --muted:#b9aabd;
   --purple:#7b35d5;
   --violet:#9d5cff;
@@ -749,17 +749,16 @@ footer{border-top:1px solid rgba(216,178,92,.17)}
 /* JSON-backed Kingdom 167 rankings. */
 .rankings-hero { min-height:360px; display:flex; align-items:center; padding:56px clamp(18px,6vw,80px); border-bottom:1px solid rgba(216,178,92,.22); background:linear-gradient(90deg,rgba(8,5,14,.96),rgba(8,5,14,.72) 53%,rgba(8,5,14,.2)),url('/Kingdom167/assets/swordland-summit.jpg') center 48%/cover no-repeat; }
 .rankings-hero .cc-wrap { width:100%; max-width:1380px; padding:0; }
-.rankings-hero .cc-overline{
-  display:inline-flex;
-  padding:8px 11px;
-  border:1px solid rgba(236,195,110,.45);
-  background:rgba(12,7,18,.62);
-   .rankings-hero h1 {
+.rankings-hero h1 {
   margin:15px 0;
   font:900 clamp(46px,7vw,82px)/1.05 Inter,system-ui,sans-serif;
   letter-spacing:-.07em;
 }
 .rankings-hero h1 span { color:#f1c76c; }
+.rankings-hero{ position:relative;  isolation:isolate;}
+.rankings-hero:before{ content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(9,6,15,.96) 0%,rgba(10,6,16,.76) 43%,rgba(10,6,16,.12) 100%);}
+.rankings-hero .cc-wrap{ position:relative; z-index:1;}
+.rankings-hero .cc-overline{  display:inline-flex;  padding:8px 11px; border:1px solid rgba(236,195,110,.45);  background:rgba(12,7,18,.62);  border-radius:3px;}
 .rankings-hero p { max-width:620px; margin:0 0 22px; color:#ded2e7; line-height:1.65; }
 .rankings-section { width:min(100%,1180px); margin:auto; padding:clamp(35px,5vw,64px) clamp(15px,3vw,28px) 72px; }
 .rankings-heading { display:flex; align-items:end; justify-content:space-between; gap:18px; margin-bottom:20px; }
