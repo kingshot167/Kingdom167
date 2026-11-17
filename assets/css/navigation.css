@@ -217,8 +217,10 @@ body.site-with-rail > .shell {
   }
   body.nav-open .rail-backdrop { opacity: 1; pointer-events: auto; }
   .nav-toggle { display: inline-flex; }
-  body.site-with-rail .topbar-inner { justify-content: flex-start; gap: 10px; }
-  body.site-with-rail .brand { margin-right: auto; }
+  
+  /* --- CHANGED: Keeps brand left, pushes menu button to the far right --- */
+  body.site-with-rail .topbar-inner { justify-content: space-between; gap: 10px; }
+  body.site-with-rail .brand { margin-right: 0; }
 
   body.kingdom-intro .kingdom-rail { width: min(82vw, 300px); }
   body.kingdom-intro .kingdom-rail .rail-brand-name,
