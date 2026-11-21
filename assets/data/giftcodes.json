@@ -2,8 +2,13 @@
   "schema_version": 1,
   "source": "Kingshot.net",
   "source_url": "https://kingshot.net/gift-codes/",
-  "updated_at": "2026-11-13T10:40:43Z",
+  "updated_at": "2026-11-21T00:43:50Z",
   "codes": [
+    {
+      "code": "Bw8Gkp9Kn",
+      "expires_at": null,
+      "created_at": "2026-11-20T23:46:47.386Z"
+    },
     {
       "code": "FORTHEKINGDOM",
       "expires_at": null,
