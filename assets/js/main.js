@@ -2,7 +2,7 @@
    K167 — SHARED JS
    File: /Kingdom167/assets/js/main.js
    One file for ALL pages. Pages load it with:
-   <script src="/Kingdom167/Kingdom167/assets/js/main.js" defer></script>
+   <script src="/Kingdom167/assets/js/main.js" defer></script>
    NEVER paste <script> into a page. Edit here only.
    ============================================ */
 
