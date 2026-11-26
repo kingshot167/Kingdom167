@@ -1,31 +1,35 @@
-/* LIVE-BAR v4 - ADDS: slow left scroll ONLY when text overflows. File: /Kingdom167/assets/css/live-bar.css - replaces v3. Keep structure: bar > .live-track (JS builds it). */
+/* LIVE-BAR v5 - MATCHES SCREENSHOT: dark bar, gold label, grey details, sentence-case details. */
+/* File: /Kingdom167/assets/css/live-bar.css - replaces v4 CSS. Keep v4 JS. */
 .live-bar{
   width:100%;max-width:none;margin:0;box-sizing:border-box;align-self:stretch;
   display:flex;align-items:center;justify-content:center;gap:0;
-  min-height:42px;padding:9px 0;
-  background:#2a1440;
-  border-bottom:1px solid rgba(232,193,110,.45);
-  color:#f4e5c4;font:700 12px Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  min-height:38px;padding:9px 0;
+  /* Screenshot bar: very dark plum, NOT purple. Almost black with a plum tint. */
+  background:#1c1329;
+  border-top:1px solid rgba(232,193,110,.12);
+  border-bottom:1px solid rgba(232,193,110,.22);
+  /* Screenshot: details are NOT all-caps. Only the label is caps. */
+  color:#cfc6da;font:600 11.5px Inter,system-ui,sans-serif;letter-spacing:.04em;text-transform:none;
   white-space:nowrap;overflow:hidden;
 }
-.live-bar b{color:#ffe1a0;letter-spacing:.18em}
-.live-bar .sep{color:rgba(232,193,110,.75)}
-.live-bar .live-item{display:inline-flex;align-items:center;gap:10px}
-/* Track holds the real content. JS duplicates it into a second identical copy for a seamless loop. */
+/* Screenshot: KINGDOM EVENT in muted gold, caps, wider spacing. */
+.live-bar b{color:#e2c07c;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+/* Screenshot: dots are small gold dots, not bright gold. Details are light grey-lavender. */
+.live-bar .sep{color:#c9a85c;font-size:11px}
+.live-bar .live-item{display:inline-flex;align-items:center;gap:10px;color:#cfc6da;font-weight:600;letter-spacing:.04em;text-transform:none}
 .live-track{display:inline-flex;align-items:center;gap:10px;padding:0 16px;will-change:transform;flex-shrink:0}
-/* When overflowing: track becomes 2 copies side-by-side, animates -50% = one full copy, so it loops with no jump. */
 .live-bar.is-scrolling{justify-content:flex-start}
 .live-bar.is-scrolling .live-track{animation:live-scroll 28s linear infinite;padding-right:10px}
-.live-bar.is-scrolling:hover .live-track{animation-play-state:paused} /* hover pauses so it can be read */
+.live-bar.is-scrolling:hover .live-track{animation-play-state:paused}
 @keyframes live-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.live-dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:#90df9f;box-shadow:0 0 12px #73ed96;animation:live-pulse 1.6s ease-in-out infinite}
-.live-bar.is-paused .live-dot{background:#e8c16e;box-shadow:0 0 12px #e8c16e;animation:none}
+/* Screenshot: small green dot with soft green glow. */
+.live-dot{flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:#6ee79a;box-shadow:0 0 10px rgba(110,231,154,.9);animation:live-pulse 1.6s ease-in-out infinite}
+.live-bar.is-paused .live-dot{background:#e8c16e;box-shadow:0 0 10px rgba(232,193,110,.9);animation:none}
 .live-bar.is-ended .live-dot{background:#95899f;box-shadow:none;animation:none}
 @keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.78)}}
 @media (max-width:700px){
-  .live-bar{font-size:11px;letter-spacing:.1em}
+  .live-bar{font-size:11px}
   .live-bar .live-item.is-extra{display:none}
-  /* On mobile, extra items are hidden, so overflow is rare - but if it still overflows, it scrolls too. */
   .live-bar.is-scrolling .live-track{animation-duration:20s}
 }
 @media (prefers-reduced-motion:reduce){
