@@ -1,0 +1,46 @@
+/* FOOTER v1 - injects improved footer on every page that loads it. File: /Kingdom167/assets/js/footer.js */
+/* Pages: DELETE their old <footer>...</footer> block, keep <div class="shell" id="top">. This JS adds the footer inside .shell. */
+(function () {
+  var shell = document.querySelector(".shell");
+  if (!shell) return;
+  if (document.querySelector(".site-footer")) return; // already injected
+  var BASE = window.location.pathname.indexOf("/Kingdom167/") === 0 ? "/Kingdom167/" : "/";
+  var year = new Date().getFullYear();
+  var footer = document.createElement("footer");
+  footer.className = "site-footer";
+  footer.innerHTML =
+    '<div class="site-footer-inner">' +
+      '<div class="footer-grid">' +
+        '<div class="footer-brand">' +
+          '<a class="footer-brand-mark" href="' + BASE + 'Home/"><span class="diamond">\u265B</span><span>KINGDOM 167</span></a>' +
+          '<p>Five alliances. One kingdom. Rankings, events, and rosters for the Misfits of Kingdom 167.</p>' +
+          '<span class="footer-status"><i></i> KINGDOM ONLINE</span>' +
+        '</div>' +
+        '<nav class="footer-col" aria-label="Kingdom"><h4>KINGDOM</h4><ul>' +
+          '<li><a href="' + BASE + 'Home/">Home</a></li>' +
+          '<li><a href="' + BASE + 'Rankings/">Rankings</a></li>' +
+          '<li><a href="' + BASE + 'Alliances/">Alliances</a></li>' +
+          '<li><a href="' + BASE + 'Announcements/">Announcements</a></li>' +
+        '</ul></nav>' +
+        '<nav class="footer-col" aria-label="Events"><h4>EVENTS</h4><ul>' +
+          '<li><a href="' + BASE + 'SwordlandSummit/">Swordland Summit</a></li>' +
+          '<li><a href="' + BASE + 'AllianceBrawl/">Alliance Brawl</a></li>' +
+          '<li><a href="' + BASE + 'Sanctuaries/">Sanctuaries</a></li>' +
+          '<li><a href="' + BASE + 'KvK/">KvK Season 23</a></li>' +
+        '</ul></nav>' +
+        '<nav class="footer-col" aria-label="Alliances"><h4>ALLIANCES</h4><div class="footer-alliances">' +
+          '<a class="a-tnw" href="' + BASE + 'Alliances/"><i></i> TNW &mdash; The Night&rsquo;s Watch</a>' +
+          '<a class="a-ryl" href="' + BASE + 'Alliances/"><i></i> RYL &mdash; Royal Legionnairs</a>' +
+          '<a class="a-jus" href="' + BASE + 'Alliances/"><i></i> JUS &mdash; Justice</a>' +
+          '<a class="a-one" href="' + BASE + 'Alliances/"><i></i> ONE &mdash; One Nation Empire</a>' +
+          '<a class="a-ita" href="' + BASE + 'Alliances/"><i></i> ITA &mdash; Imperium &AElig;ternum</a>' +
+        '</div></nav>' +
+      '</div>' +
+      '<div class="footer-bottom">' +
+        '<span>FIVE ALLIANCES &bull; ONE KINGDOM</span>' +
+        '<span>&copy; ' + year + ' KINGDOM 167 &bull; THE MISFITS</span>' +
+        '<a class="return-top" href="#top">Back to the crown &uarr;</a>' +
+      '</div>' +
+    '</div>';
+  shell.appendChild(footer);
+})();
