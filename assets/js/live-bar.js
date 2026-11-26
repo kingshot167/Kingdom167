@@ -1,4 +1,6 @@
-/* LIVE-BAR v7 - File: /Kingdom167/assets/js/live-bar.js - replaces v4. ALWAYS scrolls, NEVER hides. */
+/* LIVE-BAR v7 - File: assets/js/live-bar.js - replaces v4. ALWAYS scrolls, NEVER hides. */
+/* Relative-path version: derives the site root from this script's own URL, */
+/* so the same file works on GitHub Pages (/Kingdom167/) and Cloudflare Pages (/). */
 (function () {
   var topbar = document.querySelector(".topbar-simple") || document.querySelector(".topbar");
   if (!topbar) return;
@@ -40,7 +42,14 @@
     topbar.insertAdjacentElement("afterend", bar);
   }
 
-  fetch("/Kingdom167/assets/data/live-events.json", { cache: "no-store" })
+  // Site root from this script's URL, e.g.
+  // GitHub:     https://kingshot167.github.io/Kingdom167/assets/js/live-bar.js -> .../Kingdom167/
+  // Cloudflare: https://kingdom167.pages.dev/assets/js/live-bar.js          -> .../
+  var scriptSrc = (document.currentScript && document.currentScript.src) || "";
+  var base = scriptSrc ? scriptSrc.replace(/assets\/js\/live-bar\.js.*$/, "") : "./";
+  if (base && base.slice(-1) !== "/") base += "/";
+
+  fetch(base + "assets/data/live-events.json", { cache: "no-store" })
     .then(function (r) { if (!r.ok) throw new Error("no events file"); return r.json(); })
     .then(function (data) {
       var events = (data && data.events) || [];
