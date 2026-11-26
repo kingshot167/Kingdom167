@@ -1,4 +1,6 @@
-/* Reusable KVK season page renderer. Season values are in /KvK/season-data.js. */
+/* Reusable KVK season page renderer. Season values are in assets/js/season-data.js. */
+/* Relative-path version: derives the site root from this script's own URL, */
+/* so the same file works on GitHub Pages (/Kingdom167/) and Cloudflare Pages (/). */
 (function () {
   const season = window.KVK_SEASON;
   const home = window.KVK_HOME_KINGDOM;
@@ -66,7 +68,14 @@
   const history = document.querySelector("[data-history]");
   history.innerHTML = season.history.map((row) => `<tr class="${row.castle === "Held" ? "held-row" : ""}"><td>${row.date}</td><td><b class="opponent">${row.opponent}</b></td><td><span class="${resultClass(row.prep)}">${row.prep}</span>${row.prepScore ? `<small>${row.prepScore}</small>` : ""}</td><td><span class="${resultClass(row.castle)}">${row.castle}</span></td></tr>`).join("");
 
-  fetch("/Kingdom167/assets/data/leaderboards.json", { cache: "no-store" })
+  // Site root from this script's URL, e.g.
+  // GitHub:     https://kingshot167.github.io/Kingdom167/assets/js/kvk-page.js -> .../Kingdom167/
+  // Cloudflare: https://kingdom167.pages.dev/assets/js/kvk-page.js          -> .../
+  var scriptSrc = (document.currentScript && document.currentScript.src) || "";
+  var base = scriptSrc ? scriptSrc.replace(/assets\/js\/kvk-page\.js.*$/, "") : "./";
+  if (base && base.slice(-1) !== "/") base += "/";
+
+  fetch(base + "assets/data/leaderboards.json", { cache: "no-store" })
     .then((response) => response.ok ? response.json() : Promise.reject(new Error("MightPulse kingdom details unavailable")))
     .then((snapshot) => {
       const profiles = snapshot.kingdom_profiles || {};
