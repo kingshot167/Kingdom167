@@ -1,6 +1,14 @@
 /* Reads the published JSON snapshot written by the MightPulse GitHub Actions refresh. */
+/* Relative-path version: derives the site root from this script's own URL, */
+/* so the same file works on GitHub Pages (/Kingdom167/) and Cloudflare Pages (/). */
 (function () {
-  const dataUrl = "/Kingdom167/assets/data/leaderboards.json";
+  // Site root from this script's URL, e.g.
+  // GitHub:     https://kingshot167.github.io/Kingdom167/assets/js/rankings.js -> .../Kingdom167/
+  // Cloudflare: https://kingdom167.pages.dev/assets/js/rankings.js          -> .../
+  var scriptSrc = (document.currentScript && document.currentScript.src) || "";
+  var base = scriptSrc ? scriptSrc.replace(/assets\/js\/rankings\.js.*$/, "") : "./";
+  if (base && base.slice(-1) !== "/") base += "/";
+  const dataUrl = base + "assets/data/leaderboards.json";
   const boardSelect = document.getElementById("board-select");
   const allianceSelect = document.getElementById("alliance-select");
   const list = document.getElementById("rankings-list");
