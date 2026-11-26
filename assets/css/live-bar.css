@@ -1,10 +1,9 @@
-/* LIVE-BAR v6 - BG: #140C1E, mildly transparent. File: /Kingdom167/assets/css/live-bar.css - replaces v5 CSS. Keep v4 JS. */
+/* LIVE-BAR v7 - ANNOUNCEMENT TICKER: ALWAYS scrolls left, NEVER hides details. File: /Kingdom167/assets/css/live-bar.css - replaces v6. */
 .live-bar{
   width:100%;max-width:none;margin:0;box-sizing:border-box;align-self:stretch;
-  display:flex;align-items:center;justify-content:center;gap:0;
+  display:flex;align-items:center;justify-content:flex-start;gap:0;
   min-height:38px;padding:9px 0;
-  /* #140C1E = rgb(20,12,30). 0.85 = mildly transparent - hero faintly shows through. */
-  background:rgba(20,12,30,.85);
+  background:rgba(20,12,30,.85); /* #140C1E, mildly transparent */
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   border-top:1px solid rgba(232,193,110,.12);
   border-bottom:1px solid rgba(232,193,110,.22);
@@ -13,11 +12,10 @@
 }
 .live-bar b{color:#e2c07c;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
 .live-bar .sep{color:#c9a85c;font-size:11px}
+/* NO hiding any more - every detail shows, on mobile too. */
 .live-bar .live-item{display:inline-flex;align-items:center;gap:10px;color:#cfc6da;font-weight:600;letter-spacing:.04em;text-transform:none}
-.live-track{display:inline-flex;align-items:center;gap:10px;padding:0 16px;will-change:transform;flex-shrink:0}
-.live-bar.is-scrolling{justify-content:flex-start}
-.live-bar.is-scrolling .live-track{animation:live-scroll 28s linear infinite;padding-right:10px}
-.live-bar.is-scrolling:hover .live-track{animation-play-state:paused}
+.live-track{display:inline-flex;align-items:center;gap:10px;padding:0 16px;will-change:transform;flex-shrink:0;animation:live-scroll 28s linear infinite}
+.live-bar:hover .live-track{animation-play-state:paused} /* hover pauses so it can be read */
 @keyframes live-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .live-dot{flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:#6ee79a;box-shadow:0 0 10px rgba(110,231,154,.9);animation:live-pulse 1.6s ease-in-out infinite}
 .live-bar.is-paused .live-dot{background:#e8c16e;box-shadow:0 0 10px rgba(232,193,110,.9);animation:none}
@@ -25,10 +23,9 @@
 @keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.78)}}
 @media (max-width:700px){
   .live-bar{font-size:11px}
-  .live-bar .live-item.is-extra{display:none}
-  .live-bar.is-scrolling .live-track{animation-duration:20s}
+  .live-track{animation-duration:20s}
 }
 @media (prefers-reduced-motion:reduce){
-  .live-dot,.live-bar.is-scrolling .live-track{animation:none}
-  .live-bar.is-scrolling .live-track{transform:none}
+  .live-dot,.live-track{animation:none}
+  .live-track{transform:none}
 }
