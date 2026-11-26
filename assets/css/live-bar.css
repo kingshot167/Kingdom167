@@ -1,28 +1,34 @@
-/* LIVE-BAR v2 - FIXES: desktop full-width uniform background + mobile trailing dot */
-/* File: /Kingdom167/assets/css/live-bar.css - replaces v1 completely */
+/* LIVE-BAR v4 - ADDS: slow left scroll ONLY when text overflows. File: /Kingdom167/assets/css/live-bar.css - replaces v3. Keep structure: bar > .live-track (JS builds it). */
 .live-bar{
-  /* FIX 1: force full width of .shell (same width as topbar + hero). No max-width, no auto margins. */
-  width:100%;margin:0;box-sizing:border-box;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  min-height:42px;padding:9px 16px;
-  /* FIX 2: uniform background on all widths. Old gradient faded to dark at 42%, so desktop looked black/inset. */
-  background:linear-gradient(90deg,#2b1240 0%,#1a0b28 50%,#2b1240 100%);
+  width:100%;max-width:none;margin:0;box-sizing:border-box;align-self:stretch;
+  display:flex;align-items:center;justify-content:center;gap:0;
+  min-height:42px;padding:9px 0;
+  background:#2a1440;
   border-bottom:1px solid rgba(232,193,110,.45);
   color:#f4e5c4;font:700 12px Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;
   white-space:nowrap;overflow:hidden;
 }
 .live-bar b{color:#ffe1a0;letter-spacing:.18em}
 .live-bar .sep{color:rgba(232,193,110,.75)}
-.live-bar .live-label{color:#c9bfce}
-/* FIX 3: each detail + its dot live in ONE wrapper, so hiding the detail hides its dot too. No trailing dot. */
 .live-bar .live-item{display:inline-flex;align-items:center;gap:10px}
+/* Track holds the real content. JS duplicates it into a second identical copy for a seamless loop. */
+.live-track{display:inline-flex;align-items:center;gap:10px;padding:0 16px;will-change:transform;flex-shrink:0}
+/* When overflowing: track becomes 2 copies side-by-side, animates -50% = one full copy, so it loops with no jump. */
+.live-bar.is-scrolling{justify-content:flex-start}
+.live-bar.is-scrolling .live-track{animation:live-scroll 28s linear infinite;padding-right:10px}
+.live-bar.is-scrolling:hover .live-track{animation-play-state:paused} /* hover pauses so it can be read */
+@keyframes live-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .live-dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:#90df9f;box-shadow:0 0 12px #73ed96;animation:live-pulse 1.6s ease-in-out infinite}
 .live-bar.is-paused .live-dot{background:#e8c16e;box-shadow:0 0 12px #e8c16e;animation:none}
 .live-bar.is-ended .live-dot{background:#95899f;box-shadow:none;animation:none}
 @keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.78)}}
 @media (max-width:700px){
-  .live-bar{gap:8px;font-size:11px;letter-spacing:.1em;padding:9px 12px;justify-content:center}
-  /* Keep: dot + label + FIRST detail only. Extra items (dot + text together) hide completely. */
+  .live-bar{font-size:11px;letter-spacing:.1em}
   .live-bar .live-item.is-extra{display:none}
+  /* On mobile, extra items are hidden, so overflow is rare - but if it still overflows, it scrolls too. */
+  .live-bar.is-scrolling .live-track{animation-duration:20s}
 }
-@media (prefers-reduced-motion:reduce){.live-dot{animation:none}}
+@media (prefers-reduced-motion:reduce){
+  .live-dot,.live-bar.is-scrolling .live-track{animation:none}
+  .live-bar.is-scrolling .live-track{transform:none}
+}
