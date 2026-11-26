@@ -1,46 +1,72 @@
 <!doctype html>
 <html lang="en">
 <head>
- <!-- META TAGS  -->
+  <!-- META TAGS -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090611">
   <meta name="description" content="Kingdom 167 player and alliance leaderboards.">
-  <title>Rankings | Kingdom 167</title>  
-  
-  <!-- FAVICON  -->
+  <title>Rankings | Kingdom 167</title>
+
+  <!-- FAVICON -->
   <link rel="icon" type="image/svg+xml" href="/Kingdom167/assets/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/Kingdom167/assets/apple-touch-icon.png">
 
   <!-- CSS -->
   <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
   <link rel="stylesheet" href="/Kingdom167/assets/css/navigation.css">
+
+  <!-- SIMPLE TOPBAR - K167 colours -->
+  <!-- Move this block to the bottom of navigation.css when ready, then delete it here -->
+  <style>
+    .topbar-simple{ position: sticky; top: 0; z-index: 30; background: rgba(7,3,15,.82); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(232,193,110,.35); }
+    .topbar-simple-inner{ max-width: 1440px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; gap: 13px; }
+    .top-icon-btn{ width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; color: #f4e5c4; font-size: 20px; border: 1px solid rgba(232,193,110,.48); border-radius: 8px; background: linear-gradient(145deg, rgba(112,32,159,.45), rgba(20,10,29,.9)); cursor: not-allowed; }
+    .brand-simple{ display: flex; flex-direction: column; line-height: 1; text-decoration: none; color: #f4e5c4; font-family: Georgia, serif; font-weight: 700; letter-spacing: .12em; }
+    .brand-simple-name{ font-size: 20px; }
+    .brand-simple small{ margin-top: 5px; color: #aa98b4; font-family: Inter, system-ui, sans-serif; font-size: 8px; font-weight: 700; letter-spacing: .17em; }
+    .topbar-simple-actions{ margin-left: auto; display: flex; align-items: center; gap: 10px; }
+    .btn-login{ display: flex; align-items: center; gap: 8px; padding: 11px 17px; border-radius: 999px; background: transparent; color: #fff4d7; border: 1px solid rgba(232,193,110,.55); font-size: 13px; font-weight: 800; white-space: nowrap; cursor: not-allowed; }
+    .btn-discord{ display: flex; align-items: center; gap: 8px; padding: 11px 17px; border-radius: 999px; border: 0; background: #5865F2; color: #fff; font-size: 13px; font-weight: 800; white-space: nowrap; cursor: not-allowed; }
+    .btn-discord svg{ width: 18px; height: 18px; flex: 0 0 18px; }
+    .btn-login:disabled, .btn-discord:disabled, .top-icon-btn:disabled{ opacity: .85; }
+    @media (max-width: 700px){
+      .topbar-simple-inner{ height: 60px; padding: 0 14px; gap: 10px; }
+      .brand-simple-name{ font-size: 16px; }
+      .brand-simple small{ font-size: 7px; }
+      .btn-login{ display: none; }
+      .btn-discord{ padding: 10px 12px; font-size: 12px; }
+    }
+  </style>
 </head>
-  
 <body class="page-rankings site-with-rail">
   <div class="shell" id="top">
-    <header class="topbar"><div class="topbar-inner">
-      <a class="brand" href="/Kingdom167/Home/"><span class="diamond">♛</span><span class="brand-k">K167</span><span class="brand-divider"></span><span class="brand-full">KINGDOM 167</span></a>
-      <nav class="nav" aria-label="Main navigation">
-        <a class="nav-link" href="/Kingdom167/Home/">Command Centre</a>
-        <a class="nav-link" href="/Kingdom167/Alliances/">Alliances</a>
-        <a class="nav-link active" href="/Kingdom167/Rankings/">Rankings</a>
-        <a class="nav-link" href="/Kingdom167/SwordlandSummit/">Swordland</a>
-      </nav>
-      <a class="header-cta" href="#leaderboard">View standings ↓</a>
+    <!-- SIMPLE TOPBAR - UNIVERSAL -->
+    <!-- No nav links. No 'active'. Sidebar handles navigation. -->
+    <!-- Keep BOTH classes on inner div so navigation.js can inject the mobile hamburger -->
+    <header class="topbar-simple"><div class="topbar-simple-inner topbar-inner">
+      <!-- LEFT: language (DEAD) + brand -->
+      <button class="top-icon-btn" type="button" disabled title="Language - coming soon" aria-label="Change language - coming soon"><span aria-hidden="true">&#127760;</span></button>
+      <a class="brand-simple" href="/Kingdom167/Home/"><span class="brand-simple-name">KINGDOM 167</span><small>THE DIRTYBOB REALM</small></a>
+      <!-- RIGHT: login (DEAD) + discord (DEAD) -->
+      <div class="topbar-simple-actions">
+        <button class="btn-login" type="button" disabled title="Log in / Register - coming soon"><span aria-hidden="true">&#9673;</span> Log In / Register</button>
+        <button class="btn-discord" type="button" disabled title="Sign in with Discord - coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.5 5.3A16.3 16.3 0 0 0 15.4 4l-.5 1a14.2 14.2 0 0 0-5.8 0l-.5-1a16.5 16.5 0 0 0-4.1 1.3C1.9 9.2 1.2 13 1.5 16.7A16.7 16.7 0 0 0 6.6 19l1.2-1.7a10.7 10.7 0 0 1-1.9-.9l.5-.4c3.7 1.7 7.6 1.7 11.2 0l.5.4c-.6.4-1.2.7-1.9.9l1.2 1.7a16.5 16.5 0 0 0 5.1-2.3c.4-4.4-.7-8.2-3-11.4ZM8.7 14.5c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"/></svg> SIGN IN</button>
+      </div>
     </div></header>
     <main>
-<section class="default-hero">
-  <div class="cc-wrap">
-    <span class="cc-overline">HALL OF LEGENDS</span>
-    <h1>Kingdom<br><span>Rankings.</span></h1>
-    <p>Compare the kingdom's top 100 governors across player and alliance leaderboards. Filter the standings by one of the main alliances.</p>
-
-  </div>
-</section>
+      <!-- HERO -->
+      <section class="default-hero">
+        <div class="cc-wrap">
+          <span class="cc-overline">HALL OF LEGENDS</span>
+          <h1>Kingdom<br><span>Rankings.</span></h1>
+          <p>Compare the kingdom's top 100 governors across player and alliance leaderboards. Filter the standings by one of the main alliances.</p>
+        </div>
+      </section>
+      <!-- LEADERBOARD - unchanged from your original -->
       <section class="rankings-section" id="leaderboard" aria-labelledby="rankings-title">
         <div class="rankings-heading">
-          <div><span class="cc-overline">TOP 100 • KINGDOM 167</span><h2 id="rankings-title">Leaderboard</h2></div>
+          <div><span class="cc-overline">TOP 100 &bull; KINGDOM 167</span><h2 id="rankings-title">Leaderboard</h2></div>
           <p id="rankings-updated">Waiting for the first JSON refresh</p>
         </div>
         <div class="rankings-controls">
@@ -54,15 +80,15 @@
           <label>Alliance filter
             <select id="alliance-select" aria-label="Filter by alliance">
               <option value="all">All Kingdom 167</option>
-              <option value="RYL">RYL — Royal Legionnairs</option>
-              <option value="JUS">JUS — Justice</option>
-              <option value="TNW">TNW — The Night's Watch</option>
-              <option value="ONE">ONE — One Nation Empire</option>
-              <option value="ITA">ITA — Imperium Æternum</option>
+              <option value="RYL">RYL &mdash; Royal Legionnairs</option>
+              <option value="JUS">JUS &mdash; Justice</option>
+              <option value="TNW">TNW &mdash; The Night's Watch</option>
+              <option value="ONE">ONE &mdash; One Nation Empire</option>
+              <option value="ITA">ITA &mdash; Imperium &AElig;ternum</option>
             </select>
           </label>
         </div>
-        <div class="rankings-status" id="rankings-status" role="status" aria-live="polite">Loading the local leaderboard snapshot…</div>
+        <div class="rankings-status" id="rankings-status" role="status" aria-live="polite">Loading the local leaderboard snapshot&hellip;</div>
         <div class="rankings-board">
           <div class="rankings-board-head"><div><span class="cc-overline" id="board-kind">GOVERNOR LEADERBOARD</span><h3 id="board-title">Personal Power</h3></div><span class="rankings-count" id="board-count">0 / 100</span></div>
           <ol class="rankings-list" id="rankings-list" aria-label="Leaderboard results"></ol>
@@ -70,7 +96,7 @@
         <p class="rankings-footnote">Standings are read from the latest published MightPulse JSON snapshot. GitHub Actions refreshes the snapshot; the API key is never sent to this page.</p>
       </section>
     </main>
-    <footer><div class="footer-inner"><a class="brand" href="/Kingdom167/Home/"><span class="diamond">♛</span><span class="brand-k">K167</span><span>Kingdom 167</span></a><p>Kingdom Rankings</p><a class="return-top" href="#top">Back to the crown ↑</a></div><div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>THE DIRTYBOB REALM</span></div></footer>
+    <footer><div class="footer-inner"><a class="brand" href="/Kingdom167/Home/"><span class="diamond">&#981b;</span><span class="brand-k">K167</span><span>Kingdom 167</span></a><p>Kingdom Rankings</p><a class="return-top" href="#top">Back to the crown &uarr;</a></div><div class="footer-bottom"><span>FIVE ALLIANCES &bull; ONE KINGDOM</span><span>THE DIRTYBOB REALM</span></div></footer>
   </div>
   <script src="/Kingdom167/assets/js/rankings.js" defer></script>
   <script src="/Kingdom167/assets/js/navigation.js" defer></script>
