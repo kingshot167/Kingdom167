@@ -1,27 +1,46 @@
-<!doctype html>
-<html lang="en" class="intro-playing">
-<head>
+<html lang="en" class="intro-playing"><style>* { -webkit-text-size-adjust: 95.33333333333333% !important; }</style><head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090611">
   <meta name="description" content="Enter Kingdom 167, home of five alliances and the Dirtybob community.">
   <title>Enter the Kingdom | Kingdom 167</title>
-  <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
-  <link rel="stylesheet" href="/Kingdom167/assets/css/intro.css">
-  <link rel="stylesheet" href="/Kingdom167/assets/css/navigation.css">
-  <script src="/Kingdom167/assets/js/intro.js" defer></script>
-  <script src="/Kingdom167/assets/js/navigation.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/intro.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <script src="assets/js/intro.js" defer=""></script>
+  <script src="assets/js/navigation.js" defer=""></script>
 </head>
 <body class="kingdom-intro">
   <div class="intro-layout">
     <aside class="kingdom-rail" aria-label="Kingdom navigation">
-      <a class="rail-brand" href="/Kingdom167/Home/" aria-label="Kingdom 167 command centre">
+      <a class="rail-brand" href="Home/" aria-label="Kingdom 167 command centre">
         <span class="rail-crest" aria-hidden="true"><span>K</span><b>167</b><i>♛</i></span>
         <span class="rail-brand-name">KINGDOM 167<small>THE DIRTYBOB REALM</small></span>
       </a>
 
       <nav class="rail-nav">
-        <a class="rail-link is-active" href="/Kingdom167/Home/" aria-label="Home">
+        <a class="rail-link is-active" href="Home/" aria-label="Home">
           <span class="rail-icon" aria-hidden="true">⌂</span><span>Home</span>
         </a>
         <span class="rail-link is-disabled" aria-disabled="true"><span class="rail-icon" aria-hidden="true">♜</span><span>Alliances</span></span>
@@ -42,30 +61,30 @@
     <main class="intro-stage" aria-labelledby="intro-title">
       <div class="intro-mobile-bar"><span>KINGDOM 167 · DIRTYBOB REALM</span><button class="nav-toggle" type="button" aria-label="Open kingdom menu" aria-expanded="false" aria-controls="kingdom-navigation"><span aria-hidden="true">☰</span></button></div>
       <picture class="intro-scene" aria-hidden="true">
-        <source media="(max-width: 700px)" srcset="/Kingdom167/assets/intro-phone.jpg">
-        <source media="(min-width: 701px) and (max-width: 1100px) and (orientation: portrait)" srcset="/Kingdom167/assets/intro-ipad.jpg">
-        <img src="/Kingdom167/assets/intro-desktop.jpg" alt="" fetchpriority="high">
+        <source media="(max-width: 700px)" srcset="assets/intro-phone.jpg">
+        <source media="(min-width: 701px) and (max-width: 1100px) and (orientation: portrait)" srcset="assets/intro-ipad.jpg">
+        <img src="assets/intro-desktop.jpg" alt="" fetchpriority="high">
       </picture>
       <div class="intro-shade" aria-hidden="true"></div>
 
       <svg class="intro-flame-sweep" viewBox="0 0 600 1200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
         <defs>
           <linearGradient id="flame-horizontal" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#8e28d1" stop-opacity="0" />
-            <stop offset=".42" stop-color="#9c31dc" stop-opacity=".28" />
-            <stop offset=".72" stop-color="#c75bff" stop-opacity=".88" />
-            <stop offset=".82" stop-color="#ffe09a" />
-            <stop offset=".9" stop-color="#d458ff" stop-opacity=".78" />
-            <stop offset="1" stop-color="#7724b9" stop-opacity="0" />
+            <stop offset="0" stop-color="#8e28d1" stop-opacity="0"></stop>
+            <stop offset=".42" stop-color="#9c31dc" stop-opacity=".28"></stop>
+            <stop offset=".72" stop-color="#c75bff" stop-opacity=".88"></stop>
+            <stop offset=".82" stop-color="#ffe09a"></stop>
+            <stop offset=".9" stop-color="#d458ff" stop-opacity=".78"></stop>
+            <stop offset="1" stop-color="#7724b9" stop-opacity="0"></stop>
           </linearGradient>
           <filter id="living-flame" x="-20%" y="-15%" width="140%" height="130%">
             <feTurbulence type="fractalNoise" baseFrequency=".008 .035" numOctaves="2" seed="12" result="fire-noise">
-              <animate attributeName="baseFrequency" values=".008 .035;.012 .055;.006 .028;.008 .035" dur="1.35s" repeatCount="indefinite" />
+              <animate attributeName="baseFrequency" values=".008 .035;.012 .055;.006 .028;.008 .035" dur="1.35s" repeatCount="indefinite"></animate>
             </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="fire-noise" scale="34" xChannelSelector="R" yChannelSelector="G" />
+            <feDisplacementMap in="SourceGraphic" in2="fire-noise" scale="34" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
           </filter>
         </defs>
-        <path class="flame-shape flame-shape-horizontal" d="M0 0H580 C530 90 443 128 475 205 C504 274 398 302 441 390 C482 475 370 510 426 602 C479 690 355 739 411 825 C459 899 363 976 412 1060 C444 1117 393 1163 367 1200H0Z" fill="url(#flame-horizontal)" filter="url(#living-flame)" />
+        <path class="flame-shape flame-shape-horizontal" d="M0 0H580 C530 90 443 128 475 205 C504 274 398 302 441 390 C482 475 370 510 426 602 C479 690 355 739 411 825 C459 899 363 976 412 1060 C444 1117 393 1163 367 1200H0Z" fill="url(#flame-horizontal)" filter="url(#living-flame)"></path>
       </svg>
 
       <div class="intro-seal" aria-hidden="true"><span>♛</span><b>K167</b></div>
@@ -73,10 +92,11 @@
         <p class="intro-kicker">FIVE BANNERS <span>·</span> ONE KINGDOM</p>
         <h1 id="intro-title">KINGDOM <span>167</span></h1>
         <p class="intro-tagline">A realm forged in shadow, fire and gold.</p>
-        <a class="intro-enter" href="/Kingdom167/Home/">ENTER THE KINGDOM <span aria-hidden="true">→</span></a>
+        <a class="intro-enter" href="Home/">ENTER THE KINGDOM <span aria-hidden="true">→</span></a>
         <p class="intro-footnote">THE DIRTYBOB REALM <span>•</span> KINGDOM 167</p>
       </section>
     </main>
   </div>
-</body>
-</html>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
+
+</body></html>
