@@ -1,4 +1,4 @@
-/* LIVE-BAR v7 - ANNOUNCEMENT TICKER: ALWAYS scrolls left, NEVER hides details. File: /Kingdom167/assets/css/live-bar.css - replaces v6. */
+/* LIVE-BAR v7 - ANNOUNCEMENT TICKER: ALWAYS scrolls left, NEVER hides details. File: assets/css/live-bar.css - replaces v6. */
 .live-bar{
   width:100%;max-width:none;margin:0;box-sizing:border-box;align-self:stretch;
   display:flex;align-items:center;justify-content:flex-start;gap:0;
