@@ -1,30 +1,40 @@
 /* Shared navigation for every Kingdom 167 page. KEEP THIS VERSION - has KvK Season 23 (key: kvk). */
+/* Relative-path version: derives the site root from this script's own URL, */
+/* so the same file works on GitHub Pages (/Kingdom167/) and Cloudflare Pages (/). */
+/* Pocket Holdout removed - page no longer exists. */
 (function () {
-  const home = "/Kingdom167/Home/";
+  // e.g. https://kingshot167.github.io/Kingdom167/assets/js/navigation.js
+  //   -> https://kingshot167.github.io/Kingdom167/
+  // e.g. https://kingdom167.pages.dev/assets/js/navigation.js
+  //   -> https://kingdom167.pages.dev/
+  var scriptSrc = (document.currentScript && document.currentScript.src) || "";
+  var base = scriptSrc ? scriptSrc.replace(/assets\/js\/navigation\.js.*$/, "") : "./";
+  if (base && base.slice(-1) !== "/") base += "/";
+  function url(path) { return base + path; }
+  const home = url("Home/");
   const items = [
     { label: "Home", icon: "\u2302", href: home, key: "home" },
-    { label: "Alliances", icon: "\u265c", href: "/Kingdom167/Alliances/", key: "alliances" },
-    { label: "Transfer Application", icon: "\u21e2", href: "/Kingdom167/TransferApplication/", key: "transfer" },
-    { label: "Member Portal", icon: "\u2659", href: "/Kingdom167/MemberPortal/", key: "portal" },
-    { label: "Rankings", icon: "\u265c", href: "/Kingdom167/Rankings/", key: "rankings" },
-    { label: "Swordland Summit", short: "Swordland", icon: "\u2694", href: "/Kingdom167/SwordlandSummit/", key: "swordland" },
-    { label: "Alliance Brawl", icon: "\u2662", href: "/Kingdom167/AllianceBrawl/", key: "brawl" },
-    { label: "Prep Week", icon: "\u25a4", href: "/Kingdom167/PrepWeek/", key: "prep" },
-    { label: "Sanctuaries", icon: "\u265c", href: "/Kingdom167/Sanctuaries/", key: "sanctuaries" },
-    { label: "Flame Dragon Tyrant", short: "Dragon Tyrant", icon: "\u2668", href: "/Kingdom167/FlameDragonTyrant/", key: "dragon" },
-    { label: "KvK Themes", icon: "\u2727", href: "/Kingdom167/KvKThemes/", key: "themes" },
-    { label: "KvK Season 23", short: "KvK Season 23", icon: "\u2694", href: "/Kingdom167/KvK/", key: "kvk" },
-    { label: "Event Calendar", icon: "\u25a6", href: "/Kingdom167/EventCalendar/", key: "calendar" },
-    { label: "KvK Command Board", short: "KvK Board", icon: "\u2691", href: "/Kingdom167/KvKCommandBoard/", key: "command" },
-    { label: "Recognition Board", short: "Recognition", icon: "\u2605", href: "/Kingdom167/RecognitionBoard/", key: "recognition" },
-    { label: "Resource Library", short: "Resources", icon: "\u25a4", href: "/Kingdom167/ResourceLibrary/", key: "resources" },
-    { label: "Announcements", icon: "\u2709", href: "/Kingdom167/Announcements/", key: "announcements" },
-    { label: "Event Rosters", icon: "\u265f", href: "/Kingdom167/EventRosters/", key: "rosters" },
-    { label: "Contact Us", icon: "\u2709", href: "/Kingdom167/ContactUs/", key: "contact" },
-    { label: "Gift Code Redemption", short: "Gift Codes", icon: "\u2727", href: "/Kingdom167/GiftCode/", key: "giftcode" },
-    { label: "Kingdom Directory", short: "Directory", icon: "\u25ce", href: "/Kingdom167/KingdomDirectory/", key: "directory" },
-    { label: "Pocket Holdout", short: "Pocket Holdout", icon: "\u270a", href: "/Kingdom167/PocketHoldout/", key: "pocket" },
-    { label: "Rules & FAQ", short: "Rules & FAQ", icon: "\u2756", href: "/Kingdom167/RulesFAQ/", key: "rules" }
+    { label: "Alliances", icon: "\u265c", href: url("Alliances/"), key: "alliances" },
+    { label: "Transfer Application", icon: "\u21e2", href: url("TransferApplication/"), key: "transfer" },
+    { label: "Member Portal", icon: "\u2659", href: url("MemberPortal/"), key: "portal" },
+    { label: "Rankings", icon: "\u265c", href: url("Rankings/"), key: "rankings" },
+    { label: "Swordland Summit", short: "Swordland", icon: "\u2694", href: url("SwordlandSummit/"), key: "swordland" },
+    { label: "Alliance Brawl", icon: "\u2662", href: url("AllianceBrawl/"), key: "brawl" },
+    { label: "Prep Week", icon: "\u25a4", href: url("PrepWeek/"), key: "prep" },
+    { label: "Sanctuaries", icon: "\u265c", href: url("Sanctuaries/"), key: "sanctuaries" },
+    { label: "Flame Dragon Tyrant", short: "Dragon Tyrant", icon: "\u2668", href: url("FlameDragonTyrant/"), key: "dragon" },
+    { label: "KvK Themes", icon: "\u2727", href: url("KvKThemes/"), key: "themes" },
+    { label: "KvK Season 23", short: "KvK Season 23", icon: "\u2694", href: url("KvK/"), key: "kvk" },
+    { label: "Event Calendar", icon: "\u25a6", href: url("EventCalendar/"), key: "calendar" },
+    { label: "KvK Command Board", short: "KvK Board", icon: "\u2691", href: url("KvKCommandBoard/"), key: "command" },
+    { label: "Recognition Board", short: "Recognition", icon: "\u2605", href: url("RecognitionBoard/"), key: "recognition" },
+    { label: "Resource Library", short: "Resources", icon: "\u25a4", href: url("ResourceLibrary/"), key: "resources" },
+    { label: "Announcements", icon: "\u2709", href: url("Announcements/"), key: "announcements" },
+    { label: "Event Rosters", icon: "\u265f", href: url("EventRosters/"), key: "rosters" },
+    { label: "Contact Us", icon: "\u2709", href: url("ContactUs/"), key: "contact" },
+    { label: "Gift Code Redemption", short: "Gift Codes", icon: "\u2727", href: url("GiftCode/"), key: "giftcode" },
+    { label: "Kingdom Directory", short: "Directory", icon: "\u25ce", href: url("KingdomDirectory/"), key: "directory" },
+    { label: "Rules & FAQ", short: "Rules & FAQ", icon: "\u2756", href: url("RulesFAQ/"), key: "rules" }
   ];
   function railMarkup(intro) {
     const links = items.map(function (item) {
@@ -41,9 +51,13 @@
   if (!intro) { const topbar = document.querySelector(".topbar-inner"); if (topbar && !topbar.querySelector(".nav-toggle")) topbar.insertAdjacentHTML("afterbegin", toggleMarkup()); }
   const toggle = document.querySelector(".nav-toggle");
   const backdrop = document.createElement("button"); backdrop.className = "rail-backdrop"; backdrop.type = "button"; backdrop.setAttribute("aria-label", "Close kingdom menu"); document.body.appendChild(backdrop);
-  const path = window.location.pathname.replace(/\/$/, "") || "/"; const hash = window.location.hash; let activeKey = "";
-  if (path === "/Kingdom167" || path === "/Kingdom167/Home") activeKey = hash === "#alliances" ? "alliances" : "home";
-  else if (path.indexOf("/Alliances") !== -1) activeKey = "alliances";
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const hash = window.location.hash;
+  const last = path.split("/").filter(Boolean).pop() || "";
+  let activeKey = "";
+  // Home = site root, /Kingdom167, /Kingdom167/Home, or /Home - works on both hosts
+  if (last === "" || last === "Kingdom167" || last === "Home") activeKey = hash === "#alliances" ? "alliances" : "home";
+  else if (path.indexOf("/Alliances") !== -1 || last === "Alliances") activeKey = "alliances";
   else if (path.indexOf("TransferApplication") !== -1) activeKey = "transfer";
   else if (path.indexOf("MemberPortal") !== -1) activeKey = "portal";
   else if (path.indexOf("Rankings") !== -1) activeKey = "rankings";
@@ -53,7 +67,7 @@
   else if (path.indexOf("Sanctuaries") !== -1) activeKey = "sanctuaries";
   else if (path.indexOf("FlameDragonTyrant") !== -1) activeKey = "dragon";
   else if (path.indexOf("KvKThemes") !== -1) activeKey = "themes";
-  else if (path.indexOf("/KvK/") !== -1) activeKey = "kvk";
+  else if (path.indexOf("/KvK/") !== -1 || last === "KvK") activeKey = "kvk";
   else if (path.indexOf("EventCalendar") !== -1) activeKey = "calendar";
   else if (path.indexOf("KvKCommandBoard") !== -1) activeKey = "command";
   else if (path.indexOf("RecognitionBoard") !== -1) activeKey = "recognition";
@@ -63,7 +77,6 @@
   else if (path.indexOf("ContactUs") !== -1) activeKey = "contact";
   else if (path.indexOf("GiftCode") !== -1) activeKey = "giftcode";
   else if (path.indexOf("KingdomDirectory") !== -1) activeKey = "directory";
-  else if (path.indexOf("PocketHoldout") !== -1) activeKey = "pocket";
   else if (path.indexOf("RulesFAQ") !== -1) activeKey = "rules";
   const activeLink = rail.querySelector('[data-rail-key="' + activeKey + '"]');
   if (activeLink) { activeLink.classList.add("is-active"); activeLink.setAttribute("aria-current", "page"); }
