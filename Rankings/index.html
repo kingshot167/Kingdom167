@@ -1,6 +1,25 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><style>* { -webkit-text-size-adjust: 95.33333333333333% !important; }</style><head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
   <!-- META TAGS -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,12 +27,12 @@
   <meta name="description" content="Kingdom 167 player and alliance leaderboards.">
   <title>Rankings | Kingdom 167</title>
   <!-- FAVICON -->
-  <link rel="icon" type="image/svg+xml" href="/Kingdom167/assets/favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/Kingdom167/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
   <!-- CSS - order matters: style.css first, navigation.css second (wins on .topbar) -->
-  <link rel="stylesheet" href="/Kingdom167/assets/css/style.css">
-  <link rel="stylesheet" href="/Kingdom167/assets/css/navigation.css">
-  <link rel="stylesheet" href="/Kingdom167/assets/css/live-bar.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/navigation.css">
+  <link rel="stylesheet" href="../assets/css/live-bar.css">
   <!-- No inline <style> here. Topbar-simple lives at bottom of navigation.css -->
 </head>
 <body class="page-rankings site-with-rail">
@@ -22,11 +41,11 @@
     <!-- No nav links. No 'active'. Sidebar handles navigation. -->
     <!-- Keep BOTH classes on inner div so navigation.js can inject the mobile hamburger -->
     <header class="topbar-simple"><div class="topbar-simple-inner topbar-inner">
-      <button class="top-icon-btn" type="button" disabled title="Language - coming soon" aria-label="Change language - coming soon"><span aria-hidden="true">&#127760;</span></button>
-      <a class="brand-simple" href="/Kingdom167/Home/"><span class="brand-simple-name">KINGDOM 167</span><small>THE DIRTYBOB REALM</small></a>
+      <button class="top-icon-btn" type="button" disabled="" title="Language - coming soon" aria-label="Change language - coming soon"><span aria-hidden="true">🌐</span></button>
+      <a class="brand-simple" href="../Home/"><span class="brand-simple-name">KINGDOM 167</span><small>THE DIRTYBOB REALM</small></a>
       <div class="topbar-simple-actions">
-        <button class="btn-login" type="button" disabled title="Log in / Register - coming soon"><span aria-hidden="true">&#9673;</span> Log In / Register</button>
-        <button class="btn-discord" type="button" disabled title="Sign in with Discord - coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.5 5.3A16.3 16.3 0 0 0 15.4 4l-.5 1a14.2 14.2 0 0 0-5.8 0l-.5-1a16.5 16.5 0 0 0-4.1 1.3C1.9 9.2 1.2 13 1.5 16.7A16.7 16.7 0 0 0 6.6 19l1.2-1.7a10.7 10.7 0 0 1-1.9-.9l.5-.4c3.7 1.7 7.6 1.7 11.2 0l.5.4c-.6.4-1.2.7-1.9.9l1.2 1.7a16.5 16.5 0 0 0 5.1-2.3c.4-4.4-.7-8.2-3-11.4ZM8.7 14.5c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"/></svg> SIGN IN</button>
+        <button class="btn-login" type="button" disabled="" title="Log in / Register - coming soon"><span aria-hidden="true">◉</span> Log In / Register</button>
+        <button class="btn-discord" type="button" disabled="" title="Sign in with Discord - coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.5 5.3A16.3 16.3 0 0 0 15.4 4l-.5 1a14.2 14.2 0 0 0-5.8 0l-.5-1a16.5 16.5 0 0 0-4.1 1.3C1.9 9.2 1.2 13 1.5 16.7A16.7 16.7 0 0 0 6.6 19l1.2-1.7a10.7 10.7 0 0 1-1.9-.9l.5-.4c3.7 1.7 7.6 1.7 11.2 0l.5.4c-.6.4-1.2.7-1.9.9l1.2 1.7a16.5 16.5 0 0 0 5.1-2.3c.4-4.4-.7-8.2-3-11.4ZM8.7 14.5c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm6.6 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"></path></svg> SIGN IN</button>
       </div>
     </div></header>
     <main>
@@ -39,7 +58,7 @@
       </section>
       <section class="rankings-section" id="leaderboard" aria-labelledby="rankings-title">
         <div class="rankings-heading">
-          <div><span class="cc-overline">TOP 100 &bull; KINGDOM 167</span><h2 id="rankings-title">Leaderboard</h2></div>
+          <div><span class="cc-overline">TOP 100 • KINGDOM 167</span><h2 id="rankings-title">Leaderboard</h2></div>
           <p id="rankings-updated">Waiting for the first JSON refresh</p>
         </div>
         <div class="rankings-controls">
@@ -53,15 +72,15 @@
           <label>Alliance filter
             <select id="alliance-select" aria-label="Filter by alliance">
               <option value="all">All Kingdom 167</option>
-              <option value="RYL">RYL &mdash; Royal Legionnairs</option>
-              <option value="JUS">JUS &mdash; Justice</option>
-              <option value="TNW">TNW &mdash; The Night's Watch</option>
-              <option value="ONE">ONE &mdash; One Nation Empire</option>
-              <option value="ITA">ITA &mdash; Imperium &AElig;ternum</option>
+              <option value="RYL">RYL — Royal Legionnairs</option>
+              <option value="JUS">JUS — Justice</option>
+              <option value="TNW">TNW — The Night's Watch</option>
+              <option value="ONE">ONE — One Nation Empire</option>
+              <option value="ITA">ITA — Imperium Æternum</option>
             </select>
           </label>
         </div>
-        <div class="rankings-status" id="rankings-status" role="status" aria-live="polite">Loading the local leaderboard snapshot&hellip;</div>
+        <div class="rankings-status" id="rankings-status" role="status" aria-live="polite">Loading the local leaderboard snapshot…</div>
         <div class="rankings-board">
           <div class="rankings-board-head"><div><span class="cc-overline" id="board-kind">GOVERNOR LEADERBOARD</span><h3 id="board-title">Personal Power</h3></div><span class="rankings-count" id="board-count">0 / 100</span></div>
           <ol class="rankings-list" id="rankings-list" aria-label="Leaderboard results"></ol>
@@ -69,10 +88,11 @@
         <p class="rankings-footnote">Standings are read from the latest published MightPulse JSON snapshot. GitHub Actions refreshes the snapshot; the API key is never sent to this page.</p>
       </section>
     </main>
-    <footer><div class="footer-inner"><a class="brand" href="/Kingdom167/Home/"><span class="diamond">&#981b;</span><span class="brand-k">K167</span><span>Kingdom 167</span></a><p>Kingdom Rankings</p><a class="return-top" href="#top">Back to the crown &uarr;</a></div><div class="footer-bottom"><span>FIVE ALLIANCES &bull; ONE KINGDOM</span><span>THE DIRTYBOB REALM</span></div></footer>
+    <footer><div class="footer-inner"><a class="brand" href="../Home/"><span class="diamond">ϕb;</span><span class="brand-k">K167</span><span>Kingdom 167</span></a><p>Kingdom Rankings</p><a class="return-top" href="#top">Back to the crown ↑</a></div><div class="footer-bottom"><span>FIVE ALLIANCES • ONE KINGDOM</span><span>THE DIRTYBOB REALM</span></div></footer>
   </div>
-  <script src="/Kingdom167/assets/js/rankings.js" defer></script>
-  <script src="/Kingdom167/assets/js/navigation.js" defer></script>
-  <script src="/Kingdom167/assets/js/live-bar.js" defer></script>
-</body>
-</html>
+  <script src="../assets/js/rankings.js" defer=""></script>
+  <script src="../assets/js/navigation.js" defer=""></script>
+  <script src="../assets/js/live-bar.js" defer=""></script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
+
+</body></html>
