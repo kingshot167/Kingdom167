@@ -10,6 +10,7 @@
   const updated = document.getElementById("rankings-updated");
   const title = document.getElementById("board-title");
   const kindLabel = document.getElementById("board-kind");
+  const allianceLabel = document.getElementById("alliance-label");
   const count = document.getElementById("board-count");
   const boardLabels = new Map(Array.from(boardSelect.options).map(function (option) {
     return [option.value, option.textContent];
@@ -44,6 +45,8 @@
     emblem.setAttribute("aria-hidden", "true");
     emblem.textContent = (entry.name || entry.nick_name || entry.abbr || "K").trim().slice(0, 1).toUpperCase();
 
+    const player = document.createElement("span");
+    player.className = "ranking-player";
     const identity = document.createElement("span");
     identity.className = "ranking-identity";
     const name = document.createElement("b");
@@ -51,11 +54,15 @@
     const detail = document.createElement("small");
     if (isAlliance) detail.textContent = "Alliance: " + (entry.abbr || "—");
     else {
-      const alliance = entry.alliance_abbr || entry.abbr || "Unassigned";
       const governorId = entry.governor_id ? "Governor: " + entry.governor_id : "Governor ID unavailable";
-      detail.textContent = governorId + " · " + alliance;
+      detail.textContent = governorId;
     }
     identity.append(name, detail);
+    player.append(emblem, identity);
+
+    const alliance = document.createElement("span");
+    alliance.className = "ranking-alliance";
+    alliance.textContent = isAlliance ? "—" : (entry.alliance_abbr || entry.abbr || "—");
 
     const score = document.createElement("span");
     score.className = "ranking-score";
@@ -64,7 +71,7 @@
     scoreValue.textContent = formatScore(entry.score);
     score.appendChild(scoreValue);
 
-    row.append(rank, emblem, identity, score);
+    row.append(rank, player, alliance, score);
     return row;
   }
 
@@ -75,6 +82,7 @@
     const isAlliance = Boolean(board && board.kind === "alliance");
     title.textContent = boardLabels.get(key) || "Leaderboard";
     kindLabel.textContent = isAlliance ? "ALLIANCE LEADERBOARD" : "GOVERNOR LEADERBOARD";
+    if (allianceLabel) allianceLabel.textContent = isAlliance ? "Type" : "Alliance";
 
     if (!board || !Array.isArray(board.entries) || board.entries.length === 0) {
       showEmpty("No rankings are available for this board in the latest snapshot.");
