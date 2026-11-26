@@ -1,4 +1,6 @@
 /* Shows the latest MightPulse roster snapshot on each alliance profile. */
+/* Relative-path version: derives the site root from this script's own URL, */
+/* so the same file works on GitHub Pages (/Kingdom167/) and Cloudflare Pages (/). */
 (function () {
   const tags = ["RYL", "JUS", "TNW", "ONE", "ITA"];
   const tag = tags.find(function (value) {
@@ -29,7 +31,14 @@
   const eventsHeading = eventLinks.previousElementSibling;
   (eventsHeading || eventLinks).before(section);
 
-  fetch("/Kingdom167/assets/data/leaderboards.json", { cache: "no-store" })
+  // Site root from this script's URL, e.g.
+  // GitHub:     https://kingshot167.github.io/Kingdom167/assets/js/alliance-members.js -> .../Kingdom167/
+  // Cloudflare: https://kingdom167.pages.dev/assets/js/alliance-members.js          -> .../
+  var scriptSrc = (document.currentScript && document.currentScript.src) || "";
+  var base = scriptSrc ? scriptSrc.replace(/assets\/js\/alliance-members\.js.*$/, "") : "./";
+  if (base && base.slice(-1) !== "/") base += "/";
+
+  fetch(base + "assets/data/leaderboards.json", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Roster snapshot unavailable");
       return response.json();
