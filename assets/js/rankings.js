@@ -18,7 +18,7 @@
 
   function formatScore(score) {
     const value = Number(score);
-    if (!Number.isFinite(value)) return String(score == null ? "—" : score);
+    if (!Number.isFinite(value)) return String(score == null ? "\u2014" : score);
     return new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 2 }).format(value);
   }
 
@@ -49,11 +49,11 @@
     const name = document.createElement("b");
     name.textContent = entry.name || entry.nick_name || entry.abbr || "Unknown governor";
     const detail = document.createElement("small");
-    if (isAlliance) detail.textContent = "Alliance: " + (entry.abbr || "—");
+    if (isAlliance) detail.textContent = "Alliance: " + (entry.abbr || "\u2014");
     else {
-      const alliance = entry.alliance_abbr || entry.abbr || "Unassigned";
+      // CHANGED: alliance removed from here - it now gets its own bubble column below
       const governorId = entry.governor_id ? "Governor: " + entry.governor_id : "Governor ID unavailable";
-      detail.textContent = governorId + " · " + alliance;
+      detail.textContent = governorId;
     }
     identity.append(name, detail);
 
@@ -64,7 +64,17 @@
     scoreValue.textContent = formatScore(entry.score);
     score.appendChild(scoreValue);
 
-    row.append(rank, emblem, identity, score);
+    // NEW: alliance bubble column - just before SCORE, governor boards only
+    // For alliance boards the row IS the alliance, so no bubble needed
+    if (!isAlliance) {
+      const alliance = entry.alliance_abbr || entry.abbr || "Unassigned";
+      const tag = document.createElement("span");
+      tag.className = "alliance-tag alliance-" + alliance.toLowerCase();
+      tag.textContent = alliance;
+      row.append(rank, emblem, identity, tag, score);
+    } else {
+      row.append(rank, emblem, identity, score);
+    }
     return row;
   }
 
@@ -110,7 +120,7 @@
         const date = new Date(data.updated_at);
         updated.textContent = Number.isNaN(date.getTime()) ? "Snapshot date unavailable" : "Snapshot updated " + date.toLocaleString();
       } else updated.textContent = "Waiting for the first JSON refresh";
-      status.textContent = "MightPulse snapshot loaded · " + (data.kingdom_name || "Kingdom 167");
+      status.textContent = "MightPulse snapshot loaded \u00b7 " + (data.kingdom_name || "Kingdom 167");
       render();
     })
     .catch(function () {
