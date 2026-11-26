@@ -6,17 +6,24 @@
   // It is not a secret and must not be used to secure this website.
   const CLIENT_KEY = "mN4!pQs6JrYwV9";
 
+  // Site root from this script's URL, e.g.
+  // GitHub:     https://kingshot167.github.io/Kingdom167/assets/js/gift-code.js -> .../Kingdom167/
+  // Cloudflare: https://kingdom167.pages.dev/assets/js/gift-code.js          -> .../
+  // Used only for the local giftcodes.json list - the redemption API_URL above is external and stays as-is.
+  var scriptSrc = (document.currentScript && document.currentScript.src) || "";
+  var base = scriptSrc ? scriptSrc.replace(/assets\/js\/gift-code\.js.*$/, "") : "./";
+  if (base && base.slice(-1) !== "/") base += "/";
+  const CODES_URL = base + "assets/data/giftcodes.json";
+
   function md5(text) {
     const bytes = Array.from(new TextEncoder().encode(text));
     const bitLength = bytes.length * 8;
     bytes.push(0x80);
     while (bytes.length % 64 !== 56) bytes.push(0);
     for (let i = 0; i < 8; i += 1) bytes.push(Math.floor(bitLength / (2 ** (8 * i))) & 0xff);
-
     const shifts = [7,12,17,22,7,12,17,22,7,12,17,22,7,12,17,22,5,9,14,20,5,9,14,20,5,9,14,20,5,9,14,20,4,11,16,23,4,11,16,23,4,11,16,23,4,11,16,23,6,10,15,21,6,10,15,21,6,10,15,21,6,10,15,21];
     const constants = Array.from({ length: 64 }, (_, i) => Math.floor(Math.abs(Math.sin(i + 1)) * 4294967296) >>> 0);
     let a0 = 0x67452301, b0 = 0xefcdab89, c0 = 0x98badcfe, d0 = 0x10325476;
-
     for (let offset = 0; offset < bytes.length; offset += 64) {
       const words = [];
       for (let i = 0; i < 16; i += 1) {
@@ -38,7 +45,6 @@
       }
       a0 = (a0 + a) >>> 0; b0 = (b0 + b) >>> 0; c0 = (c0 + c) >>> 0; d0 = (d0 + d) >>> 0;
     }
-
     function littleEndianHex(word) {
       let out = "";
       for (let i = 0; i < 4; i += 1) out += ((word >>> (i * 8)) & 0xff).toString(16).padStart(2, "0");
@@ -84,7 +90,7 @@
 
   async function loadCodes() {
     try {
-      const response = await fetch("/Kingdom167/assets/data/giftcodes.json", { cache: "no-cache" });
+      const response = await fetch(CODES_URL, { cache: "no-cache" });
       if (!response.ok) throw new Error("Code list unavailable");
       const data = await response.json();
       if (!Array.isArray(data.codes)) throw new Error("Unexpected code-list format");
@@ -142,7 +148,6 @@
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     if (!form.reportValidity()) return;
-
     const formData = new FormData(form);
     const fid = String(formData.get("fid")).trim();
     const kid = String(formData.get("kid")).trim();
@@ -150,14 +155,12 @@
     const time = String(Math.floor(Date.now() / 1000));
     const signText = "cdk=" + cdk + "&fid=" + fid + "&kid=" + kid + "&time=" + time + CLIENT_KEY;
     const params = new URLSearchParams({ sign: md5(signText), fid: fid, cdk: cdk, kid: kid, time: time });
-
     status.hidden = false;
     status.dataset.kind = "info";
     status.textContent = "Sending the redemption request…";
     result.hidden = true;
     button.disabled = true;
     button.querySelector("span").textContent = "Submitting…";
-
     try {
       const response = await fetch(API_URL, {
         method: "POST",
@@ -169,7 +172,6 @@
       let data;
       try { data = JSON.parse(responseText); }
       catch (_) { data = { response: responseText }; }
-
       result.hidden = false;
       badge.className = "result-badge";
       if (data && data.err_code !== undefined) {
