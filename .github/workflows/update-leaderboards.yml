@@ -7,6 +7,7 @@ on:
     paths:
       - ".github/workflows/update-leaderboards.yml"
       - "scripts/fetch_leaderboards.py"
+      - "KvK/season-data.js"
   schedule:
     # GitHub runs scheduled workflows from the repository's default branch.
     # Daily at 03:17 UTC (13:17 in Brisbane), away from the top of the hour.

@@ -29,7 +29,7 @@
   const eventsHeading = eventLinks.previousElementSibling;
   (eventsHeading || eventLinks).before(section);
 
-  fetch("/Kingdom167/assets/data/leaderboards.json", { cache: "no-store" })
+  fetch("/assets/data/leaderboards.json", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Roster snapshot unavailable");
       return response.json();

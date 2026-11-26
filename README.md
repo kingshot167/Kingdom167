@@ -12,6 +12,7 @@ A static Kingshot community site designed for GitHub Pages. It uses plain HTML, 
 - `Rankings/index.html` — JSON-backed Top 100 leaderboard selector and alliance filters
 - `EventCalendar/index.html` — kingdom schedule starter page
 - `KvKCommandBoard/index.html` — KvK planning and assignment starter page
+- `KvK/index.html` — reusable KvK season page; season values are stored in `KvK/season-data.js`
 - `RecognitionBoard/index.html` — member and alliance recognition starter page
 - `ResourceLibrary/index.html` — guides and tools library starter page
 - `Announcements/index.html` — kingdom notices starter page

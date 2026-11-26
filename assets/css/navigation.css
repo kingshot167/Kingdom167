@@ -115,39 +115,6 @@ body.site-with-rail > .shell {
   cursor: pointer;
 }
 
-/* ---------- TOPBAR / NAV (Global) ---------- */
-.topbar{
-  position:sticky;
-  top:var(--safe-area-inset-top, 0px);
-  z-index:30;
-  height:68px;
-  background:rgba(7,3,15,.82);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(216,178,92,.18);
-}
-.topbar-inner{
-  max-width:1440px; height:68px; margin:0 auto; padding:0 28px;
-  display:flex; align-items:center; justify-content:space-between; gap:18px;
-}
-.brand{ display:flex; align-items:center; gap:11px; font-family:Georgia,serif; font-weight:700; letter-spacing:.08em; text-decoration:none; }
-.diamond{
-  width:38px; height:38px; display:grid; place-items:center; color:#07030f;
-  background:linear-gradient(135deg,#f2d58c,#d8b25c);
-  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);
-}
-.brand-k{ font-size:23px; }
-.brand-divider{ width:1px; height:26px; background:rgba(216,178,92,.55); }
-.brand-full{ font-size:13px; letter-spacing:.22em; }
-.nav{ display:flex; gap:26px; }
-.nav-link{ font-size:13px; letter-spacing:.04em; color:#c8bccf; padding:6px 2px; border-bottom:2px solid transparent; text-decoration:none; }
-.nav-link:hover,.nav-link.active{ color:var(--ink, #f8f1e5); border-color:var(--rail-gold, #e8c16e); }
-.nav-link.active{ font-weight:700; }
-.header-cta{
-  display:flex; align-items:center; gap:8px;
-  background:linear-gradient(135deg,#f2d58c,#d8b25c); color:#1a0d00;
-  padding:11px 17px; border-radius:999px; font-size:13px; font-weight:800; white-space:nowrap; text-decoration:none;
-}
-
 @media (min-width: 701px) and (max-width: 1100px) {
   body.site-with-rail { grid-template-columns: 86px minmax(0, 1fr); }
   body.site-with-rail > .kingdom-rail { align-items: center; padding: 18px 8px; }

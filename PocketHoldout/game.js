@@ -12,8 +12,8 @@
     streetDoc: new Image(),
     dirtybob: new Image()
   };
-  sprites.streetDoc.src = "/Kingdom167/assets/streetdoc-sprite.png";
-  sprites.dirtybob.src = "/Kingdom167/assets/dirtybob-sprite.png";
+  sprites.streetDoc.src = "/assets/streetdoc-sprite.png";
+  sprites.dirtybob.src = "/assets/dirtybob-sprite.png";
   const state = {
     active: false, grip: false, runId: 0, started: 0, last: 0, elapsed: 0,
     tension: 0, docX: 350, bobX: 620, bobY: 340, direction: 1,

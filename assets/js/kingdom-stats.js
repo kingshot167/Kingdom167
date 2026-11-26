@@ -3,7 +3,7 @@
   const count = document.getElementById("kingdom-member-count");
   if (!count) return;
 
-  fetch("/Kingdom167/assets/data/leaderboards.json", { cache: "no-store" })
+  fetch("/assets/data/leaderboards.json", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Kingdom snapshot unavailable");
       return response.json();
