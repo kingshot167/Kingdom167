@@ -1,0 +1,11 @@
+{
+  "_comment": "LIVE EVENTS - edit this file only. No HTML edits needed. Set active:true on the ONE event to show. If none active, first event shows. If events is empty, placeholder bar shows.",
+  "events": [
+    {
+      "label": "KINGDOM EVENT",
+      "details": ["6-week challenge", "3 legions"],
+      "status": "live",
+      "active": true
+    }
+  ]
+}
