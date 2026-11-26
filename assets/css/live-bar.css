@@ -1,0 +1,23 @@
+/* LIVE-BAR - shared status bar - File: /Kingdom167/assets/css/live-bar.css */
+/* Lives BETWEEN the topbar and the hero. Loaded on every page that wants it. */
+/* Do NOT copy this into a page. Edit here only. */
+.live-bar{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:38px;padding:8px 16px;
+  background:linear-gradient(90deg,rgba(128,27,224,.28),rgba(20,10,29,.92) 42%,rgba(20,10,29,.92));
+  border-bottom:1px solid rgba(232,193,110,.35);
+  color:#f4e5c4;font:700 11px Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.live-bar b{color:#ffe1a0;letter-spacing:.18em}
+.live-bar .sep{color:rgba(232,193,110,.75)}
+.live-bar .live-label{color:#c9bfce}
+.live-dot{flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:#90df9f;box-shadow:0 0 12px #73ed96;animation:live-pulse 1.6s ease-in-out infinite}
+.live-bar.is-paused .live-dot{background:#e8c16e;box-shadow:0 0 12px #e8c16e;animation:none}
+.live-bar.is-ended .live-dot{background:#95899f;box-shadow:none;animation:none}
+@keyframes live-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.78)}}
+@media (max-width:700px){
+  .live-bar{gap:7px;font-size:10px;letter-spacing:.1em;padding:8px 12px}
+  .live-bar .live-detail{display:none} /* keeps mobile to: dot + KINGDOM EVENT + first detail */
+}
+@media (prefers-reduced-motion:reduce){.live-dot{animation:none}}
