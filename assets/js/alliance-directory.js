@@ -1,4 +1,6 @@
 /* Fills alliance directory cards from the shared MightPulse snapshot. */
+/* Relative-path version: derives the site root from this script's own URL, */
+/* so the same file works on GitHub Pages (/Kingdom167/) and Cloudflare Pages (/). */
 (function () {
   const cards = Array.from(document.querySelectorAll("[data-alliance-tag]"));
   const status = document.getElementById("alliance-hub-status");
@@ -13,7 +15,14 @@
     }).format(number);
   }
 
-  fetch("/Kingdom167/assets/data/leaderboards.json", { cache: "no-store" })
+  // Site root from this script's URL, e.g.
+  // GitHub:     https://kingshot167.github.io/Kingdom167/assets/js/alliance-directory.js -> .../Kingdom167/
+  // Cloudflare: https://kingdom167.pages.dev/assets/js/alliance-directory.js          -> .../
+  var scriptSrc = (document.currentScript && document.currentScript.src) || "";
+  var base = scriptSrc ? scriptSrc.replace(/assets\/js\/alliance-directory\.js.*$/, "") : "./";
+  if (base && base.slice(-1) !== "/") base += "/";
+
+  fetch(base + "assets/data/leaderboards.json", { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("Alliance snapshot unavailable");
       return response.json();
